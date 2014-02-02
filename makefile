@@ -1,2 +1,15 @@
-# this is the makefile
-# this is the second line of makefile
+INCDIR=include/
+BINDIR=bin/
+LIBDIR=lib/
+OBJDIR=object/
+SRCDIR=src/
+
+CC=gcc
+RM=rm
+
+.PHONY: all clean
+
+all:
+
+clean:
+	rm -f $(OBJDIR)/*.o
