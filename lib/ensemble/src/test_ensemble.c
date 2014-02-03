@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ensemble.c>
+#include <ensemble.h>
 
 void afficherEnsemble(Ensemble *E){
 	if(vide(E)){
@@ -27,13 +27,13 @@ int main(){
 	
 	E = creer_ensemble();
 	
-	ajouterElement(15,L);
-	ajouterElement(1,L);
-	ajouterElement(3,L); 
+	ajouterElement(15,E);
+	ajouterElement(1,E);
+	ajouterElement(3,E); 
 	
-	afficherEnsemble(L);
+	afficherEnsemble(E);
 	
-	nbr = appartient(L,1); 
+	nbr = appartient(E,1); 
 	
 	printf("Appartient: %d\n", nbr);
 	

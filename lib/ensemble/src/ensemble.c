@@ -1,20 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ensemble.h>
 
-typedef struct cell cell;
-typedef struct Ensemble Ensemble;
-
-struct cell{
-	void* contenu;
-	cell* suivant;
-};
-
-struct Ensemble{
-	cell* courant;
-	cell* tete;
-};
-
-Liste* creer_ensemble(){
+Ensemble* creer_ensemble(){
 	Ensemble* E;
 	
 	E = (Ensemble*) malloc(sizeof(Ensemble));
