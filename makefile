@@ -7,6 +7,8 @@ SRCDIR=src/
 CC=gcc
 RM=rm
 
+CFLAGS=-I $(INCDIR)
+
 .PHONY: all clean
 
 all:
