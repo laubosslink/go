@@ -16,8 +16,14 @@ CFLAGS=-I $(INCDIR)
 
 all:
 
+##
+# LIBRARIES
+##
 
-# La librairie ensemble
+##
+# Ensembles
+##
+
 libensembletest: $(LIBDIR)/ensemble/bin/test_ensemble
 
 $(LIBDIR)/ensemble/bin/test_ensemble: $(OBJDIR)/test_ensemble.o $(LIBDIR)/ensemble/bin/libensemble.so
@@ -32,8 +38,10 @@ $(LIBDIR)/ensemble/bin/libensemble.so: $(OBJDIR)/libensemble.o
 	$(CC) -shared $^ -o $@
 
 $(OBJDIR)/libensemble.o: $(LIBDIR)/ensemble/src/ensemble.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
-
+##
+# Autres
+##
 clean:
-	rm -f $(OBJDIR)/*.o
+	rm -f $(OBJDIR)/*.[o-so]
