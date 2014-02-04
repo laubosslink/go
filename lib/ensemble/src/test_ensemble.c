@@ -70,6 +70,11 @@ int main(){
 	// On check si une adresse appartient à l'ensemble
 	printf("Appartient (%p): %d\n\n", t+4, appartient(E, t+4));
 	
+	E = detruire(E, t+1);
+	
+	afficherEnsembleInt(E);
+	
+	
 	return 0;
 }
 

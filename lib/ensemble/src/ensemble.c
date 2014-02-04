@@ -33,13 +33,35 @@ int appartient(Ensemble* E, void* element){
 	return 1;
 }
 
-/*Liste* supprimer(Liste* L) // @TODO */
-
+Ensemble* detruire(Ensemble* E, void* element){
+	Cell* cellule;
+	
+	if(!appartient(E,element))
+		return E;
+	
+	cellule = (Cell*) malloc(sizeof(Cell));
+	
+	while(E->courant->suivant != NULL && E->courant->suivant->contenu != element){
+		E->courant = E->courant->suivant;
+	}
+	
+	if(E->courant->suivant == NULL && E->courant->contenu != element)
+		return E;
+	
+	printf("On arrive la");
+	cellule = E->courant->suivant;
+	E->courant->suivant = cellule->suivant;
+	
+	free(cellule);
+	
+	return E;
+	
+}// TODO 
 	
 void ajouterElement(Ensemble* E, void* element){
-	cell* cellule;
+	Cell* cellule;
 	
-	cellule=(cell*)malloc(sizeof(cell));
+	cellule=(Cell*)malloc(sizeof(Cell));
 
 	cellule->contenu=element;
 	
