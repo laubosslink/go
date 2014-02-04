@@ -36,7 +36,7 @@ struct Matrice {
  * @param nbcol le nombre de colonnes à allouer
  * @return une matrice nblig*nbcol
  */
-struct Matrice alloue(int nblig, int nbcol);
+struct Matrice creer_matrice(int nblig, int nbcol);
 
 
 /**

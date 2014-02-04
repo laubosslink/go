@@ -25,7 +25,7 @@
 #include <matrice.h>
 #include <couleur.h>
 
-struct Matrice alloue(int nblig, int nbcol){
+struct Matrice creer_matrice(int nblig, int nbcol){
 	int i;
 	
 	struct Matrice m;
@@ -36,7 +36,7 @@ struct Matrice alloue(int nblig, int nbcol){
 	m.donnees = (char **) malloc(nblig * sizeof(char *));
 	
 	for(i=0; i<nblig; i++){
-		m.donnees[i] = (Couleur *) malloc(nbcol * sizeof(char));
+		m.donnees[i] = (Couleur *) malloc(nbcol * sizeof(Couleur));
 	}
 	
 	return m;
@@ -69,14 +69,21 @@ struct Matrice initMatrice(char *fichier){
 	fgetc(f);
 	
 	/* initialisation de la matrice (allocation mémoire) */
-	m = alloue(nbligne, nbcolonne);
+	m = creer_matrice(nbligne, nbcolonne);
 	m.nbcolonne = nbcolonne;
 	m.nbligne = nbligne;
 	
 	/* récupération des données */
 	if(f != NULL){
 		for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
-			m.donnees[j][i] = (char) fgetc(f);
+			c = (char) fgetc(f);
+			
+			if(c == '.')
+				m.donnees[j][i] = VIDE;
+			else if(c == 'o')
+				m.donnees[j][i] = BLANC;
+			else if(c == 'x')
+				m.donnees[j][i] = NOIR;
 			
 			if((char) fgetc(f) == '\n'){
 				j++;

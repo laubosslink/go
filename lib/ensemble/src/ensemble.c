@@ -16,6 +16,18 @@ int vide(Ensemble* E){
 	return E->tete == NULL;
 }
 
+Cell* tete(Ensemble* E){
+	return E->tete;
+}
+
+Cell* courant(Ensemble* E){
+	return E->courant;
+}
+
+int suivant(Ensemble* E){
+	return courant(E)->suivant != NULL;
+}
+
 
 int appartient(Ensemble* E, void* element){
 	if(vide(E))
@@ -23,11 +35,11 @@ int appartient(Ensemble* E, void* element){
 		
 	E->courant=E->tete;
 	
-	while(E->courant->suivant != NULL && E->courant->contenu != element ){
+	while(suivant(E) && E->courant->contenu != element ){
 		E->courant = E->courant->suivant;
 	}
 	
-	if(E->courant->suivant == NULL && E->courant->contenu != element)
+	if( !suivant(E) && E->courant->contenu != element)
 		return 0;
 	
 	return 1;
@@ -40,15 +52,15 @@ Ensemble* detruire(Ensemble* E, void* element){
 		return E;
 	
 	cellule = (Cell*) malloc(sizeof(Cell));
+	E->courant=E->tete;
 	
-	while(E->courant->suivant != NULL && E->courant->suivant->contenu != element){
+	while( suivant(E) && E->courant->suivant->contenu != element){
 		E->courant = E->courant->suivant;
 	}
 	
-	if(E->courant->suivant == NULL && E->courant->contenu != element)
+	if(!suivant(E) && E->courant->contenu != element)
 		return E;
 	
-	printf("On arrive la");
 	cellule = E->courant->suivant;
 	E->courant->suivant = cellule->suivant;
 	
@@ -56,7 +68,7 @@ Ensemble* detruire(Ensemble* E, void* element){
 	
 	return E;
 	
-}// TODO 
+} 
 	
 void ajouterElement(Ensemble* E, void* element){
 	Cell* cellule;
@@ -70,7 +82,7 @@ void ajouterElement(Ensemble* E, void* element){
 	} else {
 		E->courant=E->tete;
 		
-		while(E->courant->suivant != NULL ) {	
+		while(suivant(E) ) {	
 			E->courant=E->courant->suivant;
 			}
 		

@@ -23,4 +23,4 @@
  
 #include <ensemble.h>
 
-typedef Ensemble Position;
+typedef Ensemble Positions;

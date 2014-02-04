@@ -22,5 +22,10 @@
  */
  
 #include <ensemble.h>
+#include <couleur.h>
+#include <positions.h>
 
-typedef Ensemble Chaine;
+typedef struct Chaine {
+	Couleur c;
+	Positions *p;
+} Chaine;

@@ -1,0 +1,42 @@
+#include <positions.h>
+#include <position.h>
+
+Positions* creer_type(){
+	return (Positions*) creer_ensemble();
+}
+
+int main(){
+	Positions *p;
+	Position p1;
+	Position p2;
+	
+	p1.x = 5;
+	p1.y = 10;
+	
+	p2.x = 15;
+	p2.y = 20;
+	
+	p = creer_type();
+	
+	ajouterElement(p, &p1);
+	ajouterElement(p, &p2);
+	
+	printf("p2: %p\n", &p2);
+	printf("p->courant: %p\n", p->courant->suivant->contenu);
+	printf("15:%d\n", ((Position*)p->courant->suivant->contenu)->x);
+	
+	return 0;
+}
+
+
+ RESULTAT :
+
+laubosslink@pc-lbl:/media/files/projects/courses/go$ gcc -Wl,-rpath,/usr/local/lib -L /usr/local/lib -I include src/postions.c -o test/test -lensemble
+src/postions.c: In function ‘main’:
+src/postions.c:24:2: warning: incompatible implicit declaration of built-in function ‘printf’ [enabled by default]
+
+laubosslink@pc-lbl:/media/files/projects/courses/go$ ./test/test 
+p2: 0x7fff0eef12b0
+p->courant: 0x7fff0eef12b0
+15:15
+
