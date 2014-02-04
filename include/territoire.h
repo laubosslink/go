@@ -21,4 +21,6 @@
  * Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant compte des bords du plateau
  */
  
+#include <ensemble_colores.h>
 
+typedef Ensemble_colores Territoire;

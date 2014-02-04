@@ -19,13 +19,9 @@
  * @file chaine.h
  * 
  * Ensemble connexe de pions sur le plateau
+ * Alias de la structure Ensemble_colores
  */
  
-#include <ensemble.h>
-#include <couleur.h>
-#include <positions.h>
+#include <ensemble_colores>
 
-typedef struct Chaine {
-	Couleur c;
-	Positions *p;
-} Chaine;
+typedef Ensemble_colores Chaine;

@@ -16,6 +16,18 @@ int vide(Ensemble* E){
 	return E->tete == NULL;
 }
 
+Cell* tete(Ensemble* E){
+	return E->tete;
+}
+
+Cell* courant(Ensemble* E){
+	return E->courant;
+}
+
+int suivant(Ensemble* E){
+	return courant(E)->suivant != NULL;
+}
+
 
 int appartient(Ensemble* E, void* element){
 	if(vide(E))
@@ -23,23 +35,45 @@ int appartient(Ensemble* E, void* element){
 		
 	E->courant=E->tete;
 	
-	while(E->courant->suivant != NULL && E->courant->contenu != element ){
+	while(suivant(E) && E->courant->contenu != element ){
 		E->courant = E->courant->suivant;
 	}
 	
-	if(E->courant->suivant == NULL && E->courant->contenu != element)
+	if( !suivant(E) && E->courant->contenu != element)
 		return 0;
 	
 	return 1;
 }
 
-/*Liste* supprimer(Liste* L) // @TODO */
-
+Ensemble* detruire(Ensemble* E, void* element){
+	Cell* cellule;
+	
+	if(!appartient(E,element))
+		return E;
+	
+	cellule = (Cell*) malloc(sizeof(Cell));
+	E->courant=E->tete;
+	
+	while( suivant(E) && E->courant->suivant->contenu != element){
+		E->courant = E->courant->suivant;
+	}
+	
+	if(!suivant(E) && E->courant->contenu != element)
+		return E;
+	
+	cellule = E->courant->suivant;
+	E->courant->suivant = cellule->suivant;
+	
+	free(cellule);
+	
+	return E;
+	
+} 
 	
 void ajouterElement(Ensemble* E, void* element){
-	cell* cellule;
+	Cell* cellule;
 	
-	cellule=(cell*)malloc(sizeof(cell));
+	cellule=(Cell*)malloc(sizeof(Cell));
 
 	cellule->contenu=element;
 	
@@ -48,7 +82,7 @@ void ajouterElement(Ensemble* E, void* element){
 	} else {
 		E->courant=E->tete;
 		
-		while(E->courant->suivant != NULL ) {	
+		while(suivant(E) ) {	
 			E->courant=E->courant->suivant;
 			}
 		

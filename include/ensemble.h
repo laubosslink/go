@@ -23,17 +23,17 @@
  * structures cell et Ensemble permettant la manipulation d'ensembles
  */
  
-typedef struct cell cell;
+typedef struct Cell Cell;
 typedef struct Ensemble Ensemble;
 
-struct cell{
+struct Cell{
 	void* contenu;
-	cell* suivant;
+	Cell* suivant;
 };
 
 struct Ensemble{
-	cell* courant;
-	cell* tete;
+	Cell* courant;
+	Cell* tete;
 };
 
 /**
@@ -61,3 +61,28 @@ int appartient(Ensemble* E, void* element);
  * @param element l'élément à ajouter
  */	
 void ajouterElement(Ensemble* E, void* element);
+
+/**
+ * Permet de supprimer un élément dans l'ensemble
+ * @param element l'élement à supprimer
+ * @return E pointeur vers le nouvel ensemble privé de l'élément supprimé
+ */
+Ensemble* detruire(Ensemble* E, void* element);
+
+/**
+ * Permet de positionner le pointeur tête sur le debut de mon ensemble
+ * @return le pointeur de la tete de l'ensemble
+ */
+Cell* tete(Ensemble* E);
+ 
+ /**
+  * Permet de positionner le pointeur sur un des éléments de l'ensemble 
+  * @return le pointeur sur l'élément courant
+  */
+Cell* courant(Ensemble* E);
+
+/**
+ * Permet de dire s'il y a un élément suivant ou non 
+ * @return 1 ou 0
+ */
+ int suivant(Ensemble* E);

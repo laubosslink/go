@@ -42,6 +42,8 @@ void afficherEnsembleInt(Ensemble *E){
 	
 int main(){
 	Ensemble* E;
+	Ensemble* A;
+	
 	int t[] = {1, 4, 15, 17};
 	
 	E = creer_ensemble();
@@ -69,6 +71,13 @@ int main(){
 	
 	// On check si une adresse appartient à l'ensemble
 	printf("Appartient (%p): %d\n\n", t+4, appartient(E, t+4));
+	
+	A = (Ensemble*) malloc(sizeof(Ensemble));
+	
+	A = detruire(E, t+3);
+	
+	afficherEnsembleInt(A);
+	
 	
 	return 0;
 }
