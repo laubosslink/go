@@ -28,8 +28,8 @@ typedef enum eCouleur {
 	/* représente aucun pion */
 	VIDE=0
 	
-	/* Permet de représenter les pions rouges */
-	ROUGE=1,
+	/* Permet de représenter les pions blancs */
+	BLANC=1,
 
 	/* Permet de représenter les pions noirs*/
 	NOIR=2

@@ -13,6 +13,8 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
+ * 
+ * @todo remplacer cell par Cell (avec majuscule)
  */
  
 /** 
