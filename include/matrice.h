@@ -23,12 +23,12 @@
  
 #include <couleur.h>
  
-struct Matrice {
+/** @todo description de la structure */
+typedef struct Matrice {
 	Couleur **donnees; /** Les tableau des données */
 	int nbligne; /** Le nombre de lignes */
 	int nbcolonne; /** Le nombre de colonnes */
-};
-
+} Matrice;
 
 /**
  * Permet d'allouer une matrice
@@ -36,25 +36,24 @@ struct Matrice {
  * @param nbcol le nombre de colonnes à allouer
  * @return une matrice nblig*nbcol
  */
-struct Matrice creer_matrice(int nblig, int nbcol);
-
+Matrice creer_matrice(int nblig, int nbcol);
 
 /**
  * Permet d'initialiser une matrice à partir d'un fichier
  * @param fichier le nom du fichier
  * @return une matrice initialisé à partir d'un fichier
  */
-struct Matrice initMatrice(char *fichier);
+Matrice initMatrice(char *fichier);
 
 /**
  * Permet d'afficher une matrice
  * @param matrice la matrice en à afficher
  */
-void afficheMatrice(struct Matrice m);
+void afficheMatrice(Matrice m);
 
 /**
  * Permet de sauvegarder une matrice dans un fichier
  * @param m la matrice à sauvegarder
  * @param fichier le nom du fichier dans lequel on sauvegarde la matrice
  */
-void SauvegardeMatrice(struct Matrice m, char *fichier);
+void SauvegardeMatrice(Matrice m, char *fichier);

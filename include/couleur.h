@@ -26,7 +26,7 @@
  */
 typedef enum eCouleur {
 	/* représente aucun pion */
-	VIDE=0
+	VIDE=0,
 	
 	/* Permet de représenter les pions blancs */
 	BLANC=1,

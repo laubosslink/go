@@ -12,6 +12,8 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.0 
  * @date 03-12-2013
+ *
+ * @todo avancer sur matrice et verifier adaptation couleur pour jeu de go
  */
  
 /** 
@@ -23,17 +25,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <matrice.h>
-#include <couleur.h>
 
-struct Matrice creer_matrice(int nblig, int nbcol){
+Matrice creer_matrice(int nblig, int nbcol){
 	int i;
 	
-	struct Matrice m;
+	Matrice m;
 	
 	m.nbligne = nblig;
 	m.nbcolonne = nbcol;
 	
-	m.donnees = (char **) malloc(nblig * sizeof(char *));
+	m.donnees = (Couleur **) malloc(nblig * sizeof(Couleur *));
 	
 	for(i=0; i<nblig; i++){
 		m.donnees[i] = (Couleur *) malloc(nbcol * sizeof(Couleur));
@@ -42,11 +43,11 @@ struct Matrice creer_matrice(int nblig, int nbcol){
 	return m;
 }
 
-struct Matrice initMatrice(char *fichier){
+Matrice initMatrice(char *fichier){
 	FILE* f;
 	char c;
 	
-	struct Matrice m;
+	Matrice m;
 	int nbligne, nbcolonne, i, j;
 	
 	/* ouverture du fichier en lecture/ecriture */
@@ -78,13 +79,13 @@ struct Matrice initMatrice(char *fichier){
 		for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
 			c = (char) fgetc(f);
 			
-			if(c == '.')
-				m.donnees[j][i] = VIDE;
-			else if(c == 'o')
+			if(c == 'o')
 				m.donnees[j][i] = BLANC;
 			else if(c == 'x')
 				m.donnees[j][i] = NOIR;
-			
+			else
+				m.donnees[j][i] = VIDE;
+				
 			if((char) fgetc(f) == '\n'){
 				j++;
 			}
@@ -98,12 +99,12 @@ struct Matrice initMatrice(char *fichier){
 	return m;
 }
 
-void afficheMatrice(struct Matrice m){
+void afficheMatrice(Matrice m){
 	int i, j;
 	
 	for(j=0; j<m.nbligne; j++){
 		for(i=0; i<m.nbcolonne; i++){
-			printf("%c ", m.donnees[j][i]);
+			printf("%d ", m.donnees[j][i]);
 		}
 		printf("\n");
 	}
