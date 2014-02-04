@@ -23,6 +23,9 @@
  * structures Ensemble_colores permettant la manipulation d'un ensemble de position et d'une couleur
  */
 
+#ifndef ENSEMBLE_COLORES_H_INCLUDED
+#define ENSEMBLE_COLORES_H_INCLUDED
+
 #include <couleur.h>
 #include <positions.h>
 
@@ -33,6 +36,4 @@ typedef struct Ensemble_colores{
 	Positions p;
 };
 
-
-
-	
+#endif

@@ -21,7 +21,11 @@
  * L'ensemble de libertes d'un pion (implémentation de Liste)
  */
 
+#ifndef LIBERTES_H_INCLUDED
+#define LIBERTES_H_INCLUDED
+
 #include <ensemble.h>
 
 typedef Ensemble Libertes;
 
+#endif

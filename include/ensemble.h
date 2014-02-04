@@ -22,6 +22,9 @@
  * 
  * structures cell et Ensemble permettant la manipulation d'ensembles
  */
+
+#ifndef ENSEMBLE_H_INCLUDED
+#define ENSEMBLE_H_INCLUDED
  
 typedef struct Cell Cell;
 typedef struct Ensemble Ensemble;
@@ -86,3 +89,5 @@ Cell* courant(Ensemble* E);
  * @return 1 ou 0
  */
  int suivant(Ensemble* E);
+
+#endif

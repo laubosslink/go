@@ -21,10 +21,17 @@
  * Contient la position de l'ensemble des pions sur la grille
  */
  
+#ifndef PLATEAU_H_INCLUDED
+#define PLATEAU_H_INCLUDED
+
+#include <stdio.h>
+
 #include <matrice.h>
 #include <chaine.h>
 #include <position.h>
 #include <territoire.h>
+#include <pion.h>
+#include <chaines.h>
 
 typedef struct Matrice Plateau;
 
@@ -50,7 +57,7 @@ void plateau_set(Plateau m, int i, int j, Couleur c);
  * Produit la chaine a laquelle appartient le pion, a la position
  * pos sur le plateau. Si il n'y a pas de pion, sur cette case alors le
  * resultat est NULL
- * @param plateau lle plateau
+ * @param plateau le plateau
  * @param pos la position du pion
  * @return NULL si il n'y a pas de pion, une chaine sinon
  */
@@ -72,8 +79,20 @@ void plateau_realiser_capture(Plateau plateau, Chaine chaine);
  */
 int plateau_est_identique(Plateau plateau, Plateau ancienPlateau);
 
+/**
+ * Copie un plateau, les deux tableaux sont supposes deja alloues
+ * @param from le plateau source
+ * @param to le plateau destination
+ * @return 1 si la copie a fonctionnee, 0 sinon
+ */
 int plateau_copie(Plateau from, Plateau to);
 
+/**
+ * Determine la ou les chaines entourant un territoire
+ * @param leTerritoire le territoire
+ * @param plateau le plateau
+ * @return une ou plusieurs chaines
+ */
 Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau);
 
 int plateau_sauvegarde(Plateau plateau, FILE* fichier);
@@ -81,3 +100,5 @@ int plateau_sauvegarde(Plateau plateau, FILE* fichier);
 Plateau plateau_chargement(FILE* fichier);
 
 Chaines captureChaines(Plateau plateau, Pion pion, int *valide);
+
+#endif

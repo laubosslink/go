@@ -20,7 +20,12 @@
  * 
  * Un ensemble de positions (implémentation de Liste)
  */
+
+#ifndef POSITIONS_H_INCLUDED
+#define POSITIONS_H_INCLUDED
  
 #include <ensemble.h>
 
 typedef Ensemble Positions;
+
+#endif

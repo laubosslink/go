@@ -21,7 +21,12 @@
  * Ensemble connexe de pions sur le plateau
  * Alias de la structure Ensemble_colores
  */
- 
-#include <ensemble_colores>
+
+#ifndef CHAINE_H_INCLUDED
+#define CHAINE_H_INCLUDED
+
+#include <ensemble_colores.h>
 
 typedef Ensemble_colores Chaine;
+
+#endif

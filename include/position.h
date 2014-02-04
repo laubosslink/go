@@ -14,13 +14,16 @@
  * @version 1.0 
  * @date 03-02-2013
  */
- 
+
 /** 
  * @file position.h
  * 
  * Une position
  */
  
+#ifndef POSITION_H_INCLUDED
+#define POSITION_H_INCLUDED 
+
 /**
  * Permet de définir une position 2D
  */
@@ -31,3 +34,5 @@ typedef struct Position {
 	/* Position y */
 	int y;
 } Position;
+
+#endif

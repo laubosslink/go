@@ -20,7 +20,12 @@
  * 
  * Le fichier d'en tête qui contient la structure des pions (implémentation d'une liste)
  */
+
+#ifndef PIONS_H_INCLUDED
+#define PIONS_H_INCLUDED
  
 #include <ensemble.h>
 
 typedef Ensemble Pions;
+
+#endif

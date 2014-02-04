@@ -20,7 +20,12 @@
  * 
  * Ensemble des chaines
  */
- 
+
+#ifndef CHAINES_H_INCLUDED
+#define CHAINES_H_INCLUDED
+
 #include <ensemble.h>
 
 typedef Ensemble Chaines;
+
+#endif
