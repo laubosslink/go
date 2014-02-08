@@ -11,7 +11,7 @@
 /**
  * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
- * @version 1.0 
+ * @version 1.1 
  * @date 03-02-2013
  */
  
@@ -23,4 +23,4 @@
  
 #include <ensemble_colores.h>
 
-typedef Ensemble_colores Territoire;
+typedef Ensemble_Colores territoire;

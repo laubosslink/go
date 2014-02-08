@@ -21,6 +21,6 @@
  * Un ensemble de positions (implémentation de Liste)
  */
  
-#include <ensemble.h>
+#include <ensemble_positions.h>
 
-typedef Ensemble Positions;
+typedef Ensemble_Positions Positions;

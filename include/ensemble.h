@@ -7,7 +7,6 @@
  * No portion of this document may be reproduced, copied
  * or revised without written premission of the authors
  */
- 
 /**
  * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
