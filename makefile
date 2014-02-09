@@ -15,17 +15,29 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 
 CFLAGS=-I $(INCDIR)
 
-.PHONY: all clean
+.PHONY: all clean plateautest libensemble libmatrice libensembletest libmatricetest
 
 all:
+
+##
+# TESTS
+##
+
+# PLATEAU
+
+plateautest: $(BINDIR)/plateautest
+
+$(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so
+	$(CC) $(LDFLAGS) $< -o $@ -lensemble -lmatrice
+
+$(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 ##
 # LIBRARIES
 ##
 
-##
 # Ensembles
-##
 
 libensembletest: $(LIBDIR)/ensemble/bin/test_ensemble
 
@@ -43,9 +55,8 @@ $(LIBDIR)/ensemble/bin/libensemble.so: $(OBJDIR)/libensemble.o
 $(OBJDIR)/libensemble.o: $(LIBDIR)/ensemble/src/ensemble.c
 	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
-##
+
 # Matrice
-##
 
 libmatricetest: $(LIBDIR)/matrice/bin/test_matrice
 

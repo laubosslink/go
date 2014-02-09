@@ -11,13 +11,13 @@
 /**
  * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
- * @version 1.0 
+ * @version 1.1
  * @date 03-02-2013
  */
  
 /** 
  * @file chaine.h
- * 
+ * @todo les if define end if 
  * Ensemble connexe de pions sur le plateau
  */
  

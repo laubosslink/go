@@ -21,9 +21,14 @@
  * 
  */
 
+#ifndef PARTIE_H_INCLUDED
+#define PARTIE_H_INCLUDED
+
 #include <couleur.h>
  
 typedef struct Partie {
 	Couleur currentPlauer;
 	
 } Partie;
+
+#endif

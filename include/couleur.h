@@ -21,6 +21,9 @@
  * La couleur d'un pion
  */
 
+#ifndef COULEUR_H_INCLUDED
+#define COULEUR_H_INCLUDED
+
 /** 
  * Permet de représenter la couleur des pionts
  */
@@ -34,3 +37,5 @@ typedef enum eCouleur {
 	/* Permet de représenter les pions noirs*/
 	NOIR=2
 } Couleur;
+
+#endif

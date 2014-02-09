@@ -20,7 +20,10 @@
  * 
  * Les informations sur un pion : sa position et sa couleur
  */
- 
+
+#ifndef PION_H_INCLUDED
+#define PION_H_INCLUDED
+
 #include <position.h>
 #include <couleur.h>
 
@@ -34,3 +37,5 @@ typedef struct Pion {
 	/* La couleur du pion */
 	Couleur c;
 } Pion;
+
+#endif

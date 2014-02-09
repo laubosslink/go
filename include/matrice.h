@@ -20,6 +20,9 @@
  * 
  * Le fichier d'en tête qui contient la matrice
  */
+
+#ifndef MATRICE_H_INCLUDED
+#define MATRICE_H_INCLUDED
  
 #include <couleur.h>
  
@@ -57,3 +60,5 @@ void afficheMatrice(Matrice m);
  * @param fichier le nom du fichier dans lequel on sauvegarde la matrice
  */
 void SauvegardeMatrice(Matrice m, char *fichier);
+
+#endif
