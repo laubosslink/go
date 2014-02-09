@@ -33,6 +33,6 @@ Ensemble_Positions* detruire_ensemble_positions(Ensemble_Positions* E, Position*
 	return detruire(E,(Position*)element);
 }
 	
-void ajouterPosition(Ensemble_Positions* E, Position* element){
+void ajouter_position(Ensemble_Positions* E, Position* element){
 	ajouterElement(E,(Position*)element);
 }

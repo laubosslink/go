@@ -1,92 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ensemble.h>
 #include <ensemble_colores.h>
 
-Ensemble_Colores* creer_ensembleColores(){
-	Ensemble_Colores* E;
-	
-	E = (Ensemble_Colores*) malloc(sizeof(Ensemble_Colores));
-	E->tete = NULL;
-	E->courant = NULL;
-	
-	return E;
+Ensemble_Colores* creer_ensemble_colores(){
+	return (Ensemble_Colores*)creer_ensemble();
 }
 
-int vide(Ensemble_Colores* E){
-	return E->tete == NULL;
+int vide_ensemble_colores(Ensemble_Colores* E){
+	return vide(E);
 }
 
-Cell* tete(Ensemble_Colores* E){
-	return E->tete;
+Cell* tete_ensemble_colores(Ensemble_Colores* E){
+	return (Position*)tete(E);
 }
 
-Cell* courant(Ensemble_Colores* E){
-	return E->courant;
+Cell* courant_ensemble_colores(Ensemble_Colores* E){
+	return (Position*)courant(E);
 }
 
-int suivant(Ensemble_Colores* E){
-	return courant(E)->suivant != NULL;
+int suivant_ensemble_colores(Ensemble_Colores* E){
+	return (Position*)courant(E);
 }
 
 
-int appartient(Ensemble_Colores* E, Position* element){
-	if(vide(E))
-		return 0;
-		
-	E->courant=E->tete;
-	
-	while(suivant(E) && E->courant->contenu != element ){
-		E->courant = E->courant->suivant;
-	}
-	
-	if( !suivant(E) && E->courant->contenu != element)
-		return 0;
-	
-	return 1;
+int appartient_ensemble_colores(Ensemble_Colores* E, Position* element){
+	return appartient(E,(Position*)element);
 }
 
-Ensemble_Colores* detruire(Ensemble_Colores* E, Position* element){
-	Cell* cellule;
-	
-	if(!appartient(E,element))
-		return E;
-	
-	cellule = (Cell*) malloc(sizeof(Cell));
-	E->courant=E->tete;
-	
-	while( suivant(E) && E->courant->suivant->contenu != element){
-		E->courant = E->courant->suivant;
-	}
-	
-	if(!suivant(E) && E->courant->contenu != element)
-		return E;
-	
-	cellule = E->courant->suivant;
-	E->courant->suivant = cellule->suivant;
-	
-	free(cellule);
-	
-	return E;
-	
+Ensemble_Colores* detruire_ensemble_colores(Ensemble_Colores* E, Position* element){
+	return detruire(E,(Position*)element);
 } 
 	
-void ajouterElement(Ensemble_Colores* E, Position* element){
-	Cell* cellule;
-	
-	cellule=(Cell*)malloc(sizeof(Cell));
-
-	cellule->contenu=element;
-	
-	if(vide(E)){
-		E->tete=cellule;
-	} else {
-		E->courant=E->tete;
-		
-		while(suivant(E) ) {	
-			E->courant=E->courant->suivant;
-			}
-		
-		E->courant->suivant=cellule;
-		cellule->suivant=NULL;
-	}
+void ajouter_position_coloree(Ensemble_Colores* E, Position* element){
+	return ajouterElement(E,(Position*)element);
 }
