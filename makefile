@@ -25,13 +25,13 @@ all:
 
 # PLATEAU
 
-plateautest: $(BINDIR)/plateautest
+plateautest: $(BINDIR)/plateautest $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so
 
-$(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so
-	$(CC) $(LDFLAGS) $< -o $@ -lensemble -lmatrice
+$(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
-$(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c $(OBJDIR)/plateau.o
-	$(CC) $(CFLAGS) -c $^ -o $@
+$(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR)/plateau.o: $(SRCDIR)/plateau.c
 	$(CC) $(CFLAGS) -c $< -o $@
