@@ -13,6 +13,8 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.0 
  * @date 03-02-2013
+ * 
+ * @todo la matrice est fait par des developpeur, ils ne connaissent pas couleur.h, a remplacer par void* !
  */
  
 /** 
@@ -25,6 +27,7 @@
 #define MATRICE_H_INCLUDED
  
 #include <couleur.h>
+#include <stdio.h>
  
 /** @todo description de la structure */
 typedef struct Matrice {
@@ -34,7 +37,7 @@ typedef struct Matrice {
 } Matrice;
 
 /**
- * Permet d'allouer une matrice
+ * Permet d'allouer une matrice vide
  * @param nblig le nombre de lignes à allouer
  * @param nbcol le nombre de colonnes à allouer
  * @return une matrice nblig*nbcol
@@ -47,6 +50,13 @@ Matrice creer_matrice(int nblig, int nbcol);
  * @return une matrice initialisé à partir d'un fichier
  */
 Matrice init_matrice(char *fichier);
+
+/**
+ * Permet d'initialiser une matrice à partir d'un fichier
+ * @param fichier le pointeur de fichier
+ * @return une matrice initialisé à partir d'un fichier
+ */
+Matrice matrice_chargement(FILE *fichier);
 
 /**
  * Permet de savoir si un point est dans la matrice, ou si il en sort
@@ -68,6 +78,6 @@ void affiche_matrice(Matrice m);
  * @param m la matrice à sauvegarder
  * @param fichier le nom du fichier dans lequel on sauvegarde la matrice
  */
-void SauvegardeMatrice(Matrice m, char *fichier);
+void sauvegarde_matrice(Matrice m, char *fichier);
 
 #endif

@@ -20,8 +20,12 @@
  *@todo les if not define  
  * Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant compte des bords du plateau
  */
- 
+
+#ifndef TERRITOIRE_H_INCLUDED
+#define TERRITOIRE_H_INCLUDED
 
 #include <ensemble_colores.h>
 
-typedef Ensemble_Colores territoire;
+typedef Ensemble_Colores Territoire;
+
+#endif

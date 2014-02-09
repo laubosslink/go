@@ -12,53 +12,53 @@ Ensemble* creer_ensemble(){
 	return E;
 }
 
-int vide(Ensemble* E){
+int ensemble_vide(Ensemble* E){
 	return E->tete == NULL;
 }
 
-Cell* tete(Ensemble* E){
+Cell* ensemble_tete(Ensemble* E){
 	return E->tete;
 }
 
-Cell* courant(Ensemble* E){
+Cell* ensemble_courant(Ensemble* E){
 	return E->courant;
 }
 
-int suivant(Ensemble* E){
-	return courant(E)->suivant != NULL;
+int ensemble_suivant(Ensemble* E){
+	return (ensemble_courant(E))->suivant != NULL;
 }
 
 
-int appartient(Ensemble* E, void* element){
-	if(vide(E))
+int ensemble_appartient(Ensemble* E, void* element){
+	if(ensemble_vide(E))
 		return 0;
 		
 	E->courant=E->tete;
 	
-	while(suivant(E) && E->courant->contenu != element ){
+	while(ensemble_suivant(E) && E->courant->contenu != element ){
 		E->courant = E->courant->suivant;
 	}
 	
-	if( !suivant(E) && E->courant->contenu != element)
+	if(!ensemble_suivant(E) && E->courant->contenu != element)
 		return 0;
 	
 	return 1;
 }
 
-Ensemble* detruire(Ensemble* E, void* element){
+Ensemble* ensemble_enlever(Ensemble* E, void* element){
 	Cell* cellule;
 	
-	if(!appartient(E,element))
+	if(!ensemble_appartient(E, element))
 		return E;
 	
 	cellule = (Cell*) malloc(sizeof(Cell));
 	E->courant=E->tete;
 	
-	while( suivant(E) && E->courant->suivant->contenu != element){
+	while(ensemble_suivant(E) && E->courant->suivant->contenu != element){
 		E->courant = E->courant->suivant;
 	}
 	
-	if(!suivant(E) && E->courant->contenu != element)
+	if(!ensemble_suivant(E) && E->courant->contenu != element)
 		return E;
 	
 	cellule = E->courant->suivant;
@@ -70,21 +70,21 @@ Ensemble* detruire(Ensemble* E, void* element){
 	
 } 
 	
-void ajouterElement(Ensemble* E, void* element){
+void ensemble_ajouter(Ensemble* E, void* element){
 	Cell* cellule;
 	
-	cellule=(Cell*)malloc(sizeof(Cell));
+	cellule = (Cell*)malloc(sizeof(Cell));
 
-	cellule->contenu=element;
+	cellule->contenu = element;
 	
-	if(vide(E)){
+	if(ensemble_vide(E)){
 		E->tete=cellule;
 	} else {
 		E->courant=E->tete;
 		
-		while(suivant(E) ) {	
+		while(ensemble_suivant(E) ) {	
 			E->courant=E->courant->suivant;
-			}
+		}
 		
 		E->courant->suivant=cellule;
 		cellule->suivant=NULL;

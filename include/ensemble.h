@@ -49,44 +49,44 @@ Ensemble* creer_ensemble();
  * @param E l'ensemble
  * @return 1 si il l'est
  */
-int vide(Ensemble* E);
+int ensemble_vide(Ensemble* E);
 
 /**
  * Permet de vérifier qu'un élément appartiennent à un ensemble
  * @param element l'élément
  * @return 1 si il appartient, 0 sinon
  */
-int appartient(Ensemble* E, void* element);
+int ensemble_appartient(Ensemble* E, void* element);
 
 /**
  * Permet d'ajouter un élément dans un ensemble
  * @param element l'élément à ajouter
  */	
-void ajouterElement(Ensemble* E, void* element);
+void ensemble_ajouter(Ensemble* E, void* element);
 
 /**
  * Permet de supprimer un élément dans l'ensemble
  * @param element l'élement à supprimer
  * @return E pointeur vers le nouvel ensemble privé de l'élément supprimé
  */
-Ensemble* detruire(Ensemble* E, void* element);
+Ensemble* ensemble_enlever(Ensemble* E, void* element);
 
 /**
  * Permet de positionner le pointeur tête sur le debut de mon ensemble
  * @return le pointeur de la tete de l'ensemble
  */
-Cell* tete(Ensemble* E);
+Cell* ensemble_tete(Ensemble* E);
  
  /**
   * Permet de positionner le pointeur sur un des éléments de l'ensemble 
   * @return le pointeur sur l'élément courant
   */
-Cell* courant(Ensemble* E);
+Cell* ensemble_courant(Ensemble* E);
 
 /**
  * Permet de dire s'il y a un élément suivant ou non 
  * @return 1 ou 0
  */
- int suivant(Ensemble* E);
+ int ensemble_suivant(Ensemble* E);
 
 #endif

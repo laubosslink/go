@@ -43,31 +43,29 @@ Matrice creer_matrice(int nblig, int nbcol){
 	return m;
 }
 
-Matrice init_matrice(char *fichier){
-	FILE* f;
+Matrice matrice_chargement(FILE *fichier){
 	char c;
 	
 	Matrice m;
 	int nbligne, nbcolonne, i, j;
 	
-	/* ouverture du fichier en lecture/ecriture */
-	f = fopen(fichier, "r+");
-	
-	if(f == NULL) fprintf(stdout, "fichier '%s' inexistant \n", fichier);
+	if(fichier == NULL){ 
+		fprintf(stdout, "Le pointeur d'ouverture de fichier est NULL pour matrice_chargement \n");
+	}
 	
 	/* récupération du nombre de ligne */
-	c = fgetc(f);
+	c = fgetc(fichier);
 	nbligne = atoi(&c);
 	
 	/* on passe l'espace */
-	fgetc(f);
+	fgetc(fichier);
 	
 	/* récupération du nombre de colonnes*/
-	c = fgetc(f);
+	c = fgetc(fichier);
 	nbcolonne = atoi(&c);
 	
 	/* on passe le retour chariot */
-	fgetc(f);
+	fgetc(fichier);
 	
 	/* initialisation de la matrice (allocation mémoire) */
 	m = creer_matrice(nbligne, nbcolonne);
@@ -75,24 +73,36 @@ Matrice init_matrice(char *fichier){
 	m.nbligne = nbligne;
 	
 	/* récupération des données */
-	if(f != NULL){
-		for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
-			c = (char) fgetc(f);
+	for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
+		c = (char) fgetc(fichier);
+		
+		if(c == 'o')
+			m.donnees[j][i] = BLANC;
+		else if(c == 'x')
+			m.donnees[j][i] = NOIR;
+		else
+			m.donnees[j][i] = VIDE;
 			
-			if(c == 'o')
-				m.donnees[j][i] = BLANC;
-			else if(c == 'x')
-				m.donnees[j][i] = NOIR;
-			else
-				m.donnees[j][i] = VIDE;
-				
-			if((char) fgetc(f) == '\n'){
-				j++;
-			}
+		if((char) fgetc(fichier) == '\n'){
+			j++;
 		}
-	} else {
-			fprintf(stderr, "Erreur : fichier innexistant pour l'initialisation de la matrice");
 	}
+	
+	return m;
+}
+
+Matrice init_matrice(char *fichier){
+	FILE* f;
+	Matrice m;
+	
+	/* ouverture du fichier en lecture/ecriture */
+	f = fopen(fichier, "r+");
+	
+	if(f == NULL){
+		fprintf(stdout, "fichier '%s' inexistant \n", fichier);
+	}
+	
+	m = matrice_chargement(f);
 	
 	fclose(f);
 	
@@ -100,7 +110,7 @@ Matrice init_matrice(char *fichier){
 }
 
 int position_appartient_matrice(Matrice m, int x, int y){
-	return !(x >= m.nbcolonne || x < 0 || y >= m.nbligne || y < 0);
+	return !(x >= m.nbcolonne || x < 0 || y >= m.nbligne || y < 0);
 }
 
 void affiche_matrice(Matrice m){
@@ -114,7 +124,7 @@ void affiche_matrice(Matrice m){
 	}
 }
 
-void SauvegardeMatrice(struct Matrice m, char *fichier){
+void sauvegarde_matrice(struct Matrice m, char *fichier){
 	FILE* f;
 	int i, j;
 	

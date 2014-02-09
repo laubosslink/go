@@ -30,7 +30,10 @@ plateautest: $(BINDIR)/plateautest
 $(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so
 	$(CC) $(LDFLAGS) $< -o $@ -lensemble -lmatrice
 
-$(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c
+$(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c $(OBJDIR)/plateau.o
+	$(CC) $(CFLAGS) -c $^ -o $@
+
+$(OBJDIR)/plateau.o: $(SRCDIR)/plateau.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ##

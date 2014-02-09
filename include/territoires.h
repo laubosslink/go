@@ -24,6 +24,7 @@
 #ifndef TERRITOIRES_H_INCLUDED
 #define TERRITOIRES_H_INCLUDED
 
+#include <territoire.h>
 #include <ensemble.h>
 
 typedef Ensemble Territoires;

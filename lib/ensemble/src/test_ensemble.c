@@ -3,7 +3,7 @@
 #include <ensemble.h>
 
 void afficherEnsembleAdr(Ensemble *E){
-	if(vide(E)){
+	if(ensemble_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
 		return;
 	}
@@ -22,7 +22,7 @@ void afficherEnsembleAdr(Ensemble *E){
 }
 
 void afficherEnsembleInt(Ensemble *E){
-	if(vide(E)){
+	if(ensemble_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
 		return;
 	}
@@ -49,10 +49,10 @@ int main(){
 	E = creer_ensemble();
 	
 	// on ajout 4 éléments
-	ajouterElement(E, t);
-	ajouterElement(E, t+1);
-	ajouterElement(E, t+2);
-	ajouterElement(E, t+3);
+	ensemble_ajouter(E, t);
+	ensemble_ajouter(E, t+1);
+	ensemble_ajouter(E, t+2);
+	ensemble_ajouter(E, t+3);
 	
 	// on regarde les adresses du tableau t
 	printf("adr1: %p\n", t); 
@@ -67,14 +67,14 @@ int main(){
 	afficherEnsembleInt(E);
 	
 	// On check si une adresse appartient à l'ensemble
-	printf("Appartient (%p): %d\n\n", t+2, appartient(E, t+2));
+	printf("Appartient (%p): %d\n\n", t+2, ensemble_appartient(E, t+2));
 	
 	// On check si une adresse appartient à l'ensemble
-	printf("Appartient (%p): %d\n\n", t+4, appartient(E, t+4));
+	printf("Appartient (%p): %d\n\n", t+4, ensemble_appartient(E, t+4));
 	
 	A = (Ensemble*) malloc(sizeof(Ensemble));
 	
-	A = detruire(E, t+3);
+	A = ensemble_enlever(E, t+3);
 	
 	afficherEnsembleInt(A);
 	

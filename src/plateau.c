@@ -1,9 +1,11 @@
 #include <matrice.h>
 #include <plateau.h>
+#include <plateau.h>
 #include <couleur.h>
+#include <stdio.h>
 
 int est_un_pion(Couleur c){
-	return (c == BLANC || c == NOIR);
+	return (c == BLANC || c == NOIR);
 }
 
 int est_un_pion_plateau(Plateau plateau, Position pos){
@@ -14,9 +16,12 @@ int est_un_pion_plateau(Plateau plateau, Position pos){
 	return est_un_pion(plateau.donnees[pos.y][pos.x]);
 }
 
-Plateau creer_plateau(){
-	//Matrice m = initMatrice;
-	return NULL;
+Plateau creer_plateau(int nbligne, int nbcolonne){
+	return (Plateau) creer_matrice(nbligne, nbcolonne);
+}
+
+Plateau plateau_chargement(FILE* fichier){
+	return (Plateau) matrice_chargement(fichier);
 }
 
 Couleur plateau_get(Plateau p, int i, int j){
@@ -27,6 +32,7 @@ void plateau_set(Plateau p, int i, int j, Couleur c){
 	p.donnees[i][j] = c;
 }
 
+/*
 Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	Chaine c;
 	Position p = pos;
@@ -66,6 +72,4 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	return c;
 }
 
-Plateau plateau_chargement(FILE* fichier){
-	return NULL;
-}
+*/
