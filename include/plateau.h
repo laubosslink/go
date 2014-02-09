@@ -95,10 +95,33 @@ int plateau_copie(Plateau from, Plateau to);
  */
 Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau);
 
+/**
+ * Permet de sauvegarde un plateau dans un fichier
+ * @param plateau le plateau
+ * @param fichier le fichier dans lequel on sauvegarde le plateau
+ * @return 1 si tout s'est bien passé, 0 sinon
+ */
 int plateau_sauvegarde(Plateau plateau, FILE* fichier);
 
+/**
+ * Permet de charger un plateau a partir d'un fichier
+ * @param fichier le fichier qui contient le plateau
+ * @return un plateau
+ */
 Plateau plateau_chargement(FILE* fichier);
 
+/**
+ * En fonction de la position du pion et de sa couleur, retourne les chaines captures. Si aucune
+ * chaine n'est capturé par la pose du pion, alors la valeur NULL est retournée. L'entier (référencé par) valide
+ * est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine
+ * sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse).
+ * Dans le cas contraire l'entier référencé par valide est égale à 1
+ * 
+ * @param plateau Le plateau
+ * @param pion le pion
+ * @param valide
+ * @return un ensemble de chaine
+ */
 Chaines captureChaines(Plateau plateau, Pion pion, int *valide);
 
 #endif

@@ -43,7 +43,7 @@ Matrice creer_matrice(int nblig, int nbcol){
 	return m;
 }
 
-Matrice initMatrice(char *fichier){
+Matrice init_matrice(char *fichier){
 	FILE* f;
 	char c;
 	
@@ -99,7 +99,11 @@ Matrice initMatrice(char *fichier){
 	return m;
 }
 
-void afficheMatrice(Matrice m){
+int position_appartient_matrice(Matrice m, int x, int y){
+	return !(x >= m.nbcolonne || x < 0 || y >= m.nbligne || y < 0);
+}
+
+void affiche_matrice(Matrice m){
 	int i, j;
 	
 	for(j=0; j<m.nbligne; j++){
@@ -110,9 +114,6 @@ void afficheMatrice(Matrice m){
 	}
 }
 
-/**
- * @todo hehe
- */
 void SauvegardeMatrice(struct Matrice m, char *fichier){
 	FILE* f;
 	int i, j;

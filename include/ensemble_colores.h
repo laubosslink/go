@@ -32,8 +32,8 @@
 typedef struct Ensemble_colores Ensemble_colores;
  
 typedef struct Ensemble_colores{
-	Couleur c;
-	Positions p;
+	Couleur couleur;
+	Positions position;
 };
 
 #endif

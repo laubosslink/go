@@ -1,17 +1,19 @@
 #include <matrice.h>
+#include <couleur.h>
+#include <stdio.h>
 
 int main(){
 	Matrice m;
 	
-	m = initMatrice("extra/plateau_initiale.txt");
+	m = init_matrice("extra/plateau_initiale.txt");
 	
-	afficheMatrice(m);
+	affiche_matrice(m);
 	
 	m.donnees[1][1] = BLANC;
 	
 	printf("\n");
 	
-	afficheMatrice(m);
+	affiche_matrice(m);
 	
 	return 0;
 }
