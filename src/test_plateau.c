@@ -1,7 +1,7 @@
 #include <plateau.h>
 
 int main(){
-//	Plateau p = 
+	Plateau p = creer_plateau();
 	
 	return 0;
 }

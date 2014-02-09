@@ -46,13 +46,22 @@ Matrice creer_matrice(int nblig, int nbcol);
  * @param fichier le nom du fichier
  * @return une matrice initialisé à partir d'un fichier
  */
-Matrice initMatrice(char *fichier);
+Matrice init_matrice(char *fichier);
+
+/**
+ * Permet de savoir si un point est dans la matrice, ou si il en sort
+ * @param m la matrice
+ * @param x l'asbcisse
+ * @param y l'ordonnée
+ * @return 1 si le point est situé dans la matrice, 0 sinon
+ */
+int position_appartient_matrice(Matrice m, int x, int y);
 
 /**
  * Permet d'afficher une matrice
  * @param matrice la matrice en à afficher
  */
-void afficheMatrice(Matrice m);
+void affiche_matrice(Matrice m);
 
 /**
  * Permet de sauvegarder une matrice dans un fichier

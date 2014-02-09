@@ -27,7 +27,7 @@
 #include <position.h>
 
 typedef struct Ensemble_Colores Ensemble_Colores;
- 
+
 struct Ensemble_Colores{
 	Couleur c;
 	Cell* courant;
