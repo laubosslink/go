@@ -3,17 +3,11 @@
 #include <ensemble_positions.h>
 #include <position.h>
 
-Ensemble_Positions* creer_ensemblePositions(){
-	Ensemble_Positions* E;
-	
-	E = (Ensemble_Positions*) malloc(sizeof(Ensemble_Positions));
-	E->tete = NULL;
-	E->courant = NULL;
-	
-	return E;
+Ensemble_Positions* creer_ensemble_positions(){
+	return (Ensemble_Positions*) creer_ensemble();
 }
 
-int vide(Ensemble_Positions* E){
+int vide_ensemble_positions(Ensemble_Positions* E){
 	return E->tete == NULL;
 }
 

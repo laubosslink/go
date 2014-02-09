@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.2 
  * @date 03-02-2013
- * 
- * @todo revoir la doc 
  */
  
 /** 
@@ -23,15 +21,17 @@
  * structures Ensemble_colores permettant la manipulation d'un ensemble de position et d'une couleur
  */
 
+#ifndef ENSEMBLE_COLORES_H_INCLUDED
+#define ENSEMBLE_COLORES_H_INCLUDED 
+
 #include <couleur.h>
-#include <position.h>
+#include <positions.h>
 
 typedef struct Ensemble_Colores Ensemble_Colores;
 
 struct Ensemble_Colores{
 	Couleur c;
-	Cell* courant;
-	Cell* suivant;
+	Positions p;
 };
 
 typedef struct Cell Cell;
@@ -91,4 +91,6 @@ Cell* courant(Ensemble_Colores* E);
  * Permet de dire s'il y a un élément suivant ou non 
  * @return 1 ou 0
  */
- int suivant(Ensemble_Colores* E);
+int suivant(Ensemble_Colores* E);
+
+#endif

@@ -20,7 +20,12 @@
  * @todo les if define end if 
  * Ensemble connexe de pions sur le plateau
  */
- 
+
+#ifndef CHAINE_H_INCLUDED
+#define CHAINE_H_INCLUDED 
+
 #include <ensemble_colores.h>
 
 typedef Ensemble_Colores Chaine;
+
+#endif

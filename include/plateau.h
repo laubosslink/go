@@ -36,6 +36,21 @@
 typedef struct Matrice Plateau;
 
 /**
+ * Permet de savoir si la couleur est un pion
+ * @param c la couleur
+ * @return 1 si c'est un pion, 0 sinon 
+ */
+int est_un_pion(Couleur c);
+
+/**
+ * Permet de savoir si c'est un pion du plateau
+ * @param plateau Le plateau 
+ * @param pos La position d'un plateau
+ * @return 1 si le pion est dans le plateau, 0 sinon
+ */
+int est_un_pion_plateau(Plateau plateau, Position pos);
+
+/**
  * Permet de recuperer un pion sur une position
  * @param m la matrice
  * @param i l'abscisse

@@ -22,21 +22,13 @@
  * 
  * structures cell et Ensemble permettant la manipulation d'ensembles
  */
- 
-#include <position.h>
- 
-typedef struct Cell Cell;
-typedef struct Ensemble_Positions Ensemble_Positions;
 
-struct Cell{
-	Position* contenu;
-	Cell* suivant;
-};
+#ifndef ENSEMBLE_POSITIONS_H_INCLUDED
+#define ENSEMBLE_POSITIONS_H_INCLUDED 
 
-struct Ensemble_Positions{
-	Cell* courant;
-	Cell* tete;
-};
+#include <ensemble.h>
+  
+typedef Ensemble Ensemble_Positions;
 
 /**
  * Permet de creer un ensemble
@@ -87,4 +79,6 @@ Cell* courant(Ensemble_Positions* E);
  * Permet de dire s'il y a un élément suivant ou non 
  * @return 1 ou 0
  */
- int suivant(Ensemble_Positions* E);
+int suivant(Ensemble_Positions* E);
+
+#endif
