@@ -73,6 +73,9 @@ Ensemble* ensemble_enlever(Ensemble* E, void* element){
 void ensemble_ajouter(Ensemble* E, void* element){
 	Cell* cellule;
 	
+	if(element == NULL)
+		return;
+	
 	cellule = (Cell*)malloc(sizeof(Cell));
 
 	cellule->contenu = element;

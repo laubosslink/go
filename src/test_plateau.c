@@ -9,5 +9,7 @@ int main(){
 	
 	affiche_matrice(p);
 	
+	// test de plateau_determiner_chaine
+	
 	return 0;
 }

@@ -1,5 +1,6 @@
 #include <matrice.h>
-#include <plateau.h>
+#include <ensemble_colores.h>
+#include <chaine.h>
 #include <plateau.h>
 #include <couleur.h>
 #include <stdio.h>
@@ -32,9 +33,43 @@ void plateau_set(Plateau p, int i, int j, Couleur c){
 	p.donnees[i][j] = c;
 }
 
-/*
+Positions* plateau_determiner_chaine(Plateau plateau, Position pos, Couleur c){
+	Positions* c = creer_ensemble_colores();
+	Position* p;
+	
+	if(plateau_get(plateau, pos.y, pos.x) != c)
+		return NULL;
+		
+	ensemble_colores_concatene
+	
+	pos.x++;
+	if(est_un_pion_plateau(plateau, p) && plateau_get(plateau, pos.y, pos.x) == c.couleur){
+		p = (Position *) malloc(sizeof(Position));
+		p->x = pos.x;
+		p->y = pos.y;
+		
+		ensemble_colores_ajouter(c, p);
+	}
+	
+	pos.x -= 2;
+	if(est_un_pion_plateau(plateau, p) && plateau_get(plateau, pos.y, pos.x) == c.couleur){
+		p = (Position *) malloc(sizeof(Position));
+		p->x = pos.x;
+		p->y = pos.y;
+		
+		ensemble_colores_ajouter(c, p);
+	}
+	
+	if(est_un_pion(plateau.donnees[pos.y+1][pos.x]))
+		ajouterElement(&c, plateau.donnees[pos.y+1][pos.x]);
+		
+	if(est_un_pion(plateau.donnees[pos.y-1][pos]))
+		ajouterElement(&c, plateau.donnees[pos.y-1][pos.x]);
+
+}
+
 Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
-	Chaine c;
+	Chaine* c;
 	Position p = pos;
 	
 	if(!position_appartient_matrice(plateau, pos.x, pos.y))
@@ -43,19 +78,13 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	if(!est_un_pion(plateau.donnees[pos.y][pos.x]))
 		return NULL;
 	
-	c.couleur = plateau.donnees[pos.y][pos.x];
+	c = creer_ensemble_colores();
 	
-	if(est_un_pion(plateau.donnees[pos.y][pos.x+1]))
-		ajouterElement(&c, plateau.donnees[pos.y][pos.x+1]);
-		
-	if(est_un_pion(plateau.donnees[pos.y][pos.x-1]))
-		ajouterElement(&c, plateau.donnees[pos.y][pos.x-1]);
-		
-	if(est_un_pion(plateau.donnees[pos.y+1][pos.x]))
-		ajouterElement(&c, plateau.donnees[pos.y+1][pos.x]);
-		
-	if(est_un_pion(plateau.donnees[pos.y-1][pos]))
-		ajouterElement(&c, plateau.donnees[pos.y-1][pos.x]);
+	c->couleur = plateau.donnees[pos.y][pos.x];
+	
+	
+	
+	
 		
 	p.x++;
 	plateau_determiner_chaine(plateau, p);
@@ -71,5 +100,3 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	
 	return c;
 }
-
-*/

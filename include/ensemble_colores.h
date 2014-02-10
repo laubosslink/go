@@ -85,7 +85,6 @@ Cell* ensemble_colores_courant(Ensemble_Colores* E);
  */
 int ensemble_colores_suivant(Ensemble_Colores* E);
 
-
 /**
  * Permet de récupérer le contenu d'une cellule d'ensemble colores
  * @param c la cellule

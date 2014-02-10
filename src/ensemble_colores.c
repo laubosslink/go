@@ -27,7 +27,7 @@ int ensemble_colores_suivant(Ensemble_Colores* E){
 }
 
 int ensemble_colores_appartient(Ensemble_Colores* E, Position* element){
-	return ensemble_appartient(&(E->p),(Position*)element);
+	return ensemble_appartient(&(E->p),(Position*)element); /* @todo un element appartient si pos.x et pos.y se trouve dans la chaine */
 }
 
 Ensemble_Colores* ensemble_colores_enlever(Ensemble_Colores* E, Position* element){
