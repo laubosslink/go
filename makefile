@@ -5,6 +5,7 @@ BINDIR=./bin
 LIBDIR=./lib
 OBJDIR=./object
 SRCDIR=./src
+TESTDIR= ./test
 
 CC=gcc
 RM=rm
@@ -15,7 +16,7 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 
 CFLAGS=-I $(INCDIR)
 
-.PHONY: all clean plateautest libensemble libmatrice libensembletest libmatricetest
+.PHONY: all clean plateautest libensemble libmatrice libensembletest libmatricetest ensemble_colores_test
 
 all:
 
@@ -25,7 +26,7 @@ all:
 
 # PLATEAU
 
-plateautest: $(BINDIR)/plateautest $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so
+plateautest: $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so $(BINDIR)/plateautest
 
 $(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
@@ -35,6 +36,20 @@ $(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c
 
 $(OBJDIR)/plateau.o: $(SRCDIR)/plateau.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
+# Ensembles Colores 
+
+ensemble_colores_test: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/ensemble_colores_test
+
+$(BINDIR)/ensemble_colores_test: $(OBJDIR)/ensemble_colores.o $(OBJDIR)/test_ensemble_colores.o
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble 
+	
+$(OBJDIR)/test_ensemble_colores.o : $(TESTDIR)/test_ensemble_colores.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+$(OBJDIR)/ensemble_colores.o: $(SRCDIR)/ensemble_colores.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 
 ##
 # LIBRARIES

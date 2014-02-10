@@ -24,6 +24,7 @@
 #ifndef ENSEMBLE_COLORES_H_INCLUDED
 #define ENSEMBLE_COLORES_H_INCLUDED 
 
+#include <ensemble.h>
 #include <couleur.h>
 #include <position.h>
 #include <positions.h>
@@ -83,5 +84,13 @@ Cell* ensemble_colores_courant(Ensemble_Colores* E);
  * @return 1 ou 0
  */
 int ensemble_colores_suivant(Ensemble_Colores* E);
+
+
+/**
+ * Permet de récupérer le contenu d'une cellule d'ensemble colores
+ * @param c la cellule
+ * @return une position
+ */
+Position* ensemble_colores_contenu(Cell* c);
 
 #endif

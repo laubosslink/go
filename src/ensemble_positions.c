@@ -8,31 +8,31 @@ Ensemble_Positions* creer_ensemble_positions(){
 	return (Ensemble_Positions*) creer_ensemble();
 }
 
-int vide_ensemble_positions(Ensemble_Positions* E){
+int ensemble_positions_vide(Ensemble_Positions* E){
 	return E->tete == NULL;
 }
 
-Cell* tete_ensemble_positions(Ensemble_Positions* E){
+Cell* ensemble_positions_tete(Ensemble_Positions* E){
 	return E->tete;
 }
 
-Cell* courant_ensemble_positions(Ensemble_Positions* E){
+Cell* ensemble_positions_courant(Ensemble_Positions* E){
 	return E->courant;
 }
 
-int suivant_ensemble_positions(Ensemble_Positions* E){
-	return courant(E)->suivant != NULL;
+int ensemble_positions_suivant(Ensemble_Positions* E){
+	return ensemble_courant(E)->suivant != NULL;
 }
 
 
-int appartient_ensemble_positions(Ensemble_Positions* E, Position* element){
-	return appartient(E,(Position*) element);
+int ensemble_positions_appartient(Ensemble_Positions* E, Position* element){
+	return ensemble_appartient(E,(Position*) element);
 }
 
-Ensemble_Positions* detruire_ensemble_positions(Ensemble_Positions* E, Position* element){
-	return detruire(E,(Position*)element);
+Ensemble_Positions* ensemble_positions_detruire(Ensemble_Positions* E, Position* element){
+	return ensemble_detruire(E,(Position*)element);
 }
 	
-void ajouter_position(Ensemble_Positions* E, Position* element){
-	ajouterElement(E,(Position*)element);
+void ensemble_positions_ajouter(Ensemble_Positions* E, Position* element){
+	ensemble_ajouter(E,(Position*)element);
 }
