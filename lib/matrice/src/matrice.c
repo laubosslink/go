@@ -74,7 +74,7 @@ Matrice matrice_chargement(FILE *fichier){
 	
 	for(i=1; i<m.nbligne-1 ; i++){
       for(j=1; j<m.nbcolonne-1; j++){
-                fscanf(fic, "%c ", &(m.donnees[i][j]));
+                fscanf(fichier, "%c ", &(m.donnees[i][j]));
           }
     }
     
