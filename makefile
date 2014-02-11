@@ -21,22 +21,10 @@ CFLAGS=-I $(INCDIR)
 all:
 
 ##
-#Fichiers .o
+#Fichiers SRCDIR/*.c vers OBJDIR/*.o
 ##
 
-$(OBJDIR)/position.o: $(SRCDIR)/position.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/libertes.o: $(SRCDIR)/libertes.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/ensemble_colores.o: $(SRCDIR)/ensemble_colores.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/ensemble_positions.o : $(SRCDIR)/ensemble_positions.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/plateau.o: $(SRCDIR)/plateau.c
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 ##
