@@ -5,7 +5,7 @@
 int main(){
 	Matrice m;
 	
-	m = init_matrice("extra/plateau_initiale.txt");
+	m = init_matrice("extra/plateau_test.txt");
 	
 	affiche_matrice(m);
 	
