@@ -26,7 +26,7 @@ Libertes determineLiberte(Plateau plateau, Chaine chaine){
 		pc.x = ((Position *) p->courant->contenu)->x;
 		pc.y = ((Position *) p->courant->contenu)->y;
 		
-		pc.x++;
+		pc.x++; /* @todo utiliser haut,bas,gauche,droite */
 		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 			pa = position_creer(pc.x, pc.y);
 			ensemble_ajouter(&l, pa);

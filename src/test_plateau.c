@@ -32,7 +32,7 @@ int main(){
 		
 	Position pos;
 	
-	pos.x = 2; /** @todo si on remplace x par 1 GROS PROB */
+	pos.x = 2;
 	pos.y = 3;
 	
 	fclose(f);
