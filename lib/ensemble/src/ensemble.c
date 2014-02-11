@@ -3,6 +3,11 @@
 #include <position.h>
 #include <ensemble.h>
 
+void ensemble_init(Ensemble *E){
+	E->tete = NULL;
+	E->courant = NULL;
+}
+
 Ensemble* creer_ensemble(){
 	Ensemble* E;
 	
@@ -26,7 +31,10 @@ Cell* ensemble_courant(Ensemble* E){
 }
 
 int ensemble_suivant(Ensemble* E){
-	return (ensemble_courant(E))->suivant != NULL;
+	if(ensemble_courant(E) == NULL) 	
+		return NULL;
+	
+	return(ensemble_courant(E))->suivant != NULL;
 }
 
 
@@ -36,7 +44,7 @@ int ensemble_appartient(Ensemble* E, void* element){
 		
 	E->courant = E->tete;
 	
-	while(ensemble_suivant(E) && E->courant->contenu != element ){
+	while(ensemble_suivant(E) && E->courant->contenu != element){
 		E->courant = E->courant->suivant;
 	}
 	

@@ -70,10 +70,10 @@ Ensemble_Positions* ensemble_positions_enlever(Ensemble_Positions* E, Position* 
  */
 Cell* ensemble_positions_tete(Ensemble_Positions* E);
  
- /**
-  * Permet de positionner le pointeur sur un des éléments de l'ensemble 
-  * @return le pointeur sur l'élément courant
-  */
+/**
+ * Permet de positionner le pointeur sur un des éléments de l'ensemble 
+ * @return le pointeur sur l'élément courant
+ */
 Cell* ensemble_positions_courant(Ensemble_Positions* E);
 
 /**

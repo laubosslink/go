@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <matrice.h>
 #include <libertes.h>
 #include <position.h>
@@ -10,66 +11,78 @@
 
 Libertes determineLiberte(Plateau plateau, Chaine chaine){
 	Libertes l;
-	Positions* p = chaine.p;
-	Position* pos_courante;
+	Positions* p = chaine.p; /* l'ensemble des positions de la chaine */
+	Position pc; /* la position courante */
+	Position* pa; /* la position a ajouter */
 	
 	if(ensemble_vide(p))
 		return;
 	
+	ensemble_init(&l);
+	
 	p->courant = ensemble_tete(p);
 	
 	while(ensemble_suivant(p)){
-		pos_courante = (Position*) p->courant->contenu;
+		pc.x = ((Position *) p->courant->contenu)->x;
+		pc.y = ((Position *) p->courant->contenu)->y;
 		
-		pos_courante->x++;
-		if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-			ensemble_ajouter(&l, pos_courante);
+		pc.x++;
+		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+			pa = position_creer(pc.x, pc.y);
+			ensemble_ajouter(&l, pa);
 		}
 		
-		pos_courante->x -= 2;
-		if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-			ensemble_ajouter(&l, pos_courante);
+		pc.x -= 2;
+		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+			pa = position_creer(pc.x, pc.y);
+			ensemble_ajouter(&l, pa);
 		}
-		pos_courante->x++;
+		pc.x++;
 		
-		pos_courante->y++;
-		if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-			ensemble_ajouter(&l, pos_courante);
+		pc.y++;
+		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+			pa = position_creer(pc.x, pc.y);
+			ensemble_ajouter(&l, pa);
 		}
 		
-		pos_courante->y -= 2;
-		if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-			ensemble_ajouter(&l, pos_courante);
+		pc.y -= 2;
+		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+			pa = position_creer(pc.x, pc.y);
+			ensemble_ajouter(&l, pa);
 		}
-		pos_courante->y++;
+		pc.y++;
 		
 		p->courant = ensemble_courant(p)->suivant;
 	}
+	
+	pc.x = ((Position *) p->courant->contenu)->x;
+	pc.y = ((Position *) p->courant->contenu)->y;
 
-	pos_courante = (Position*) p->courant->contenu;
-	
-	pos_courante->x++;
-	if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-		ensemble_ajouter(&l, pos_courante);
+	pc.x++;
+	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		pa = position_creer(pc.x, pc.y);
+		ensemble_ajouter(&l, pa);
 	}
 	
-	pos_courante->x -= 2;
-	if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-		ensemble_ajouter(&l, pos_courante);
+	pc.x -= 2;
+	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		pa = position_creer(pc.x, pc.y);
+		ensemble_ajouter(&l, pa);
 	}
-	pos_courante->x++;
+	pc.x++;
 	
-	pos_courante->y++;
-	if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-		ensemble_ajouter(&l, pos_courante);
+	pc.y++;
+	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		pa = position_creer(pc.x, pc.y);
+		ensemble_ajouter(&l, pa);
 	}
 	
-	pos_courante->y -= 2;
-	if(position_appartient_matrice(plateau, pos_courante->x, pos_courante->y) && plateau_get(plateau, pos_courante->x, pos_courante->y == VIDE)){
-		ensemble_ajouter(&l, pos_courante);
+	pc.y -= 2;
+	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		pa = position_creer(pc.x, pc.y);
+		ensemble_ajouter(&l, pa);
 	}
-	pos_courante->y++;
-	
+	pc.y++;
 
 	return l;
 }

@@ -115,7 +115,7 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	p->x = pos.x;
 	p->y = pos.y;
 	
-	chaine.p = creer_ensemble(); /** FUCKING IMPORTANT */
+	chaine.p = creer_ensemble(); /** IMPORTANT */
 	
 	/* ajoute de la position actuel dans la chaine */
 	ensemble_colores_ajouter(&chaine, p);
@@ -178,7 +178,7 @@ int plateau_copie(Plateau from, Plateau to){
 	
 	for(i=0; i<from.nbcolonne; i++){
 		for(j=0; j<from.nbligne; j++){
-			to.donnees[j][i] != from.donnees[j][i]
+			to.donnees[j][i] != from.donnees[j][i];
 		}
 	}
 	

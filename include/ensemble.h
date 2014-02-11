@@ -39,6 +39,12 @@ struct Ensemble{
 };
 
 /**
+ * Permet d'initialiser un ensemble
+ * @param E l'ensemble
+ */
+void ensemble_init(Ensemble *E);
+
+/**
  * Permet de creer un ensemble
  * @return un pointeur vers un ensemble
  */

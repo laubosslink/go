@@ -26,7 +26,17 @@
 
 
 #include <ensemble_positions.h>
+#include <plateau.h>
+#include <chaine.h>
 
 typedef Ensemble_Positions Libertes;
+
+/**
+ * Permet de determiner les libertes d'une chaine
+ * @param plateau le plateau
+ * @param chaine la chaine contenant un ensemble de position
+ * @return un ensemble de positions qui represente les libertes
+ */
+Libertes determineLiberte(Plateau plateau, Chaine chaine);
 
 #endif

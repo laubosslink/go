@@ -35,4 +35,40 @@ typedef struct Position {
 	int y;
 } Position;
 
+/**
+ * Permet de creer une position
+ * @param x l'abscisse
+ * @param y l'ordonnee
+ * @return un pointeur vers la position alloue
+ */
+Position* position_creer(int x, int y);
+
+/**
+ * Permet de se deplacer vers le haut
+ * @param p la position a deplacer
+ * @return nouvelle position
+ */
+Position haut(Position p);
+
+/**
+ * Permet de se deplacer vers le bas
+ * @param p la position a deplacer
+ * @return nouvelle position
+ */
+Position bas(Position p);
+
+/**
+ * Permet de se deplacer vers la gauche
+ * @param p la position a deplacer
+ * @return nouvelle position
+ */
+Position gauche(Position p);
+
+/**
+ * Permet de se deplacer vers la droite
+ * @param p la position a deplacer
+ * @return nouvelle position
+ */
+Position droite(Position p);
+
 #endif

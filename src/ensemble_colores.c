@@ -46,12 +46,11 @@ int ensemble_colores_appartient(Ensemble_Colores* E, Position* element){
 		return 1;
 	
 	return 0;
-	
-	//return ensemble_appartient(&(E->p),(Position*)element); /* @todo un element appartient si pos.x et pos.y se trouve dans la chaine */
 }
 
 Ensemble_Colores* ensemble_colores_enlever(Ensemble_Colores* E, Position* element){
-	return ensemble_enlever(E->p, (Position*) element);
+	ensemble_enlever(E->p, element);
+	return E;
 } 
 	
 void ensemble_colores_ajouter(Ensemble_Colores* E, Position* element){

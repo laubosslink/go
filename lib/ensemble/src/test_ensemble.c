@@ -43,6 +43,7 @@ void afficherEnsembleInt(Ensemble *E){
 int main(){
 	Ensemble* E;
 	Ensemble* A;
+	Ensemble e;
 	
 	int t[] = {1, 4, 15, 17};
 	
@@ -77,12 +78,21 @@ int main(){
 	A = (Ensemble*) malloc(sizeof(Ensemble));
 	
 	ensemble_ajouter(A, t+3);
+	ensemble_ajouter(A, t+3);
+	ensemble_ajouter(A, t+3);
 	
 	afficherEnsembleInt(A);
 	
 	A = ensemble_concatene(A, E);
 	
 	afficherEnsembleInt(A);
+	
+	ensemble_init(&e);
+	ensemble_ajouter(&e, t+1);
+	ensemble_ajouter(&e, t+2);
+	ensemble_ajouter(&e, t+3);
+	ensemble_ajouter(&e, t+3);
+	afficherEnsembleInt(&e);
 	
 	return 0;
 }

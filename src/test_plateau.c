@@ -1,7 +1,8 @@
 #include <plateau.h>
+#include <libertes.h>
 #include <position.h>
 
-void afficherPositions(Positions *E){
+void afficherPositions(Ensemble_Positions *E){
 	if(ensemble_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
 		return;
@@ -24,12 +25,14 @@ int main(){
 	FILE *f = fopen("extra/plateau_initiale.txt", "r+");
 	
 	Plateau p = plateau_chargement(f);
-	
+
 	Chaine c;
-	
+
+	Libertes libertes;
+		
 	Position pos;
 	
-	pos.x = 1; /** @todo si on remplace x par 1 GROS PROB */
+	pos.x = 2; /** @todo si on remplace x par 1 GROS PROB */
 	pos.y = 3;
 	
 	fclose(f);
@@ -40,11 +43,15 @@ int main(){
 	
 	printf("\nCouleur: %d\n", c.c);
 	
-	//afficherPositions(c.p);
+	afficherPositions(c.p);
 	
-	plateau_realiser_capture(p, c);
+	//plateau_realiser_capture(p, c);
 	
 	affiche_matrice(p);
+	
+	libertes = determineLiberte(p, c);
+	
+	afficherPositions(&libertes);
 	
 	return 0;
 }
