@@ -41,7 +41,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 # Plateau
 
-test_plateau: $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so $(BINDIR)/test_plateau
+test_plateau: libmatrice libensemble $(BINDIR)/test_plateau
 
 $(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice

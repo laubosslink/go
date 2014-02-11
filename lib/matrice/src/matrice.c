@@ -45,8 +45,6 @@ Matrice matrice_creer(int nblig, int nbcol){
 }
 
 Matrice matrice_chargement(FILE *fichier){
-	char c;
-	
 	Matrice m;
 	int nbligne, nbcolonne, i, j;
 	
@@ -60,34 +58,30 @@ Matrice matrice_chargement(FILE *fichier){
 	 */
 	
 	/* récupération du nombre de ligne */
-	fscanf(fichier,"%d",&nbligne);
+	nbligne = (int) fgetc(fichier) - '0';
+	
+	/* on passe l'espace */
+	fgetc(fichier);
 	
 	/* récupération du nombre de colonnes*/
-	fscanf(fichier,"%d",&nbcolonne);
-
+	nbcolonne = (int) fgetc(fichier) - '0';
+	
+	/* on passe le retour chariot */
+	fgetc(fichier);
+	
 	/* initialisation de la matrice (allocation mémoire) */
-	m = matrice_creer(nbligne+2, nbcolonne+2);
-	m.nbcolonne = nbcolonne+2;
-	m.nbligne = nbligne+2;	
+	m = matrice_creer(nbligne, nbcolonne);
+	m.nbcolonne = nbcolonne;
+	m.nbligne = nbligne;	
 	
 	/* récupération des données */
-	
-	for(i=1; i<m.nbligne-1 ; i++){
-      for(j=1; j<m.nbcolonne-1; j++){
-                fscanf(fichier, "%c ", &(m.donnees[i][j]));
-          }
-    }
-    
-    for(j=0; j<m.nbcolonne; j++){
-                m.donnees[0][j] = '.';
-                m.donnees[m.nbligne-1][j] = '.';
-    }
-   
-    for(i=0; i<m.nbligne; i++){
-                m.donnees[i][0] = '.';
-                m.donnees[i][m.nbcolonne-1] = '.';
-   }
-
+	for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
+		m.donnees[j][i] = (int) fgetc(fichier) - '0';
+		
+		if((char) fgetc(fichier) == '\n'){
+			j++;
+		}
+	}
 
 	return m;
 }
