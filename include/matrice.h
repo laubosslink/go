@@ -31,7 +31,7 @@
  
 /** @todo description de la structure */
 typedef struct Matrice {
-	Couleur **donnees; /** Les tableau des données */
+	int **donnees; /** Les tableau des données */
 	int nbligne; /** Le nombre de lignes */
 	int nbcolonne; /** Le nombre de colonnes */
 } Matrice;

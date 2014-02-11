@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #include <position.h>
 
 Position* position_creer(int x, int y){

@@ -38,7 +38,7 @@ int main(){
 	
 	fclose(f);
 	
-	affiche_matrice(p);
+	plateau_afficher(p);
 	
 	c = plateau_determiner_chaine(p, pos);
 	
@@ -46,15 +46,25 @@ int main(){
 	
 	afficherPositions(c.p);
 	
-	//plateau_realiser_capture(p, c);
+	plateau_realiser_capture(p, c);
 	
-	affiche_matrice(p);
+	plateau_afficher(p);
 	
 	libertes = determineLiberte(p, c);
 	
 	afficherPositions(&libertes);
 	
-	printf("save ? %d\n", plateau_sauvegarde(p, f2));
+	printf("largeur: %d\n", p.nbcolonne);
+	printf("hauteur: %d\n", p.nbligne);
+	printf("save ? %d\n", plateau_sauvegarde((Matrice) p, f2));
+	
+	fclose(f2);
+	
+	f2 = fopen("extra/plateau_2.txt", "r");
+	
+	p = plateau_chargement(f2);
+	
+	plateau_afficher(p);
 	
 	return 0;
 }

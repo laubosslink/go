@@ -32,7 +32,7 @@ Cell* ensemble_courant(Ensemble* E){
 
 int ensemble_suivant(Ensemble* E){
 	if(ensemble_courant(E) == NULL) 	
-		return NULL;
+		return 0;
 	
 	return(ensemble_courant(E))->suivant != NULL;
 }

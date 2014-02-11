@@ -27,7 +27,7 @@ Plateau plateau_chargement(FILE* fichier){
 }
 
 Couleur plateau_get(Plateau p, int x, int y){
-	return p.donnees[y][x];
+	return (Couleur) p.donnees[y][x];
 }
 
 void plateau_set(Plateau p, int i, int j, Couleur c){
@@ -187,6 +187,70 @@ int plateau_copie(Plateau from, Plateau to){
 
 int plateau_sauvegarde(Plateau plateau, FILE* fichier){
 	return sauvegarde_matrice(plateau, fichier);
+}
+
+void plateau_afficher(Plateau p){
+	char c;
+	int i, j;
+	
+	/* En tete pour connaitre les colonnes */
+	printf("   ");
+	for(i=0; i<p.nbcolonne; i++){
+		printf("- ", i);
+	}
+	printf("\n");
+	
+	printf("  |");
+	for(i=0; i<p.nbcolonne; i++){
+		if(i<p.nbcolonne-1)
+			printf("%d ", i+1);
+		else
+			printf("%d", i+1);
+	}
+	printf("|\n");	
+	
+	printf("   ");
+	for(i=0; i<p.nbcolonne; i++){
+		printf("- ", i);
+	}
+	printf("\n");
+	
+	/* Contenu */
+	for(j=0; j<p.nbligne; j++){
+		for(i=0; i<p.nbcolonne; i++){
+			
+			if(i == 0)
+				printf("%d |", j+1);
+			
+			switch(p.donnees[j][i]){
+				case 1:
+					c = 'o';
+					break;
+				case 2:
+					c = 'x';
+					break;
+				default:
+					c = '.';
+			}
+			
+			if(i<p.nbcolonne-1)
+				printf("%c ", c);
+			else
+				printf("%c", c);
+			
+			if(i == p.nbcolonne-1)
+				printf("|");
+		}
+		printf("\n");
+	}
+
+	/* bas d'affichage */
+	printf("  ");
+	for(i=0; i<p.nbcolonne; i++){
+		printf("- ", i);
+	}
+	printf("-\n");
+	
 }
 
 /*

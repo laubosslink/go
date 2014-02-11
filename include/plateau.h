@@ -35,6 +35,13 @@
 
 typedef struct Matrice Plateau;
 
+
+/**
+ * Permet d'afficher un plateau dans la console
+ * @param p le plateau
+ */
+void plateau_afficher(Plateau p);
+
 /**
  * Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne
  * @param nbligne le nombre de ligne

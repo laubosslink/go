@@ -35,10 +35,10 @@ Matrice creer_matrice(int nblig, int nbcol){
 	m.nbligne = nblig;
 	m.nbcolonne = nbcol;
 	
-	m.donnees = (Couleur **) malloc(nblig * sizeof(Couleur *));
+	m.donnees = (int **) malloc(nblig * sizeof(int *));
 	
 	for(i=0; i<nblig; i++){
-		m.donnees[i] = (Couleur *) malloc(nbcol * sizeof(Couleur));
+		m.donnees[i] = (int *) malloc(nbcol * sizeof(int));
 	}
 	
 	return m;
@@ -75,15 +75,9 @@ Matrice matrice_chargement(FILE *fichier){
 	
 	/* récupération des données */
 	for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
-		c = (char) fgetc(fichier);
 		
-		if(c == 'o')
-			m.donnees[j][i] = BLANC;
-		else if(c == 'x')
-			m.donnees[j][i] = NOIR;
-		else
-			m.donnees[j][i] = VIDE;
-			
+		m.donnees[j][i] = (fgetc(fichier) - '0');
+		
 		if((char) fgetc(fichier) == '\n'){
 			j++;
 		}
@@ -129,28 +123,27 @@ int sauvegarde_matrice(Matrice m, FILE *fichier){
 	int i, j;
 	unsigned char r;
 
-	if( fichier == NULL)
+	if(fichier == NULL)
 		return 0;
 
 	/* "en-tête" du fichier contenant le nombre de ligne et de colonnes de la matrice */
-	r = fputc(m.nbligne, fichier);
+	r = fputc(m.nbligne + '0', fichier);
 	if(r == EOF) return 0;
 	
 	r = fputc(' ', fichier);
 	if(r == EOF) return 0;
 	
-	r = fputc(m.nbcolonne, fichier);
+	r = fputc(m.nbcolonne + '0', fichier);
 	if(r == EOF) return 0;
-
+	
 	r = fputc('\n', fichier);
 	if(r == EOF) return 0;
 	
 	for(j=0; j<m.nbligne; j++){
 		for(i=0; i<m.nbcolonne; i++){
-			r = fputc(m.donnees[j][i], fichier);
+			r = fputc(m.donnees[j][i] + '0', fichier);
 			if(r == EOF) return 0;
 
-			
 			if(i<m.nbcolonne-1){
 				r = fputc(' ', fichier);
 				if(r == EOF) return 0; 
@@ -160,9 +153,6 @@ int sauvegarde_matrice(Matrice m, FILE *fichier){
 		if(r == EOF) return 0;
 
 	}
-	
-	/* @TODO facultatif ? */
-	fputc('\0', fichier);
 	
 	return 1;
 }
