@@ -151,3 +151,36 @@ void plateau_realiser_capture(Plateau plateau, Chaine chaine){
 	
 	plateau.donnees[((Position*)p->courant->contenu)->y][((Position*)p->courant->contenu)->x] = VIDE;
 }
+
+int plateau_est_identique(Plateau plateau, Plateau ancienPlateau){
+	int i, j;
+	
+	if(plateau.nbcolonne != ancienPlateau.nbcolonne || plateau.nbligne != ancienPlateau.nbligne)
+		return 0;
+	
+	for(i=0; i<plateau.nbcolonne; i++){
+		for(j=0; j<plateau.nbligne; j++){
+			if(plateau.donnees[j][i] != ancienPlateau.donnees[j][i])
+				return 0;
+		}
+	}
+	
+	return 1;
+}
+
+int plateau_copie(Plateau from, Plateau to){
+	int i, j;
+	
+	if(from.nbcolonne != to.nbcolonne || from.nbligne != to.nbligne){
+		fprintf(stderr, "taille différence pour la copie d'un tableau 'from' vers 'to'");
+		return 0;
+	}
+	
+	for(i=0; i<from.nbcolonne; i++){
+		for(j=0; j<from.nbligne; j++){
+			to.donnees[j][i] != from.donnees[j][i]
+		}
+	}
+	
+	return plateau_est_identique(from, to);
+}

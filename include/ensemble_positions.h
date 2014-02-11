@@ -27,6 +27,7 @@
 #define ENSEMBLE_POSITIONS_H_INCLUDED 
 
 #include <ensemble.h>
+#include <position.h>
   
 typedef Ensemble Ensemble_Positions;
 

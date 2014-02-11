@@ -28,7 +28,7 @@ all:
 
 plateautest: $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so $(BINDIR)/plateautest
 
-$(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
+$(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c
@@ -48,6 +48,9 @@ $(OBJDIR)/test_ensemble_colores.o : $(TESTDIR)/test_ensemble_colores.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 #Fichiers .o
+
+$(OBJDIR)/libertes.o: $(SRCDIR)/libertes.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR)/ensemble_colores.o: $(SRCDIR)/ensemble_colores.c
 	$(CC) $(CFLAGS) -c $< -o $@

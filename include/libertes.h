@@ -25,7 +25,7 @@
 #define LIBERTES_H_INCLUDED 
 
 
-#include <ensemble_position.h>
+#include <ensemble_positions.h>
 
 typedef Ensemble_Positions Libertes;
 
