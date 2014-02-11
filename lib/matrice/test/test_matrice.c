@@ -5,15 +5,15 @@
 int main(){
 	Matrice m;
 	
-	m = init_matrice("extra/plateau_initiale.txt");
+	m = matrice_init("extra/plateau_test.txt");
 	
-	affiche_matrice(m);
+	matrice_affiche(m);
 	
 	m.donnees[1][1] = BLANC;
 	
 	printf("\n");
 	
-	affiche_matrice(m);
+	matrice_affiche(m);
 	
 	return 0;
 }

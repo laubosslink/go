@@ -27,7 +27,7 @@
 #include <stdio.h>
 #include <matrice.h>
 
-Matrice creer_matrice(int nblig, int nbcol){
+Matrice matrice_creer(int nblig, int nbcol){
 	int i;
 	
 	Matrice m;
@@ -54,6 +54,11 @@ Matrice matrice_chargement(FILE *fichier){
 		fprintf(stdout, "Le pointeur d'ouverture de fichier est NULL pour matrice_chargement \n");
 	}
 	
+	/** 
+	 * @bug si dans un fichier la taille est > 9, il y a un problème pour récupérer 
+	 * le nombre de ligne, et de colonnes. Il faut changer fgetc par autre chose.
+	 */
+	
 	/* récupération du nombre de ligne */
 	c = fgetc(fichier);
 	nbligne = atoi(&c);
@@ -69,7 +74,7 @@ Matrice matrice_chargement(FILE *fichier){
 	fgetc(fichier);
 	
 	/* initialisation de la matrice (allocation mémoire) */
-	m = creer_matrice(nbligne, nbcolonne);
+	m = matrice_creer(nbligne, nbcolonne);
 	m.nbcolonne = nbcolonne;
 	m.nbligne = nbligne;
 	
@@ -86,7 +91,7 @@ Matrice matrice_chargement(FILE *fichier){
 	return m;
 }
 
-Matrice init_matrice(char *fichier){
+Matrice matrice_init(char *fichier){
 	FILE* f;
 	Matrice m;
 	
@@ -104,11 +109,11 @@ Matrice init_matrice(char *fichier){
 	return m;
 }
 
-int position_appartient_matrice(Matrice m, int x, int y){
+int matrice_position_appartient(Matrice m, int x, int y){
 	return (x < m.nbcolonne && x >= 0 && y < m.nbligne && y >= 0);
 }
 
-void affiche_matrice(Matrice m){
+void matrice_affiche(Matrice m){
 	int i, j;
 	
 	for(j=0; j<m.nbligne; j++){
@@ -119,7 +124,7 @@ void affiche_matrice(Matrice m){
 	}
 }
 
-int sauvegarde_matrice(Matrice m, FILE *fichier){
+int matrice_sauvegarde(Matrice m, FILE *fichier){
 	int i, j;
 	unsigned char r;
 

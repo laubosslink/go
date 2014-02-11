@@ -16,9 +16,17 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 
 CFLAGS=-I $(INCDIR)
 
-.PHONY: all clean plateautest libensemble libmatrice libensembletest libmatricetest ensemble_colores_test distclean
+.PHONY: all go \
+		test_plateau test_libensemble test_libmatrice ensemble_colores_test \
+		libensemble libmatrice \
+		clean distclean
 
-all:
+all: go
+
+go: $(BINDIR)/go
+
+$(BINDIR)/go: $(SRCDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 ##
 #Fichiers SRCDIR/*.c vers OBJDIR/*.o
