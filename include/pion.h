@@ -9,7 +9,7 @@
  */
  
 /**
- * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
+ * @author ELHIMDI Yasmine <yasmine.elhimdi@ecole.ensicaen.fr>
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.0 
  * @date 03-02-2013

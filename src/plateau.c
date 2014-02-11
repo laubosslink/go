@@ -184,3 +184,20 @@ int plateau_copie(Plateau from, Plateau to){
 	
 	return plateau_est_identique(from, to);
 }
+
+int plateau_sauvegarde(Plateau plateau, FILE* fichier){
+	return sauvegarde_matrice(plateau, fichier);
+}
+
+Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
+	Chaines CC; /* chaines_capturees*/
+	Chaine ChainePion;
+	
+	if( ensemble_vide(&CC) ) return NULL;
+	
+	ChainePion = plateau_determiner_chaine(plateau,pion.p);
+	if( (*valide) == 0 && ) 
+	
+	
+	
+	

@@ -47,6 +47,18 @@ $(BINDIR)/ensemble_colores_test: $(OBJDIR)/ensemble_colores.o $(OBJDIR)/test_ens
 $(OBJDIR)/test_ensemble_colores.o : $(TESTDIR)/test_ensemble_colores.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+
+# Ensembles Positions
+
+ensemble_positions_test: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/ensemble_positions_test
+
+$(BINDIR)/ensemble_positions_test: $(OBJDIR)/ensemble_positions.o $(OBJDIR)/test_ensemble_positions.o
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble
+	
+$(OBJDIR)/test_ensemble_positions.o : $(TESTDIR)/test_ensemble_positions.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
 #Fichiers .o
 
 $(OBJDIR)/position.o: $(SRCDIR)/position.c
@@ -58,6 +70,8 @@ $(OBJDIR)/libertes.o: $(SRCDIR)/libertes.c
 $(OBJDIR)/ensemble_colores.o: $(SRCDIR)/ensemble_colores.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJDIR)/ensemble_positions.o : $(SRCDIR)/ensemble_positions.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 ##
 # LIBRARIES
