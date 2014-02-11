@@ -23,6 +23,7 @@ void afficherPositions(Ensemble_Positions *E){
 
 int main(){
 	FILE *f = fopen("extra/plateau_initiale.txt", "r+");
+	FILE *f2 = fopen("extra/plateau_2.txt", "w+");
 	
 	Plateau p = plateau_chargement(f);
 
@@ -52,6 +53,8 @@ int main(){
 	libertes = determineLiberte(p, c);
 	
 	afficherPositions(&libertes);
+	
+	printf("save ? %d\n", plateau_sauvegarde(p, f2));
 	
 	return 0;
 }
