@@ -54,6 +54,11 @@ Matrice matrice_chargement(FILE *fichier){
 		fprintf(stdout, "Le pointeur d'ouverture de fichier est NULL pour matrice_chargement \n");
 	}
 	
+	/** 
+	 * @bug si dans un fichier la taille est > 9, il y a un problème pour récupérer 
+	 * le nombre de ligne, et de colonnes. Il faut changer fgetc par autre chose.
+	 */
+	
 	/* récupération du nombre de ligne */
 	c = fgetc(fichier);
 	nbligne = atoi(&c);
