@@ -110,7 +110,7 @@ Matrice init_matrice(char *fichier){
 }
 
 int position_appartient_matrice(Matrice m, int x, int y){
-	return !(x >= m.nbcolonne || x < 0 || y >= m.nbligne || y < 0);
+	return (x < m.nbcolonne && x >= 0 && y < m.nbligne && y >= 0);
 }
 
 void affiche_matrice(Matrice m){

@@ -47,7 +47,7 @@ Ensemble* creer_ensemble();
 /**
  * Permet de vérifier si un ensemble est vide
  * @param E l'ensemble
- * @return 1 si il l'est
+ * @return 1 si il l'estsinon
  */
 int ensemble_vide(Ensemble* E);
 
@@ -87,6 +87,14 @@ Cell* ensemble_courant(Ensemble* E);
  * Permet de dire s'il y a un élément suivant ou non 
  * @return 1 ou 0
  */
- int ensemble_suivant(Ensemble* E);
+int ensemble_suivant(Ensemble* E);
+
+/**
+ * Përmet de concatener deux ensembles
+ * @param e1 l'ensemble e1 ajouter en "tête"
+ * @param e2 l'ensemble e2 ajouter en bout de e1
+ * @return un nouvel ensemble
+ */
+Ensemble* ensemble_concatene(Ensemble* e1, Ensemble* e2);
 
 #endif

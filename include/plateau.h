@@ -65,7 +65,7 @@ int est_un_pion_plateau(Plateau plateau, Position pos);
  * @param j l'ordonnee
  * @return La couleur du pion
  */
-Couleur plateau_get(Plateau m, int i, int j);
+Couleur plateau_get(Plateau m, int x, int t);
 
 /**
  * Permet de mettre un pion sur le plateau

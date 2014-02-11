@@ -4,6 +4,7 @@
 #include <plateau.h>
 #include <couleur.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 int est_un_pion(Couleur c){
 	return (c == BLANC || c == NOIR);
@@ -25,78 +26,128 @@ Plateau plateau_chargement(FILE* fichier){
 	return (Plateau) matrice_chargement(fichier);
 }
 
-Couleur plateau_get(Plateau p, int i, int j){
-	return p.donnees[i][j];
+Couleur plateau_get(Plateau p, int x, int y){
+	return p.donnees[y][x];
 }
 
 void plateau_set(Plateau p, int i, int j, Couleur c){
 	p.donnees[i][j] = c;
 }
 
-Positions* plateau_determiner_chaine(Plateau plateau, Position pos, Couleur c){
-	Positions* c = creer_ensemble_colores();
+void plateau_determiner_chaine_rec(Plateau plateau, Position pos, Chaine* chaine){
 	Position* p;
 	
-	if(plateau_get(plateau, pos.y, pos.x) != c)
-		return NULL;
+	/* Si la position reçu sort du plateau, ou qu'elle ne correspond pas à la couleur rechercher, on s'arrête */
+	if(!position_appartient_matrice(plateau, pos.x, pos.y) || plateau_get(plateau, pos.x, pos.y) != chaine->c)
+		return;
+	
+	/* 
+	 * On regarde à droite 
+	 * On fait bien attention à vérifie que la position ne se trouve pas déjà dans la chaine, permet un appel récursif infinie
+	 */
+	pos.x++;
+	if(est_un_pion_plateau(plateau, pos) && plateau_get(plateau, pos.x, pos.y) == chaine->c && !ensemble_colores_appartient(chaine, &pos)){
+		p = (Position *) malloc(sizeof(Position));
+		p->x = pos.x;
+		p->y = pos.y;
 		
-	ensemble_colores_concatene
+		/* Si on est là, c'est qu'a droite il a une position a ajouter dans notre chaine */
+		ensemble_colores_ajouter(chaine, p);
+		
+		/* On relance un appel récursif sur la position droite */
+		plateau_determiner_chaine_rec(plateau, pos, chaine);
+	}
+	
+	/* On regarde à gauche */
+	pos.x -= 2;
+	if(est_un_pion_plateau(plateau, pos) && plateau_get(plateau, pos.x, pos.y) == chaine->c && !ensemble_colores_appartient(chaine, &pos)){
+		p = (Position *) malloc(sizeof(Position));
+		p->x = pos.x;
+		p->y = pos.y;
+		
+		ensemble_colores_ajouter(chaine, p);
+		
+		plateau_determiner_chaine_rec(plateau, pos, chaine);
+	}
 	
 	pos.x++;
-	if(est_un_pion_plateau(plateau, p) && plateau_get(plateau, pos.y, pos.x) == c.couleur){
-		p = (Position *) malloc(sizeof(Position));
-		p->x = pos.x;
-		p->y = pos.y;
-		
-		ensemble_colores_ajouter(c, p);
-	}
-	
-	pos.x -= 2;
-	if(est_un_pion_plateau(plateau, p) && plateau_get(plateau, pos.y, pos.x) == c.couleur){
-		p = (Position *) malloc(sizeof(Position));
-		p->x = pos.x;
-		p->y = pos.y;
-		
-		ensemble_colores_ajouter(c, p);
-	}
-	
-	if(est_un_pion(plateau.donnees[pos.y+1][pos.x]))
-		ajouterElement(&c, plateau.donnees[pos.y+1][pos.x]);
-		
-	if(est_un_pion(plateau.donnees[pos.y-1][pos]))
-		ajouterElement(&c, plateau.donnees[pos.y-1][pos.x]);
 
+	/* On regarde en bas  */
+	pos.y++;
+	if(est_un_pion_plateau(plateau, pos) && plateau_get(plateau, pos.x, pos.y) == chaine->c && !ensemble_colores_appartient(chaine, &pos)){
+		p = (Position *) malloc(sizeof(Position));
+		p->x = pos.x;
+		p->y = pos.y;
+		
+		ensemble_colores_ajouter(chaine, p);
+		
+		plateau_determiner_chaine_rec(plateau, pos, chaine);
+	}
+	
+	/* On regarde en haut */
+	pos.y -= 2;
+	if(est_un_pion_plateau(plateau, pos) && plateau_get(plateau, pos.x, pos.y) == chaine->c && !ensemble_colores_appartient(chaine, &pos)){
+		p = (Position *) malloc(sizeof(Position));
+		p->x = pos.x;
+		p->y = pos.y;
+		
+		ensemble_colores_ajouter(chaine, p);
+		
+		plateau_determiner_chaine_rec(plateau, pos, chaine);
+	}
+	
+	pos.y++;
 }
 
 Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
-	Chaine* c;
-	Position p = pos;
+	Chaine chaine;
+	Position* p;
 	
 	if(!position_appartient_matrice(plateau, pos.x, pos.y))
-		return NULL;
+		return;
 	
 	if(!est_un_pion(plateau.donnees[pos.y][pos.x]))
-		return NULL;
+		return;
 	
-	c = creer_ensemble_colores();
+	chaine.c = plateau.donnees[pos.y][pos.x];
 	
-	c->couleur = plateau.donnees[pos.y][pos.x];
+	p = (Position *) malloc(sizeof(Position));
+	p->x = pos.x;
+	p->y = pos.y;
 	
+	chaine.p = creer_ensemble(); /** FUCKING IMPORTANT */
 	
+	/* ajoute de la position actuel dans la chaine */
+	ensemble_colores_ajouter(&chaine, p);
+
+	/* lancement récursif à droite, gauche, haut, bas pour rechercher des pions de même couleur */
+	pos.x++;
+	plateau_determiner_chaine_rec(plateau, pos, &chaine);
+	pos.x -= 2;
+	plateau_determiner_chaine_rec(plateau, pos, &chaine);
+	pos.x++;
 	
+	pos.y++;
+	plateau_determiner_chaine_rec(plateau, pos, &chaine);
+	pos.y -= 2;
+	plateau_determiner_chaine_rec(plateau, pos, &chaine);
+	pos.x++;
 	
-		
-	p.x++;
-	plateau_determiner_chaine(plateau, p);
-	p.x -= 2;
-	plateau_determiner_chaine(plateau, p);
-	p.x++;
+	return chaine;
+}
+
+void plateau_realiser_capture(Plateau plateau, Chaine chaine){
+	Positions* p = chaine.p;
 	
-	p.y++;
-	plateau_determiner_chaine(plateau, p);
-	p.y -= 2;
-	plateau_determiner_chaine(plateau, p);
-	p.x++;
+	if(ensemble_vide(p))
+		return;
 	
-	return c;
+	p->courant = ensemble_tete(p);
+	
+	while(ensemble_suivant(p)){
+		plateau.donnees[((Position*)p->courant->contenu)->y][((Position*)p->courant->contenu)->x] = VIDE;
+		p->courant = ensemble_courant(p)->suivant;
+	}
+	
+	plateau.donnees[((Position*)p->courant->contenu)->y][((Position*)p->courant->contenu)->x] = VIDE;
 }

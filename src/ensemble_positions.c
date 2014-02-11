@@ -24,7 +24,6 @@ int ensemble_positions_suivant(Ensemble_Positions* E){
 	return ensemble_courant(E)->suivant != NULL;
 }
 
-
 int ensemble_positions_appartient(Ensemble_Positions* E, Position* element){
 	return ensemble_appartient(E,(Position*) element);
 }

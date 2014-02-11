@@ -72,12 +72,17 @@ int main(){
 	// On check si une adresse appartient à l'ensemble
 	printf("Appartient (%p): %d\n\n", t+4, ensemble_appartient(E, t+4));
 	
+	ensemble_enlever(E, t+3);
+	
 	A = (Ensemble*) malloc(sizeof(Ensemble));
 	
-	A = ensemble_enlever(E, t+3);
+	ensemble_ajouter(A, t+3);
 	
 	afficherEnsembleInt(A);
 	
+	A = ensemble_concatene(A, E);
+	
+	afficherEnsembleInt(A);
 	
 	return 0;
 }

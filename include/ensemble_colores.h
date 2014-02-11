@@ -31,7 +31,7 @@
 
 typedef struct Ensemble_Colores{
 	Couleur c;
-	Positions p;
+	Positions* p;
 } Ensemble_Colores;
 
 /**
