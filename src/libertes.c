@@ -26,27 +26,27 @@ Libertes determineLiberte(Plateau plateau, Chaine chaine){
 		pc.x = ((Position *) p->courant->contenu)->x;
 		pc.y = ((Position *) p->courant->contenu)->y;
 		
-		pc.x++; /* @todo utiliser haut,bas,gauche,droite */
-		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		pc.x++; /** @todo utiliser haut,bas,gauche,droite */
+		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 			pa = position_creer(pc.x, pc.y);
 			ensemble_ajouter(&l, pa);
 		}
 		
 		pc.x -= 2;
-		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 			pa = position_creer(pc.x, pc.y);
 			ensemble_ajouter(&l, pa);
 		}
 		pc.x++;
 		
 		pc.y++;
-		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 			pa = position_creer(pc.x, pc.y);
 			ensemble_ajouter(&l, pa);
 		}
 		
 		pc.y -= 2;
-		if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 			pa = position_creer(pc.x, pc.y);
 			ensemble_ajouter(&l, pa);
 		}
@@ -59,26 +59,26 @@ Libertes determineLiberte(Plateau plateau, Chaine chaine){
 	pc.y = ((Position *) p->courant->contenu)->y;
 
 	pc.x++;
-	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 		pa = position_creer(pc.x, pc.y);
 		ensemble_ajouter(&l, pa);
 	}
 	
 	pc.x -= 2;
-	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 		pa = position_creer(pc.x, pc.y);
 		ensemble_ajouter(&l, pa);
 	}
 	pc.x++;
 	
 	pc.y++;
-	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 		pa = position_creer(pc.x, pc.y);
 		ensemble_ajouter(&l, pa);
 	}
 	
 	pc.y -= 2;
-	if(position_appartient_matrice(plateau, pc.x, pc.y) && plateau_get(plateau, pc.x, pc.y) == VIDE){
+	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 		pa = position_creer(pc.x, pc.y);
 		ensemble_ajouter(&l, pa);
 	}

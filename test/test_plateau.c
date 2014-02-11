@@ -22,8 +22,8 @@ void afficherPositions(Ensemble_Positions *E){
 }
 
 int main(){
-	FILE *f = fopen("extra/plateau_initiale.txt", "r+");
-	FILE *f2 = fopen("extra/plateau_2.txt", "w+");
+	FILE *f = fopen("extra/plateau_test.txt", "r+");
+	FILE *f2 = fopen("extra/plateau_test_output.txt", "w+");
 	
 	Plateau p = plateau_chargement(f);
 
@@ -60,7 +60,7 @@ int main(){
 	
 	fclose(f2);
 	
-	f2 = fopen("extra/plateau_2.txt", "r");
+	f2 = fopen("extra/plateau_test_output.txt", "r");
 	
 	p = plateau_chargement(f2);
 	

@@ -42,14 +42,14 @@ typedef struct Matrice {
  * @param nbcol le nombre de colonnes à allouer
  * @return une matrice nblig*nbcol
  */
-Matrice creer_matrice(int nblig, int nbcol);
+Matrice matrice_creer(int nblig, int nbcol);
 
 /**
  * Permet d'initialiser une matrice à partir d'un fichier
  * @param fichier le nom du fichier
  * @return une matrice initialisé à partir d'un fichier
  */
-Matrice init_matrice(char *fichier);
+Matrice matrice_init(char *fichier);
 
 /**
  * Permet d'initialiser une matrice à partir d'un fichier
@@ -65,19 +65,19 @@ Matrice matrice_chargement(FILE *fichier);
  * @param y l'ordonnée
  * @return 1 si le point est situé dans la matrice, 0 sinon
  */
-int position_appartient_matrice(Matrice m, int x, int y);
+int matrice_position_appartient(Matrice m, int x, int y);
 
 /**
  * Permet d'afficher une matrice
  * @param matrice la matrice en à afficher
  */
-void affiche_matrice(Matrice m);
+void matrice_affiche(Matrice m);
 
 /**
  * Permet de sauvegarder une matrice dans un fichier
  * @param m la matrice à sauvegarder
  * @param fichier le nom du fichier dans lequel on sauvegarde la matrice
  */
-int sauvegarde_matrice(Matrice m, FILE *fichier);
+int matrice_sauvegarde(Matrice m, FILE *fichier);
 
 #endif

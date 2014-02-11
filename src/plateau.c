@@ -12,14 +12,14 @@ int est_un_pion(Couleur c){
 
 int est_un_pion_plateau(Plateau plateau, Position pos){
 	/* on vérifie premièrement que la position ne sort pas des bords */
-	if(!position_appartient_matrice(plateau, pos.x, pos.y))
+	if(!plateau_position_appartient(plateau, pos))
 		return 0;
 	
 	return est_un_pion(plateau.donnees[pos.y][pos.x]);
 }
 
 Plateau creer_plateau(int nbligne, int nbcolonne){
-	return (Plateau) creer_matrice(nbligne, nbcolonne);
+	return (Plateau) matrice_creer(nbligne, nbcolonne);
 }
 
 Plateau plateau_chargement(FILE* fichier){
@@ -38,7 +38,7 @@ void plateau_determiner_chaine_rec(Plateau plateau, Position pos, Chaine* chaine
 	Position* p;
 	
 	/* Si la position reçu sort du plateau, ou qu'elle ne correspond pas à la couleur rechercher, on s'arrête */
-	if(!position_appartient_matrice(plateau, pos.x, pos.y) || plateau_get(plateau, pos.x, pos.y) != chaine->c)
+	if(!plateau_position_appartient(plateau, pos) || plateau_get(plateau, pos.x, pos.y) != chaine->c)
 		return;
 	
 	/* 
@@ -103,10 +103,7 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	Chaine chaine;
 	Position* p;
 	
-	if(!position_appartient_matrice(plateau, pos.x, pos.y))
-		return;
-	
-	if(!est_un_pion(plateau.donnees[pos.y][pos.x]))
+	if(!est_un_pion_plateau(plateau, pos))
 		return;
 	
 	chaine.c = plateau.donnees[pos.y][pos.x];
@@ -168,6 +165,10 @@ int plateau_est_identique(Plateau plateau, Plateau ancienPlateau){
 	return 1;
 }
 
+int plateau_position_appartient(Plateau plateau, Position position){
+	return matrice_position_appartient(plateau, position.x, position.y);
+}
+
 int plateau_copie(Plateau from, Plateau to){
 	int i, j;
 	
@@ -186,7 +187,7 @@ int plateau_copie(Plateau from, Plateau to){
 }
 
 int plateau_sauvegarde(Plateau plateau, FILE* fichier){
-	return sauvegarde_matrice(plateau, fichier);
+	return matrice_sauvegarde(plateau, fichier);
 }
 
 void plateau_afficher(Plateau p){

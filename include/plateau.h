@@ -134,6 +134,14 @@ Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau);
 int plateau_sauvegarde(Plateau plateau, FILE* fichier);
 
 /**
+ * Permet de savoir si une position est sur plateau
+ * @param plateau le plateau
+ * @param position la position à vérifier
+ * @return 1 si elle appartient au plateau, 0 sinon
+ */
+int plateau_position_appartient(Plateau plateau, Position position);
+
+/**
  * Permet de charger un plateau a partir d'un fichier
  * @param fichier le fichier qui contient le plateau
  * @return un plateau
