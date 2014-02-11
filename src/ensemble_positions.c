@@ -25,7 +25,12 @@ int ensemble_positions_suivant(Ensemble_Positions* E){
 }
 
 int ensemble_positions_appartient(Ensemble_Positions* E, Position* element){
-	return ensemble_appartient(E,(Position*) element);
+	E->courant = ensemble_positions_tete(E);
+	while(ensemble_positions_suivant(E) && E->courant->contenu->x != element->x && E->courant->contenu->y != element->y){
+		E->courant = E->courant->suivant;
+	}
+	if(E->courant->suivant == NULL && E->courant->contenu->x != element->x && E->courant->contenu->y != element->y) return 0;
+	return 1;
 }
 
 Ensemble_Positions* ensemble_positions_detruire(Ensemble_Positions* E, Position* element){

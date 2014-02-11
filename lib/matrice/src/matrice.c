@@ -10,6 +10,7 @@
 
 /**
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
+ * @author EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr>
  * @version 1.0 
  * @date 03-12-2013
  *
@@ -124,36 +125,46 @@ void affiche_matrice(Matrice m){
 	}
 }
 
-void sauvegarde_matrice(struct Matrice m, char *fichier){
-	FILE* f;
+int sauvegarde_matrice(Matrice m, FILE *fichier){
 	int i, j;
-	
-	f = fopen(fichier, "w+");
+	unsigned char r;
 
-	if(f != NULL){
-		/* "en-tête" du fichier contenant le nombre de ligne et de colonnes de la matrice */
-		fputc(m.nbligne, f);
-		fputc(' ', f);
-		fputc(m.nbcolonne, f);
-		fputc('\n', f);
-		
-		for(j=0; j<m.nbligne; j++){
-			for(i=0; i<m.nbcolonne; i++){
-				fputc(m.donnees[j][i], f);
-				
-				if(i<m.nbcolonne-1)
-					fputc(' ', f);
+	if( fichier == NULL)
+		return 0;
+
+	/* "en-tête" du fichier contenant le nombre de ligne et de colonnes de la matrice */
+	r = fputc(m.nbligne, fichier);
+	if(r == EOF) return 0;
+	
+	r = fputc(' ', fichier);
+	if(r == EOF) return 0;
+	
+	r = fputc(m.nbcolonne, fichier);
+	if(r == EOF) return 0;
+
+	r = fputc('\n', fichier);
+	if(r == EOF) return 0;
+	
+	for(j=0; j<m.nbligne; j++){
+		for(i=0; i<m.nbcolonne; i++){
+			r = fputc(m.donnees[j][i], fichier);
+			if(r == EOF) return 0;
+
+			
+			if(i<m.nbcolonne-1){
+				r = fputc(' ', fichier);
+				if(r == EOF) return 0; 
 			}
-			fputc('\n', f);
 		}
-		
-		/* @TODO facultatif ? */
-		fputc('\0', f);
-	} else {
-		fprintf(stderr, "Erreur : fichier innexistant pour la sauvegarde de la matrice");
+		r = fputc('\n', fichier);
+		if(r == EOF) return 0;
+
 	}
 	
-	fclose(f);
+	/* @TODO facultatif ? */
+	fputc('\0', fichier);
+	
+	return 1;
 }
 
 

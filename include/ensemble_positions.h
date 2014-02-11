@@ -35,7 +35,7 @@ typedef Ensemble Ensemble_Positions;
  * Permet de creer un ensemble
  * @return un pointeur vers un ensemble
  */
-Ensemble_Positions* creer_ensemblePositions();
+Ensemble_Positions* creer_ensemble_positions();
 
 /**
  * Permet de vérifier si un ensemble est vide

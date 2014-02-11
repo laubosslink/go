@@ -78,6 +78,6 @@ void affiche_matrice(Matrice m);
  * @param m la matrice à sauvegarder
  * @param fichier le nom du fichier dans lequel on sauvegarde la matrice
  */
-void sauvegarde_matrice(Matrice m, char *fichier);
+int sauvegarde_matrice(Matrice m, FILE *fichier);
 
 #endif
