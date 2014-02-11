@@ -40,28 +40,36 @@ int main(){
 	
 	plateau_afficher(p);
 	
+	/* Test de la détermination d'une chaine */
 	c = plateau_determiner_chaine(p, pos);
 	
+	/* couleur de la chaine ?*/
 	printf("\nCouleur: %d\n", c.c);
 	
+	/* Les différentes positions de la chaine même couleur*/
 	afficherPositions(c.p);
 	
+	/* réalisation d'une capture de la chaine */
 	plateau_realiser_capture(p, c);
 	
 	plateau_afficher(p);
 	
+	/* on détermine les libertés de la chaine */
 	libertes = determineLiberte(p, c);
 	
 	afficherPositions(&libertes);
 	
 	printf("largeur: %d\n", p.nbcolonne);
 	printf("hauteur: %d\n", p.nbligne);
+	
+	/* test de la sauvegarde du plateau */
 	printf("save ? %d\n", plateau_sauvegarde((Matrice) p, f2));
 	
 	fclose(f2);
 	
 	f2 = fopen("extra/plateau_test_output.txt", "r");
 	
+	/* test de l'ouverture puis de l'affichage du plateau sauvegardé */
 	p = plateau_chargement(f2);
 	
 	plateau_afficher(p);

@@ -4,9 +4,13 @@
 #include <partie.h>
 #include <plateau.h>
 
+
+
 int main(){
 	int choix;
 	int x, y, numero_tour;
+	
+	Partie partie;
 	
 	FILE* fichier_plateau = fopen("extra/plateau_initiale_9_9.txt", "r");
 	
@@ -32,10 +36,10 @@ int main(){
 			plateau_afficher(plateau_courant);
 			
 			if(couleur == BLANC){
-				printf("Au tour du joueur 1 (tour n°%d)\n", numero_tour);
+				printf("Au tour du joueur BLANC (tour n°%d)\n", numero_tour);
 			} else if(couleur == NOIR)
 			{
-				printf("Au tour du joueur 2 (tour n°%d)\n", numero_tour);
+				printf("Au tour du joueur NOIR (tour n°%d)\n", numero_tour);
 			}
 			
 			printf("Vous désirez poser votre pion en quels positions ? \n");
@@ -52,7 +56,7 @@ int main(){
 			x--;
 			y--;
 			
-			} while(!position_appartient_matrice(plateau_courant, x, y));
+			} while(!matrice_position_appartient(plateau_courant, x, y));
 			
 			plateau_set(plateau_courant, x, y, couleur);
 			

@@ -28,12 +28,16 @@
 #include <couleur.h>
 #include <plateau.h>
  
+typedef void (*FonctionQuestions)(int numeroQuestion, Partie* partie); 
+
 typedef struct Partie {
-	Couleur joueur_actuel;
+	char *joueur1, *joueur2; /* nom des joueurs */
+	Couleur joueur; /* joueur actuel */
+	int taille; /* taille du plateau */
 	Plateau plateau;
 } Partie;
 
-Partie partie_initialisation();
+Partie partie_initialisation(FonctionQuestions fonctionQuestions);
 
 /**
  * Sauvegarde la partie dans sa position actuelle. Si la sauvegarde se passe
@@ -59,4 +63,5 @@ Partie partie_charge(FILE* fichier);
  * @param valKomi
  */
 void partie_score_joueurs(Partie p, int *scores, float valKomi);
+
 #endif
