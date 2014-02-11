@@ -16,25 +16,41 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 
 CFLAGS=-I $(INCDIR)
 
-.PHONY: all clean plateautest libensemble libmatrice libensembletest libmatricetest ensemble_colores_test
+.PHONY: all clean plateautest libensemble libmatrice libensembletest libmatricetest ensemble_colores_test distclean
 
 all:
+
+##
+#Fichiers .o
+##
+
+$(OBJDIR)/position.o: $(SRCDIR)/position.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/libertes.o: $(SRCDIR)/libertes.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/ensemble_colores.o: $(SRCDIR)/ensemble_colores.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/ensemble_positions.o : $(SRCDIR)/ensemble_positions.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/plateau.o: $(SRCDIR)/plateau.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 ##
 # TESTS
 ##
 
-# PLATEAU
+# Plateau
 
-plateautest: $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so $(BINDIR)/plateautest
+test_plateau: $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so $(BINDIR)/test_plateau
 
-$(BINDIR)/plateautest: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o
+$(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
-$(OBJDIR)/test_plateau.o: $(SRCDIR)/test_plateau.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/plateau.o: $(SRCDIR)/plateau.c
+$(OBJDIR)/test_plateau.o: $(TESTDIR)/test_plateau.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Ensembles Colores 
@@ -59,33 +75,11 @@ $(OBJDIR)/test_ensemble_positions.o : $(TESTDIR)/test_ensemble_positions.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 
-#Fichiers .o
-
-$(OBJDIR)/position.o: $(SRCDIR)/position.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/libertes.o: $(SRCDIR)/libertes.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/ensemble_colores.o: $(SRCDIR)/ensemble_colores.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/ensemble_positions.o : $(SRCDIR)/ensemble_positions.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
 ##
 # LIBRARIES
 ##
 
 # Ensembles
-
-libensembletest: $(LIBDIR)/ensemble/bin/test_ensemble
-
-$(LIBDIR)/ensemble/bin/test_ensemble: $(OBJDIR)/test_ensemble.o $(LIBDIR)/ensemble/bin/libensemble.so
-	$(CC) $(LDFLAGS) $< -o $@ -lensemble
-
-$(OBJDIR)/test_ensemble.o: $(LIBDIR)/ensemble/src/test_ensemble.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
 libensemble: $(LIBDIR)/ensemble/bin/libensemble.so
 
@@ -95,16 +89,15 @@ $(LIBDIR)/ensemble/bin/libensemble.so: $(OBJDIR)/libensemble.o
 $(OBJDIR)/libensemble.o: $(LIBDIR)/ensemble/src/ensemble.c
 	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
+test_libensemble: $(LIBDIR)/ensemble/bin/test_libensemble
+
+$(LIBDIR)/ensemble/bin/test_libensemble: $(OBJDIR)/test_libensemble.o $(LIBDIR)/ensemble/bin/libensemble.so
+	$(CC) $(LDFLAGS) $< -o $@ -lensemble
+
+$(OBJDIR)/test_libensemble.o: $(LIBDIR)/ensemble/test/test_ensemble.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # Matrice
-
-libmatricetest: $(LIBDIR)/matrice/bin/test_matrice
-
-$(LIBDIR)/matrice/bin/test_matrice: $(OBJDIR)/test_matrice.o $(LIBDIR)/matrice/bin/libmatrice.so
-	$(CC) $(LDFLAGS) $< -o $@ -lmatrice
-
-$(OBJDIR)/test_matrice.o: $(LIBDIR)/matrice/src/test_matrice.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
 libmatrice: $(LIBDIR)/matrice/bin/libmatrice.so
 
@@ -114,8 +107,20 @@ $(LIBDIR)/matrice/bin/libmatrice.so: $(OBJDIR)/libmatrice.o
 $(OBJDIR)/libmatrice.o: $(LIBDIR)/matrice/src/matrice.c
 	$(CC) $(CFLAGS) -fPIC -c $< -o $@
 
+test_libmatrice: $(LIBDIR)/matrice/bin/test_libmatrice
+
+$(LIBDIR)/matrice/bin/test_libmatrice: $(OBJDIR)/test_libmatrice.o $(LIBDIR)/matrice/bin/libmatrice.so
+	$(CC) $(LDFLAGS) $< -o $@ -lmatrice
+
+$(OBJDIR)/test_libmatrice.o: $(LIBDIR)/matrice/test/test_matrice.c
+	$(CC) $(CFLAGS) -c $< -o $@
+	
 ##
 # Autres
 ##
 clean:
 	rm -f $(OBJDIR)/*.[o-so]
+
+distclean: clean
+	rm -f bin/*
+	rm -f lib/*/bin/*
