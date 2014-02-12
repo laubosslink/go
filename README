@@ -1,0 +1,13 @@
+====== GO ======
+
+----
+
+Ce fichier respecte la norme DokuWiki.
+
+===== Utilisation de make =====
+
+----
+
+  * Pour creer le jeu : <code bash> make </code>
+  * Pour creer la documentation : <code bash> make doc </code>
+  * Pour creer les tests : <code bash> make test_FILE </code>
