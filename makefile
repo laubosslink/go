@@ -23,9 +23,9 @@ CFLAGS=-I $(INCDIR)
 
 all: go
 
-go: $(BINDIR)/go
+go: libensemble libmatrice $(BINDIR)/go
 
-$(BINDIR)/go: $(SRCDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
+$(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 ##
