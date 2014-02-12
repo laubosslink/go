@@ -18,7 +18,7 @@
 /** 
  * @file libertes.h
  * 
- * L'ensemble de libertes d'un pion (implémentation de Liste)
+ * @brief L'ensemble de libertes d'un pion (implémentation de Liste)
  */
 
 #ifndef LIBERTES_H_INCLUDED

@@ -18,7 +18,7 @@
 /** 
  * @file pion.h
  * 
- * Les informations sur un pion : sa position et sa couleur
+ * @brief Les informations sur un pion : sa position et sa couleur
  */
 
 #ifndef PION_H_INCLUDED

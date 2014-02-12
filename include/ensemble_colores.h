@@ -18,7 +18,7 @@
 /** 
  * @file ensemble_colores.h
  * 
- * structures Ensemble_colores permettant la manipulation d'un ensemble de position et d'une couleur
+ * @brief structures Ensemble_colores permettant la manipulation d'un ensemble de position et d'une couleur
  */
 
 #ifndef ENSEMBLE_COLORES_H_INCLUDED

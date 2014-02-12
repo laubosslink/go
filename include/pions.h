@@ -18,7 +18,7 @@
 /** 
  * @file pions.h
  * 
- * Le fichier d'en tête qui contient la structure des pions (implémentation d'une liste)
+ * @brief Le fichier d'en tête qui contient la structure des pions (implémentation d'une liste)
  */
 
 #ifndef PIONS_H_INCLUDED

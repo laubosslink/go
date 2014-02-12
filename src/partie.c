@@ -42,6 +42,7 @@ void echange_joueur(Couleur* c){
 		*c = BLANC;
 }
 
+/* @todo sauvegarder la partie, le plateau dans un fichier */
 int partie_sauvegarde(Partie partie, FILE* fichier){
 	int est_sauve = 0;
 	
@@ -50,4 +51,9 @@ int partie_sauvegarde(Partie partie, FILE* fichier){
 	fwrite(&(partie.plateau), sizeof(Plateau), 1, fichier);
 	
 	return est_sauve;
+}
+
+/* @todo utiliser fread.. */
+int partie_charge(FILE* fichier){
+	return 0;
 }

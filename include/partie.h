@@ -18,7 +18,7 @@
 /** 
  * @file partie.h
  * 
- * Fichier d'en-tête permettant de gérer une partie 
+ * @brief Fichier d'en-tête permettant de gérer une partie 
  */
 
 #ifndef PARTIE_H_INCLUDED
@@ -36,6 +36,11 @@ typedef struct Partie {
  
 typedef void (*FonctionQuestions)(int numeroQuestion, Partie* partie); 
 
+/**
+ * Permet d'initialiser une partie !
+ * @param fonctionQuestions une fonction qui permet de demander des questions
+ * @return une partie initialise
+ */
 Partie partie_initialisation(FonctionQuestions fonctionQuestions);
 
 /**

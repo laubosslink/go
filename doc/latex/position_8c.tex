@@ -1,0 +1,100 @@
+\hypertarget{position_8c}{\section{\-Référence du fichier src/position.c}
+\label{position_8c}\index{src/position.\-c@{src/position.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$position.\-h$>$}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8c_a53b0b3e1eef3ea6d4a39729168fc5d74}{position\-\_\-creer} (int x, int y)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8c_a560eb95832e1fa5b450a770fc0bbda3b}{haut} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8c_a7e92be3f4b11fe045bd2faa5d121bc07}{bas} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8c_af85ae3fae0ab221ae8f7f52ca740b584}{gauche} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8c_aae3c656b6236e8cd8109d4486140fb38}{droite} (\hyperlink{structPosition}{\-Position} p)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{position_8c_a7e92be3f4b11fe045bd2faa5d121bc07}{\index{position.\-c@{position.\-c}!bas@{bas}}
+\index{bas@{bas}!position.c@{position.\-c}}
+\subsubsection[{bas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf bas} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8c_a7e92be3f4b11fe045bd2faa5d121bc07}
+\-Permet de se deplacer vers le bas 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+nouvelle position 
+\end{DoxyReturn}
+\hypertarget{position_8c_aae3c656b6236e8cd8109d4486140fb38}{\index{position.\-c@{position.\-c}!droite@{droite}}
+\index{droite@{droite}!position.c@{position.\-c}}
+\subsubsection[{droite}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf droite} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8c_aae3c656b6236e8cd8109d4486140fb38}
+\-Permet de se deplacer vers la droite 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+nouvelle position 
+\end{DoxyReturn}
+\hypertarget{position_8c_af85ae3fae0ab221ae8f7f52ca740b584}{\index{position.\-c@{position.\-c}!gauche@{gauche}}
+\index{gauche@{gauche}!position.c@{position.\-c}}
+\subsubsection[{gauche}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf gauche} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8c_af85ae3fae0ab221ae8f7f52ca740b584}
+\-Permet de se deplacer vers la gauche 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+nouvelle position 
+\end{DoxyReturn}
+\hypertarget{position_8c_a560eb95832e1fa5b450a770fc0bbda3b}{\index{position.\-c@{position.\-c}!haut@{haut}}
+\index{haut@{haut}!position.c@{position.\-c}}
+\subsubsection[{haut}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf haut} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8c_a560eb95832e1fa5b450a770fc0bbda3b}
+\-Permet de se deplacer vers le haut 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+nouvelle position 
+\end{DoxyReturn}
+\hypertarget{position_8c_a53b0b3e1eef3ea6d4a39729168fc5d74}{\index{position.\-c@{position.\-c}!position\-\_\-creer@{position\-\_\-creer}}
+\index{position\-\_\-creer@{position\-\_\-creer}!position.c@{position.\-c}}
+\subsubsection[{position\-\_\-creer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf position\-\_\-creer} (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{position_8c_a53b0b3e1eef3ea6d4a39729168fc5d74}
+\-Permet de creer une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em x} & l'abscisse \\
+\hline
+{\em y} & l'ordonnee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un pointeur vers la position alloue 
+\end{DoxyReturn}

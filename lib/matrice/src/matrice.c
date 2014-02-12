@@ -14,7 +14,6 @@
  * @version 1.0 
  * @date 03-12-2013
  *
- * @todo avancer sur matrice et verifier adaptation couleur pour jeu de go
  */
  
 /** 

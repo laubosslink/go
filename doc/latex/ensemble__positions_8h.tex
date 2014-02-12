@@ -1,0 +1,174 @@
+\hypertarget{ensemble__positions_8h}{\section{\-Référence du fichier include/ensemble\-\_\-positions.h}
+\label{ensemble__positions_8h}\index{include/ensemble\-\_\-positions.\-h@{include/ensemble\-\_\-positions.\-h}}
+}
+
+
+structures cell et \hyperlink{structEnsemble}{\-Ensemble} permettant la manipulation d'ensembles  
+
+
+{\ttfamily \#include $<$ensemble.\-h$>$}\*
+{\ttfamily \#include $<$position.\-h$>$}\*
+\subsection*{\-Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{structEnsemble}{\-Ensemble} \hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions}
+\end{DoxyCompactItemize}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$ \hyperlink{ensemble__positions_8h_a9ebb7fa7fe148c899d1d3b5e5d0286b3}{creer\-\_\-ensemble\-\_\-positions} ()
+\item 
+int \hyperlink{ensemble__positions_8h_a53f4463cae2405410dfd8f73c208f9e2}{ensemble\-\_\-positions\-\_\-vide} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E)
+\item 
+int \hyperlink{ensemble__positions_8h_a88172f5c0c5730bbecc5f87db225df61}{ensemble\-\_\-positions\-\_\-appartient} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E, \hyperlink{structPosition}{\-Position} $\ast$element)
+\item 
+void \hyperlink{ensemble__positions_8h_a6ab2fb11d290562d312ae8e3c1592e8b}{ensemble\-\_\-positions\-\_\-ajouter} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E, \hyperlink{structPosition}{\-Position} $\ast$element)
+\item 
+\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$ \hyperlink{ensemble__positions_8h_a7ae13e4ac77034d839488c348f30c2b9}{ensemble\-\_\-positions\-\_\-enlever} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E, \hyperlink{structPosition}{\-Position} $\ast$element)
+\item 
+\hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble__positions_8h_a7af4def5f3af04d640a71aefd66f9623}{ensemble\-\_\-positions\-\_\-tete} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E)
+\item 
+\hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble__positions_8h_a50a3e490b451e599ce8b9f85b54942b9}{ensemble\-\_\-positions\-\_\-courant} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E)
+\item 
+int \hyperlink{ensemble__positions_8h_a602ebbb0a6051225d82049ed2578751b}{ensemble\-\_\-positions\-\_\-suivant} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} $\ast$\-E)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+structures cell et \hyperlink{structEnsemble}{\-Ensemble} permettant la manipulation d'ensembles \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-E\-L\-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:elhimdi@ecole.ensicaen.fr}{\tt elhimdi@ecole.\-ensicaen.\-fr}$>$ 
+
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/02-\/2013
+\end{DoxyDate}
+\-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-E\-L\-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:elhimdi@ecole.ensicaen.fr}{\tt elhimdi@ecole.\-ensicaen.\-fr}$>$ 
+
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-1 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/02-\/2013
+\end{DoxyDate}
+\begin{DoxyRefDesc}{\-A faire}
+\item[\hyperlink{todo__todo000002}{\-A faire}]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position \end{DoxyRefDesc}
+
+
+\subsection{\-Documentation des définitions de type}
+\hypertarget{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!\-Ensemble\-\_\-\-Positions@{\-Ensemble\-\_\-\-Positions}}
+\index{\-Ensemble\-\_\-\-Positions@{\-Ensemble\-\_\-\-Positions}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{\-Ensemble\-\_\-\-Positions}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \-Ensemble} {\bf \-Ensemble\-\_\-\-Positions}}}\label{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{ensemble__positions_8h_a9ebb7fa7fe148c899d1d3b5e5d0286b3}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!creer\-\_\-ensemble\-\_\-positions@{creer\-\_\-ensemble\-\_\-positions}}
+\index{creer\-\_\-ensemble\-\_\-positions@{creer\-\_\-ensemble\-\_\-positions}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{creer\-\_\-ensemble\-\_\-positions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble\-\_\-\-Positions}$\ast$ {\bf creer\-\_\-ensemble\-\_\-positions} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a9ebb7fa7fe148c899d1d3b5e5d0286b3}
+\-Permet de creer un ensemble \begin{DoxyReturn}{\-Renvoie}
+un pointeur vers un ensemble 
+\end{DoxyReturn}
+\hypertarget{ensemble__positions_8h_a6ab2fb11d290562d312ae8e3c1592e8b}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-ajouter@{ensemble\-\_\-positions\-\_\-ajouter}}
+\index{ensemble\-\_\-positions\-\_\-ajouter@{ensemble\-\_\-positions\-\_\-ajouter}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-ajouter}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-positions\-\_\-ajouter} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E, }
+\item[{{\bf \-Position} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a6ab2fb11d290562d312ae8e3c1592e8b}
+\-Permet d'ajouter un élément dans un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em element} & l'élément à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{ensemble__positions_8h_a88172f5c0c5730bbecc5f87db225df61}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-appartient@{ensemble\-\_\-positions\-\_\-appartient}}
+\index{ensemble\-\_\-positions\-\_\-appartient@{ensemble\-\_\-positions\-\_\-appartient}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-appartient}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-positions\-\_\-appartient} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E, }
+\item[{{\bf \-Position} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a88172f5c0c5730bbecc5f87db225df61}
+\-Permet de vérifier qu'un élément appartiennent à un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em element} & l'élément \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si il appartient, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{ensemble__positions_8h_a50a3e490b451e599ce8b9f85b54942b9}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-courant@{ensemble\-\_\-positions\-\_\-courant}}
+\index{ensemble\-\_\-positions\-\_\-courant@{ensemble\-\_\-positions\-\_\-courant}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell}$\ast$ {\bf ensemble\-\_\-positions\-\_\-courant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a50a3e490b451e599ce8b9f85b54942b9}
+\-Permet de positionner le pointeur sur un des éléments de l'ensemble \begin{DoxyReturn}{\-Renvoie}
+le pointeur sur l'élément courant 
+\end{DoxyReturn}
+\hypertarget{ensemble__positions_8h_a7ae13e4ac77034d839488c348f30c2b9}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-enlever@{ensemble\-\_\-positions\-\_\-enlever}}
+\index{ensemble\-\_\-positions\-\_\-enlever@{ensemble\-\_\-positions\-\_\-enlever}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-enlever}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble\-\_\-\-Positions}$\ast$ {\bf ensemble\-\_\-positions\-\_\-enlever} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E, }
+\item[{{\bf \-Position} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a7ae13e4ac77034d839488c348f30c2b9}
+\-Permet de supprimer un élément dans l'ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em element} & l'élement à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-E pointeur vers le nouvel ensemble privé de l'élément supprimé 
+\end{DoxyReturn}
+\hypertarget{ensemble__positions_8h_a602ebbb0a6051225d82049ed2578751b}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-suivant@{ensemble\-\_\-positions\-\_\-suivant}}
+\index{ensemble\-\_\-positions\-\_\-suivant@{ensemble\-\_\-positions\-\_\-suivant}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-suivant}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-positions\-\_\-suivant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a602ebbb0a6051225d82049ed2578751b}
+\-Permet de dire s'il y a un élément suivant ou non \begin{DoxyReturn}{\-Renvoie}
+1 ou 0 
+\end{DoxyReturn}
+\hypertarget{ensemble__positions_8h_a7af4def5f3af04d640a71aefd66f9623}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-tete@{ensemble\-\_\-positions\-\_\-tete}}
+\index{ensemble\-\_\-positions\-\_\-tete@{ensemble\-\_\-positions\-\_\-tete}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-tete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell}$\ast$ {\bf ensemble\-\_\-positions\-\_\-tete} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a7af4def5f3af04d640a71aefd66f9623}
+\-Permet de positionner le pointeur tête sur le debut de mon ensemble \begin{DoxyReturn}{\-Renvoie}
+le pointeur de la tete de l'ensemble 
+\end{DoxyReturn}
+\hypertarget{ensemble__positions_8h_a53f4463cae2405410dfd8f73c208f9e2}{\index{ensemble\-\_\-positions.\-h@{ensemble\-\_\-positions.\-h}!ensemble\-\_\-positions\-\_\-vide@{ensemble\-\_\-positions\-\_\-vide}}
+\index{ensemble\-\_\-positions\-\_\-vide@{ensemble\-\_\-positions\-\_\-vide}!ensemble_positions.h@{ensemble\-\_\-positions.\-h}}
+\subsubsection[{ensemble\-\_\-positions\-\_\-vide}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-positions\-\_\-vide} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Positions} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble__positions_8h_a53f4463cae2405410dfd8f73c208f9e2}
+\-Permet de vérifier si un ensemble est vide 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si il l'est 
+\end{DoxyReturn}

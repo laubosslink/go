@@ -20,7 +20,7 @@
 /** 
  * @file ensemble_positions.h
  * 
- * structures cell et Ensemble permettant la manipulation d'ensembles
+ * @brief structures cell et Ensemble permettant la manipulation d'ensembles
  */
  
 

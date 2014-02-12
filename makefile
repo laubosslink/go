@@ -16,7 +16,7 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 
 CFLAGS=-I $(INCDIR)
 
-.PHONY: all go \
+.PHONY: all go doc \
 		test_plateau test_libensemble test_libmatrice ensemble_colores_test \
 		libensemble libmatrice \
 		clean distclean
@@ -27,6 +27,9 @@ go: libensemble libmatrice $(BINDIR)/go
 
 $(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+doc:
+	doxygen doxygen_config
 
 ##
 #Fichiers SRCDIR/*.c vers OBJDIR/*.o

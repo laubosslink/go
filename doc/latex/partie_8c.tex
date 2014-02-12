@@ -1,0 +1,92 @@
+\hypertarget{partie_8c}{\section{\-Référence du fichier src/partie.c}
+\label{partie_8c}\index{src/partie.\-c@{src/partie.\-c}}
+}
+{\ttfamily \#include $<$partie.\-h$>$}\*
+{\ttfamily \#include $<$plateau.\-h$>$}\*
+{\ttfamily \#include $<$couleur.\-h$>$}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{partie_8c_a6c8191cb2c1c0a145d01a5208d2017cc}{partie\-\_\-demande\-\_\-questions} (int numero\-\_\-question, \hyperlink{structPartie}{\-Partie} $\ast$partie)
+\item 
+\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8c_a2257cb4beec2250fb4d0b5304b8de1ba}{partie\-\_\-initialisation} (\hyperlink{partie_8h_ac95c1237507b0e72ab459319522c1c43}{\-Fonction\-Questions} fonction\-Questions)
+\item 
+void \hyperlink{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}{echange\-\_\-joueur} (\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} $\ast$c)
+\item 
+int \hyperlink{partie_8c_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegarde} (\hyperlink{structPartie}{\-Partie} partie, \-F\-I\-L\-E $\ast$fichier)
+\item 
+int \hyperlink{partie_8c_a19841ef71350926e846e1f0509ef8a8d}{partie\-\_\-charge} (\-F\-I\-L\-E $\ast$fichier)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}{\index{partie.\-c@{partie.\-c}!echange\-\_\-joueur@{echange\-\_\-joueur}}
+\index{echange\-\_\-joueur@{echange\-\_\-joueur}!partie.c@{partie.\-c}}
+\subsubsection[{echange\-\_\-joueur}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf echange\-\_\-joueur} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Couleur} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}
+\hypertarget{partie_8c_a19841ef71350926e846e1f0509ef8a8d}{\index{partie.\-c@{partie.\-c}!partie\-\_\-charge@{partie\-\_\-charge}}
+\index{partie\-\_\-charge@{partie\-\_\-charge}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf partie\-\_\-charge} (
+\begin{DoxyParamCaption}
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_a19841ef71350926e846e1f0509ef8a8d}
+\-Charge une partie précédement sauvegardée. \-Si le chargement n'est pas possible, retorune un pointeur \-N\-U\-L\-L 
+\begin{DoxyParams}{\-Paramètres}
+{\em fichier} & \-Le fichier à partir du quel on charge la partie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-La partie, ou \-N\-U\-L\-L si le chargement n'est pas possible 
+\end{DoxyReturn}
+\hypertarget{partie_8c_a6c8191cb2c1c0a145d01a5208d2017cc}{\index{partie.\-c@{partie.\-c}!partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}}
+\index{partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-demande\-\_\-questions}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf partie\-\_\-demande\-\_\-questions} (
+\begin{DoxyParamCaption}
+\item[{int}]{numero\-\_\-question, }
+\item[{{\bf \-Partie} $\ast$}]{partie}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_a6c8191cb2c1c0a145d01a5208d2017cc}
+\-Questions a demande a l'utilisateur 
+\begin{DoxyParams}{\-Paramètres}
+{\em numero} & de la question \\
+\hline
+{\em partie} & pointeur vers une partie \\
+\hline
+\end{DoxyParams}
+\hypertarget{partie_8c_a2257cb4beec2250fb4d0b5304b8de1ba}{\index{partie.\-c@{partie.\-c}!partie\-\_\-initialisation@{partie\-\_\-initialisation}}
+\index{partie\-\_\-initialisation@{partie\-\_\-initialisation}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-initialisation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf partie\-\_\-initialisation} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Fonction\-Questions}}]{fonction\-Questions}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_a2257cb4beec2250fb4d0b5304b8de1ba}
+\-Permet d'initialiser une partie ! 
+\begin{DoxyParams}{\-Paramètres}
+{\em fonction\-Questions} & une fonction qui permet de demander des questions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une partie initialise 
+\end{DoxyReturn}
+\hypertarget{partie_8c_ae887d9089d029f0f4df07e96dae63523}{\index{partie.\-c@{partie.\-c}!partie\-\_\-sauvegarde@{partie\-\_\-sauvegarde}}
+\index{partie\-\_\-sauvegarde@{partie\-\_\-sauvegarde}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-sauvegarde}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf partie\-\_\-sauvegarde} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{partie, }
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_ae887d9089d029f0f4df07e96dae63523}
+\-Sauvegarde la partie dans sa position actuelle. \-Si la sauvegarde se passe sans problème la fonction retourne 1, 0 sinon 
+\begin{DoxyParams}{\-Paramètres}
+{\em partie} & \-La partie actuelle \\
+\hline
+{\em fichier} & \-Le fichier dans lequel on sauvegarde la partie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+0 si il n'y a pas de problème, 1 sinon 
+\end{DoxyReturn}

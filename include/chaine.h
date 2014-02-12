@@ -17,8 +17,8 @@
  
 /** 
  * @file chaine.h
- * @todo les if define end if 
- * Ensemble connexe de pions sur le plateau
+ * 
+ * @brief Ensemble connexe de pions sur le plateau
  */
 
 #ifndef CHAINE_H_INCLUDED

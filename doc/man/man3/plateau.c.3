@@ -1,0 +1,255 @@
+.TH "src/plateau.c" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/plateau.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <matrice\&.h>\fP
+.br
+\fC#include <ensemble_colores\&.h>\fP
+.br
+\fC#include <chaine\&.h>\fP
+.br
+\fC#include <plateau\&.h>\fP
+.br
+\fC#include <couleur\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "int \fBest_un_pion\fP (\fBCouleur\fP c)"
+.br
+.ti -1c
+.RI "int \fBest_un_pion_plateau\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
+.br
+.ti -1c
+.RI "\fBPlateau\fP \fBcreer_plateau\fP (int nbligne, int nbcolonne)"
+.br
+.ti -1c
+.RI "\fBPlateau\fP \fBplateau_chargement\fP (FILE *fichier)"
+.br
+.ti -1c
+.RI "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fP p, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBplateau_set\fP (\fBPlateau\fP p, int i, int j, \fBCouleur\fP c)"
+.br
+.ti -1c
+.RI "void \fBplateau_determiner_chaine_rec\fP (\fBPlateau\fP plateau, \fBPosition\fP pos, \fBChaine\fP *chaine)"
+.br
+.ti -1c
+.RI "\fBChaine\fP \fBplateau_determiner_chaine\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
+.br
+.ti -1c
+.RI "void \fBplateau_realiser_capture\fP (\fBPlateau\fP plateau, \fBChaine\fP chaine)"
+.br
+.ti -1c
+.RI "int \fBplateau_est_identique\fP (\fBPlateau\fP plateau, \fBPlateau\fP ancienPlateau)"
+.br
+.ti -1c
+.RI "int \fBplateau_position_appartient\fP (\fBPlateau\fP plateau, \fBPosition\fP position)"
+.br
+.ti -1c
+.RI "int \fBplateau_copie\fP (\fBPlateau\fP from, \fBPlateau\fP to)"
+.br
+.ti -1c
+.RI "int \fBplateau_sauvegarde\fP (\fBPlateau\fP plateau, FILE *fichier)"
+.br
+.ti -1c
+.RI "void \fBplateau_afficher\fP (\fBPlateau\fP p)"
+.br
+.in -1c
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBPlateau\fP \fBcreer_plateau\fP (intnbligne, intnbcolonne)"Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fInbligne\fP le nombre de ligne 
+.br
+\fInbcolonne\fP le nombre de colonnes 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un plateau 
+.RE
+.PP
+
+.SS "int \fBest_un_pion\fP (\fBCouleur\fPc)"Permet de savoir si la couleur est un pion 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIc\fP la couleur 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si c'est un pion, 0 sinon 
+.RE
+.PP
+
+.SS "int \fBest_un_pion_plateau\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Permet de savoir si c'est un pion du plateau 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP Le plateau 
+.br
+\fIpos\fP La position d'un plateau 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si le pion est dans le plateau, 0 sinon 
+.RE
+.PP
+
+.SS "void \fBplateau_afficher\fP (\fBPlateau\fPp)"Permet d'afficher un plateau dans la console 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP le plateau 
+.RE
+.PP
+
+.SS "\fBPlateau\fP \fBplateau_chargement\fP (FILE *fichier)"Permet de charger un plateau a partir d'un fichier 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIfichier\fP le fichier qui contient le plateau 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un plateau 
+.RE
+.PP
+
+.SS "int \fBplateau_copie\fP (\fBPlateau\fPfrom, \fBPlateau\fPto)"Copie un plateau, les deux tableaux sont supposes deja alloues 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIfrom\fP le plateau source 
+.br
+\fIto\fP le plateau destination 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si la copie a fonctionnee, 0 sinon 
+.RE
+.PP
+
+.SS "\fBChaine\fP \fBplateau_determiner_chaine\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Produit la chaine a laquelle appartient le pion, a la position pos sur le plateau\&. Si il n'y a pas de pion, sur cette case alors le resultat est NULL 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP le plateau 
+.br
+\fIpos\fP la position du pion 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+NULL si il n'y a pas de pion, une chaine sinon 
+.RE
+.PP
+IMPORTANT 
+.SS "void \fBplateau_determiner_chaine_rec\fP (\fBPlateau\fPplateau, \fBPosition\fPpos, \fBChaine\fP *chaine)"
+.SS "int \fBplateau_est_identique\fP (\fBPlateau\fPplateau, \fBPlateau\fPancienPlateau)"indique sur l'organisation du plateau est identique a une precedente organisation de plateau\&. 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP le plateau actuel 
+.br
+\fIancienPlateau\fP l'ancien plateau 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si identique, 0 sinon 
+.RE
+.PP
+
+.SS "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fPm, intx, intt)"Permet de recuperer un pion sur une position 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.br
+\fIi\fP l'abscisse 
+.br
+\fIj\fP l'ordonnee 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+La couleur du pion 
+.RE
+.PP
+
+.SS "int \fBplateau_position_appartient\fP (\fBPlateau\fPplateau, \fBPosition\fPposition)"Permet de savoir si une position est sur plateau 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP le plateau 
+.br
+\fIposition\fP la position à vérifier 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si elle appartient au plateau, 0 sinon 
+.RE
+.PP
+
+.SS "void \fBplateau_realiser_capture\fP (\fBPlateau\fPplateau, \fBChaine\fPchaine)"Realise la capture des pions correspondant a la chaine en les enlevant du plateau 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP le plateau 
+.br
+\fIchaine\fP une chaine 
+.RE
+.PP
+
+.SS "int \fBplateau_sauvegarde\fP (\fBPlateau\fPplateau, FILE *fichier)"Permet de sauvegarde un plateau dans un fichier 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP le plateau 
+.br
+\fIfichier\fP le fichier dans lequel on sauvegarde le plateau 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si tout s'est bien passé, 0 sinon 
+.RE
+.PP
+
+.SS "void \fBplateau_set\fP (\fBPlateau\fPm, inti, intj, \fBCouleur\fPc)"Permet de mettre un pion sur le plateau 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.br
+\fIi\fP l'abscisse 
+.br
+\fIj\fP l'ordonnee 
+.br
+\fIc\fP la couleur du pion 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

@@ -1,0 +1,172 @@
+.TH "include/matrice.h" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/matrice.h \- 
+.PP
+Le fichier d'en tête qui contient la matrice\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <couleur\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMatrice\fP"
+.br
+.in -1c
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBMatrice\fP \fBMatrice\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatrice\fP \fBmatrice_creer\fP (int nblig, int nbcol)"
+.br
+.ti -1c
+.RI "\fBMatrice\fP \fBmatrice_init\fP (char *fichier)"
+.br
+.ti -1c
+.RI "\fBMatrice\fP \fBmatrice_chargement\fP (FILE *fichier)"
+.br
+.ti -1c
+.RI "int \fBmatrice_position_appartient\fP (\fBMatrice\fP m, int x, int y)"
+.br
+.ti -1c
+.RI "void \fBmatrice_affiche\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "int \fBmatrice_sauvegarde\fP (\fBMatrice\fP m, FILE *fichier)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Le fichier d'en tête qui contient la matrice\&. 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef struct \fBMatrice\fP  \fBMatrice\fP"\fBA faire\fP
+.RS 4
+description de la structure 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "void \fBmatrice_affiche\fP (\fBMatrice\fPm)"Permet d'afficher une matrice 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fImatrice\fP la matrice en à afficher 
+.RE
+.PP
+
+.SS "\fBMatrice\fP \fBmatrice_chargement\fP (FILE *fichier)"Permet d'initialiser une matrice à partir d'un fichier 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIfichier\fP le pointeur de fichier 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une matrice initialisé à partir d'un fichier 
+.RE
+.PP
+\fBBogue\fP
+.RS 4
+si dans un fichier la taille est > 9, il y a un problème pour récupérer le nombre de ligne, et de colonnes\&. Il faut changer fgetc par autre chose\&. 
+.RE
+.PP
+
+.SS "\fBMatrice\fP \fBmatrice_creer\fP (intnblig, intnbcol)"Permet d'allouer une matrice vide 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fInblig\fP le nombre de lignes à allouer 
+.br
+\fInbcol\fP le nombre de colonnes à allouer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une matrice nblig*nbcol 
+.RE
+.PP
+
+.SS "\fBMatrice\fP \fBmatrice_init\fP (char *fichier)"Permet d'initialiser une matrice à partir d'un fichier 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIfichier\fP le nom du fichier 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une matrice initialisé à partir d'un fichier 
+.RE
+.PP
+
+.SS "int \fBmatrice_position_appartient\fP (\fBMatrice\fPm, intx, inty)"Permet de savoir si un point est dans la matrice, ou si il en sort 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.br
+\fIx\fP l'asbcisse 
+.br
+\fIy\fP l'ordonnée 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si le point est situé dans la matrice, 0 sinon 
+.RE
+.PP
+
+.SS "int \fBmatrice_sauvegarde\fP (\fBMatrice\fPm, FILE *fichier)"Permet de sauvegarder une matrice dans un fichier 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice à sauvegarder 
+.br
+\fIfichier\fP le nom du fichier dans lequel on sauvegarde la matrice 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

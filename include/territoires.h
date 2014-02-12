@@ -18,7 +18,7 @@
 /** 
  * @file territoires.h
  * 
- * Un ensemble de territoires
+ * @brief Un ensemble de territoires
  */
 
 #ifndef TERRITOIRES_H_INCLUDED

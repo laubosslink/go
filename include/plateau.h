@@ -18,7 +18,7 @@
 /** 
  * @file plateau.h
  * 
- * Contient la position de l'ensemble des pions sur la grille
+ * @brief Contient la position de l'ensemble des pions sur la grille
  */
  
 #ifndef PLATEAU_H_INCLUDED

@@ -5,8 +5,6 @@
 #include <partie.h>
 #include <plateau.h>
 
-
-
 int main(){
 	char choix;
 	
@@ -85,6 +83,7 @@ int main(){
 				/* changement du joueur */
 				echange_joueur(&partie.joueur);
 				
+				/* @todo faire une fonction pour le numero, evite allocaton dans main, et bordel */
 				nom_fichier = malloc(sizeof(char) * 50);
 				strcat(nom_fichier, "extra/sauvegardes/");
 				

@@ -18,7 +18,7 @@
 /** 
  * @file position.h
  * 
- * Une position
+ * @brief Une position
  */
  
 #ifndef POSITION_H_INCLUDED

@@ -1,0 +1,14 @@
+PROJECT_NAME		= "Jeu du GO"
+PROJECT_BRIEF		= "ENSICAEN - Projet Algo S1 - 2014. Realise par PARMENTIER Laurent et ELHIMDI Yasmine"
+
+EXTRACT_ALL		= YES
+
+GENERATE_RTF		= YES
+
+OUTPUT_DIRECTORY	= doc/
+OUTPUT_LANGUAGE		= French
+
+GENERATE_TODOLIST	= YES
+
+PROJECT_LOGO           	= extra/ensi_logo.jpeg
+
