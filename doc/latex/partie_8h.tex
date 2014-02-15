@@ -1,0 +1,145 @@
+\hypertarget{partie_8h}{\section{\-Référence du fichier include/partie.h}
+\label{partie_8h}\index{include/partie.\-h@{include/partie.\-h}}
+}
+
+
+\-Fichier d'en-\/tête permettant de gérer une partie.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$couleur.\-h$>$}\*
+{\ttfamily \#include $<$plateau.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPartie}{\-Partie}
+\end{DoxyCompactItemize}
+\subsection*{\-Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structPartie}{\-Partie} \hyperlink{partie_8h_a7135444ad2f38a510cd8f34366d673e7}{\-Partie}
+\item 
+typedef void($\ast$ \hyperlink{partie_8h_ac95c1237507b0e72ab459319522c1c43}{\-Fonction\-Questions} )(int numero\-Question, \hyperlink{structPartie}{\-Partie} $\ast$partie)
+\end{DoxyCompactItemize}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8h_a2257cb4beec2250fb4d0b5304b8de1ba}{partie\-\_\-initialisation} (\hyperlink{partie_8h_ac95c1237507b0e72ab459319522c1c43}{\-Fonction\-Questions} fonction\-Questions)
+\item 
+int \hyperlink{partie_8h_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegarde} (\hyperlink{structPartie}{\-Partie} partie, \-F\-I\-L\-E $\ast$fichier)
+\item 
+\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8h_a2ab987532fb030da5d66eb14e1648e18}{partie\-\_\-charge} (\-F\-I\-L\-E $\ast$fichier)
+\item 
+void \hyperlink{partie_8h_aad3dae2ec8b9da9475cadac532658e3d}{partie\-\_\-score\-\_\-joueurs} (\hyperlink{structPartie}{\-Partie} p, int $\ast$scores, float val\-Komi)
+\item 
+void \hyperlink{partie_8h_a6c8191cb2c1c0a145d01a5208d2017cc}{partie\-\_\-demande\-\_\-questions} (int numero\-\_\-question, \hyperlink{structPartie}{\-Partie} $\ast$partie)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+\-Fichier d'en-\/tête permettant de gérer une partie. \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-E\-L\-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:elhimdi@ecole.ensicaen.fr}{\tt elhimdi@ecole.\-ensicaen.\-fr}$>$ 
+
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/02-\/2013 
+\end{DoxyDate}
+
+
+\subsection{\-Documentation des définitions de type}
+\hypertarget{partie_8h_ac95c1237507b0e72ab459319522c1c43}{\index{partie.\-h@{partie.\-h}!\-Fonction\-Questions@{\-Fonction\-Questions}}
+\index{\-Fonction\-Questions@{\-Fonction\-Questions}!partie.h@{partie.\-h}}
+\subsubsection[{\-Fonction\-Questions}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf \-Fonction\-Questions})(int numero\-Question, {\bf \-Partie} $\ast$partie)}}\label{partie_8h_ac95c1237507b0e72ab459319522c1c43}
+\hypertarget{partie_8h_a7135444ad2f38a510cd8f34366d673e7}{\index{partie.\-h@{partie.\-h}!\-Partie@{\-Partie}}
+\index{\-Partie@{\-Partie}!partie.h@{partie.\-h}}
+\subsubsection[{\-Partie}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Partie}  {\bf \-Partie}}}\label{partie_8h_a7135444ad2f38a510cd8f34366d673e7}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{partie_8h_a2ab987532fb030da5d66eb14e1648e18}{\index{partie.\-h@{partie.\-h}!partie\-\_\-charge@{partie\-\_\-charge}}
+\index{partie\-\_\-charge@{partie\-\_\-charge}!partie.h@{partie.\-h}}
+\subsubsection[{partie\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf partie\-\_\-charge} (
+\begin{DoxyParamCaption}
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{partie_8h_a2ab987532fb030da5d66eb14e1648e18}
+\-Charge une partie précédement sauvegardée. \-Si le chargement n'est pas possible, retorune un pointeur \-N\-U\-L\-L 
+\begin{DoxyParams}{\-Paramètres}
+{\em fichier} & \-Le fichier à partir du quel on charge la partie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-La partie, ou \-N\-U\-L\-L si le chargement n'est pas possible 
+\end{DoxyReturn}
+\hypertarget{partie_8h_a6c8191cb2c1c0a145d01a5208d2017cc}{\index{partie.\-h@{partie.\-h}!partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}}
+\index{partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}!partie.h@{partie.\-h}}
+\subsubsection[{partie\-\_\-demande\-\_\-questions}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf partie\-\_\-demande\-\_\-questions} (
+\begin{DoxyParamCaption}
+\item[{int}]{numero\-\_\-question, }
+\item[{{\bf \-Partie} $\ast$}]{partie}
+\end{DoxyParamCaption}
+)}}\label{partie_8h_a6c8191cb2c1c0a145d01a5208d2017cc}
+\-Questions a demande a l'utilisateur 
+\begin{DoxyParams}{\-Paramètres}
+{\em numero} & de la question \\
+\hline
+{\em partie} & pointeur vers une partie \\
+\hline
+\end{DoxyParams}
+\hypertarget{partie_8h_a2257cb4beec2250fb4d0b5304b8de1ba}{\index{partie.\-h@{partie.\-h}!partie\-\_\-initialisation@{partie\-\_\-initialisation}}
+\index{partie\-\_\-initialisation@{partie\-\_\-initialisation}!partie.h@{partie.\-h}}
+\subsubsection[{partie\-\_\-initialisation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf partie\-\_\-initialisation} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Fonction\-Questions}}]{fonction\-Questions}
+\end{DoxyParamCaption}
+)}}\label{partie_8h_a2257cb4beec2250fb4d0b5304b8de1ba}
+\-Permet d'initialiser une partie ! 
+\begin{DoxyParams}{\-Paramètres}
+{\em fonction\-Questions} & une fonction qui permet de demander des questions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une partie initialise 
+\end{DoxyReturn}
+\hypertarget{partie_8h_ae887d9089d029f0f4df07e96dae63523}{\index{partie.\-h@{partie.\-h}!partie\-\_\-sauvegarde@{partie\-\_\-sauvegarde}}
+\index{partie\-\_\-sauvegarde@{partie\-\_\-sauvegarde}!partie.h@{partie.\-h}}
+\subsubsection[{partie\-\_\-sauvegarde}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf partie\-\_\-sauvegarde} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{partie, }
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{partie_8h_ae887d9089d029f0f4df07e96dae63523}
+\-Sauvegarde la partie dans sa position actuelle. \-Si la sauvegarde se passe sans problème la fonction retourne 1, 0 sinon 
+\begin{DoxyParams}{\-Paramètres}
+{\em partie} & \-La partie actuelle \\
+\hline
+{\em fichier} & \-Le fichier dans lequel on sauvegarde la partie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+0 si il n'y a pas de problème, 1 sinon 
+\end{DoxyReturn}
+\hypertarget{partie_8h_aad3dae2ec8b9da9475cadac532658e3d}{\index{partie.\-h@{partie.\-h}!partie\-\_\-score\-\_\-joueurs@{partie\-\_\-score\-\_\-joueurs}}
+\index{partie\-\_\-score\-\_\-joueurs@{partie\-\_\-score\-\_\-joueurs}!partie.h@{partie.\-h}}
+\subsubsection[{partie\-\_\-score\-\_\-joueurs}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf partie\-\_\-score\-\_\-joueurs} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p, }
+\item[{int $\ast$}]{scores, }
+\item[{float}]{val\-Komi}
+\end{DoxyParamCaption}
+)}}\label{partie_8h_aad3dae2ec8b9da9475cadac532658e3d}
+\-Calcul la valeur des deux scores des deux joueurs en fin de partie en tenant compte du komi 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la partie \\
+\hline
+{\em scores} & les scores des joueurs \\
+\hline
+{\em val\-Komi} & \\
+\hline
+\end{DoxyParams}

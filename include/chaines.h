@@ -18,7 +18,7 @@
 /** 
  * @file chaines.h
  * 
- * Ensemble des chaines
+ * @brief Ensemble des chaines
  */
 
 #ifndef CHAINES_H_INCLUDED

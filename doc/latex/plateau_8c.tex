@@ -1,0 +1,278 @@
+\hypertarget{plateau_8c}{\section{\-Référence du fichier src/plateau.c}
+\label{plateau_8c}\index{src/plateau.\-c@{src/plateau.\-c}}
+}
+{\ttfamily \#include $<$matrice.\-h$>$}\*
+{\ttfamily \#include $<$ensemble\-\_\-colores.\-h$>$}\*
+{\ttfamily \#include $<$chaine.\-h$>$}\*
+{\ttfamily \#include $<$plateau.\-h$>$}\*
+{\ttfamily \#include $<$couleur.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{plateau_8c_aa1e22cd1f62f82a372ea9064bf20dc1a}{est\-\_\-un\-\_\-pion} (\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} c)
+\item 
+int \hyperlink{plateau_8c_a1c743ade7c4b882ed744379644771532}{est\-\_\-un\-\_\-pion\-\_\-plateau} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
+\item 
+\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8c_a868ea5ad96fe509901a18ed34fec9d85}{creer\-\_\-plateau} (int nbligne, int nbcolonne)
+\item 
+\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8c_a07f20c49b80703211e7a8949f2e702b1}{plateau\-\_\-chargement} (\-F\-I\-L\-E $\ast$fichier)
+\item 
+\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} \hyperlink{plateau_8c_a78f1ad5d8c0744ac1cea6c738163c70e}{plateau\-\_\-get} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p, int x, int y)
+\item 
+void \hyperlink{plateau_8c_aa50accd3b4f1e4eefbe7dc2852a097da}{plateau\-\_\-set} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p, int i, int j, \hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} c)
+\item 
+void \hyperlink{plateau_8c_abb2eff609b3c2f2072ae58b288552465}{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos, \hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} $\ast$chaine)
+\item 
+\hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} \hyperlink{plateau_8c_a9e30ba185721b4e439f27ff5e29be474}{plateau\-\_\-determiner\-\_\-chaine} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
+\item 
+void \hyperlink{plateau_8c_a68c23e65cb6394bb0d2d7d81e184d644}{plateau\-\_\-realiser\-\_\-capture} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} chaine)
+\item 
+int \hyperlink{plateau_8c_a29b162a052880b4bc14ecab174be380b}{plateau\-\_\-est\-\_\-identique} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} ancien\-Plateau)
+\item 
+int \hyperlink{plateau_8c_aa32daf7f27e57e0994beb62b3bba2611}{plateau\-\_\-position\-\_\-appartient} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} position)
+\item 
+int \hyperlink{plateau_8c_a396ddc6f1c29d908e92628deac9c07fc}{plateau\-\_\-copie} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} from, \hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} to)
+\item 
+int \hyperlink{plateau_8c_ae8d9ec3267e5d16b943e20324a8944cd}{plateau\-\_\-sauvegarde} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \-F\-I\-L\-E $\ast$fichier)
+\item 
+void \hyperlink{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-afficher} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{plateau_8c_a868ea5ad96fe509901a18ed34fec9d85}{\index{plateau.\-c@{plateau.\-c}!creer\-\_\-plateau@{creer\-\_\-plateau}}
+\index{creer\-\_\-plateau@{creer\-\_\-plateau}!plateau.c@{plateau.\-c}}
+\subsubsection[{creer\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf creer\-\_\-plateau} (
+\begin{DoxyParamCaption}
+\item[{int}]{nbligne, }
+\item[{int}]{nbcolonne}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a868ea5ad96fe509901a18ed34fec9d85}
+\-Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne 
+\begin{DoxyParams}{\-Paramètres}
+{\em nbligne} & le nombre de ligne \\
+\hline
+{\em nbcolonne} & le nombre de colonnes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un plateau 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_aa1e22cd1f62f82a372ea9064bf20dc1a}{\index{plateau.\-c@{plateau.\-c}!est\-\_\-un\-\_\-pion@{est\-\_\-un\-\_\-pion}}
+\index{est\-\_\-un\-\_\-pion@{est\-\_\-un\-\_\-pion}!plateau.c@{plateau.\-c}}
+\subsubsection[{est\-\_\-un\-\_\-pion}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf est\-\_\-un\-\_\-pion} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Couleur}}]{c}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_aa1e22cd1f62f82a372ea9064bf20dc1a}
+\-Permet de savoir si la couleur est un pion 
+\begin{DoxyParams}{\-Paramètres}
+{\em c} & la couleur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si c'est un pion, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_a1c743ade7c4b882ed744379644771532}{\index{plateau.\-c@{plateau.\-c}!est\-\_\-un\-\_\-pion\-\_\-plateau@{est\-\_\-un\-\_\-pion\-\_\-plateau}}
+\index{est\-\_\-un\-\_\-pion\-\_\-plateau@{est\-\_\-un\-\_\-pion\-\_\-plateau}!plateau.c@{plateau.\-c}}
+\subsubsection[{est\-\_\-un\-\_\-pion\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf est\-\_\-un\-\_\-pion\-\_\-plateau} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Position}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a1c743ade7c4b882ed744379644771532}
+\-Permet de savoir si c'est un pion du plateau 
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & \-Le plateau \\
+\hline
+{\em pos} & \-La position d'un plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si le pion est dans le plateau, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-afficher@{plateau\-\_\-afficher}}
+\index{plateau\-\_\-afficher@{plateau\-\_\-afficher}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-afficher}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf plateau\-\_\-afficher} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{p}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}
+\-Permet d'afficher un plateau dans la console 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & le plateau \\
+\hline
+\end{DoxyParams}
+\hypertarget{plateau_8c_a07f20c49b80703211e7a8949f2e702b1}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-chargement@{plateau\-\_\-chargement}}
+\index{plateau\-\_\-chargement@{plateau\-\_\-chargement}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-chargement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf plateau\-\_\-chargement} (
+\begin{DoxyParamCaption}
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a07f20c49b80703211e7a8949f2e702b1}
+\-Permet de charger un plateau a partir d'un fichier 
+\begin{DoxyParams}{\-Paramètres}
+{\em fichier} & le fichier qui contient le plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un plateau 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_a396ddc6f1c29d908e92628deac9c07fc}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-copie@{plateau\-\_\-copie}}
+\index{plateau\-\_\-copie@{plateau\-\_\-copie}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-copie}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf plateau\-\_\-copie} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{from, }
+\item[{{\bf \-Plateau}}]{to}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a396ddc6f1c29d908e92628deac9c07fc}
+\-Copie un plateau, les deux tableaux sont supposes deja alloues 
+\begin{DoxyParams}{\-Paramètres}
+{\em from} & le plateau source \\
+\hline
+{\em to} & le plateau destination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si la copie a fonctionnee, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_a9e30ba185721b4e439f27ff5e29be474}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-determiner\-\_\-chaine@{plateau\-\_\-determiner\-\_\-chaine}}
+\index{plateau\-\_\-determiner\-\_\-chaine@{plateau\-\_\-determiner\-\_\-chaine}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-determiner\-\_\-chaine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Chaine} {\bf plateau\-\_\-determiner\-\_\-chaine} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Position}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a9e30ba185721b4e439f27ff5e29be474}
+\-Produit la chaine a laquelle appartient le pion, a la position pos sur le plateau. \-Si il n'y a pas de pion, sur cette case alors le resultat est \-N\-U\-L\-L 
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & le plateau \\
+\hline
+{\em pos} & la position du pion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-N\-U\-L\-L si il n'y a pas de pion, une chaine sinon 
+\end{DoxyReturn}
+\-I\-M\-P\-O\-R\-T\-A\-N\-T \hypertarget{plateau_8c_abb2eff609b3c2f2072ae58b288552465}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-determiner\-\_\-chaine\-\_\-rec@{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}}
+\index{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec@{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf plateau\-\_\-determiner\-\_\-chaine\-\_\-rec} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Position}}]{pos, }
+\item[{{\bf \-Chaine} $\ast$}]{chaine}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_abb2eff609b3c2f2072ae58b288552465}
+\hypertarget{plateau_8c_a29b162a052880b4bc14ecab174be380b}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-est\-\_\-identique@{plateau\-\_\-est\-\_\-identique}}
+\index{plateau\-\_\-est\-\_\-identique@{plateau\-\_\-est\-\_\-identique}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-est\-\_\-identique}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf plateau\-\_\-est\-\_\-identique} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Plateau}}]{ancien\-Plateau}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a29b162a052880b4bc14ecab174be380b}
+indique sur l'organisation du plateau est identique a une precedente organisation de plateau. 
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & le plateau actuel \\
+\hline
+{\em ancien\-Plateau} & l'ancien plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si identique, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_a78f1ad5d8c0744ac1cea6c738163c70e}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-get@{plateau\-\_\-get}}
+\index{plateau\-\_\-get@{plateau\-\_\-get}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Couleur} {\bf plateau\-\_\-get} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{m, }
+\item[{int}]{x, }
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a78f1ad5d8c0744ac1cea6c738163c70e}
+\-Permet de recuperer un pion sur une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice \\
+\hline
+{\em i} & l'abscisse \\
+\hline
+{\em j} & l'ordonnee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-La couleur du pion 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_aa32daf7f27e57e0994beb62b3bba2611}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-position\-\_\-appartient@{plateau\-\_\-position\-\_\-appartient}}
+\index{plateau\-\_\-position\-\_\-appartient@{plateau\-\_\-position\-\_\-appartient}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-position\-\_\-appartient}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf plateau\-\_\-position\-\_\-appartient} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Position}}]{position}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_aa32daf7f27e57e0994beb62b3bba2611}
+\-Permet de savoir si une position est sur plateau 
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & le plateau \\
+\hline
+{\em position} & la position à vérifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si elle appartient au plateau, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_a68c23e65cb6394bb0d2d7d81e184d644}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-realiser\-\_\-capture@{plateau\-\_\-realiser\-\_\-capture}}
+\index{plateau\-\_\-realiser\-\_\-capture@{plateau\-\_\-realiser\-\_\-capture}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-realiser\-\_\-capture}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf plateau\-\_\-realiser\-\_\-capture} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Chaine}}]{chaine}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a68c23e65cb6394bb0d2d7d81e184d644}
+\-Realise la capture des pions correspondant a la chaine en les enlevant du plateau 
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & le plateau \\
+\hline
+{\em chaine} & une chaine \\
+\hline
+\end{DoxyParams}
+\hypertarget{plateau_8c_ae8d9ec3267e5d16b943e20324a8944cd}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-sauvegarde@{plateau\-\_\-sauvegarde}}
+\index{plateau\-\_\-sauvegarde@{plateau\-\_\-sauvegarde}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-sauvegarde}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf plateau\-\_\-sauvegarde} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_ae8d9ec3267e5d16b943e20324a8944cd}
+\-Permet de sauvegarde un plateau dans un fichier 
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & le plateau \\
+\hline
+{\em fichier} & le fichier dans lequel on sauvegarde le plateau \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si tout s'est bien passé, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_aa50accd3b4f1e4eefbe7dc2852a097da}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-set@{plateau\-\_\-set}}
+\index{plateau\-\_\-set@{plateau\-\_\-set}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf plateau\-\_\-set} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{m, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{{\bf \-Couleur}}]{c}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_aa50accd3b4f1e4eefbe7dc2852a097da}
+\-Permet de mettre un pion sur le plateau 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice \\
+\hline
+{\em i} & l'abscisse \\
+\hline
+{\em j} & l'ordonnee \\
+\hline
+{\em c} & la couleur du pion \\
+\hline
+\end{DoxyParams}

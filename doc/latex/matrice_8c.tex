@@ -1,0 +1,138 @@
+\hypertarget{matrice_8c}{\section{\-Référence du fichier lib/matrice/src/matrice.c}
+\label{matrice_8c}\index{lib/matrice/src/matrice.\-c@{lib/matrice/src/matrice.\-c}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$matrice.\-h$>$}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structMatrice}{\-Matrice} \hyperlink{matrice_8c_a634f509afa7d665d250bbc49f1229c1c}{matrice\-\_\-creer} (int nblig, int nbcol)
+\item 
+\hyperlink{structMatrice}{\-Matrice} \hyperlink{matrice_8c_ad3b953551d15e015f4f3027ae2f259da}{matrice\-\_\-chargement} (\-F\-I\-L\-E $\ast$fichier)
+\item 
+\hyperlink{structMatrice}{\-Matrice} \hyperlink{matrice_8c_a91edc9c5d80be64ff2431b1784cf1cc5}{matrice\-\_\-init} (char $\ast$fichier)
+\item 
+int \hyperlink{matrice_8c_abc0378614b84ad7d0fb507f8646887e0}{matrice\-\_\-position\-\_\-appartient} (\hyperlink{structMatrice}{\-Matrice} m, int x, int y)
+\item 
+void \hyperlink{matrice_8c_a42e5dda540697aa95793e22c7641943a}{matrice\-\_\-affiche} (\hyperlink{structMatrice}{\-Matrice} m)
+\item 
+int \hyperlink{matrice_8c_a715838df2af0c1e069d599aeaf4f5289}{matrice\-\_\-sauvegarde} (\hyperlink{structMatrice}{\-Matrice} m, \-F\-I\-L\-E $\ast$fichier)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+\-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+
+\-E\-L \-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:yasmine.elhimdi@ecole.enciscaen.fr}{\tt yasmine.\-elhimdi@ecole.\-enciscaen.\-fr}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/12-\/2013
+\end{DoxyDate}
+\-Le code source permettant de gérer des matrices 
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{matrice_8c_a42e5dda540697aa95793e22c7641943a}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-affiche@{matrice\-\_\-affiche}}
+\index{matrice\-\_\-affiche@{matrice\-\_\-affiche}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-affiche}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf matrice\-\_\-affiche} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a42e5dda540697aa95793e22c7641943a}
+\-Permet d'afficher une matrice 
+\begin{DoxyParams}{\-Paramètres}
+{\em matrice} & la matrice en à afficher \\
+\hline
+\end{DoxyParams}
+\hypertarget{matrice_8c_ad3b953551d15e015f4f3027ae2f259da}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-chargement@{matrice\-\_\-chargement}}
+\index{matrice\-\_\-chargement@{matrice\-\_\-chargement}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-chargement}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Matrice} {\bf matrice\-\_\-chargement} (
+\begin{DoxyParamCaption}
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_ad3b953551d15e015f4f3027ae2f259da}
+\-Permet d'initialiser une matrice à partir d'un fichier 
+\begin{DoxyParams}{\-Paramètres}
+{\em fichier} & le pointeur de fichier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une matrice initialisé à partir d'un fichier 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{\-Bogue}
+\item[\hyperlink{bug__bug000001}{\-Bogue}]si dans un fichier la taille est $>$ 9, il y a un problème pour récupérer le nombre de ligne, et de colonnes. \-Il faut changer fgetc par autre chose. \end{DoxyRefDesc}
+\hypertarget{matrice_8c_a634f509afa7d665d250bbc49f1229c1c}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-creer@{matrice\-\_\-creer}}
+\index{matrice\-\_\-creer@{matrice\-\_\-creer}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-creer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Matrice} {\bf matrice\-\_\-creer} (
+\begin{DoxyParamCaption}
+\item[{int}]{nblig, }
+\item[{int}]{nbcol}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a634f509afa7d665d250bbc49f1229c1c}
+\-Permet d'allouer une matrice vide 
+\begin{DoxyParams}{\-Paramètres}
+{\em nblig} & le nombre de lignes à allouer \\
+\hline
+{\em nbcol} & le nombre de colonnes à allouer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une matrice nblig$\ast$nbcol 
+\end{DoxyReturn}
+\hypertarget{matrice_8c_a91edc9c5d80be64ff2431b1784cf1cc5}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-init@{matrice\-\_\-init}}
+\index{matrice\-\_\-init@{matrice\-\_\-init}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Matrice} {\bf matrice\-\_\-init} (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a91edc9c5d80be64ff2431b1784cf1cc5}
+\-Permet d'initialiser une matrice à partir d'un fichier 
+\begin{DoxyParams}{\-Paramètres}
+{\em fichier} & le nom du fichier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une matrice initialisé à partir d'un fichier 
+\end{DoxyReturn}
+\hypertarget{matrice_8c_abc0378614b84ad7d0fb507f8646887e0}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-position\-\_\-appartient@{matrice\-\_\-position\-\_\-appartient}}
+\index{matrice\-\_\-position\-\_\-appartient@{matrice\-\_\-position\-\_\-appartient}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-position\-\_\-appartient}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf matrice\-\_\-position\-\_\-appartient} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_abc0378614b84ad7d0fb507f8646887e0}
+\-Permet de savoir si un point est dans la matrice, ou si il en sort 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice \\
+\hline
+{\em x} & l'asbcisse \\
+\hline
+{\em y} & l'ordonnée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si le point est situé dans la matrice, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{matrice_8c_a715838df2af0c1e069d599aeaf4f5289}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-sauvegarde@{matrice\-\_\-sauvegarde}}
+\index{matrice\-\_\-sauvegarde@{matrice\-\_\-sauvegarde}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-sauvegarde}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf matrice\-\_\-sauvegarde} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m, }
+\item[{\-F\-I\-L\-E $\ast$}]{fichier}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a715838df2af0c1e069d599aeaf4f5289}
+\-Permet de sauvegarder une matrice dans un fichier 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice à sauvegarder \\
+\hline
+{\em fichier} & le nom du fichier dans lequel on sauvegarde la matrice \\
+\hline
+\end{DoxyParams}

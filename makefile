@@ -16,17 +16,20 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 
 CFLAGS=-I $(INCDIR)
 
-.PHONY: all go \
+.PHONY: all go doc \
 		test_plateau test_libensemble test_libmatrice ensemble_colores_test \
 		libensemble libmatrice \
 		clean distclean
 
 all: go
 
-go: $(BINDIR)/go
+go: libensemble libmatrice $(BINDIR)/go
 
-$(BINDIR)/go: $(SRCDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
+$(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+doc:
+	doxygen doxygen_config
 
 ##
 #Fichiers SRCDIR/*.c vers OBJDIR/*.o
@@ -41,7 +44,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 # Plateau
 
-test_plateau: $(LIBDIR)/ensemble/bin/libensemble.so $(LIBDIR)/matrice/bin/libmatrice.so $(BINDIR)/test_plateau
+test_plateau: libmatrice libensemble $(BINDIR)/test_plateau
 
 $(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice

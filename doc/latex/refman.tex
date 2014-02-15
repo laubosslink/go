@@ -1,0 +1,120 @@
+\documentclass[a4paper]{book}
+\usepackage{makeidx}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage[table]{xcolor}
+\usepackage{textcomp}
+\usepackage{alltt}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[pdftex,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\else
+\usepackage[ps2pdf,
+            pagebackref=true,
+            colorlinks=true,
+            linkcolor=blue,
+            unicode
+           ]{hyperref}
+\usepackage{pspicture}
+\fi
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{sectsty}
+\usepackage[titles]{tocloft}
+\usepackage{doxygen}
+\lstset{language=C++,inputencoding=utf8,basicstyle=\footnotesize,breaklines=true,breakatwhitespace=true,tabsize=8,numbers=left }
+\makeindex
+\setcounter{tocdepth}{3}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\familydefault}{\sfdefault}
+\hfuzz=15pt
+\setlength{\emergencystretch}{15pt}
+\hbadness=750
+\tolerance=750
+\begin{document}
+\hypersetup{pageanchor=false,citecolor=blue}
+\begin{titlepage}
+\vspace*{7cm}
+\begin{center}
+{\Large \-Jeu du \-G\-O }\\
+\vspace*{1cm}
+{\large \-Généré par Doxygen 1.7.6.1}\\
+\vspace*{0.5cm}
+{\small Mercredi Février 12 2014 14:36:03}\\
+\end{center}
+\end{titlepage}
+\clearemptydoublepage
+\pagenumbering{roman}
+\tableofcontents
+\clearemptydoublepage
+\pagenumbering{arabic}
+\hypersetup{pageanchor=true,citecolor=blue}
+\chapter{\-Liste des choses à faire}
+\label{todo}
+\hypertarget{todo}{}
+\input{todo}
+\chapter{\-Liste des bogues}
+\label{bug}
+\hypertarget{bug}{}
+\input{bug}
+\chapter{\-Index des classes}
+\input{annotated}
+\chapter{\-Index des fichiers}
+\input{files}
+\chapter{\-Documentation des classes}
+\input{structCell}
+\input{structEnsemble}
+\input{structEnsemble__Colores}
+\input{structMatrice}
+\input{structPartie}
+\input{structPion}
+\input{structPosition}
+\chapter{\-Documentation des fichiers}
+\input{chaine_8h}
+\input{chaines_8h}
+\input{couleur_8h}
+\input{ensemble_8h}
+\input{ensemble__colores_8h}
+\input{ensemble__positions_8h}
+\input{libertes_8h}
+\input{matrice_8h}
+\input{partie_8h}
+\input{pion_8h}
+\input{pions_8h}
+\input{plateau_8h}
+\input{position_8h}
+\input{positions_8h}
+\input{territoire_8h}
+\input{territoires_8h}
+\input{ensemble_8c}
+\input{src_2test__ensemble_8c}
+\input{test_2test__ensemble_8c}
+\input{matrice_8c}
+\input{test__matrice_8c}
+\input{ensemble__colores_8c}
+\input{ensemble__positions_8c}
+\input{go_8c}
+\input{libertes_8c}
+\input{partie_8c}
+\input{plateau_8c}
+\input{position_8c}
+\input{test_8h}
+\input{test__ensemble__colores_8c}
+\input{test__ensemble__positions_8c}
+\input{test__plateau_8c}
+\printindex
+\end{document}

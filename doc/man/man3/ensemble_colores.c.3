@@ -1,0 +1,149 @@
+.TH "src/ensemble_colores.c" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/ensemble_colores.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <position\&.h>\fP
+.br
+\fC#include <positions\&.h>\fP
+.br
+\fC#include <ensemble\&.h>\fP
+.br
+\fC#include <ensemble_colores\&.h>\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnsemble_Colores\fP * \fBcreer_ensemble_colores\fP ()"
+.br
+.ti -1c
+.RI "int \fBensemble_colores_vide\fP (\fBEnsemble_Colores\fP *E)"
+.br
+.ti -1c
+.RI "\fBCell\fP * \fBensemble_colores_tete\fP (\fBEnsemble_Colores\fP *E)"
+.br
+.ti -1c
+.RI "\fBCell\fP * \fBensemble_colores_courant\fP (\fBEnsemble_Colores\fP *E)"
+.br
+.ti -1c
+.RI "int \fBensemble_colores_suivant\fP (\fBEnsemble_Colores\fP *E)"
+.br
+.ti -1c
+.RI "int \fBensemble_colores_appartient\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"
+.br
+.ti -1c
+.RI "\fBEnsemble_Colores\fP * \fBensemble_colores_enlever\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"
+.br
+.ti -1c
+.RI "void \fBensemble_colores_ajouter\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"
+.br
+.ti -1c
+.RI "\fBPosition\fP * \fBensemble_colores_contenu\fP (\fBCell\fP *c)"
+.br
+.in -1c
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBEnsemble_Colores\fP* \fBcreer_ensemble_colores\fP ()"Permet de creer un ensemble 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un pointeur vers un ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_colores_ajouter\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"Permet d'ajouter un élément dans un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIelement\fP l'élément à ajouter 
+.RE
+.PP
+
+.SS "int \fBensemble_colores_appartient\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIelement\fP l'élément 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si il appartient, 0 sinon 
+.RE
+.PP
+
+.SS "\fBPosition\fP* \fBensemble_colores_contenu\fP (\fBCell\fP *c)"Permet de récupérer le contenu d'une cellule d'ensemble colores 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIc\fP la cellule 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une position 
+.RE
+.PP
+
+.SS "\fBCell\fP* \fBensemble_colores_courant\fP (\fBEnsemble_Colores\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
+.PP
+\fBRenvoie:\fP
+.RS 4
+le pointeur sur l'élément courant 
+.RE
+.PP
+
+.SS "\fBEnsemble_Colores\fP* \fBensemble_colores_enlever\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"Permet de supprimer un élément dans l'ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIelement\fP l'élement à supprimer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+E pointeur vers le nouvel ensemble privé de l'élément supprimé 
+.RE
+.PP
+
+.SS "int \fBensemble_colores_suivant\fP (\fBEnsemble_Colores\fP *E)"Permet de dire s'il y a un élément suivant ou non 
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 ou 0 
+.RE
+.PP
+
+.SS "\fBCell\fP* \fBensemble_colores_tete\fP (\fBEnsemble_Colores\fP *E)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
+.PP
+\fBRenvoie:\fP
+.RS 4
+le pointeur de la tete de l'ensemble 
+.RE
+.PP
+
+.SS "int \fBensemble_colores_vide\fP (\fBEnsemble_Colores\fP *E)"Permet de vérifier si un ensemble est vide 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si il l'est 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

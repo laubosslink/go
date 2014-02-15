@@ -14,13 +14,12 @@
  * @version 1.1 
  * @date 03-02-2013
  * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
  * @file ensemble_positions.h
  * 
- * structures cell et Ensemble permettant la manipulation d'ensembles
+ * @brief structures cell et Ensemble permettant la manipulation d'ensembles
  */
 
 #ifndef ENSEMBLE_POSITIONS_H_INCLUDED

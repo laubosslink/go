@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Jeu du GO: Référence du fichier lib/ensemble/src/ensemble.c</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  <td id="projectlogo"><img alt="Logo" src="ensi_logo.jpeg"/></td>
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Jeu du GO
+   
+   </div>
+   <div id="projectbrief">ENSICAEN - Projet Algo S1 - 2014. Realise par PARMENTIER Laurent et ELHIMDI Yasmine</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier lib/ensemble/src/ensemble.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="position_8h_source.html">position.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ensemble_8h_source.html">ensemble.h</a>&gt;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#a5a38da96e292ee9603aa8c38b7eca270">ensemble_init</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#a896ef1d92c5fdfff3bce4f1daea43f31">creer_ensemble</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#a44307c9a5fc03e2950375401fe00282c">ensemble_vide</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#a49fbcb97f3bb110025052809e42aad2f">ensemble_tete</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#afe671e087f7eae69e5e89df96f2eb1c4">ensemble_courant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#aa786b13e0846e401cfc327d5f3876251">ensemble_suivant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#ae12cb38d281d2d744899214fba976abb">ensemble_appartient</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E, void *element)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#a6839b221efdc6b7d38eb13e4591e58f6">ensemble_enlever</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E, void *element)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#aa0fd09212e6ed9154a9f01909039f384">ensemble_ajouter</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E, void *element)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8c.html#ac8b8082e3fa0171fe35373c3c6af36c4">ensemble_concatene</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *e1, <a class="el" href="structEnsemble.html">Ensemble</a> *e2)</td></tr>
+</table>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a896ef1d92c5fdfff3bce4f1daea43f31"></a><!-- doxytag: member="ensemble.c::creer_ensemble" ref="a896ef1d92c5fdfff3bce4f1daea43f31" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEnsemble.html">Ensemble</a>* <a class="el" href="ensemble_8c.html#a896ef1d92c5fdfff3bce4f1daea43f31">creer_ensemble</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de creer un ensemble </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un pointeur vers un ensemble </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa0fd09212e6ed9154a9f01909039f384"></a><!-- doxytag: member="ensemble.c::ensemble_ajouter" ref="aa0fd09212e6ed9154a9f01909039f384" args="(Ensemble *E, void *element)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="ensemble_8c.html#aa0fd09212e6ed9154a9f01909039f384">ensemble_ajouter</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet d'ajouter un élément dans un ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>l'élément à ajouter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae12cb38d281d2d744899214fba976abb"></a><!-- doxytag: member="ensemble.c::ensemble_appartient" ref="ae12cb38d281d2d744899214fba976abb" args="(Ensemble *E, void *element)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="ensemble_8c.html#ae12cb38d281d2d744899214fba976abb">ensemble_appartient</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de vérifier qu'un élément appartiennent à un ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>l'élément </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si il appartient, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac8b8082e3fa0171fe35373c3c6af36c4"></a><!-- doxytag: member="ensemble.c::ensemble_concatene" ref="ac8b8082e3fa0171fe35373c3c6af36c4" args="(Ensemble *e1, Ensemble *e2)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEnsemble.html">Ensemble</a>* <a class="el" href="ensemble_8c.html#ac8b8082e3fa0171fe35373c3c6af36c4">ensemble_concatene</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>e1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>e2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Përmet de concatener deux ensembles </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e1</td><td>l'ensemble e1 ajouter en "tête" </td></tr>
+    <tr><td class="paramname">e2</td><td>l'ensemble e2 ajouter en bout de e1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un nouvel ensemble </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afe671e087f7eae69e5e89df96f2eb1c4"></a><!-- doxytag: member="ensemble.c::ensemble_courant" ref="afe671e087f7eae69e5e89df96f2eb1c4" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCell.html">Cell</a>* <a class="el" href="ensemble_8c.html#afe671e087f7eae69e5e89df96f2eb1c4">ensemble_courant</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de positionner le pointeur sur un des éléments de l'ensemble </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>le pointeur sur l'élément courant </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6839b221efdc6b7d38eb13e4591e58f6"></a><!-- doxytag: member="ensemble.c::ensemble_enlever" ref="a6839b221efdc6b7d38eb13e4591e58f6" args="(Ensemble *E, void *element)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEnsemble.html">Ensemble</a>* <a class="el" href="ensemble_8c.html#a6839b221efdc6b7d38eb13e4591e58f6">ensemble_enlever</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>element</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de supprimer un élément dans l'ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">element</td><td>l'élement à supprimer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>E pointeur vers le nouvel ensemble privé de l'élément supprimé </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5a38da96e292ee9603aa8c38b7eca270"></a><!-- doxytag: member="ensemble.c::ensemble_init" ref="a5a38da96e292ee9603aa8c38b7eca270" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="ensemble_8c.html#a5a38da96e292ee9603aa8c38b7eca270">ensemble_init</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet d'initialiser un ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="aa786b13e0846e401cfc327d5f3876251"></a><!-- doxytag: member="ensemble.c::ensemble_suivant" ref="aa786b13e0846e401cfc327d5f3876251" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="ensemble_8c.html#aa786b13e0846e401cfc327d5f3876251">ensemble_suivant</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de dire s'il y a un élément suivant ou non </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 ou 0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49fbcb97f3bb110025052809e42aad2f"></a><!-- doxytag: member="ensemble.c::ensemble_tete" ref="a49fbcb97f3bb110025052809e42aad2f" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCell.html">Cell</a>* <a class="el" href="ensemble_8c.html#a49fbcb97f3bb110025052809e42aad2f">ensemble_tete</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de positionner le pointeur tête sur le debut de mon ensemble </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>le pointeur de la tete de l'ensemble </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a44307c9a5fc03e2950375401fe00282c"></a><!-- doxytag: member="ensemble.c::ensemble_vide" ref="a44307c9a5fc03e2950375401fe00282c" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="ensemble_8c.html#a44307c9a5fc03e2950375401fe00282c">ensemble_vide</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de vérifier si un ensemble est vide </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si il l'estsinon </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Février 12 2014 14:36:02 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

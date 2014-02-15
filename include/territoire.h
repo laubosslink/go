@@ -17,8 +17,8 @@
  
 /** 
  * @file territoire.h
- *@todo les if not define  
- * Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant compte des bords du plateau
+ *
+ * @brief Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant compte des bords du plateau
  */
 
 #ifndef TERRITOIRE_H_INCLUDED

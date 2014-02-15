@@ -1,0 +1,190 @@
+.TH "include/ensemble_positions.h" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/ensemble_positions.h \- 
+.PP
+structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ensemble\&.h>\fP
+.br
+\fC#include <position\&.h>\fP
+.br
+
+.SS "Définitions de type"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBEnsemble\fP \fBEnsemble_Positions\fP"
+.br
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBEnsemble_Positions\fP * \fBcreer_ensemble_positions\fP ()"
+.br
+.ti -1c
+.RI "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fP *E)"
+.br
+.ti -1c
+.RI "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"
+.br
+.ti -1c
+.RI "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"
+.br
+.ti -1c
+.RI "\fBEnsemble_Positions\fP * \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"
+.br
+.ti -1c
+.RI "\fBCell\fP * \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fP *E)"
+.br
+.ti -1c
+.RI "\fBCell\fP * \fBensemble_positions_courant\fP (\fBEnsemble_Positions\fP *E)"
+.br
+.ti -1c
+.RI "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fP *E)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+.RE
+.PP
+
+.SH "Documentation des définitions de type"
+.PP 
+.SS "typedef \fBEnsemble\fP \fBEnsemble_Positions\fP"
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBEnsemble_Positions\fP* \fBcreer_ensemble_positions\fP ()"Permet de creer un ensemble 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un pointeur vers un ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"Permet d'ajouter un élément dans un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIelement\fP l'élément à ajouter 
+.RE
+.PP
+
+.SS "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIelement\fP l'élément 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si il appartient, 0 sinon 
+.RE
+.PP
+
+.SS "\fBCell\fP* \fBensemble_positions_courant\fP (\fBEnsemble_Positions\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
+.PP
+\fBRenvoie:\fP
+.RS 4
+le pointeur sur l'élément courant 
+.RE
+.PP
+
+.SS "\fBEnsemble_Positions\fP* \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"Permet de supprimer un élément dans l'ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIelement\fP l'élement à supprimer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+E pointeur vers le nouvel ensemble privé de l'élément supprimé 
+.RE
+.PP
+
+.SS "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fP *E)"Permet de dire s'il y a un élément suivant ou non 
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 ou 0 
+.RE
+.PP
+
+.SS "\fBCell\fP* \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fP *E)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
+.PP
+\fBRenvoie:\fP
+.RS 4
+le pointeur de la tete de l'ensemble 
+.RE
+.PP
+
+.SS "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fP *E)"Permet de vérifier si un ensemble est vide 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si il l'est 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

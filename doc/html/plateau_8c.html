@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Jeu du GO: Référence du fichier src/plateau.c</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  <td id="projectlogo"><img alt="Logo" src="ensi_logo.jpeg"/></td>
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Jeu du GO
+   
+   </div>
+   <div id="projectbrief">ENSICAEN - Projet Algo S1 - 2014. Realise par PARMENTIER Laurent et ELHIMDI Yasmine</div>
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="pages.html"><span>Pages&#160;associées</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier src/plateau.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="matrice_8h_source.html">matrice.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ensemble__colores_8h_source.html">ensemble_colores.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="chaine_8h_source.html">chaine.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="plateau_8h_source.html">plateau.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="couleur_8h_source.html">couleur.h</a>&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+</div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#aa1e22cd1f62f82a372ea9064bf20dc1a">est_un_pion</a> (<a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> c)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a1c743ade7c4b882ed744379644771532">est_un_pion_plateau</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a868ea5ad96fe509901a18ed34fec9d85">creer_plateau</a> (int nbligne, int nbcolonne)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a07f20c49b80703211e7a8949f2e702b1">plateau_chargement</a> (FILE *fichier)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a78f1ad5d8c0744ac1cea6c738163c70e">plateau_get</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p, int x, int y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#aa50accd3b4f1e4eefbe7dc2852a097da">plateau_set</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p, int i, int j, <a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> c)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#abb2eff609b3c2f2072ae58b288552465">plateau_determiner_chaine_rec</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos, <a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a> *chaine)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a9e30ba185721b4e439f27ff5e29be474">plateau_determiner_chaine</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a68c23e65cb6394bb0d2d7d81e184d644">plateau_realiser_capture</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a> chaine)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a29b162a052880b4bc14ecab174be380b">plateau_est_identique</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> ancienPlateau)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#aa32daf7f27e57e0994beb62b3bba2611">plateau_position_appartient</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> position)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a396ddc6f1c29d908e92628deac9c07fc">plateau_copie</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> from, <a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> to)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#ae8d9ec3267e5d16b943e20324a8944cd">plateau_sauvegarde</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, FILE *fichier)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#ad68ec9a561a948d5452a6f9f0d47ad5e">plateau_afficher</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p)</td></tr>
+</table>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a868ea5ad96fe509901a18ed34fec9d85"></a><!-- doxytag: member="plateau.c::creer_plateau" ref="a868ea5ad96fe509901a18ed34fec9d85" args="(int nbligne, int nbcolonne)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> <a class="el" href="plateau_8c.html#a868ea5ad96fe509901a18ed34fec9d85">creer_plateau</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbligne</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbcolonne</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nbligne</td><td>le nombre de ligne </td></tr>
+    <tr><td class="paramname">nbcolonne</td><td>le nombre de colonnes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un plateau </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa1e22cd1f62f82a372ea9064bf20dc1a"></a><!-- doxytag: member="plateau.c::est_un_pion" ref="aa1e22cd1f62f82a372ea9064bf20dc1a" args="(Couleur c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="plateau_8c.html#aa1e22cd1f62f82a372ea9064bf20dc1a">est_un_pion</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de savoir si la couleur est un pion </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>la couleur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si c'est un pion, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1c743ade7c4b882ed744379644771532"></a><!-- doxytag: member="plateau.c::est_un_pion_plateau" ref="a1c743ade7c4b882ed744379644771532" args="(Plateau plateau, Position pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="plateau_8c.html#a1c743ade7c4b882ed744379644771532">est_un_pion_plateau</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPosition.html">Position</a>&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de savoir si c'est un pion du plateau </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>Le plateau </td></tr>
+    <tr><td class="paramname">pos</td><td>La position d'un plateau </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si le pion est dans le plateau, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad68ec9a561a948d5452a6f9f0d47ad5e"></a><!-- doxytag: member="plateau.c::plateau_afficher" ref="ad68ec9a561a948d5452a6f9f0d47ad5e" args="(Plateau p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="plateau_8c.html#ad68ec9a561a948d5452a6f9f0d47ad5e">plateau_afficher</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet d'afficher un plateau dans la console </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>le plateau </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a07f20c49b80703211e7a8949f2e702b1"></a><!-- doxytag: member="plateau.c::plateau_chargement" ref="a07f20c49b80703211e7a8949f2e702b1" args="(FILE *fichier)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> <a class="el" href="plateau_8c.html#a07f20c49b80703211e7a8949f2e702b1">plateau_chargement</a> </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fichier</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de charger un plateau a partir d'un fichier </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fichier</td><td>le fichier qui contient le plateau </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un plateau </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a396ddc6f1c29d908e92628deac9c07fc"></a><!-- doxytag: member="plateau.c::plateau_copie" ref="a396ddc6f1c29d908e92628deac9c07fc" args="(Plateau from, Plateau to)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="plateau_8c.html#a396ddc6f1c29d908e92628deac9c07fc">plateau_copie</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>from</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>to</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Copie un plateau, les deux tableaux sont supposes deja alloues </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from</td><td>le plateau source </td></tr>
+    <tr><td class="paramname">to</td><td>le plateau destination </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si la copie a fonctionnee, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e30ba185721b4e439f27ff5e29be474"></a><!-- doxytag: member="plateau.c::plateau_determiner_chaine" ref="a9e30ba185721b4e439f27ff5e29be474" args="(Plateau plateau, Position pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a> <a class="el" href="plateau_8c.html#a9e30ba185721b4e439f27ff5e29be474">plateau_determiner_chaine</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPosition.html">Position</a>&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Produit la chaine a laquelle appartient le pion, a la position pos sur le plateau. Si il n'y a pas de pion, sur cette case alors le resultat est NULL </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>le plateau </td></tr>
+    <tr><td class="paramname">pos</td><td>la position du pion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>NULL si il n'y a pas de pion, une chaine sinon </dd></dl>
+<p>IMPORTANT </p>
+
+</div>
+</div>
+<a class="anchor" id="abb2eff609b3c2f2072ae58b288552465"></a><!-- doxytag: member="plateau.c::plateau_determiner_chaine_rec" ref="abb2eff609b3c2f2072ae58b288552465" args="(Plateau plateau, Position pos, Chaine *chaine)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="plateau_8c.html#abb2eff609b3c2f2072ae58b288552465">plateau_determiner_chaine_rec</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPosition.html">Position</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a> *&#160;</td>
+          <td class="paramname"><em>chaine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a29b162a052880b4bc14ecab174be380b"></a><!-- doxytag: member="plateau.c::plateau_est_identique" ref="a29b162a052880b4bc14ecab174be380b" args="(Plateau plateau, Plateau ancienPlateau)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="plateau_8c.html#a29b162a052880b4bc14ecab174be380b">plateau_est_identique</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>ancienPlateau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>indique sur l'organisation du plateau est identique a une precedente organisation de plateau. </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>le plateau actuel </td></tr>
+    <tr><td class="paramname">ancienPlateau</td><td>l'ancien plateau </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si identique, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a78f1ad5d8c0744ac1cea6c738163c70e"></a><!-- doxytag: member="plateau.c::plateau_get" ref="a78f1ad5d8c0744ac1cea6c738163c70e" args="(Plateau p, int x, int y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> <a class="el" href="plateau_8c.html#a78f1ad5d8c0744ac1cea6c738163c70e">plateau_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de recuperer un pion sur une position </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+    <tr><td class="paramname">i</td><td>l'abscisse </td></tr>
+    <tr><td class="paramname">j</td><td>l'ordonnee </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>La couleur du pion </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa32daf7f27e57e0994beb62b3bba2611"></a><!-- doxytag: member="plateau.c::plateau_position_appartient" ref="aa32daf7f27e57e0994beb62b3bba2611" args="(Plateau plateau, Position position)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="plateau_8c.html#aa32daf7f27e57e0994beb62b3bba2611">plateau_position_appartient</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPosition.html">Position</a>&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de savoir si une position est sur plateau </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>le plateau </td></tr>
+    <tr><td class="paramname">position</td><td>la position à vérifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si elle appartient au plateau, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a68c23e65cb6394bb0d2d7d81e184d644"></a><!-- doxytag: member="plateau.c::plateau_realiser_capture" ref="a68c23e65cb6394bb0d2d7d81e184d644" args="(Plateau plateau, Chaine chaine)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="plateau_8c.html#a68c23e65cb6394bb0d2d7d81e184d644">plateau_realiser_capture</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a>&#160;</td>
+          <td class="paramname"><em>chaine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Realise la capture des pions correspondant a la chaine en les enlevant du plateau </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>le plateau </td></tr>
+    <tr><td class="paramname">chaine</td><td>une chaine </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae8d9ec3267e5d16b943e20324a8944cd"></a><!-- doxytag: member="plateau.c::plateau_sauvegarde" ref="ae8d9ec3267e5d16b943e20324a8944cd" args="(Plateau plateau, FILE *fichier)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="plateau_8c.html#ae8d9ec3267e5d16b943e20324a8944cd">plateau_sauvegarde</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>fichier</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de sauvegarde un plateau dans un fichier </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>le plateau </td></tr>
+    <tr><td class="paramname">fichier</td><td>le fichier dans lequel on sauvegarde le plateau </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si tout s'est bien passé, 0 sinon </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aa50accd3b4f1e4eefbe7dc2852a097da"></a><!-- doxytag: member="plateau.c::plateau_set" ref="aa50accd3b4f1e4eefbe7dc2852a097da" args="(Plateau p, int i, int j, Couleur c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="plateau_8c.html#aa50accd3b4f1e4eefbe7dc2852a097da">plateau_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de mettre un pion sur le plateau </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+    <tr><td class="paramname">i</td><td>l'abscisse </td></tr>
+    <tr><td class="paramname">j</td><td>l'ordonnee </td></tr>
+    <tr><td class="paramname">c</td><td>la couleur du pion </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Définitions de type</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Énumérations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Valeurs énumérées</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Mercredi Février 12 2014 14:36:02 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

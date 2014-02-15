@@ -18,7 +18,7 @@
 /** 
  * @file couleur.h
  * 
- * La couleur d'un pion
+ * @brief La couleur d'un pion
  */
 
 #ifndef COULEUR_H_INCLUDED

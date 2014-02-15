@@ -1,0 +1,91 @@
+.TH "src/partie.c" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/partie.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <partie\&.h>\fP
+.br
+\fC#include <plateau\&.h>\fP
+.br
+\fC#include <couleur\&.h>\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBpartie_demande_questions\fP (int numero_question, \fBPartie\fP *partie)"
+.br
+.ti -1c
+.RI "\fBPartie\fP \fBpartie_initialisation\fP (\fBFonctionQuestions\fP fonctionQuestions)"
+.br
+.ti -1c
+.RI "void \fBechange_joueur\fP (\fBCouleur\fP *c)"
+.br
+.ti -1c
+.RI "int \fBpartie_sauvegarde\fP (\fBPartie\fP partie, FILE *fichier)"
+.br
+.ti -1c
+.RI "int \fBpartie_charge\fP (FILE *fichier)"
+.br
+.in -1c
+.SH "Documentation des fonctions"
+.PP 
+.SS "void \fBechange_joueur\fP (\fBCouleur\fP *c)"
+.SS "int \fBpartie_charge\fP (FILE *fichier)"Charge une partie précédement sauvegardée\&. Si le chargement n'est pas possible, retorune un pointeur NULL 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIfichier\fP Le fichier à partir du quel on charge la partie 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+La partie, ou NULL si le chargement n'est pas possible 
+.RE
+.PP
+
+.SS "void \fBpartie_demande_questions\fP (intnumero_question, \fBPartie\fP *partie)"Questions a demande a l'utilisateur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fInumero\fP de la question 
+.br
+\fIpartie\fP pointeur vers une partie 
+.RE
+.PP
+
+.SS "\fBPartie\fP \fBpartie_initialisation\fP (\fBFonctionQuestions\fPfonctionQuestions)"Permet d'initialiser une partie ! 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIfonctionQuestions\fP une fonction qui permet de demander des questions 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une partie initialise 
+.RE
+.PP
+
+.SS "int \fBpartie_sauvegarde\fP (\fBPartie\fPpartie, FILE *fichier)"Sauvegarde la partie dans sa position actuelle\&. Si la sauvegarde se passe sans problème la fonction retourne 1, 0 sinon 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpartie\fP La partie actuelle 
+.br
+\fIfichier\fP Le fichier dans lequel on sauvegarde la partie 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+0 si il n'y a pas de problème, 1 sinon 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

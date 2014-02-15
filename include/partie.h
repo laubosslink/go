@@ -18,7 +18,7 @@
 /** 
  * @file partie.h
  * 
- * Fichier d'en-tête permettant de gérer une partie 
+ * @brief Fichier d'en-tête permettant de gérer une partie 
  */
 
 #ifndef PARTIE_H_INCLUDED
@@ -27,16 +27,20 @@
 #include <stdio.h>
 #include <couleur.h>
 #include <plateau.h>
+
+typedef struct Partie {
+	char joueur1[20], joueur2[20]; /* nom des joueurs */
+	Couleur joueur; /* joueur actuel */
+	Plateau plateau;
+} Partie;
  
 typedef void (*FonctionQuestions)(int numeroQuestion, Partie* partie); 
 
-typedef struct Partie {
-	char *joueur1, *joueur2; /* nom des joueurs */
-	Couleur joueur; /* joueur actuel */
-	int taille; /* taille du plateau */
-	Plateau plateau;
-} Partie;
-
+/**
+ * Permet d'initialiser une partie !
+ * @param fonctionQuestions une fonction qui permet de demander des questions
+ * @return une partie initialise
+ */
 Partie partie_initialisation(FonctionQuestions fonctionQuestions);
 
 /**
@@ -63,5 +67,12 @@ Partie partie_charge(FILE* fichier);
  * @param valKomi
  */
 void partie_score_joueurs(Partie p, int *scores, float valKomi);
+
+/**
+ * Questions a demande a l'utilisateur
+ * @param numero de la question
+ * @param partie pointeur vers une partie
+ */
+void partie_demande_questions(int numero_question, Partie *partie);
 
 #endif

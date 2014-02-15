@@ -1,0 +1,163 @@
+\hypertarget{ensemble_8c}{\section{\-Référence du fichier lib/ensemble/src/ensemble.c}
+\label{ensemble_8c}\index{lib/ensemble/src/ensemble.\-c@{lib/ensemble/src/ensemble.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
+{\ttfamily \#include $<$position.\-h$>$}\*
+{\ttfamily \#include $<$ensemble.\-h$>$}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ensemble_8c_a5a38da96e292ee9603aa8c38b7eca270}{ensemble\-\_\-init} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+\hyperlink{structEnsemble}{\-Ensemble} $\ast$ \hyperlink{ensemble_8c_a896ef1d92c5fdfff3bce4f1daea43f31}{creer\-\_\-ensemble} ()
+\item 
+int \hyperlink{ensemble_8c_a44307c9a5fc03e2950375401fe00282c}{ensemble\-\_\-vide} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+\hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble_8c_a49fbcb97f3bb110025052809e42aad2f}{ensemble\-\_\-tete} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+\hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble_8c_afe671e087f7eae69e5e89df96f2eb1c4}{ensemble\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+int \hyperlink{ensemble_8c_aa786b13e0846e401cfc327d5f3876251}{ensemble\-\_\-suivant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+int \hyperlink{ensemble_8c_ae12cb38d281d2d744899214fba976abb}{ensemble\-\_\-appartient} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E, void $\ast$element)
+\item 
+\hyperlink{structEnsemble}{\-Ensemble} $\ast$ \hyperlink{ensemble_8c_a6839b221efdc6b7d38eb13e4591e58f6}{ensemble\-\_\-enlever} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E, void $\ast$element)
+\item 
+void \hyperlink{ensemble_8c_aa0fd09212e6ed9154a9f01909039f384}{ensemble\-\_\-ajouter} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E, void $\ast$element)
+\item 
+\hyperlink{structEnsemble}{\-Ensemble} $\ast$ \hyperlink{ensemble_8c_ac8b8082e3fa0171fe35373c3c6af36c4}{ensemble\-\_\-concatene} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$e1, \hyperlink{structEnsemble}{\-Ensemble} $\ast$e2)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{ensemble_8c_a896ef1d92c5fdfff3bce4f1daea43f31}{\index{ensemble.\-c@{ensemble.\-c}!creer\-\_\-ensemble@{creer\-\_\-ensemble}}
+\index{creer\-\_\-ensemble@{creer\-\_\-ensemble}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{creer\-\_\-ensemble}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble}$\ast$ {\bf creer\-\_\-ensemble} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_a896ef1d92c5fdfff3bce4f1daea43f31}
+\-Permet de creer un ensemble \begin{DoxyReturn}{\-Renvoie}
+un pointeur vers un ensemble 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_aa0fd09212e6ed9154a9f01909039f384}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-ajouter@{ensemble\-\_\-ajouter}}
+\index{ensemble\-\_\-ajouter@{ensemble\-\_\-ajouter}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-ajouter}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-ajouter} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E, }
+\item[{void $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_aa0fd09212e6ed9154a9f01909039f384}
+\-Permet d'ajouter un élément dans un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em element} & l'élément à ajouter \\
+\hline
+\end{DoxyParams}
+\hypertarget{ensemble_8c_ae12cb38d281d2d744899214fba976abb}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-appartient@{ensemble\-\_\-appartient}}
+\index{ensemble\-\_\-appartient@{ensemble\-\_\-appartient}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-appartient}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-appartient} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E, }
+\item[{void $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_ae12cb38d281d2d744899214fba976abb}
+\-Permet de vérifier qu'un élément appartiennent à un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em element} & l'élément \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si il appartient, 0 sinon 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_ac8b8082e3fa0171fe35373c3c6af36c4}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-concatene@{ensemble\-\_\-concatene}}
+\index{ensemble\-\_\-concatene@{ensemble\-\_\-concatene}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-concatene}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble}$\ast$ {\bf ensemble\-\_\-concatene} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{e1, }
+\item[{{\bf \-Ensemble} $\ast$}]{e2}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_ac8b8082e3fa0171fe35373c3c6af36c4}
+\-Përmet de concatener deux ensembles 
+\begin{DoxyParams}{\-Paramètres}
+{\em e1} & l'ensemble e1 ajouter en \char`\"{}tête\char`\"{} \\
+\hline
+{\em e2} & l'ensemble e2 ajouter en bout de e1 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un nouvel ensemble 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_afe671e087f7eae69e5e89df96f2eb1c4}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-courant@{ensemble\-\_\-courant}}
+\index{ensemble\-\_\-courant@{ensemble\-\_\-courant}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell}$\ast$ {\bf ensemble\-\_\-courant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_afe671e087f7eae69e5e89df96f2eb1c4}
+\-Permet de positionner le pointeur sur un des éléments de l'ensemble \begin{DoxyReturn}{\-Renvoie}
+le pointeur sur l'élément courant 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_a6839b221efdc6b7d38eb13e4591e58f6}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-enlever@{ensemble\-\_\-enlever}}
+\index{ensemble\-\_\-enlever@{ensemble\-\_\-enlever}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-enlever}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble}$\ast$ {\bf ensemble\-\_\-enlever} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E, }
+\item[{void $\ast$}]{element}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_a6839b221efdc6b7d38eb13e4591e58f6}
+\-Permet de supprimer un élément dans l'ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em element} & l'élement à supprimer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-E pointeur vers le nouvel ensemble privé de l'élément supprimé 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_a5a38da96e292ee9603aa8c38b7eca270}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-init@{ensemble\-\_\-init}}
+\index{ensemble\-\_\-init@{ensemble\-\_\-init}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-init} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_a5a38da96e292ee9603aa8c38b7eca270}
+\-Permet d'initialiser un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\hypertarget{ensemble_8c_aa786b13e0846e401cfc327d5f3876251}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-suivant@{ensemble\-\_\-suivant}}
+\index{ensemble\-\_\-suivant@{ensemble\-\_\-suivant}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-suivant}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-suivant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_aa786b13e0846e401cfc327d5f3876251}
+\-Permet de dire s'il y a un élément suivant ou non \begin{DoxyReturn}{\-Renvoie}
+1 ou 0 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_a49fbcb97f3bb110025052809e42aad2f}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-tete@{ensemble\-\_\-tete}}
+\index{ensemble\-\_\-tete@{ensemble\-\_\-tete}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-tete}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell}$\ast$ {\bf ensemble\-\_\-tete} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_a49fbcb97f3bb110025052809e42aad2f}
+\-Permet de positionner le pointeur tête sur le debut de mon ensemble \begin{DoxyReturn}{\-Renvoie}
+le pointeur de la tete de l'ensemble 
+\end{DoxyReturn}
+\hypertarget{ensemble_8c_a44307c9a5fc03e2950375401fe00282c}{\index{ensemble.\-c@{ensemble.\-c}!ensemble\-\_\-vide@{ensemble\-\_\-vide}}
+\index{ensemble\-\_\-vide@{ensemble\-\_\-vide}!ensemble.c@{ensemble.\-c}}
+\subsubsection[{ensemble\-\_\-vide}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-vide} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8c_a44307c9a5fc03e2950375401fe00282c}
+\-Permet de vérifier si un ensemble est vide 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si il l'estsinon 
+\end{DoxyReturn}

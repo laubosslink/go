@@ -14,13 +14,12 @@
  * @version 1.0 
  * @date 03-02-2013
  * 
- * @todo la matrice est fait par des developpeur, ils ne connaissent pas couleur.h, a remplacer par void* !
  */
  
 /** 
  * @file matrice.h
  * 
- * Le fichier d'en tête qui contient la matrice
+ * @brief Le fichier d'en tête qui contient la matrice
  */
 
 #ifndef MATRICE_H_INCLUDED
