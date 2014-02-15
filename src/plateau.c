@@ -18,8 +18,8 @@ int est_un_pion_plateau(Plateau plateau, Position pos){
 	return est_un_pion(plateau.donnees[pos.y][pos.x]);
 }
 
-Plateau creer_plateau(int nbligne, int nbcolonne){
-	return (Plateau) matrice_creer(nbligne, nbcolonne);
+Plateau creer_plateau(int taille){
+	return (Plateau) matrice_creer(taille, taille);
 }
 
 Plateau plateau_chargement(FILE* fichier){

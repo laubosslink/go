@@ -27,10 +27,19 @@ int main(){
 	
 	choix = getchar();
 	
-	if(choix =='j'){
+	if(choix =='j' || choix == 'c'){	
 		numero_tour = 0;
 		
-		partie = partie_initialisation(partie_demande_questions);
+		if(choix == 'j'){
+			partie = partie_initialisation(partie_demande_questions);
+		} else if(choix == 'c')
+		{
+			fichier_plateau = fopen("extra/sauvegardes/sauvegarde_partie", "r");
+
+			partie = partie_charge(fichier_plateau);
+			
+			fclose(fichier_plateau);
+		}
 		
 		do {
 			numero_tour++;
@@ -132,8 +141,6 @@ int main(){
 				} else {
 					printf("\n /!\\ La partie na pas pu etre sauvegarde /!\\ \n");
 				}
-				
-				getchar();
 				
 				fclose(fichier_plateau);
 			} else if(choix == 'q')

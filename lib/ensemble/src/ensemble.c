@@ -119,7 +119,7 @@ Ensemble* ensemble_concatene(Ensemble* e1, Ensemble* e2){
 
 		ensemble_ajouter(e, ensemble_courant(e1)->contenu);
 	}
-	Ensemble_Colores
+	
 	if(!ensemble_vide(e2)){
 		/* ajout des éléments de l'ensemble e2 */
 		e2->courant = ensemble_tete(e2);

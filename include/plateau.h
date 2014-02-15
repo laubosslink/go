@@ -43,12 +43,11 @@ typedef struct Matrice Plateau;
 void plateau_afficher(Plateau p);
 
 /**
- * Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne
- * @param nbligne le nombre de ligne
- * @param nbcolonne le nombre de colonnes
+ * Permet de creer un plateau [taille x taille]
+ * @param taille 
  * @return un plateau
  */
-Plateau creer_plateau(int nbligne, int nbcolonne);
+Plateau creer_plateau(int taille);
 
 /**
  * Permet de savoir si la couleur est un pion

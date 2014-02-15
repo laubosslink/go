@@ -33,7 +33,7 @@ typedef struct Partie {
 	Couleur joueur; /* joueur actuel */
 	Plateau plateau;
 } Partie;
- 
+
 typedef void (*FonctionQuestions)(int numeroQuestion, Partie* partie); 
 
 /**
