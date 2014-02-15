@@ -68,11 +68,11 @@ int est_un_pion_plateau(Plateau plateau, Position pos);
 /**
  * Permet de recuperer un pion sur une position
  * @param m la matrice
- * @param i l'abscisse
- * @param j l'ordonnee
+ * @param x l'abscisse
+ * @param y l'ordonnee
  * @return La couleur du pion
  */
-Couleur plateau_get(Plateau m, int x, int t);
+Couleur plateau_get(Plateau m, int x, int y);
 
 /**
  * Permet de mettre un pion sur le plateau

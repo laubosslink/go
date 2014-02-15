@@ -33,8 +33,18 @@ int main(){
 		
 	Position pos;
 	
+	Pion pion;
+	
+	Chaines chainesCapturees;
+	
+	int* valide;
+	
+	valide = (int*)malloc(sizeof(int));
+	
 	pos.x = 2;
 	pos.y = 3;
+	
+	pion.p = pos;
 	
 	fclose(f);
 	
@@ -73,6 +83,9 @@ int main(){
 	p = plateau_chargement(f2);
 	
 	plateau_afficher(p);
+	
+	(*valide) == 0;
+	captureChaines(plateau,
 	
 	return 0;
 }
