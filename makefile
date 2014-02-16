@@ -44,6 +44,17 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 # captureChaines
 
+test_chaines_appartient_chaine: libmatrice libensemble $(BINDIR)/test_chaines_appartient_chaine
+
+$(BINDIR)/test_chaines_appartient_chaine: $(OBJDIR)/test_chaines_appartient_chaine.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o 
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+$(OBJDIR)/test_chaines_appartient_chaine.o: $(TESTDIR)/test_chaines_appartient_chaine.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+
+# captureChaines
+
 test_capture_chaines: libmatrice libensemble $(BINDIR)/test_capture_chaines
 
 $(BINDIR)/test_capture_chaines: $(OBJDIR)/test_capture_chaines.o $(OBJDIR)/territoire.o $(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o 
