@@ -1,0 +1,34 @@
+\hypertarget{tmp_8c}{\section{\-Référence du fichier test/tmp.c}
+\label{tmp_8c}\index{test/tmp.\-c@{test/tmp.\-c}}
+}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} \hyperlink{tmp_8c_a233209249792b1a2c99163fc53ce62aa}{capture\-Chaines} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPion}{\-Pion} pion, int $\ast$valide)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{tmp_8c_a233209249792b1a2c99163fc53ce62aa}{\index{tmp.\-c@{tmp.\-c}!capture\-Chaines@{capture\-Chaines}}
+\index{capture\-Chaines@{capture\-Chaines}!tmp.c@{tmp.\-c}}
+\subsubsection[{capture\-Chaines}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Chaines} {\bf capture\-Chaines} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Pion}}]{pion, }
+\item[{int $\ast$}]{valide}
+\end{DoxyParamCaption}
+)}}\label{tmp_8c_a233209249792b1a2c99163fc53ce62aa}
+\-En fonction de la position du pion et de sa couleur, retourne les chaines captures. \-Si aucune chaine n'est capturé par la pose du pion, alors la valeur \-N\-U\-L\-L est retournée. \-L'entier (référencé par) valide est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse). \-Dans le cas contraire l'entier référencé par valide est égale à 1
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & \-Le plateau \\
+\hline
+{\em pion} & le pion \\
+\hline
+{\em valide} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un ensemble de chaine 
+\end{DoxyReturn}

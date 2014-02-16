@@ -84,10 +84,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="title">Référence du fichier src/plateau.c</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Le code source permettant de gérer le plateau.  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="matrice_8h_source.html">matrice.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ensemble_8h_source.html">ensemble.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="ensemble__colores_8h_source.html">ensemble_colores.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ensemble__positions_8h_source.html">ensemble_positions.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="chaine_8h_source.html">chaine.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="plateau_8h_source.html">plateau.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="libertes_8h_source.html">libertes.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="position_8h_source.html">position.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="couleur_8h_source.html">couleur.h</a>&gt;</code><br/>
 <code>#include &lt;stdio.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
@@ -96,9 +103,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#aa1e22cd1f62f82a372ea9064bf20dc1a">est_un_pion</a> (<a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a1c743ade7c4b882ed744379644771532">est_un_pion_plateau</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a868ea5ad96fe509901a18ed34fec9d85">creer_plateau</a> (int nbligne, int nbcolonne)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a48347ca20160613e199cab541b9a261f">creer_plateau</a> (int taille)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a07f20c49b80703211e7a8949f2e702b1">plateau_chargement</a> (FILE *fichier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a78f1ad5d8c0744ac1cea6c738163c70e">plateau_get</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p, int x, int y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a6418474ffc4c3ca31e65af92ed12444b">plateau_get_pos</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p, <a class="el" href="structPosition.html">Position</a> pos)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#aa50accd3b4f1e4eefbe7dc2852a097da">plateau_set</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p, int i, int j, <a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#abb2eff609b3c2f2072ae58b288552465">plateau_determiner_chaine_rec</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos, <a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a> *chaine)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a9e30ba185721b4e439f27ff5e29be474">plateau_determiner_chaine</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos)</td></tr>
@@ -109,36 +117,34 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#ae8d9ec3267e5d16b943e20324a8944cd">plateau_sauvegarde</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, FILE *fichier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#ad68ec9a561a948d5452a6f9f0d47ad5e">plateau_afficher</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p)</td></tr>
 </table>
-<hr/><h2>Documentation des fonctions</h2>
-<a class="anchor" id="a868ea5ad96fe509901a18ed34fec9d85"></a><!-- doxytag: member="plateau.c::creer_plateau" ref="a868ea5ad96fe509901a18ed34fec9d85" args="(int nbligne, int nbcolonne)" -->
+<hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
+<div class="textblock"><p>Le code source permettant de gérer le plateau. </p>
+<p>ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex</p>
+<p>This file is owned by ENSICAEN students. No portion of this document may be reproduced, copied or revised without written premission of the authors </p>
+<dl class="author"><dt><b>Auteur:</b></dt><dd>PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@ecole.ensicaen.fr</a>, <a href="mailto:laubosslink@society-lbl.com">laubosslink@society-lbl.com</a>&gt; </dd>
+<dd>
+EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine.elhimdi@ecole.enciscaen.fr</a>&gt; </dd></dl>
+<dl class="version"><dt><b>Version:</b></dt><dd>1.0 </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>03-12-2013 </dd></dl>
+</div><hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a48347ca20160613e199cab541b9a261f"></a><!-- doxytag: member="plateau.c::creer_plateau" ref="a48347ca20160613e199cab541b9a261f" args="(int taille)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> <a class="el" href="plateau_8c.html#a868ea5ad96fe509901a18ed34fec9d85">creer_plateau</a> </td>
+          <td class="memname"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> <a class="el" href="plateau_8c.html#a48347ca20160613e199cab541b9a261f">creer_plateau</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nbligne</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>taille</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>nbcolonne</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne </p>
+<p>Permet de creer un plateau [taille x taille] </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">nbligne</td><td>le nombre de ligne </td></tr>
-    <tr><td class="paramname">nbcolonne</td><td>le nombre de colonnes </td></tr>
+    <tr><td class="paramname">taille</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -418,7 +424,7 @@ Fonctions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -432,8 +438,44 @@ Fonctions</h2></td></tr>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>la matrice </td></tr>
-    <tr><td class="paramname">i</td><td>l'abscisse </td></tr>
-    <tr><td class="paramname">j</td><td>l'ordonnee </td></tr>
+    <tr><td class="paramname">x</td><td>l'abscisse </td></tr>
+    <tr><td class="paramname">y</td><td>l'ordonnee </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>La couleur du pion </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6418474ffc4c3ca31e65af92ed12444b"></a><!-- doxytag: member="plateau.c::plateau_get_pos" ref="a6418474ffc4c3ca31e65af92ed12444b" args="(Plateau p, Position pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> <a class="el" href="plateau_8c.html#a6418474ffc4c3ca31e65af92ed12444b">plateau_get_pos</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPosition.html">Position</a>&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de recuperer un pion sur une position </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p</td><td>le plateau </td></tr>
+    <tr><td class="paramname">pos</td><td>la position </td></tr>
   </table>
   </dd>
 </dl>
@@ -615,7 +657,7 @@ Fonctions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi Février 12 2014 14:36:02 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

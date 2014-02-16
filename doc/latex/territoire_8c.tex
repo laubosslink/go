@@ -1,0 +1,57 @@
+\hypertarget{territoire_8c}{\section{\-Référence du fichier src/territoire.c}
+\label{territoire_8c}\index{src/territoire.\-c@{src/territoire.\-c}}
+}
+
+
+\-Le code source permettant de gérer un territoire.  
+
+
+{\ttfamily \#include $<$ensemble\-\_\-colores.\-h$>$}\*
+{\ttfamily \#include $<$territoire.\-h$>$}\*
+{\ttfamily \#include $<$plateau.\-h$>$}\*
+{\ttfamily \#include $<$position.\-h$>$}\*
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{territoire_8c_a7618eb4621bb458e0b9f884614275494}{determine\-Territoire\-Rec} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos, \hyperlink{territoire_8h_acd8ada3b62a70edf9027b633cd14db5c}{\-Territoire} $\ast$t)
+\item 
+\hyperlink{territoire_8h_acd8ada3b62a70edf9027b633cd14db5c}{\-Territoire} \hyperlink{territoire_8c_a896662da2a34a834e9316b1d5985538b}{determine\-Territoire} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+\-Le code source permettant de gérer un territoire. \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+
+\-E\-L \-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:yasmine.elhimdi@ecole.enciscaen.fr}{\tt yasmine.\-elhimdi@ecole.\-enciscaen.\-fr}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/12-\/2013 
+\end{DoxyDate}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{territoire_8c_a896662da2a34a834e9316b1d5985538b}{\index{territoire.\-c@{territoire.\-c}!determine\-Territoire@{determine\-Territoire}}
+\index{determine\-Territoire@{determine\-Territoire}!territoire.c@{territoire.\-c}}
+\subsubsection[{determine\-Territoire}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Territoire} {\bf determine\-Territoire} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Position}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{territoire_8c_a896662da2a34a834e9316b1d5985538b}
+\-Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos. \-Important\-: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur. \-Ce cas est exploite pas la fonction est\-Un\-Seki \begin{DoxyRefDesc}{\-Bogue}
+\item[\hyperlink{bug__bug000002}{\-Bogue}]risque de bug sans utiliser init\-\_\-ensemble ou creer\-\_\-ensemble sur territoire ! \end{DoxyRefDesc}
+\hypertarget{territoire_8c_a7618eb4621bb458e0b9f884614275494}{\index{territoire.\-c@{territoire.\-c}!determine\-Territoire\-Rec@{determine\-Territoire\-Rec}}
+\index{determine\-Territoire\-Rec@{determine\-Territoire\-Rec}!territoire.c@{territoire.\-c}}
+\subsubsection[{determine\-Territoire\-Rec}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf determine\-Territoire\-Rec} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Position}}]{pos, }
+\item[{{\bf \-Territoire} $\ast$}]{t}
+\end{DoxyParamCaption}
+)}}\label{territoire_8c_a7618eb4621bb458e0b9f884614275494}

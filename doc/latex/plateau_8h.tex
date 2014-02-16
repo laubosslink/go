@@ -10,9 +10,9 @@
 {\ttfamily \#include $<$matrice.\-h$>$}\*
 {\ttfamily \#include $<$chaine.\-h$>$}\*
 {\ttfamily \#include $<$position.\-h$>$}\*
-{\ttfamily \#include $<$territoire.\-h$>$}\*
 {\ttfamily \#include $<$pion.\-h$>$}\*
 {\ttfamily \#include $<$chaines.\-h$>$}\*
+{\ttfamily \#include $<$territoire.\-h$>$}\*
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
@@ -23,13 +23,15 @@ typedef struct \hyperlink{structMatrice}{\-Matrice} \hyperlink{plateau_8h_a2f8eb
 \item 
 void \hyperlink{plateau_8h_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-afficher} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p)
 \item 
-\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8h_a868ea5ad96fe509901a18ed34fec9d85}{creer\-\_\-plateau} (int nbligne, int nbcolonne)
+\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8h_a48347ca20160613e199cab541b9a261f}{creer\-\_\-plateau} (int taille)
 \item 
 int \hyperlink{plateau_8h_aa1e22cd1f62f82a372ea9064bf20dc1a}{est\-\_\-un\-\_\-pion} (\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} c)
 \item 
 int \hyperlink{plateau_8h_a1c743ade7c4b882ed744379644771532}{est\-\_\-un\-\_\-pion\-\_\-plateau} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
 \item 
-\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} \hyperlink{plateau_8h_a4527488648530d93bdf785e4df3ebcea}{plateau\-\_\-get} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} m, int x, int t)
+\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} \hyperlink{plateau_8h_a5c7b6365c1a6de4969afc180f5527275}{plateau\-\_\-get} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} m, int x, int y)
+\item 
+\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} \hyperlink{plateau_8h_a6418474ffc4c3ca31e65af92ed12444b}{plateau\-\_\-get\-\_\-pos} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p, \hyperlink{structPosition}{\-Position} pos)
 \item 
 void \hyperlink{plateau_8h_a8827f1d4c586d4cc0bec0d30c659ccf8}{plateau\-\_\-set} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} m, int i, int j, \hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} c)
 \item 
@@ -99,19 +101,16 @@ int \hyperlink{plateau_8h_aa32daf7f27e57e0994beb62b3bba2611}{plateau\-\_\-positi
 \begin{DoxyReturn}{\-Renvoie}
 un ensemble de chaine 
 \end{DoxyReturn}
-\hypertarget{plateau_8h_a868ea5ad96fe509901a18ed34fec9d85}{\index{plateau.\-h@{plateau.\-h}!creer\-\_\-plateau@{creer\-\_\-plateau}}
+\hypertarget{plateau_8h_a48347ca20160613e199cab541b9a261f}{\index{plateau.\-h@{plateau.\-h}!creer\-\_\-plateau@{creer\-\_\-plateau}}
 \index{creer\-\_\-plateau@{creer\-\_\-plateau}!plateau.h@{plateau.\-h}}
 \subsubsection[{creer\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf creer\-\_\-plateau} (
 \begin{DoxyParamCaption}
-\item[{int}]{nbligne, }
-\item[{int}]{nbcolonne}
+\item[{int}]{taille}
 \end{DoxyParamCaption}
-)}}\label{plateau_8h_a868ea5ad96fe509901a18ed34fec9d85}
-\-Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne 
+)}}\label{plateau_8h_a48347ca20160613e199cab541b9a261f}
+\-Permet de creer un plateau \mbox{[}taille x taille\mbox{]} 
 \begin{DoxyParams}{\-Paramètres}
-{\em nbligne} & le nombre de ligne \\
-\hline
-{\em nbcolonne} & le nombre de colonnes \\
+{\em taille} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
@@ -249,22 +248,40 @@ indique sur l'organisation du plateau est identique a une precedente organisatio
 \begin{DoxyReturn}{\-Renvoie}
 1 si identique, 0 sinon 
 \end{DoxyReturn}
-\hypertarget{plateau_8h_a4527488648530d93bdf785e4df3ebcea}{\index{plateau.\-h@{plateau.\-h}!plateau\-\_\-get@{plateau\-\_\-get}}
+\hypertarget{plateau_8h_a5c7b6365c1a6de4969afc180f5527275}{\index{plateau.\-h@{plateau.\-h}!plateau\-\_\-get@{plateau\-\_\-get}}
 \index{plateau\-\_\-get@{plateau\-\_\-get}!plateau.h@{plateau.\-h}}
 \subsubsection[{plateau\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Couleur} {\bf plateau\-\_\-get} (
 \begin{DoxyParamCaption}
 \item[{{\bf \-Plateau}}]{m, }
 \item[{int}]{x, }
-\item[{int}]{t}
+\item[{int}]{y}
 \end{DoxyParamCaption}
-)}}\label{plateau_8h_a4527488648530d93bdf785e4df3ebcea}
+)}}\label{plateau_8h_a5c7b6365c1a6de4969afc180f5527275}
 \-Permet de recuperer un pion sur une position 
 \begin{DoxyParams}{\-Paramètres}
 {\em m} & la matrice \\
 \hline
-{\em i} & l'abscisse \\
+{\em x} & l'abscisse \\
 \hline
-{\em j} & l'ordonnee \\
+{\em y} & l'ordonnee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-La couleur du pion 
+\end{DoxyReturn}
+\hypertarget{plateau_8h_a6418474ffc4c3ca31e65af92ed12444b}{\index{plateau.\-h@{plateau.\-h}!plateau\-\_\-get\-\_\-pos@{plateau\-\_\-get\-\_\-pos}}
+\index{plateau\-\_\-get\-\_\-pos@{plateau\-\_\-get\-\_\-pos}!plateau.h@{plateau.\-h}}
+\subsubsection[{plateau\-\_\-get\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Couleur} {\bf plateau\-\_\-get\-\_\-pos} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{p, }
+\item[{{\bf \-Position}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{plateau_8h_a6418474ffc4c3ca31e65af92ed12444b}
+\-Permet de recuperer un pion sur une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & le plateau \\
+\hline
+{\em pos} & la position \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}

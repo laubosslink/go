@@ -44,11 +44,11 @@ int main(){
 	pos.x = 2;
 	pos.y = 3;
 	
-	position.x = 5;
-	position.y = 6;
+	position.x = 6;
+	position.y = 5;
 	
 	pion.p = position;
-	pion.c = NOIR ;
+	pion.c = BLANC ;
 	
 	fclose(f);
 	
@@ -88,7 +88,7 @@ int main(){
 	
 	plateau_afficher(p);
 	
-	chainesCapturees = captureChaines(p,pion,valide);
+	chainesCapturees = captureChaines(p, pion, valide);
 	
 	
 	return 0;

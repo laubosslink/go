@@ -1,6 +1,11 @@
 \hypertarget{partie_8c}{\section{\-Référence du fichier src/partie.c}
 \label{partie_8c}\index{src/partie.\-c@{src/partie.\-c}}
 }
+
+
+\-Le code source permettant de gérer une partie.  
+
+
 {\ttfamily \#include $<$partie.\-h$>$}\*
 {\ttfamily \#include $<$plateau.\-h$>$}\*
 {\ttfamily \#include $<$couleur.\-h$>$}\*
@@ -15,8 +20,24 @@ void \hyperlink{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}{echange\-\_\-joueur
 \item 
 int \hyperlink{partie_8c_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegarde} (\hyperlink{structPartie}{\-Partie} partie, \-F\-I\-L\-E $\ast$fichier)
 \item 
-int \hyperlink{partie_8c_a19841ef71350926e846e1f0509ef8a8d}{partie\-\_\-charge} (\-F\-I\-L\-E $\ast$fichier)
+\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8c_a2ab987532fb030da5d66eb14e1648e18}{partie\-\_\-charge} (\-F\-I\-L\-E $\ast$fichier)
 \end{DoxyCompactItemize}
+
+
+\subsection{\-Description détaillée}
+\-Le code source permettant de gérer une partie. \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+
+\-E\-L \-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:yasmine.elhimdi@ecole.enciscaen.fr}{\tt yasmine.\-elhimdi@ecole.\-enciscaen.\-fr}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/12-\/2013 
+\end{DoxyDate}
 
 
 \subsection{\-Documentation des fonctions}
@@ -27,13 +48,13 @@ int \hyperlink{partie_8c_a19841ef71350926e846e1f0509ef8a8d}{partie\-\_\-charge} 
 \item[{{\bf \-Couleur} $\ast$}]{c}
 \end{DoxyParamCaption}
 )}}\label{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}
-\hypertarget{partie_8c_a19841ef71350926e846e1f0509ef8a8d}{\index{partie.\-c@{partie.\-c}!partie\-\_\-charge@{partie\-\_\-charge}}
+\hypertarget{partie_8c_a2ab987532fb030da5d66eb14e1648e18}{\index{partie.\-c@{partie.\-c}!partie\-\_\-charge@{partie\-\_\-charge}}
 \index{partie\-\_\-charge@{partie\-\_\-charge}!partie.c@{partie.\-c}}
-\subsubsection[{partie\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf partie\-\_\-charge} (
+\subsubsection[{partie\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf partie\-\_\-charge} (
 \begin{DoxyParamCaption}
 \item[{\-F\-I\-L\-E $\ast$}]{fichier}
 \end{DoxyParamCaption}
-)}}\label{partie_8c_a19841ef71350926e846e1f0509ef8a8d}
+)}}\label{partie_8c_a2ab987532fb030da5d66eb14e1648e18}
 \-Charge une partie précédement sauvegardée. \-Si le chargement n'est pas possible, retorune un pointeur \-N\-U\-L\-L 
 \begin{DoxyParams}{\-Paramètres}
 {\em fichier} & \-Le fichier à partir du quel on charge la partie \\

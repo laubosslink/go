@@ -1,0 +1,37 @@
+.TH "test/tmp.c" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+test/tmp.c \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBChaines\fP \fBcaptureChaines\fP (\fBPlateau\fP plateau, \fBPion\fP pion, int *valide)"
+.br
+.in -1c
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBChaines\fP \fBcaptureChaines\fP (\fBPlateau\fPplateau, \fBPion\fPpion, int *valide)"En fonction de la position du pion et de sa couleur, retourne les chaines captures\&. Si aucune chaine n'est capturé par la pose du pion, alors la valeur NULL est retournée\&. L'entier (référencé par) valide est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse)\&. Dans le cas contraire l'entier référencé par valide est égale à 1
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP Le plateau 
+.br
+\fIpion\fP le pion 
+.br
+\fIvalide\fP 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un ensemble de chaine 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

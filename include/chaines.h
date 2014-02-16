@@ -26,6 +26,9 @@
 
 #include <ensemble.h>
 
+/** Chaines est une ensemble de chaine (alias d'un ensemble)
+ * @see Ensemble
+ */
 typedef Ensemble Chaines;
 
 #endif

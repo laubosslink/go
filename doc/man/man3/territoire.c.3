@@ -1,0 +1,68 @@
+.TH "src/territoire.c" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/territoire.c \- 
+.PP
+Le code source permettant de gérer un territoire\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <ensemble_colores\&.h>\fP
+.br
+\fC#include <territoire\&.h>\fP
+.br
+\fC#include <plateau\&.h>\fP
+.br
+\fC#include <position\&.h>\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdetermineTerritoireRec\fP (\fBPlateau\fP plateau, \fBPosition\fP pos, \fBTerritoire\fP *t)"
+.br
+.ti -1c
+.RI "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+Le code source permettant de gérer un territoire\&. 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.PP
+EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-12-2013 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos\&. Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur\&. Ce cas est exploite pas la fonction estUnSeki \fBBogue\fP
+.RS 4
+risque de bug sans utiliser init_ensemble ou creer_ensemble sur territoire ! 
+.RE
+.PP
+
+.SS "void \fBdetermineTerritoireRec\fP (\fBPlateau\fPplateau, \fBPosition\fPpos, \fBTerritoire\fP *t)"
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

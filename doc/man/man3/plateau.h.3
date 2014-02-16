@@ -1,4 +1,4 @@
-.TH "include/plateau.h" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/plateau.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -17,11 +17,11 @@ Contient la position de l'ensemble des pions sur la grille\&.
 .br
 \fC#include <position\&.h>\fP
 .br
-\fC#include <territoire\&.h>\fP
-.br
 \fC#include <pion\&.h>\fP
 .br
 \fC#include <chaines\&.h>\fP
+.br
+\fC#include <territoire\&.h>\fP
 .br
 
 .SS "Définitions de type"
@@ -38,7 +38,7 @@ Contient la position de l'ensemble des pions sur la grille\&.
 .RI "void \fBplateau_afficher\fP (\fBPlateau\fP p)"
 .br
 .ti -1c
-.RI "\fBPlateau\fP \fBcreer_plateau\fP (int nbligne, int nbcolonne)"
+.RI "\fBPlateau\fP \fBcreer_plateau\fP (int taille)"
 .br
 .ti -1c
 .RI "int \fBest_un_pion\fP (\fBCouleur\fP c)"
@@ -47,7 +47,10 @@ Contient la position de l'ensemble des pions sur la grille\&.
 .RI "int \fBest_un_pion_plateau\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
 .br
 .ti -1c
-.RI "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fP m, int x, int t)"
+.RI "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fP m, int x, int y)"
+.br
+.ti -1c
+.RI "\fBCouleur\fP \fBplateau_get_pos\fP (\fBPlateau\fP p, \fBPosition\fP pos)"
 .br
 .ti -1c
 .RI "void \fBplateau_set\fP (\fBPlateau\fP m, int i, int j, \fBCouleur\fP c)"
@@ -128,13 +131,11 @@ un ensemble de chaine
 .RE
 .PP
 
-.SS "\fBPlateau\fP \fBcreer_plateau\fP (intnbligne, intnbcolonne)"Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne 
+.SS "\fBPlateau\fP \fBcreer_plateau\fP (inttaille)"Permet de creer un plateau [taille x taille] 
 .PP
 \fBParamètres:\fP
 .RS 4
-\fInbligne\fP le nombre de ligne 
-.br
-\fInbcolonne\fP le nombre de colonnes 
+\fItaille\fP 
 .RE
 .PP
 \fBRenvoie:\fP
@@ -252,15 +253,30 @@ une ou plusieurs chaines
 .RE
 .PP
 
-.SS "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fPm, intx, intt)"Permet de recuperer un pion sur une position 
+.SS "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fPm, intx, inty)"Permet de recuperer un pion sur une position 
 .PP
 \fBParamètres:\fP
 .RS 4
 \fIm\fP la matrice 
 .br
-\fIi\fP l'abscisse 
+\fIx\fP l'abscisse 
 .br
-\fIj\fP l'ordonnee 
+\fIy\fP l'ordonnee 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+La couleur du pion 
+.RE
+.PP
+
+.SS "\fBCouleur\fP \fBplateau_get_pos\fP (\fBPlateau\fPp, \fBPosition\fPpos)"Permet de recuperer un pion sur une position 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP le plateau 
+.br
+\fIpos\fP la position 
 .RE
 .PP
 \fBRenvoie:\fP

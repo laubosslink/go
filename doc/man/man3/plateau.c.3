@@ -1,18 +1,29 @@
-.TH "src/plateau.c" 3 "Mercredi Février 12 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "src/plateau.c" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
 src/plateau.c \- 
+.PP
+Le code source permettant de gérer le plateau\&.  
+
 .SH SYNOPSIS
 .br
 .PP
 \fC#include <matrice\&.h>\fP
 .br
+\fC#include <ensemble\&.h>\fP
+.br
 \fC#include <ensemble_colores\&.h>\fP
+.br
+\fC#include <ensemble_positions\&.h>\fP
 .br
 \fC#include <chaine\&.h>\fP
 .br
 \fC#include <plateau\&.h>\fP
+.br
+\fC#include <libertes\&.h>\fP
+.br
+\fC#include <position\&.h>\fP
 .br
 \fC#include <couleur\&.h>\fP
 .br
@@ -31,13 +42,16 @@ src/plateau.c \-
 .RI "int \fBest_un_pion_plateau\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
 .br
 .ti -1c
-.RI "\fBPlateau\fP \fBcreer_plateau\fP (int nbligne, int nbcolonne)"
+.RI "\fBPlateau\fP \fBcreer_plateau\fP (int taille)"
 .br
 .ti -1c
 .RI "\fBPlateau\fP \fBplateau_chargement\fP (FILE *fichier)"
 .br
 .ti -1c
 .RI "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fP p, int x, int y)"
+.br
+.ti -1c
+.RI "\fBCouleur\fP \fBplateau_get_pos\fP (\fBPlateau\fP p, \fBPosition\fP pos)"
 .br
 .ti -1c
 .RI "void \fBplateau_set\fP (\fBPlateau\fP p, int i, int j, \fBCouleur\fP c)"
@@ -67,15 +81,39 @@ src/plateau.c \-
 .RI "void \fBplateau_afficher\fP (\fBPlateau\fP p)"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+Le code source permettant de gérer le plateau\&. 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.PP
+EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-12-2013 
+.RE
+.PP
+
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBPlateau\fP \fBcreer_plateau\fP (intnbligne, intnbcolonne)"Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne 
+.SS "\fBPlateau\fP \fBcreer_plateau\fP (inttaille)"Permet de creer un plateau [taille x taille] 
 .PP
 \fBParamètres:\fP
 .RS 4
-\fInbligne\fP le nombre de ligne 
-.br
-\fInbcolonne\fP le nombre de colonnes 
+\fItaille\fP 
 .RE
 .PP
 \fBRenvoie:\fP
@@ -179,15 +217,30 @@ IMPORTANT
 .RE
 .PP
 
-.SS "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fPm, intx, intt)"Permet de recuperer un pion sur une position 
+.SS "\fBCouleur\fP \fBplateau_get\fP (\fBPlateau\fPm, intx, inty)"Permet de recuperer un pion sur une position 
 .PP
 \fBParamètres:\fP
 .RS 4
 \fIm\fP la matrice 
 .br
-\fIi\fP l'abscisse 
+\fIx\fP l'abscisse 
 .br
-\fIj\fP l'ordonnee 
+\fIy\fP l'ordonnee 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+La couleur du pion 
+.RE
+.PP
+
+.SS "\fBCouleur\fP \fBplateau_get_pos\fP (\fBPlateau\fPp, \fBPosition\fPpos)"Permet de recuperer un pion sur une position 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP le plateau 
+.br
+\fIpos\fP la position 
 .RE
 .PP
 \fBRenvoie:\fP

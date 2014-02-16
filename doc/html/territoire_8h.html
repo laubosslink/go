@@ -79,7 +79,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Définitions de type</a>  </div>
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier include/territoire.h</div>  </div>
 </div><!--header-->
@@ -88,12 +89,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <p>Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant compte des bords du plateau.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="ensemble__colores_8h_source.html">ensemble_colores.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="plateau_8h_source.html">plateau.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="position_8h_source.html">position.h</a>&gt;</code><br/>
 </div>
 <p><a href="territoire_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="territoire_8h.html#acd8ada3b62a70edf9027b633cd14db5c">Territoire</a></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="territoire_8h.html#acd8ada3b62a70edf9027b633cd14db5c">Territoire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="territoire_8h.html#a896662da2a34a834e9316b1d5985538b">determineTerritoire</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPosition.html">Position</a> pos)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant compte des bords du plateau. </p>
@@ -118,6 +124,36 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 </div>
 </div>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a896662da2a34a834e9316b1d5985538b"></a><!-- doxytag: member="territoire.h::determineTerritoire" ref="a896662da2a34a834e9316b1d5985538b" args="(Plateau plateau, Position pos)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="territoire_8h.html#acd8ada3b62a70edf9027b633cd14db5c">Territoire</a> <a class="el" href="territoire_8c.html#a896662da2a34a834e9316b1d5985538b">determineTerritoire</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPosition.html">Position</a>&#160;</td>
+          <td class="paramname"><em>pos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos. Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur. Ce cas est exploite pas la fonction estUnSeki </p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bogue:</a></b></dt><dd>risque de bug sans utiliser init_ensemble ou creer_ensemble sur territoire ! </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -136,7 +172,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi Février 12 2014 14:36:02 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

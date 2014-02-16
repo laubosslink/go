@@ -1,10 +1,19 @@
 \hypertarget{plateau_8c}{\section{\-Référence du fichier src/plateau.c}
 \label{plateau_8c}\index{src/plateau.\-c@{src/plateau.\-c}}
 }
+
+
+\-Le code source permettant de gérer le plateau.  
+
+
 {\ttfamily \#include $<$matrice.\-h$>$}\*
+{\ttfamily \#include $<$ensemble.\-h$>$}\*
 {\ttfamily \#include $<$ensemble\-\_\-colores.\-h$>$}\*
+{\ttfamily \#include $<$ensemble\-\_\-positions.\-h$>$}\*
 {\ttfamily \#include $<$chaine.\-h$>$}\*
 {\ttfamily \#include $<$plateau.\-h$>$}\*
+{\ttfamily \#include $<$libertes.\-h$>$}\*
+{\ttfamily \#include $<$position.\-h$>$}\*
 {\ttfamily \#include $<$couleur.\-h$>$}\*
 {\ttfamily \#include $<$stdio.\-h$>$}\*
 {\ttfamily \#include $<$stdlib.\-h$>$}\*
@@ -15,11 +24,13 @@ int \hyperlink{plateau_8c_aa1e22cd1f62f82a372ea9064bf20dc1a}{est\-\_\-un\-\_\-pi
 \item 
 int \hyperlink{plateau_8c_a1c743ade7c4b882ed744379644771532}{est\-\_\-un\-\_\-pion\-\_\-plateau} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
 \item 
-\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8c_a868ea5ad96fe509901a18ed34fec9d85}{creer\-\_\-plateau} (int nbligne, int nbcolonne)
+\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8c_a48347ca20160613e199cab541b9a261f}{creer\-\_\-plateau} (int taille)
 \item 
 \hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} \hyperlink{plateau_8c_a07f20c49b80703211e7a8949f2e702b1}{plateau\-\_\-chargement} (\-F\-I\-L\-E $\ast$fichier)
 \item 
 \hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} \hyperlink{plateau_8c_a78f1ad5d8c0744ac1cea6c738163c70e}{plateau\-\_\-get} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p, int x, int y)
+\item 
+\hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} \hyperlink{plateau_8c_a6418474ffc4c3ca31e65af92ed12444b}{plateau\-\_\-get\-\_\-pos} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p, \hyperlink{structPosition}{\-Position} pos)
 \item 
 void \hyperlink{plateau_8c_aa50accd3b4f1e4eefbe7dc2852a097da}{plateau\-\_\-set} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p, int i, int j, \hyperlink{couleur_8h_ae253e1bdbff71a044d939ee96ba0814a}{\-Couleur} c)
 \item 
@@ -41,20 +52,33 @@ void \hyperlink{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-affic
 \end{DoxyCompactItemize}
 
 
+\subsection{\-Description détaillée}
+\-Le code source permettant de gérer le plateau. \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
+
+\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
+\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
+
+\-E\-L \-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:yasmine.elhimdi@ecole.enciscaen.fr}{\tt yasmine.\-elhimdi@ecole.\-enciscaen.\-fr}$>$ 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{\-Version}
+1.\-0 
+\end{DoxyVersion}
+\begin{DoxyDate}{\-Date}
+03-\/12-\/2013 
+\end{DoxyDate}
+
+
 \subsection{\-Documentation des fonctions}
-\hypertarget{plateau_8c_a868ea5ad96fe509901a18ed34fec9d85}{\index{plateau.\-c@{plateau.\-c}!creer\-\_\-plateau@{creer\-\_\-plateau}}
+\hypertarget{plateau_8c_a48347ca20160613e199cab541b9a261f}{\index{plateau.\-c@{plateau.\-c}!creer\-\_\-plateau@{creer\-\_\-plateau}}
 \index{creer\-\_\-plateau@{creer\-\_\-plateau}!plateau.c@{plateau.\-c}}
 \subsubsection[{creer\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf creer\-\_\-plateau} (
 \begin{DoxyParamCaption}
-\item[{int}]{nbligne, }
-\item[{int}]{nbcolonne}
+\item[{int}]{taille}
 \end{DoxyParamCaption}
-)}}\label{plateau_8c_a868ea5ad96fe509901a18ed34fec9d85}
-\-Permet de creer un plateau d'une hauteur nbligne, et largeur nbcolonne 
+)}}\label{plateau_8c_a48347ca20160613e199cab541b9a261f}
+\-Permet de creer un plateau \mbox{[}taille x taille\mbox{]} 
 \begin{DoxyParams}{\-Paramètres}
-{\em nbligne} & le nombre de ligne \\
-\hline
-{\em nbcolonne} & le nombre de colonnes \\
+{\em taille} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
@@ -189,16 +213,34 @@ indique sur l'organisation du plateau est identique a une precedente organisatio
 \begin{DoxyParamCaption}
 \item[{{\bf \-Plateau}}]{m, }
 \item[{int}]{x, }
-\item[{int}]{t}
+\item[{int}]{y}
 \end{DoxyParamCaption}
 )}}\label{plateau_8c_a78f1ad5d8c0744ac1cea6c738163c70e}
 \-Permet de recuperer un pion sur une position 
 \begin{DoxyParams}{\-Paramètres}
 {\em m} & la matrice \\
 \hline
-{\em i} & l'abscisse \\
+{\em x} & l'abscisse \\
 \hline
-{\em j} & l'ordonnee \\
+{\em y} & l'ordonnee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-La couleur du pion 
+\end{DoxyReturn}
+\hypertarget{plateau_8c_a6418474ffc4c3ca31e65af92ed12444b}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-get\-\_\-pos@{plateau\-\_\-get\-\_\-pos}}
+\index{plateau\-\_\-get\-\_\-pos@{plateau\-\_\-get\-\_\-pos}!plateau.c@{plateau.\-c}}
+\subsubsection[{plateau\-\_\-get\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Couleur} {\bf plateau\-\_\-get\-\_\-pos} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{p, }
+\item[{{\bf \-Position}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a6418474ffc4c3ca31e65af92ed12444b}
+\-Permet de recuperer un pion sur une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & le plateau \\
+\hline
+{\em pos} & la position \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
