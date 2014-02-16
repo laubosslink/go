@@ -1,3 +1,27 @@
+/**
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ * 
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written premission of the authors
+ */
+
+/**
+ * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
+ * @author EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr>
+ * @version 1.0 
+ * @date 03-12-2013
+ *
+ */
+ 
+/** 
+ * @file plateau.c
+ * 
+ * @brief Le code source permettant de gérer le plateau
+ */
+ 
 #include <matrice.h>
 #include <ensemble_colores.h>
 #include <chaine.h>
@@ -28,6 +52,10 @@ Plateau plateau_chargement(FILE* fichier){
 
 Couleur plateau_get(Plateau p, int x, int y){
 	return (Couleur) p.donnees[y][x];
+}
+
+Couleur plateau_get_pos(Plateau p, Position pos){
+	return (Couleur) p.donnees[pos.y][pos.x];
 }
 
 void plateau_set(Plateau p, int i, int j, Couleur c){

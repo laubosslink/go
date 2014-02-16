@@ -19,7 +19,7 @@
 /** 
  * @file matrice.c
  * 
- * Le code source permettant de gérer des matrices
+ * @brief Le code source permettant de gérer des matrices
  */
  
 #include <stdlib.h>

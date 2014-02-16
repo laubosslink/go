@@ -26,15 +26,14 @@
 
 #include <stdio.h>
 
+typedef struct Matrice Plateau;
+
 #include <matrice.h>
 #include <chaine.h>
 #include <position.h>
-#include <territoire.h>
 #include <pion.h>
 #include <chaines.h>
-
-typedef struct Matrice Plateau;
-
+#include <territoire.h>
 
 /**
  * Permet d'afficher un plateau dans la console
@@ -72,6 +71,14 @@ int est_un_pion_plateau(Plateau plateau, Position pos);
  * @return La couleur du pion
  */
 Couleur plateau_get(Plateau m, int x, int t);
+
+/**
+ * Permet de recuperer un pion sur une position
+ * @param p le plateau
+ * @param pos la position
+ * @return La couleur du pion
+ */
+Couleur plateau_get_pos(Plateau p, Position pos);
 
 /**
  * Permet de mettre un pion sur le plateau

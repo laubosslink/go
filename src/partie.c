@@ -1,3 +1,27 @@
+/**
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ * 
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written premission of the authors
+ */
+
+/**
+ * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
+ * @author EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr>
+ * @version 1.0 
+ * @date 03-12-2013
+ *
+ */
+ 
+/** 
+ * @file partie.c
+ * 
+ * @brief Le code source permettant de gérer une partie
+ */
+ 
 #include <partie.h>
 #include <plateau.h>
 #include <couleur.h>
@@ -53,18 +77,12 @@ int partie_sauvegarde(Partie partie, FILE* fichier){
 	
 	/* sauvegarde des informations du plateau (taille, donnees) */
 	est_sauve = (fwrite(&(partie.plateau.nbligne), sizeof(int), 1, fichier) == 1 && est_sauve == 1);
-	
-	//est_sauve = (fwrite(partie.plateau.donnees, sizeof(int), partie.plateau.nbligne * partie.plateau.nbcolonne, fichier) == 1 && est_sauve == 1);
-	
+		
 	for(i=0; i<partie.plateau.nbligne; i++)
 	{
-		for(j=0; j<partie.plateau.nbcolonne; j++)
-		{
-			est_sauve = (fwrite(&(partie.plateau.donnees[i][j]), sizeof(int), 1, fichier) == 1 && est_sauve == 1);
-		}
+		est_sauve = (fwrite(partie.plateau.donnees[i], sizeof(int), partie.plateau.nbcolonne, fichier) == partie.plateau.nbcolonne && est_sauve == 1);
 	}
-	//est_sauve = (fwrite(&(partie.plateau), sizeof(int), 1, fichier) == 1 && est_sauve == 1);
-	
+
 	return est_sauve;
 }
 
@@ -81,14 +99,9 @@ Partie partie_charge(FILE* fichier){
 	
 	partie.plateau = creer_plateau(partie.plateau.nbcolonne);
 
-	//fread(&(partie.plateau.donnees), sizeof(int) * partie.plateau.nbligne * partie.plateau.nbcolonne, 1, fichier);
-	
 	for(i=0; i<partie.plateau.nbligne; i++)
 	{
-		for(j=0; j<partie.plateau.nbcolonne; j++)
-		{
-			fread(&(partie.plateau.donnees[i][j]), sizeof(int), 1, fichier);
-		}
+		fread(partie.plateau.donnees[i], sizeof(int), partie.plateau.nbcolonne, fichier);
 	}
 	
 	return partie;

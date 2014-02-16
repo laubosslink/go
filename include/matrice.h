@@ -24,8 +24,7 @@
 
 #ifndef MATRICE_H_INCLUDED
 #define MATRICE_H_INCLUDED
- 
-#include <couleur.h>
+
 #include <stdio.h>
  
 /** @todo description de la structure */
