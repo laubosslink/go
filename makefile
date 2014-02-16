@@ -25,7 +25,7 @@ all: go
 
 go: libensemble libmatrice $(BINDIR)/go
 
-$(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o
+$(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 doc:
@@ -56,7 +56,7 @@ $(OBJDIR)/test_territoire.o: $(TESTDIR)/test_territoire.c
 
 test_plateau: libmatrice libensemble $(BINDIR)/test_plateau
 
-$(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o
+$(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o 
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_plateau.o: $(TESTDIR)/test_plateau.c

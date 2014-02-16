@@ -24,8 +24,11 @@
  
 #include <matrice.h>
 #include <ensemble_colores.h>
+#include <ensemble_positions.h>
 #include <chaine.h>
 #include <plateau.h>
+#include <libertes.h>
+#include <position.h>
 #include <couleur.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -286,55 +289,74 @@ void plateau_afficher(Plateau p){
 
 /*
 Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
-	int i,j,x,y;
-	Chaines CC; // chaines_capturees
-	Chaine chaine;
-	Couleur couleur;
+	Chaines CC;
 	Pion pionChaine;
-	Pion pionVoisin;
+	Position* voisinHaut;
+	Position* voisinBas;
+	Position* voisinGauche;
+	Position* voisinDroite;
+	Chaine chaine;
 	Chaine chaineAdverse;
-		
+	Libertes libertes_chaine;
+	Libertes libertes_chaineAdverse;
+	
 	chaine = plateau_determiner_chaine(plateau,pion.p);
-	couleur = chaine.c ; 
-	pionChaine.p = (*((Position *)(ensemble_colores_tete(&chaine)->contenu)));
 	
+	pionChaine.c = chaine.c;
+	pionChaine.p = (*(Position*)(ensemble_colores_tete(&chaine)->contenu));
 	
+	voisinHaut = (Position*)malloc(sizeof(Position));
+	voisinBas = (Position*)malloc(sizeof(Position));
+	voisinGauche = (Position*)malloc(sizeof(Position));
+	voisinDroite = (Position*)malloc(sizeof(Position));
+	
+	/* on parcours la chaine à laquelle appartient le pion pour determiner la chaine des pions adverses */
 	while(ensemble_colores_suivant(&chaine)){
-		x=pionChaine.p.x;
-		y=pionChaine.p.y;
-		for(i=x-1;i<x+2;i++){
-			pionVoisin.p.x = i;
-			pionVoisin.p.y = y;
-			
-			if(plateau_position_appartient(plateau,pionVoisin.p) && plateau_get(plateau,pionVoisin.p.x,pionVoisin.p.y) != couleur && ensemble_colores_appartient(&chaineAdverse,&pionVoisin.p)){
-				ensemble_colores_ajouter(&chaineAdverse,(*pionAdverse.p));
-			}
-		}
-			
-		for(j=y-1;j<y+2;j++){
-			pionVoisin.p.x = x;
-			pionVoisin.p.y = j;
-			
-			if(plateau_position_appartient(plateau,pionVoisin.p) && plateau_get(plateau,pionVoisin.p.x,pionVoisin.p.y) != couleur && ensemble_colores_appartient(&chaineAdverse,&pionVoisin.p)){
-				ensemble_colores_ajouter(&chaineAdverse,(*pionAdverse.p));
-			}
-		}
 		
-		pionChaine.p = (*(ensemble_colores_tete(&chaine)->(Position*)contenu->suivant));
+		(*voisinHaut) = haut(pionChaine.p);
+		(*voisinBas) = bas(pionChaine.p);
+		(*voisinGauche) = gauche(pionChaine.p);
+		(*voisinDroite) = droite(pionChaine.p);
+
+		
+		if(plateau_position_appartient(plateau,haut(pionChaine.p)) && plateau_get(plateau,haut(pionChaine.p).x,haut(pionChaine.p).y) != pionChaine.c)
+			ensemble_colores_ajouter(&chaineAdverse,voisinHaut);
+		
+		if(plateau_position_appartient(plateau,bas(pionChaine.p)) && plateau_get(plateau,bas(pionChaine.p).x,bas(pionChaine.p).y) != pionChaine.c)
+			ensemble_colores_ajouter(&chaineAdverse,voisinBas);
+		
+		if(plateau_position_appartient(plateau,droite(pionChaine.p)) && plateau_get(plateau,droite(pionChaine.p).x,droite(pionChaine.p).y) != pionChaine.c)
+			ensemble_colores_ajouter(&chaineAdverse,voisinDroite);
+		
+		if(plateau_position_appartient(plateau,gauche(pionChaine.p)) && plateau_get(plateau,gauche(pionChaine.p).x,gauche(pionChaine.p).y) != pionChaine.c)
+			ensemble_colores_ajouter(&chaineAdverse,voisinGauche);
+			
+		pionChaine.p = (*(Position*)(ensemble_colores_tete(&chaine)->suivant));
 	}
 	
-	if((*valide) == 0){
-		ensemble_ajouter(&CC,(Chaine*)&chaine);
+	/* On determine les libertes de chacune des deux chaines */
+	libertes_chaine = determineLiberte(plateau,chaine);
+	libertes_chaineAdverse = determineLiberte(plateau,chaineAdverse);
+	
+	/* si la chaine ne possède aucune liberté elle est capturée */
+	if(ensemble_positions_vide(&libertes_chaine)){
+		plateau_realiser_capture(plateau,chaine);
+		ensemble_ajouter(&CC,&chaine);
+		(*valide) = 0;
 		return CC;
 	}
-	
-	if((*valide) == 1){
-		ensemble_ajouter(&CC,(Chaine*)&chaineAdverse);
-		return CC;
+	else{
+		if(ensemble_positions_vide(&libertes_chaineAdverse)){
+			plateau_realiser_capture(plateau,chaineAdverse);
+			ensemble_ajouter(&CC,&chaineAdverse);
+			(*valide) = 1;
+			return CC;
+		}
 	}
 	
-	if(ensemble_vide(&CC) && (*valide) != 0 && (*valide) != 1) 
-		return NULL;
+	if((*valide) != 0 && (*valide) != 1 && ensemble_vide(&CC)){
+		printf("Aucune chaine n'a été capturé");
+	}
 	
 }
 */
