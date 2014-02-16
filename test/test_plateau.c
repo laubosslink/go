@@ -31,7 +31,7 @@ int main(){
 
 	Libertes libertes;
 		
-	Position pos;
+	Position pos,position;
 	
 	Pion pion;
 	
@@ -44,7 +44,11 @@ int main(){
 	pos.x = 2;
 	pos.y = 3;
 	
-	pion.p = pos;
+	position.x = 5;
+	position.y = 6;
+	
+	pion.p = position;
+	pion.c = NOIR ;
 	
 	fclose(f);
 	
@@ -84,8 +88,8 @@ int main(){
 	
 	plateau_afficher(p);
 	
-	(*valide) == 0;
-	captureChaines(plateau,
+	chainesCapturees = captureChaines(p,pion,valide);
+	
 	
 	return 0;
 }
