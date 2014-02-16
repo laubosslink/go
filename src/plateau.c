@@ -256,7 +256,7 @@ void plateau_afficher(Plateau p){
 
 
 Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
-	int i,j ;
+	int i,j,x,y;
 	Chaines CC; // chaines_capturees
 	Chaine chaine;
 	Couleur couleur;
