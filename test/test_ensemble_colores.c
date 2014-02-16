@@ -17,14 +17,14 @@ void afficherEnsembleColores(Ensemble_Colores *E){
 	
 	while(ensemble_colores_suivant(E)){
 		//ensemble_colores_courant(E)
-		printf("%d \t",  ensemble_colores_contenu(E->p.courant)->x);
-		printf("%d \t",  ensemble_colores_contenu(E->p.courant)->y);
+		printf("%d \t",  position_get_courant(E)->x);
+		printf("%d \t",  position_get_courant(E)->y);
 		//printf("%d\t", E->p.courant->contenu->y);
 		E->p.courant=E->p.courant->suivant;
 	}
 	
-	printf("%d \t",  ensemble_colores_contenu(E->p.courant)->x);
-	printf("%d \t",  ensemble_colores_contenu(E->p.courant)->y);
+	printf("%d \t",  position_get_courant(E)->x);
+	printf("%d \t",  position_get_courant(E)->y);
 	printf("}\n\n");
 }
 

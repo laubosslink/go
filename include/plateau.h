@@ -26,6 +26,9 @@
 
 #include <stdio.h>
 
+/**
+ * @brief Structure d'un plateau de jeu. Plateau est un alias du type Matrice.
+ */
 typedef struct Matrice Plateau;
 
 #include <matrice.h>

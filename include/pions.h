@@ -26,6 +26,9 @@
  
 #include <ensemble.h>
 
+/**
+ * @brief Le type Pions regroupe un ensemble de pions. Pions est un alias du type Ensemble.
+ */
 typedef Ensemble Pions;
 
 #endif

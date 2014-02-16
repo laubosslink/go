@@ -23,15 +23,21 @@
 
 #ifndef ENSEMBLE_H_INCLUDED
 #define ENSEMBLE_H_INCLUDED
- 
+
 typedef struct Cell Cell;
 typedef struct Ensemble Ensemble;
 
+/** 
+ *@brief structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante. 
+ */
 struct Cell{
 	void* contenu;
 	Cell* suivant;
 };
 
+/** 
+ *@brief structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l'ensemble. 
+ */
 struct Ensemble{
 	Cell* courant;
 	Cell* tete;
@@ -89,17 +95,44 @@ Cell* ensemble_tete(Ensemble* E);
 Cell* ensemble_courant(Ensemble* E);
 
 /**
+ * Permet de récupérer la cellule suivante d'un ensemble
+ * @param E l'ensemble
+ * @return la cellule suivante (par rapport à courant)
+ */
+Cell* ensemble_get_suivant(Ensemble* E);
+
+/**
+ * Permet de récupérer le contenu de la cellule courante
+ * @param E l'ensemble
+ * @return void* le contenu
+ */
+void* ensemble_get_courant_contenu(Ensemble *E);
+
+/**
+ * Permet de modifier le pointeur de la cellule courante sur une autre
+ * @param E l'ensemble
+ * @param c la nouvelle celulle vers laquelle pointe courant
+ */
+void ensemble_set_courant(Ensemble* E, Cell *c);
+
+/**
  * Permet de dire s'il y a un élément suivant ou non 
  * @return 1 ou 0
  */
 int ensemble_suivant(Ensemble* E);
 
 /**
- * Përmet de concatener deux ensembles
+ * Permet de concatener deux ensembles
  * @param e1 l'ensemble e1 ajouter en "tête"
  * @param e2 l'ensemble e2 ajouter en bout de e1
  * @return un nouvel ensemble
  */
 Ensemble* ensemble_concatene(Ensemble* e1, Ensemble* e2);
+
+/**
+ * Permet de remettre le pointeur courant sur la tête de l'ensemble
+ * @param E l'ensemble
+ */
+void ensemble_reset_courant(Ensemble* E);
 
 #endif

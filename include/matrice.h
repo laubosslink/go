@@ -27,11 +27,18 @@
 
 #include <stdio.h>
  
-/** @todo description de la structure */
+/**
+ * @brief Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne.
+ */ 
 typedef struct Matrice {
-	int **donnees; /** Les tableau des données */
-	int nbligne; /** Le nombre de lignes */
-	int nbcolonne; /** Le nombre de colonnes */
+	/** Les tableau des données */
+	int **donnees; 
+	
+	/** Le nombre de lignes */
+	int nbligne;
+	
+	/** Le nombre de colonnes */
+	int nbcolonne;
 } Matrice;
 
 /**

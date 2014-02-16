@@ -15,9 +15,11 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .ti -1c
 .RI "struct \fBCell\fP"
 .br
+.RI "\fIstructure \fBCell\fP qui contient le contenu de la cellule et le pointeur vers la cellule suivante\&. \fP"
 .ti -1c
 .RI "struct \fBEnsemble\fP"
 .br
+.RI "\fIstructure \fBEnsemble\fP contient le pointeur vers la cellule courante et le pointeur vers la tete de l'ensemble\&. \fP"
 .in -1c
 .SS "Définitions de type"
 
@@ -57,10 +59,22 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .RI "\fBCell\fP * \fBensemble_courant\fP (\fBEnsemble\fP *E)"
 .br
 .ti -1c
+.RI "\fBCell\fP * \fBensemble_get_suivant\fP (\fBEnsemble\fP *E)"
+.br
+.ti -1c
+.RI "void * \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP *E)"
+.br
+.ti -1c
+.RI "void \fBensemble_set_courant\fP (\fBEnsemble\fP *E, \fBCell\fP *c)"
+.br
+.ti -1c
 .RI "int \fBensemble_suivant\fP (\fBEnsemble\fP *E)"
 .br
 .ti -1c
 .RI "\fBEnsemble\fP * \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"
+.br
+.ti -1c
+.RI "void \fBensemble_reset_courant\fP (\fBEnsemble\fP *E)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -124,7 +138,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "\fBEnsemble\fP* \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"Përmet de concatener deux ensembles 
+.SS "\fBEnsemble\fP* \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"Permet de concatener deux ensembles 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -143,7 +157,12 @@ un nouvel ensemble
 .PP
 \fBRenvoie:\fP
 .RS 4
-le pointeur sur l'élément courant 
+le pointeur sur l'élément courant
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+get_ 
 .RE
 .PP
 
@@ -160,11 +179,55 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
+.SS "void* \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP *E)"Permet de récupérer le contenu de la cellule courante 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+void* le contenu 
+.RE
+.PP
+
+.SS "\fBCell\fP* \fBensemble_get_suivant\fP (\fBEnsemble\fP *E)"Permet de récupérer la cellule suivante d'un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la cellule suivante (par rapport à courant) 
+.RE
+.PP
+
 .SS "void \fBensemble_init\fP (\fBEnsemble\fP *E)"Permet d'initialiser un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
 \fIE\fP l'ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_reset_courant\fP (\fBEnsemble\fP *E)"Permet de remettre le pointeur courant sur la tête de l'ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_set_courant\fP (\fBEnsemble\fP *E, \fBCell\fP *c)"Permet de modifier le pointeur de la cellule courante sur une autre 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.br
+\fIc\fP la nouvelle celulle vers laquelle pointe courant 
 .RE
 .PP
 
@@ -180,7 +243,12 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .PP
 \fBRenvoie:\fP
 .RS 4
-le pointeur de la tete de l'ensemble 
+le pointeur de la tete de l'ensemble
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+get_ 
 .RE
 .PP
 

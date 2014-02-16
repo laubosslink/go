@@ -13,14 +13,14 @@ La couleur d'un pion\&.
 
 .in +1c
 .ti -1c
-.RI "typedef enum \fBeCouleur\fP \fBCouleur\fP"
+.RI "typedef enum \fBCouleur\fP \fBCouleur\fP"
 .br
 .in -1c
 .SS "Énumérations"
 
 .in +1c
 .ti -1c
-.RI "enum \fBeCouleur\fP { \fBVIDE\fP = 0, \fBBLANC\fP = 1, \fBNOIR\fP = 2 }"
+.RI "enum \fBCouleur\fP { \fBINDEFINI\fP = -1, \fBVIDE\fP = 0, \fBBLANC\fP = 1, \fBNOIR\fP = 2 }"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -51,20 +51,25 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef enum \fBeCouleur\fP  \fBCouleur\fP"Permet de représenter la couleur des pionts 
+.SS "typedef enum \fBCouleur\fP  \fBCouleur\fP"Permet de représenter la couleur des pionts 
 .SH "Documentation du type de l'énumération"
 .PP 
-.SS "enum \fBeCouleur\fP"Permet de représenter la couleur des pionts 
+.SS "enum \fBCouleur\fP"Permet de représenter la couleur des pionts 
 .PP
 \fBValeurs énumérées: \fP
 .in +1c
 .TP
+\fB\fIINDEFINI \fP\fP
+Cas particulié, non definis 
+.TP
 \fB\fIVIDE \fP\fP
+Permet de représenter une case vide (pas de pion) 
 .TP
 \fB\fIBLANC \fP\fP
+Permet de représenter les pions blancs 
 .TP
 \fB\fINOIR \fP\fP
-
+Permet de représenter les pions noirs 
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

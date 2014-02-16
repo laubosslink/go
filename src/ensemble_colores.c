@@ -1,10 +1,35 @@
+/**
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ * 
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written premission of the authors
+ */
+ 
+/**
+ * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
+ * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
+ * @version 1.1 
+ * @date 03-02-2013
+ * 
+ * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
+ */
+ 
+/** 
+ * @file ensemble_colores.c
+ * 
+ * @brief code source qui permet de gérer les ensembles colores
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <position.h>
 #include <positions.h>
 #include <ensemble.h>
 #include <ensemble_colores.h>
-
 
 Ensemble_Colores* creer_ensemble_colores(){
 	Ensemble_Colores* e = (Ensemble_Colores *) malloc(sizeof(Ensemble_Colores));
@@ -12,6 +37,10 @@ Ensemble_Colores* creer_ensemble_colores(){
 	e->p = (Positions *) creer_ensemble();
 	
 	return e;
+}
+
+void ensemble_colores_init(Ensemble_Colores* E){
+	E->p = creer_ensemble();
 }
 
 int ensemble_colores_vide(Ensemble_Colores* E){
@@ -33,16 +62,16 @@ int ensemble_colores_suivant(Ensemble_Colores* E){
 int ensemble_colores_appartient(Ensemble_Colores* E, Position* element){
 	Positions* p = E->p;
 	
-	p->courant = ensemble_tete(p);
+	ensemble_reset_courant(p);
 
 	while(ensemble_suivant(p)){
-		if(element->x == ((Position *)ensemble_courant(p)->contenu)->x && element->y == ((Position *)ensemble_courant(p)->contenu)->y)
+		if(element->x == position_get_courant(p)->x && element->y == position_get_courant(p)->y)
 			return 1;
-	
-		p->courant = ensemble_courant(p)->suivant;
+			
+		ensemble_set_courant(p, ensemble_get_suivant(p));
 	}
 	
-	if(element->x == ((Position *)ensemble_courant(p)->contenu)->x && element->y == ((Position *)ensemble_courant(p)->contenu)->y)
+	if(element->x == position_get_courant(p)->x && element->y == position_get_courant(p)->y)
 		return 1;
 	
 	return 0;
@@ -57,6 +86,3 @@ void ensemble_colores_ajouter(Ensemble_Colores* E, Position* element){
 	return ensemble_ajouter(E->p, (Position*) element);
 }
 
-Position* ensemble_colores_contenu(Cell* c){
-	return (Position *) c->contenu;
-}

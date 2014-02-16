@@ -26,7 +26,9 @@
 
 #include <territoire.h>
 #include <ensemble.h>
-
+/**
+ * @brief le type Territoires regroupe un ensemble de territoire. Donc Territoires est un alias du type Ensemble
+ */
 typedef Ensemble Territoires;
 
 #endif

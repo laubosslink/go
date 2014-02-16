@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 src/position.c \- 
+.PP
+code source qui permet de gérer les positions  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -12,12 +15,17 @@ src/position.c \-
 .br
 \fC#include <position\&.h>\fP
 .br
+\fC#include <ensemble\&.h>\fP
+.br
 
 .SS "Fonctions"
 
 .in +1c
 .ti -1c
 .RI "\fBPosition\fP * \fBposition_creer\fP (int x, int y)"
+.br
+.ti -1c
+.RI "\fBPosition\fP * \fBposition_get_courant\fP (\fBEnsemble\fP *E)"
 .br
 .ti -1c
 .RI "\fBPosition\fP \fBhaut\fP (\fBPosition\fP p)"
@@ -32,6 +40,37 @@ src/position.c \-
 .RI "\fBPosition\fP \fBdroite\fP (\fBPosition\fP p)"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+code source qui permet de gérer les positions 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+.RE
+.PP
+
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBPosition\fP \fBbas\fP (\fBPosition\fPp)"Permet de se deplacer vers le bas 
@@ -98,6 +137,19 @@ nouvelle position
 \fBRenvoie:\fP
 .RS 4
 un pointeur vers la position alloue 
+.RE
+.PP
+
+.SS "\fBPosition\fP* \fBposition_get_courant\fP (\fBEnsemble\fP *E)"Permet de récupérer la position actuelle d'un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un pointeur vers une position 
 .RE
 .PP
 

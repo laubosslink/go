@@ -27,11 +27,11 @@
 /** 
  * Permet de représenter la couleur des pionts
  */
-typedef enum eCouleur {
+typedef enum Couleur {
 	/** Cas particulié, non definis */
 	INDEFINI=-1,
 	
-	/** Permet de représenter une case vide (pas de pion)
+	/** Permet de représenter une case vide (pas de pion) */
 	VIDE=0,
 	
 	/** Permet de représenter les pions blancs */

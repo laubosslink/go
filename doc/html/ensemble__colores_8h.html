@@ -89,22 +89,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>structures Ensemble_colores permettant la manipulation d'un ensemble de position et d'une couleur  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="ensemble_8h_source.html">ensemble.h</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="couleur_8h_source.html">couleur.h</a>&gt;</code><br/>
-<code>#include &lt;<a class="el" href="position_8h_source.html">position.h</a>&gt;</code><br/>
+<div class="textblock"><code>#include &lt;<a class="el" href="couleur_8h_source.html">couleur.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="positions_8h_source.html">positions.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="ensemble_8h_source.html">ensemble.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="position_8h_source.html">position.h</a>&gt;</code><br/>
 </div>
 <p><a href="ensemble__colores_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure d'un ensemble coloré contient une couleur, et un ensemble de positions.  <a href="structEnsemble__Colores.html#details">Plus de détails...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#ad9a9a10e36629d4adab5cddc52fd1d51">Ensemble_Colores</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a03bfe7bf4dafcbcc51a33c44489f6b41">Ensemble_Colores</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#ab04091371c13add605fc680e5f47ad4c">creer_ensemble_colores</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a49dc4cbe77e610739541c1baa3bf2ccd">ensemble_colores_init</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a6c609986a7d91669933815f93e86cdac">ensemble_colores_vide</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a8e4474801c500718f15715768ac91737">ensemble_colores_appartient</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E, <a class="el" href="structPosition.html">Position</a> *element)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a8fe9b958da26667518265205fd50d0d1">ensemble_colores_ajouter</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E, <a class="el" href="structPosition.html">Position</a> *element)</td></tr>
@@ -112,7 +114,6 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a3917eef3aa1e45f7e8d60ab9b1e9bbbe">ensemble_colores_tete</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#ab519c8243f96382acf4aa29af761d2f3">ensemble_colores_courant</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a74161295871ea5195cb841c53f1d759a">ensemble_colores_suivant</a> (<a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *E)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble__colores_8h.html#a563ec0ac9525bae5fb50ba261cbcdfbc">ensemble_colores_contenu</a> (<a class="el" href="structCell.html">Cell</a> *c)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>structures Ensemble_colores permettant la manipulation d'un ensemble de position et d'une couleur </p>
@@ -124,12 +125,12 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 <dl class="version"><dt><b>Version:</b></dt><dd>1.2 </dd></dl>
 <dl class="date"><dt><b>Date:</b></dt><dd>03-02-2013 </dd></dl>
 </div><hr/><h2>Documentation des définitions de type</h2>
-<a class="anchor" id="ad9a9a10e36629d4adab5cddc52fd1d51"></a><!-- doxytag: member="ensemble_colores.h::Ensemble_Colores" ref="ad9a9a10e36629d4adab5cddc52fd1d51" args="" -->
+<a class="anchor" id="a03bfe7bf4dafcbcc51a33c44489f6b41"></a><!-- doxytag: member="ensemble_colores.h::Ensemble_Colores" ref="a03bfe7bf4dafcbcc51a33c44489f6b41" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a>  <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a></td>
+          <td class="memname">typedef struct <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> <a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a></td>
         </tr>
       </table>
 </div>
@@ -225,31 +226,6 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 </div>
 </div>
-<a class="anchor" id="a563ec0ac9525bae5fb50ba261cbcdfbc"></a><!-- doxytag: member="ensemble_colores.h::ensemble_colores_contenu" ref="a563ec0ac9525bae5fb50ba261cbcdfbc" args="(Cell *c)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structPosition.html">Position</a>* <a class="el" href="ensemble__colores_8c.html#a563ec0ac9525bae5fb50ba261cbcdfbc">ensemble_colores_contenu</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structCell.html">Cell</a> *&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Permet de récupérer le contenu d'une cellule d'ensemble colores </p>
-<dl class="params"><dt><b>Paramètres:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td>la cellule </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>une position </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ab519c8243f96382acf4aa29af761d2f3"></a><!-- doxytag: member="ensemble_colores.h::ensemble_colores_courant" ref="ab519c8243f96382acf4aa29af761d2f3" args="(Ensemble_Colores *E)" -->
 <div class="memitem">
 <div class="memproto">
@@ -301,6 +277,30 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
   </dd>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>E pointeur vers le nouvel ensemble privé de l'élément supprimé </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a49dc4cbe77e610739541c1baa3bf2ccd"></a><!-- doxytag: member="ensemble_colores.h::ensemble_colores_init" ref="a49dc4cbe77e610739541c1baa3bf2ccd" args="(Ensemble_Colores *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="ensemble__colores_8c.html#a49dc4cbe77e610739541c1baa3bf2ccd">ensemble_colores_init</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble__Colores.html">Ensemble_Colores</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet d'initialiser un ensemble coloré </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensenble coloré </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -385,7 +385,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:18 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

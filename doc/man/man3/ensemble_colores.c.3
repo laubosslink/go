@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 src/ensemble_colores.c \- 
+.PP
+code source qui permet de gérer les ensembles colores  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -26,6 +29,9 @@ src/ensemble_colores.c \-
 .RI "\fBEnsemble_Colores\fP * \fBcreer_ensemble_colores\fP ()"
 .br
 .ti -1c
+.RI "void \fBensemble_colores_init\fP (\fBEnsemble_Colores\fP *E)"
+.br
+.ti -1c
 .RI "int \fBensemble_colores_vide\fP (\fBEnsemble_Colores\fP *E)"
 .br
 .ti -1c
@@ -46,10 +52,38 @@ src/ensemble_colores.c \-
 .ti -1c
 .RI "void \fBensemble_colores_ajouter\fP (\fBEnsemble_Colores\fP *E, \fBPosition\fP *element)"
 .br
-.ti -1c
-.RI "\fBPosition\fP * \fBensemble_colores_contenu\fP (\fBCell\fP *c)"
-.br
 .in -1c
+.SH "Description détaillée"
+.PP 
+code source qui permet de gérer les ensembles colores 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+.RE
+.PP
+
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBEnsemble_Colores\fP* \fBcreer_ensemble_colores\fP ()"Permet de creer un ensemble 
@@ -81,19 +115,6 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "\fBPosition\fP* \fBensemble_colores_contenu\fP (\fBCell\fP *c)"Permet de récupérer le contenu d'une cellule d'ensemble colores 
-.PP
-\fBParamètres:\fP
-.RS 4
-\fIc\fP la cellule 
-.RE
-.PP
-\fBRenvoie:\fP
-.RS 4
-une position 
-.RE
-.PP
-
 .SS "\fBCell\fP* \fBensemble_colores_courant\fP (\fBEnsemble_Colores\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
 .PP
 \fBRenvoie:\fP
@@ -112,6 +133,14 @@ le pointeur sur l'élément courant
 \fBRenvoie:\fP
 .RS 4
 E pointeur vers le nouvel ensemble privé de l'élément supprimé 
+.RE
+.PP
+
+.SS "void \fBensemble_colores_init\fP (\fBEnsemble_Colores\fP *E)"Permet d'initialiser un ensemble coloré 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensenble coloré 
 .RE
 .PP
 

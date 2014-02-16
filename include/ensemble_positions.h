@@ -26,9 +26,13 @@
 #define ENSEMBLE_POSITIONS_H_INCLUDED 
 
 #include <ensemble.h>
-#include <position.h>
-  
+
+/**
+ * @brief Ensemble_Positions est un alias du type Ensemble
+ */ 
 typedef Ensemble Ensemble_Positions;
+
+#include <position.h>
 
 /**
  * Permet de creer un ensemble

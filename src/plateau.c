@@ -140,27 +140,18 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	
 	chaine.c = plateau.donnees[pos.y][pos.x];
 	
-	p = (Position *) malloc(sizeof(Position));
-	p->x = pos.x;
-	p->y = pos.y;
+	p = creer_position(pos.x, pos.y);
 	
-	chaine.p = creer_ensemble(); /** IMPORTANT */
+	chaine.p = creer_ensemble();
 	
 	/* ajoute de la position actuel dans la chaine */
 	ensemble_colores_ajouter(&chaine, p);
 
 	/* lancement récursif à droite, gauche, haut, bas pour rechercher des pions de même couleur */
-	pos.x++;
-	plateau_determiner_chaine_rec(plateau, pos, &chaine);
-	pos.x -= 2;
-	plateau_determiner_chaine_rec(plateau, pos, &chaine);
-	pos.x++;
-	
-	pos.y++;
-	plateau_determiner_chaine_rec(plateau, pos, &chaine);
-	pos.y -= 2;
-	plateau_determiner_chaine_rec(plateau, pos, &chaine);
-	pos.x++;
+	plateau_determiner_chaine_rec(plateau, droite(pos), &chaine);
+	plateau_determiner_chaine_rec(plateau, gauche(pos), &chaine);
+	plateau_determiner_chaine_rec(plateau, haut(pos), &chaine);
+	plateau_determiner_chaine_rec(plateau, bas(pos), &chaine);
 	
 	return chaine;
 }
@@ -171,14 +162,14 @@ void plateau_realiser_capture(Plateau plateau, Chaine chaine){
 	if(ensemble_vide(p))
 		return;
 	
-	p->courant = ensemble_tete(p);
+	ensemble_reset_courant(p); 
 	
 	while(ensemble_suivant(p)){
-		plateau.donnees[((Position*)p->courant->contenu)->y][((Position*)p->courant->contenu)->x] = VIDE;
-		p->courant = ensemble_courant(p)->suivant;
+		plateau.donnees[position_get_courant(p)->y][position_get_courant(p)->x] = VIDE;
+		ensemble_set_courant(p, ensemble_get_suivant(p));
 	}
 	
-	plateau.donnees[((Position*)p->courant->contenu)->y][((Position*)p->courant->contenu)->x] = VIDE;
+	plateau.donnees[position_get_courant(p)->y][position_get_courant(p)->x] = VIDE;
 	
 	/* @todo free de chaine */
 }
@@ -286,4 +277,26 @@ void plateau_afficher(Plateau p){
 	}
 	printf("-\n");
 	
+}
+
+
+Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
+	Chaines chaines;
+	
+	/* on determine la chaine a laquelle appartient le pion */
+	
+	/* on se deplace sur cette chaine */
+	
+	/* on regarde haut, bas, gauche, droite de chaque position de cette chaine */
+	
+	/* on determine la chaine de chaque haut/bas/gauche/droite  */
+	
+	/* on ajoute cette chaine dans Chaines "tmp" (ensemble de chaine) */
+	
+	/* on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
+	
+	/* on retourne Chaines "sortie" (les chaines captures) */
+	
+	
+	return chaines;
 }

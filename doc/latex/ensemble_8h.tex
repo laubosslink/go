@@ -10,9 +10,9 @@ structures cell et \hyperlink{structEnsemble}{\-Ensemble} permettant la manipula
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structCell}{\-Cell}
-\item 
+\begin{DoxyCompactList}\small\item\em structure \hyperlink{structCell}{\-Cell} qui contient le contenu de la cellule et le pointeur vers la cellule suivante. \end{DoxyCompactList}\item 
 struct \hyperlink{structEnsemble}{\-Ensemble}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em structure \hyperlink{structEnsemble}{\-Ensemble} contient le pointeur vers la cellule courante et le pointeur vers la tete de l'ensemble. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,9 +39,17 @@ void \hyperlink{ensemble_8h_aa0fd09212e6ed9154a9f01909039f384}{ensemble\-\_\-ajo
 \item 
 \hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble_8h_afe671e087f7eae69e5e89df96f2eb1c4}{ensemble\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
 \item 
+\hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble_8h_ab1f76a3f11864e53cbbed88004cb6872}{ensemble\-\_\-get\-\_\-suivant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+void $\ast$ \hyperlink{ensemble_8h_ac32df2329e085c8172dd34c393e8e3e9}{ensemble\-\_\-get\-\_\-courant\-\_\-contenu} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
+\item 
+void \hyperlink{ensemble_8h_a15184ddbccffd1cca2c8172118447af6}{ensemble\-\_\-set\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E, \hyperlink{structCell}{\-Cell} $\ast$c)
+\item 
 int \hyperlink{ensemble_8h_aa786b13e0846e401cfc327d5f3876251}{ensemble\-\_\-suivant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
 \item 
 \hyperlink{structEnsemble}{\-Ensemble} $\ast$ \hyperlink{ensemble_8h_ac8b8082e3fa0171fe35373c3c6af36c4}{ensemble\-\_\-concatene} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$e1, \hyperlink{structEnsemble}{\-Ensemble} $\ast$e2)
+\item 
+void \hyperlink{ensemble_8h_a6992161c7ad25f6a41d9fe9e2f339f14}{ensemble\-\_\-reset\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
 \end{DoxyCompactItemize}
 
 
@@ -118,7 +126,7 @@ un pointeur vers un ensemble
 \item[{{\bf \-Ensemble} $\ast$}]{e2}
 \end{DoxyParamCaption}
 )}}\label{ensemble_8h_ac8b8082e3fa0171fe35373c3c6af36c4}
-\-Përmet de concatener deux ensembles 
+\-Permet de concatener deux ensembles 
 \begin{DoxyParams}{\-Paramètres}
 {\em e1} & l'ensemble e1 ajouter en \char`\"{}tête\char`\"{} \\
 \hline
@@ -136,8 +144,10 @@ un nouvel ensemble
 \end{DoxyParamCaption}
 )}}\label{ensemble_8h_afe671e087f7eae69e5e89df96f2eb1c4}
 \-Permet de positionner le pointeur sur un des éléments de l'ensemble \begin{DoxyReturn}{\-Renvoie}
-le pointeur sur l'élément courant 
+le pointeur sur l'élément courant
 \end{DoxyReturn}
+\begin{DoxyRefDesc}{\-A faire}
+\item[\hyperlink{todo__todo000004}{\-A faire}]get\-\_\- \end{DoxyRefDesc}
 \hypertarget{ensemble_8h_a6839b221efdc6b7d38eb13e4591e58f6}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-enlever@{ensemble\-\_\-enlever}}
 \index{ensemble\-\_\-enlever@{ensemble\-\_\-enlever}!ensemble.h@{ensemble.\-h}}
 \subsubsection[{ensemble\-\_\-enlever}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble}$\ast$ {\bf ensemble\-\_\-enlever} (
@@ -154,6 +164,36 @@ le pointeur sur l'élément courant
 \begin{DoxyReturn}{\-Renvoie}
 \-E pointeur vers le nouvel ensemble privé de l'élément supprimé 
 \end{DoxyReturn}
+\hypertarget{ensemble_8h_ac32df2329e085c8172dd34c393e8e3e9}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-get\-\_\-courant\-\_\-contenu@{ensemble\-\_\-get\-\_\-courant\-\_\-contenu}}
+\index{ensemble\-\_\-get\-\_\-courant\-\_\-contenu@{ensemble\-\_\-get\-\_\-courant\-\_\-contenu}!ensemble.h@{ensemble.\-h}}
+\subsubsection[{ensemble\-\_\-get\-\_\-courant\-\_\-contenu}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf ensemble\-\_\-get\-\_\-courant\-\_\-contenu} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8h_ac32df2329e085c8172dd34c393e8e3e9}
+\-Permet de récupérer le contenu de la cellule courante 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+void$\ast$ le contenu 
+\end{DoxyReturn}
+\hypertarget{ensemble_8h_ab1f76a3f11864e53cbbed88004cb6872}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-get\-\_\-suivant@{ensemble\-\_\-get\-\_\-suivant}}
+\index{ensemble\-\_\-get\-\_\-suivant@{ensemble\-\_\-get\-\_\-suivant}!ensemble.h@{ensemble.\-h}}
+\subsubsection[{ensemble\-\_\-get\-\_\-suivant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell}$\ast$ {\bf ensemble\-\_\-get\-\_\-suivant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8h_ab1f76a3f11864e53cbbed88004cb6872}
+\-Permet de récupérer la cellule suivante d'un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la cellule suivante (par rapport à courant) 
+\end{DoxyReturn}
 \hypertarget{ensemble_8h_a5a38da96e292ee9603aa8c38b7eca270}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-init@{ensemble\-\_\-init}}
 \index{ensemble\-\_\-init@{ensemble\-\_\-init}!ensemble.h@{ensemble.\-h}}
 \subsubsection[{ensemble\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-init} (
@@ -164,6 +204,33 @@ le pointeur sur l'élément courant
 \-Permet d'initialiser un ensemble 
 \begin{DoxyParams}{\-Paramètres}
 {\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\hypertarget{ensemble_8h_a6992161c7ad25f6a41d9fe9e2f339f14}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-reset\-\_\-courant@{ensemble\-\_\-reset\-\_\-courant}}
+\index{ensemble\-\_\-reset\-\_\-courant@{ensemble\-\_\-reset\-\_\-courant}!ensemble.h@{ensemble.\-h}}
+\subsubsection[{ensemble\-\_\-reset\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-reset\-\_\-courant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8h_a6992161c7ad25f6a41d9fe9e2f339f14}
+\-Permet de remettre le pointeur courant sur la tête de l'ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\hypertarget{ensemble_8h_a15184ddbccffd1cca2c8172118447af6}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-set\-\_\-courant@{ensemble\-\_\-set\-\_\-courant}}
+\index{ensemble\-\_\-set\-\_\-courant@{ensemble\-\_\-set\-\_\-courant}!ensemble.h@{ensemble.\-h}}
+\subsubsection[{ensemble\-\_\-set\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-set\-\_\-courant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E, }
+\item[{{\bf \-Cell} $\ast$}]{c}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8h_a15184ddbccffd1cca2c8172118447af6}
+\-Permet de modifier le pointeur de la cellule courante sur une autre 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+{\em c} & la nouvelle celulle vers laquelle pointe courant \\
 \hline
 \end{DoxyParams}
 \hypertarget{ensemble_8h_aa786b13e0846e401cfc327d5f3876251}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-suivant@{ensemble\-\_\-suivant}}
@@ -184,8 +251,10 @@ le pointeur sur l'élément courant
 \end{DoxyParamCaption}
 )}}\label{ensemble_8h_a49fbcb97f3bb110025052809e42aad2f}
 \-Permet de positionner le pointeur tête sur le debut de mon ensemble \begin{DoxyReturn}{\-Renvoie}
-le pointeur de la tete de l'ensemble 
+le pointeur de la tete de l'ensemble
 \end{DoxyReturn}
+\begin{DoxyRefDesc}{\-A faire}
+\item[\hyperlink{todo__todo000003}{\-A faire}]get\-\_\- \end{DoxyRefDesc}
 \hypertarget{ensemble_8h_a44307c9a5fc03e2950375401fe00282c}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-vide@{ensemble\-\_\-vide}}
 \index{ensemble\-\_\-vide@{ensemble\-\_\-vide}!ensemble.h@{ensemble.\-h}}
 \subsubsection[{ensemble\-\_\-vide}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-vide} (

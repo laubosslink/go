@@ -28,13 +28,13 @@
 #include <couleur.h>
 
 /**
- * Informations d'un pion
+ * @brief Structure d'un pion qui contient la position du pion et sa couleur.
  */
 typedef struct Pion {
-	/* La position du pion */
+	/** La position du pion */
 	Position p;
 
-	/* La couleur du pion */
+	/** La couleur du pion */
 	Couleur c;
 } Pion;
 

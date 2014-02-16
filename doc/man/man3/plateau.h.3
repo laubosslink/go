@@ -30,6 +30,7 @@ Contient la position de l'ensemble des pions sur la grille\&.
 .ti -1c
 .RI "typedef struct \fBMatrice\fP \fBPlateau\fP"
 .br
+.RI "\fIStructure d'un plateau de jeu\&. Plateau est un alias du type \fBMatrice\fP\&. \fP"
 .in -1c
 .SS "Fonctions"
 
@@ -112,6 +113,8 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 .SH "Documentation des définitions de type"
 .PP 
 .SS "typedef struct \fBMatrice\fP \fBPlateau\fP"
+.PP
+Structure d'un plateau de jeu\&. Plateau est un alias du type \fBMatrice\fP\&. 
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBChaines\fP \fBcaptureChaines\fP (\fBPlateau\fPplateau, \fBPion\fPpion, int *valide)"En fonction de la position du pion et de sa couleur, retourne les chaines captures\&. Si aucune chaine n'est capturé par la pose du pion, alors la valeur NULL est retournée\&. L'entier (référencé par) valide est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse)\&. Dans le cas contraire l'entier référencé par valide est égale à 1

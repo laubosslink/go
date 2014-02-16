@@ -98,3 +98,4 @@ Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
 
 	
 }
+

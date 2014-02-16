@@ -9,13 +9,13 @@ structures Ensemble_colores permettant la manipulation d'un ensemble de position
 .SH SYNOPSIS
 .br
 .PP
-\fC#include <ensemble\&.h>\fP
-.br
 \fC#include <couleur\&.h>\fP
 .br
-\fC#include <position\&.h>\fP
-.br
 \fC#include <positions\&.h>\fP
+.br
+\fC#include <ensemble\&.h>\fP
+.br
+\fC#include <position\&.h>\fP
 .br
 
 .SS "Classes"
@@ -24,6 +24,7 @@ structures Ensemble_colores permettant la manipulation d'un ensemble de position
 .ti -1c
 .RI "struct \fBEnsemble_Colores\fP"
 .br
+.RI "\fIStructure d'un ensemble coloré contient une couleur, et un ensemble de positions\&. \fP"
 .in -1c
 .SS "Définitions de type"
 
@@ -37,6 +38,9 @@ structures Ensemble_colores permettant la manipulation d'un ensemble de position
 .in +1c
 .ti -1c
 .RI "\fBEnsemble_Colores\fP * \fBcreer_ensemble_colores\fP ()"
+.br
+.ti -1c
+.RI "void \fBensemble_colores_init\fP (\fBEnsemble_Colores\fP *E)"
 .br
 .ti -1c
 .RI "int \fBensemble_colores_vide\fP (\fBEnsemble_Colores\fP *E)"
@@ -58,9 +62,6 @@ structures Ensemble_colores permettant la manipulation d'un ensemble de position
 .br
 .ti -1c
 .RI "int \fBensemble_colores_suivant\fP (\fBEnsemble_Colores\fP *E)"
-.br
-.ti -1c
-.RI "\fBPosition\fP * \fBensemble_colores_contenu\fP (\fBCell\fP *c)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -91,7 +92,7 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef struct \fBEnsemble_Colores\fP  \fBEnsemble_Colores\fP"
+.SS "typedef struct \fBEnsemble_Colores\fP \fBEnsemble_Colores\fP"
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBEnsemble_Colores\fP* \fBcreer_ensemble_colores\fP ()"Permet de creer un ensemble 
@@ -123,19 +124,6 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "\fBPosition\fP* \fBensemble_colores_contenu\fP (\fBCell\fP *c)"Permet de récupérer le contenu d'une cellule d'ensemble colores 
-.PP
-\fBParamètres:\fP
-.RS 4
-\fIc\fP la cellule 
-.RE
-.PP
-\fBRenvoie:\fP
-.RS 4
-une position 
-.RE
-.PP
-
 .SS "\fBCell\fP* \fBensemble_colores_courant\fP (\fBEnsemble_Colores\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
 .PP
 \fBRenvoie:\fP
@@ -154,6 +142,14 @@ le pointeur sur l'élément courant
 \fBRenvoie:\fP
 .RS 4
 E pointeur vers le nouvel ensemble privé de l'élément supprimé 
+.RE
+.PP
+
+.SS "void \fBensemble_colores_init\fP (\fBEnsemble_Colores\fP *E)"Permet d'initialiser un ensemble coloré 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensenble coloré 
 .RE
 .PP
 

@@ -86,35 +86,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00024"></a>00024 <span class="preprocessor">#ifndef ENSEMBLE_COLORES_H_INCLUDED</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define ENSEMBLE_COLORES_H_INCLUDED </span>
 <a name="l00026"></a>00026 <span class="preprocessor"></span>
-<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="ensemble_8h.html" title="structures cell et Ensemble permettant la manipulation d&#39;ensembles">ensemble.h</a>&gt;</span>
-<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="couleur_8h.html" title="La couleur d&#39;un pion.">couleur.h</a>&gt;</span>
-<a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="position_8h.html" title="Une position.">position.h</a>&gt;</span>
-<a name="l00030"></a>00030 <span class="preprocessor">#include &lt;<a class="code" href="positions_8h.html">positions.h</a>&gt;</span>
-<a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="structEnsemble__Colores.html">00032</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>{
-<a name="l00033"></a><a class="code" href="structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b">00033</a>         <a class="code" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> <a class="code" href="structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b">c</a>;
-<a name="l00034"></a><a class="code" href="structEnsemble__Colores.html#ade944f566879fa1e8e29bd4eaad1cbe4">00034</a>         <a class="code" href="structEnsemble.html">Positions</a>* <a class="code" href="structEnsemble__Colores.html#ade944f566879fa1e8e29bd4eaad1cbe4">p</a>;
-<a name="l00035"></a>00035 } <a class="code" href="ensemble__colores_8h.html#ad9a9a10e36629d4adab5cddc52fd1d51">Ensemble_Colores</a>;
-<a name="l00036"></a>00036 
-<a name="l00041"></a>00041 <a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* <a class="code" href="ensemble__colores_8h.html#ab04091371c13add605fc680e5f47ad4c">creer_ensemble_colores</a>();
-<a name="l00042"></a>00042 
-<a name="l00048"></a>00048 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a6c609986a7d91669933815f93e86cdac">ensemble_colores_vide</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E);
+<a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="couleur_8h.html" title="La couleur d&#39;un pion.">couleur.h</a>&gt;</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="positions_8h.html" title="structures cell et Ensemble permettant la manipulation d&#39;ensembles">positions.h</a>&gt;</span>
+<a name="l00029"></a>00029 
+<a name="l00030"></a>00030 
+<a name="l00031"></a><a class="code" href="ensemble__colores_8h.html#a03bfe7bf4dafcbcc51a33c44489f6b41">00031</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a> <a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>;
+<a name="l00032"></a>00032 
+<a name="l00036"></a><a class="code" href="structEnsemble__Colores.html">00036</a> <span class="keyword">struct </span><a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a> {
+<a name="l00037"></a><a class="code" href="structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b">00037</a>         <a class="code" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b">c</a>; 
+<a name="l00038"></a><a class="code" href="structEnsemble__Colores.html#ade944f566879fa1e8e29bd4eaad1cbe4">00038</a>         <a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Positions</a>* <a class="code" href="structEnsemble__Colores.html#ade944f566879fa1e8e29bd4eaad1cbe4">p</a>;
+<a name="l00039"></a>00039 };
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041 <span class="preprocessor">#include &lt;<a class="code" href="ensemble_8h.html" title="structures cell et Ensemble permettant la manipulation d&#39;ensembles">ensemble.h</a>&gt;</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &lt;<a class="code" href="position_8h.html" title="Une position.">position.h</a>&gt;</span>
+<a name="l00043"></a>00043 
+<a name="l00048"></a>00048 <a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* <a class="code" href="ensemble__colores_8h.html#ab04091371c13add605fc680e5f47ad4c">creer_ensemble_colores</a>();
 <a name="l00049"></a>00049 
-<a name="l00055"></a>00055 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a8e4474801c500718f15715768ac91737">ensemble_colores_appartient</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E, <a class="code" href="structPosition.html">Position</a>* element);
-<a name="l00056"></a>00056 
-<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#a8fe9b958da26667518265205fd50d0d1">ensemble_colores_ajouter</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E, <a class="code" href="structPosition.html">Position</a>* element);
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#a49dc4cbe77e610739541c1baa3bf2ccd">ensemble_colores_init</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E);
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a6c609986a7d91669933815f93e86cdac">ensemble_colores_vide</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E);
 <a name="l00062"></a>00062 
-<a name="l00068"></a>00068 <a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* <a class="code" href="ensemble__colores_8h.html#afc7caab324bb4c58223202f5a6a3c618">ensemble_colores_enlever</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E, <a class="code" href="structPosition.html">Position</a>* element);
+<a name="l00068"></a>00068 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a8e4474801c500718f15715768ac91737">ensemble_colores_appartient</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E, <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* element);
 <a name="l00069"></a>00069 
-<a name="l00074"></a>00074 <a class="code" href="structCell.html">Cell</a>* <a class="code" href="ensemble__colores_8h.html#a3917eef3aa1e45f7e8d60ab9b1e9bbbe">ensemble_colores_tete</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E);
-<a name="l00075"></a>00075  
-<a name="l00080"></a>00080 <a class="code" href="structCell.html">Cell</a>* <a class="code" href="ensemble__colores_8h.html#ab519c8243f96382acf4aa29af761d2f3">ensemble_colores_courant</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E);
-<a name="l00081"></a>00081 
-<a name="l00086"></a>00086 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a74161295871ea5195cb841c53f1d759a">ensemble_colores_suivant</a>(<a class="code" href="structEnsemble__Colores.html">Ensemble_Colores</a>* E);
-<a name="l00087"></a>00087 
-<a name="l00093"></a>00093 <a class="code" href="structPosition.html">Position</a>* <a class="code" href="ensemble__colores_8h.html#a563ec0ac9525bae5fb50ba261cbcdfbc">ensemble_colores_contenu</a>(<a class="code" href="structCell.html">Cell</a>* c);
+<a name="l00074"></a>00074 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#a8fe9b958da26667518265205fd50d0d1">ensemble_colores_ajouter</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E, <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* element);
+<a name="l00075"></a>00075 
+<a name="l00081"></a>00081 <a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* <a class="code" href="ensemble__colores_8h.html#afc7caab324bb4c58223202f5a6a3c618">ensemble_colores_enlever</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E, <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* element);
+<a name="l00082"></a>00082 
+<a name="l00087"></a>00087 <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="ensemble__colores_8h.html#a3917eef3aa1e45f7e8d60ab9b1e9bbbe">ensemble_colores_tete</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E);
+<a name="l00088"></a>00088  
+<a name="l00093"></a>00093 <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="ensemble__colores_8h.html#ab519c8243f96382acf4aa29af761d2f3">ensemble_colores_courant</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E);
 <a name="l00094"></a>00094 
-<a name="l00095"></a>00095 <span class="preprocessor">#endif</span>
+<a name="l00099"></a>00099 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a74161295871ea5195cb841c53f1d759a">ensemble_colores_suivant</a>(<a class="code" href="structEnsemble__Colores.html" title="Structure d&#39;un ensemble coloré contient une couleur, et un ensemble de positions.">Ensemble_Colores</a>* E);
+<a name="l00100"></a>00100 
+<a name="l00101"></a>00101 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -133,7 +137,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:17 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

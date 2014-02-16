@@ -28,6 +28,9 @@
 #include <couleur.h>
 #include <plateau.h>
 
+/**
+ * @brief Structure d'une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le plateau du jeu
+ */
 typedef struct Partie {
 	char joueur1[20], joueur2[20]; /* nom des joueurs */
 	Couleur joueur; /* joueur actuel */

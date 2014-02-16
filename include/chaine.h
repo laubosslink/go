@@ -26,7 +26,8 @@
 
 #include <ensemble_colores.h>
 
-/** Une chaine est un alias d'un ensemble colores 
+/** 
+ * @brief Une chaine comporte des positions colorés. C'est un alias d'un ensemble colores 
  * @see Ensemble_Colores 
  */
 typedef Ensemble_Colores Chaine;

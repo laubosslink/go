@@ -47,7 +47,7 @@ void determineTerritoireRec(Plateau plateau, Position pos, Territoire* t){
 	if(ensemble_colores_appartient(t, &pos))
 		return;
 	
-	pp = position_creer(pos.x, pos.y);
+	pp = creer_position(pos.x, pos.y);
 	
 	/* ajout de la position actuelle */
 	ensemble_colores_ajouter(t, pp);
@@ -74,7 +74,7 @@ Territoire determineTerritoire(Plateau plateau, Position pos){
 	t.p = creer_ensemble();
 	t.c = INDEFINI;
 	
-	pp = position_creer(pos.x, pos.y);
+	pp = creer_position(pos.x, pos.y);
 	ensemble_ajouter(t.p, pp);
 	
 	determineTerritoireRec(plateau, haut(pos), &t);

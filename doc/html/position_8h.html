@@ -89,18 +89,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Une position.  
 <a href="#details">Plus de détails...</a></p>
-
+<div class="textblock"><code>#include &lt;<a class="el" href="ensemble_8h_source.html">ensemble.h</a>&gt;</code><br/>
+</div>
 <p><a href="position_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPosition.html">Position</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure d'une position qui permet de définir une position 2D. Cette structure comporte l'absice et l'ordonné de la position.  <a href="structPosition.html#details">Plus de détails...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#a3ce5d573a1ead8523f53ab9dfec0730f">Position</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure d'une position qui permet de définir une position 2D. Cette structure comporte l'absice et l'ordonné de la position.  <a href="#a3ce5d573a1ead8523f53ab9dfec0730f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#a53b0b3e1eef3ea6d4a39729168fc5d74">position_creer</a> (int x, int y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#a0fe16a57be214b54230f843ac61b2fc7">position_get_courant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#a560eb95832e1fa5b450a770fc0bbda3b">haut</a> (<a class="el" href="structPosition.html">Position</a> p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#a7e92be3f4b11fe045bd2faa5d121bc07">bas</a> (<a class="el" href="structPosition.html">Position</a> p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPosition.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="position_8h.html#af85ae3fae0ab221ae8f7f52ca740b584">gauche</a> (<a class="el" href="structPosition.html">Position</a> p)</td></tr>
@@ -126,7 +130,8 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
       </table>
 </div>
 <div class="memdoc">
-<p>Permet de définir une position 2D </p>
+
+<p>structure d'une position qui permet de définir une position 2D. Cette structure comporte l'absice et l'ordonné de la position. </p>
 
 </div>
 </div>
@@ -267,6 +272,31 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 </div>
 </div>
+<a class="anchor" id="a0fe16a57be214b54230f843ac61b2fc7"></a><!-- doxytag: member="position.h::position_get_courant" ref="a0fe16a57be214b54230f843ac61b2fc7" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structPosition.html">Position</a>* <a class="el" href="position_8c.html#a0fe16a57be214b54230f843ac61b2fc7">position_get_courant</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer la position actuelle d'un ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>Un pointeur vers une position </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -285,7 +315,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:18 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

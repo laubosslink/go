@@ -90,25 +90,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="couleur_8h.html" title="La couleur d&#39;un pion.">couleur.h</a>&gt;</span>
 <a name="l00029"></a>00029 <span class="preprocessor">#include &lt;<a class="code" href="plateau_8h.html" title="Contient la position de l&#39;ensemble des pions sur la grille.">plateau.h</a>&gt;</span>
 <a name="l00030"></a>00030 
-<a name="l00031"></a><a class="code" href="structPartie.html">00031</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structPartie.html">Partie</a> {
-<a name="l00032"></a><a class="code" href="structPartie.html#a90dd0f2162050b2f3169dcb860d975cf">00032</a>         <span class="keywordtype">char</span> <a class="code" href="structPartie.html#a42905bbdce5ccfd367a1b4195a433e01">joueur1</a>[20], <a class="code" href="structPartie.html#a90dd0f2162050b2f3169dcb860d975cf">joueur2</a>[20]; <span class="comment">/* nom des joueurs */</span>
-<a name="l00033"></a><a class="code" href="structPartie.html#a8b5c0c007da53d6d723f4300a1d9d4ad">00033</a>         <a class="code" href="couleur_8h.html#ae253e1bdbff71a044d939ee96ba0814a">Couleur</a> <a class="code" href="structPartie.html#a8b5c0c007da53d6d723f4300a1d9d4ad">joueur</a>; <span class="comment">/* joueur actuel */</span>
-<a name="l00034"></a><a class="code" href="structPartie.html#ae8a9b67f286f8bfd3e3a574f0ac2ac67">00034</a>         <a class="code" href="structMatrice.html">Plateau</a> <a class="code" href="structPartie.html#ae8a9b67f286f8bfd3e3a574f0ac2ac67">plateau</a>;
-<a name="l00035"></a>00035 } <a class="code" href="partie_8h.html#a7135444ad2f38a510cd8f34366d673e7">Partie</a>;
-<a name="l00036"></a>00036 
-<a name="l00037"></a><a class="code" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">00037</a> <span class="keyword">typedef</span> void (*<a class="code" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">FonctionQuestions</a>)(<span class="keywordtype">int</span> numeroQuestion, <a class="code" href="structPartie.html">Partie</a>* partie); 
-<a name="l00038"></a>00038 
-<a name="l00044"></a>00044 <a class="code" href="structPartie.html">Partie</a> <a class="code" href="partie_8h.html#a2257cb4beec2250fb4d0b5304b8de1ba">partie_initialisation</a>(<a class="code" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">FonctionQuestions</a> fonctionQuestions);
-<a name="l00045"></a>00045 
-<a name="l00053"></a>00053 <span class="keywordtype">int</span> <a class="code" href="partie_8h.html#ae887d9089d029f0f4df07e96dae63523">partie_sauvegarde</a>(<a class="code" href="structPartie.html">Partie</a> partie, FILE* fichier);
-<a name="l00054"></a>00054 
-<a name="l00061"></a>00061 <a class="code" href="structPartie.html">Partie</a> <a class="code" href="partie_8h.html#a2ab987532fb030da5d66eb14e1648e18">partie_charge</a>(FILE* fichier);
-<a name="l00062"></a>00062 
-<a name="l00069"></a>00069 <span class="keywordtype">void</span> <a class="code" href="partie_8h.html#aad3dae2ec8b9da9475cadac532658e3d">partie_score_joueurs</a>(<a class="code" href="structPartie.html">Partie</a> p, <span class="keywordtype">int</span> *scores, <span class="keywordtype">float</span> valKomi);
-<a name="l00070"></a>00070 
-<a name="l00076"></a>00076 <span class="keywordtype">void</span> <a class="code" href="partie_8h.html#a6c8191cb2c1c0a145d01a5208d2017cc">partie_demande_questions</a>(<span class="keywordtype">int</span> numero_question, <a class="code" href="structPartie.html">Partie</a> *partie);
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078 <span class="preprocessor">#endif</span>
+<a name="l00034"></a><a class="code" href="structPartie.html">00034</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a> {
+<a name="l00035"></a><a class="code" href="structPartie.html#a90dd0f2162050b2f3169dcb860d975cf">00035</a>         <span class="keywordtype">char</span> <a class="code" href="structPartie.html#a42905bbdce5ccfd367a1b4195a433e01">joueur1</a>[20], <a class="code" href="structPartie.html#a90dd0f2162050b2f3169dcb860d975cf">joueur2</a>[20]; <span class="comment">/* nom des joueurs */</span>
+<a name="l00036"></a><a class="code" href="structPartie.html#a8b5c0c007da53d6d723f4300a1d9d4ad">00036</a>         <a class="code" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="structPartie.html#a8b5c0c007da53d6d723f4300a1d9d4ad">joueur</a>; <span class="comment">/* joueur actuel */</span>
+<a name="l00037"></a><a class="code" href="structPartie.html#ae8a9b67f286f8bfd3e3a574f0ac2ac67">00037</a>         <a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Plateau</a> <a class="code" href="structPartie.html#ae8a9b67f286f8bfd3e3a574f0ac2ac67">plateau</a>;
+<a name="l00038"></a>00038 } <a class="code" href="partie_8h.html#a7135444ad2f38a510cd8f34366d673e7" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a>;
+<a name="l00039"></a>00039 
+<a name="l00040"></a><a class="code" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">00040</a> <span class="keyword">typedef</span> void (*<a class="code" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">FonctionQuestions</a>)(<span class="keywordtype">int</span> numeroQuestion, <a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a>* partie); 
+<a name="l00041"></a>00041 
+<a name="l00047"></a>00047 <a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a> <a class="code" href="partie_8h.html#a2257cb4beec2250fb4d0b5304b8de1ba">partie_initialisation</a>(<a class="code" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">FonctionQuestions</a> fonctionQuestions);
+<a name="l00048"></a>00048 
+<a name="l00056"></a>00056 <span class="keywordtype">int</span> <a class="code" href="partie_8h.html#ae887d9089d029f0f4df07e96dae63523">partie_sauvegarde</a>(<a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a> partie, FILE* fichier);
+<a name="l00057"></a>00057 
+<a name="l00064"></a>00064 <a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a> <a class="code" href="partie_8h.html#a2ab987532fb030da5d66eb14e1648e18">partie_charge</a>(FILE* fichier);
+<a name="l00065"></a>00065 
+<a name="l00072"></a>00072 <span class="keywordtype">void</span> <a class="code" href="partie_8h.html#aad3dae2ec8b9da9475cadac532658e3d">partie_score_joueurs</a>(<a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a> p, <span class="keywordtype">int</span> *scores, <span class="keywordtype">float</span> valKomi);
+<a name="l00073"></a>00073 
+<a name="l00079"></a>00079 <span class="keywordtype">void</span> <a class="code" href="partie_8h.html#a6c8191cb2c1c0a145d01a5208d2017cc">partie_demande_questions</a>(<span class="keywordtype">int</span> numero_question, <a class="code" href="structPartie.html" title="Structure d&#39;une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le ...">Partie</a> *partie);
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:17 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

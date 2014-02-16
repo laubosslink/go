@@ -22,6 +22,7 @@ Fichier d'en-tête permettant de gérer une partie\&.
 .ti -1c
 .RI "struct \fBPartie\fP"
 .br
+.RI "\fIStructure d'une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le plateau du jeu\&. \fP"
 .in -1c
 .SS "Définitions de type"
 
@@ -29,6 +30,7 @@ Fichier d'en-tête permettant de gérer une partie\&.
 .ti -1c
 .RI "typedef struct \fBPartie\fP \fBPartie\fP"
 .br
+.RI "\fIStructure d'une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le plateau du jeu\&. \fP"
 .ti -1c
 .RI "typedef void(* \fBFonctionQuestions\fP )(int numeroQuestion, \fBPartie\fP *partie)"
 .br
@@ -82,6 +84,8 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 .PP 
 .SS "typedef void(* \fBFonctionQuestions\fP)(int numeroQuestion, \fBPartie\fP *partie)"
 .SS "typedef struct \fBPartie\fP  \fBPartie\fP"
+.PP
+Structure d'une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le plateau du jeu\&. 
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBPartie\fP \fBpartie_charge\fP (FILE *fichier)"Charge une partie précédement sauvegardée\&. Si le chargement n'est pas possible, retorune un pointeur NULL 

@@ -18,7 +18,7 @@
  */
  
 /** 
- * @file ensemble_positions.h
+ * @file positions.h
  * 
  * @brief structures cell et Ensemble permettant la manipulation d'ensembles
  */
@@ -30,6 +30,9 @@
 #include <position.h>
 #include <ensemble_positions.h>
 
+/**
+ * @brief type Positions qui regroupe un ensemble de positions, alias du type Ensemble_Positions. 
+ */
 typedef Ensemble_Positions Positions;
 
 #endif

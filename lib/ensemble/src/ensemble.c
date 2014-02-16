@@ -1,6 +1,30 @@
+/**
+ * ENSICAEN
+ * 6 Boulevard Marechal Juin
+ * F-14050 Caen Cedex
+ * 
+ * This file is owned by ENSICAEN students.
+ * No portion of this document may be reproduced, copied
+ * or revised without written premission of the authors
+ */
+ 
+/**
+ * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
+ * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
+ * @version 1.1 
+ * @date 03-02-2013
+ * 
+ * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
+ */
+ 
+/** 
+ * @file ensemble.c
+ * 
+ * @brief code source qui permet de gérer les ensembles
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
-#include <position.h>
 #include <ensemble.h>
 
 void ensemble_init(Ensemble *E){
@@ -22,12 +46,18 @@ int ensemble_vide(Ensemble* E){
 	return (E == NULL || E->tete == NULL);
 }
 
+/** @todo get_ */
 Cell* ensemble_tete(Ensemble* E){
 	return E->tete;
 }
 
+/** @todo get_ */
 Cell* ensemble_courant(Ensemble* E){
 	return E->courant;
+}
+
+void ensemble_reset_courant(Ensemble* E){
+	E->courant = E->tete;
 }
 
 int ensemble_suivant(Ensemble* E){
@@ -37,6 +67,20 @@ int ensemble_suivant(Ensemble* E){
 	return(ensemble_courant(E))->suivant != NULL;
 }
 
+void* ensemble_get_courant_contenu(Ensemble *E){
+	return E->courant->contenu;
+}
+
+Cell* ensemble_get_suivant(Ensemble* E){
+	if(E->courant == NULL)
+		return NULL;
+		
+	return E->courant->suivant;
+}
+
+void ensemble_set_courant(Ensemble* E, Cell *c){
+	E->courant = c;
+}
 
 int ensemble_appartient(Ensemble* E, void* element){
 	if(ensemble_vide(E))

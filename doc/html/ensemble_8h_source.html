@@ -85,41 +85,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a href="ensemble_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00024"></a>00024 <span class="preprocessor">#ifndef ENSEMBLE_H_INCLUDED</span>
 <a name="l00025"></a>00025 <span class="preprocessor"></span><span class="preprocessor">#define ENSEMBLE_H_INCLUDED</span>
-<a name="l00026"></a>00026 <span class="preprocessor"></span> 
-<a name="l00027"></a><a class="code" href="ensemble_8h.html#a60bf09598e66928bf67a21a22bc17814">00027</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structCell.html">Cell</a> <a class="code" href="structCell.html">Cell</a>;
-<a name="l00028"></a><a class="code" href="ensemble_8h.html#a3765eebe007a5dc397b599f1f2e5dd73">00028</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structEnsemble.html">Ensemble</a> <a class="code" href="structEnsemble.html">Ensemble</a>;
+<a name="l00026"></a>00026 <span class="preprocessor"></span>
+<a name="l00027"></a><a class="code" href="ensemble_8h.html#a60bf09598e66928bf67a21a22bc17814">00027</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a> <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>;
+<a name="l00028"></a><a class="code" href="ensemble_8h.html#a3765eebe007a5dc397b599f1f2e5dd73">00028</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> <a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>;
 <a name="l00029"></a>00029 
-<a name="l00030"></a><a class="code" href="structCell.html">00030</a> <span class="keyword">struct </span><a class="code" href="structCell.html">Cell</a>{
-<a name="l00031"></a><a class="code" href="structCell.html#af2d81fa8eccad6f58d37802fc1908a61">00031</a>         <span class="keywordtype">void</span>* <a class="code" href="structCell.html#af2d81fa8eccad6f58d37802fc1908a61">contenu</a>;
-<a name="l00032"></a><a class="code" href="structCell.html#ad7eff379c5dfaefcb19f09638109dbaf">00032</a>         <a class="code" href="structCell.html">Cell</a>* <a class="code" href="structCell.html#ad7eff379c5dfaefcb19f09638109dbaf">suivant</a>;
-<a name="l00033"></a>00033 };
-<a name="l00034"></a>00034 
-<a name="l00035"></a><a class="code" href="structEnsemble.html">00035</a> <span class="keyword">struct </span><a class="code" href="structEnsemble.html">Ensemble</a>{
-<a name="l00036"></a><a class="code" href="structEnsemble.html#a2962c7ff3817d074d6ffeb75f3a764b1">00036</a>         <a class="code" href="structCell.html">Cell</a>* <a class="code" href="structEnsemble.html#a2962c7ff3817d074d6ffeb75f3a764b1">courant</a>;
-<a name="l00037"></a><a class="code" href="structEnsemble.html#abb1d7f65429442d3b36beceede08ff71">00037</a>         <a class="code" href="structCell.html">Cell</a>* <a class="code" href="structEnsemble.html#abb1d7f65429442d3b36beceede08ff71">tete</a>;
-<a name="l00038"></a>00038 };
-<a name="l00039"></a>00039 
-<a name="l00044"></a>00044 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#a5a38da96e292ee9603aa8c38b7eca270">ensemble_init</a>(<a class="code" href="structEnsemble.html">Ensemble</a> *E);
+<a name="l00033"></a><a class="code" href="structCell.html">00033</a> <span class="keyword">struct </span><a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>{
+<a name="l00034"></a><a class="code" href="structCell.html#af2d81fa8eccad6f58d37802fc1908a61">00034</a>         <span class="keywordtype">void</span>* <a class="code" href="structCell.html#af2d81fa8eccad6f58d37802fc1908a61">contenu</a>;
+<a name="l00035"></a><a class="code" href="structCell.html#ad7eff379c5dfaefcb19f09638109dbaf">00035</a>         <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="structCell.html#ad7eff379c5dfaefcb19f09638109dbaf">suivant</a>;
+<a name="l00036"></a>00036 };
+<a name="l00037"></a>00037 
+<a name="l00041"></a><a class="code" href="structEnsemble.html">00041</a> <span class="keyword">struct </span><a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>{
+<a name="l00042"></a><a class="code" href="structEnsemble.html#a2962c7ff3817d074d6ffeb75f3a764b1">00042</a>         <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="structEnsemble.html#a2962c7ff3817d074d6ffeb75f3a764b1">courant</a>;
+<a name="l00043"></a><a class="code" href="structEnsemble.html#abb1d7f65429442d3b36beceede08ff71">00043</a>         <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="structEnsemble.html#abb1d7f65429442d3b36beceede08ff71">tete</a>;
+<a name="l00044"></a>00044 };
 <a name="l00045"></a>00045 
-<a name="l00050"></a>00050 <a class="code" href="structEnsemble.html">Ensemble</a>* <a class="code" href="ensemble_8h.html#a896ef1d92c5fdfff3bce4f1daea43f31">creer_ensemble</a>();
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#a5a38da96e292ee9603aa8c38b7eca270">ensemble_init</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> *E);
 <a name="l00051"></a>00051 
-<a name="l00057"></a>00057 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#a44307c9a5fc03e2950375401fe00282c">ensemble_vide</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E);
-<a name="l00058"></a>00058 
-<a name="l00064"></a>00064 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#ae12cb38d281d2d744899214fba976abb">ensemble_appartient</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E, <span class="keywordtype">void</span>* element);
-<a name="l00065"></a>00065 
-<a name="l00070"></a>00070 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#aa0fd09212e6ed9154a9f01909039f384">ensemble_ajouter</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E, <span class="keywordtype">void</span>* element);
+<a name="l00056"></a>00056 <a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* <a class="code" href="ensemble_8h.html#a896ef1d92c5fdfff3bce4f1daea43f31">creer_ensemble</a>();
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#a44307c9a5fc03e2950375401fe00282c">ensemble_vide</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E);
+<a name="l00064"></a>00064 
+<a name="l00070"></a>00070 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#ae12cb38d281d2d744899214fba976abb">ensemble_appartient</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E, <span class="keywordtype">void</span>* element);
 <a name="l00071"></a>00071 
-<a name="l00077"></a>00077 <a class="code" href="structEnsemble.html">Ensemble</a>* <a class="code" href="ensemble_8h.html#a6839b221efdc6b7d38eb13e4591e58f6">ensemble_enlever</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E, <span class="keywordtype">void</span>* element);
-<a name="l00078"></a>00078 
-<a name="l00083"></a>00083 <a class="code" href="structCell.html">Cell</a>* <a class="code" href="ensemble_8h.html#a49fbcb97f3bb110025052809e42aad2f">ensemble_tete</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E);
-<a name="l00084"></a>00084  
-<a name="l00089"></a>00089 <a class="code" href="structCell.html">Cell</a>* <a class="code" href="ensemble_8h.html#afe671e087f7eae69e5e89df96f2eb1c4">ensemble_courant</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E);
-<a name="l00090"></a>00090 
-<a name="l00095"></a>00095 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#aa786b13e0846e401cfc327d5f3876251">ensemble_suivant</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* E);
+<a name="l00076"></a>00076 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#aa0fd09212e6ed9154a9f01909039f384">ensemble_ajouter</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E, <span class="keywordtype">void</span>* element);
+<a name="l00077"></a>00077 
+<a name="l00083"></a>00083 <a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* <a class="code" href="ensemble_8h.html#a6839b221efdc6b7d38eb13e4591e58f6">ensemble_enlever</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E, <span class="keywordtype">void</span>* element);
+<a name="l00084"></a>00084 
+<a name="l00089"></a>00089 <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="ensemble_8h.html#a49fbcb97f3bb110025052809e42aad2f">ensemble_tete</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E);
+<a name="l00090"></a>00090  
+<a name="l00095"></a>00095 <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="ensemble_8h.html#afe671e087f7eae69e5e89df96f2eb1c4">ensemble_courant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E);
 <a name="l00096"></a>00096 
-<a name="l00103"></a>00103 <a class="code" href="structEnsemble.html">Ensemble</a>* <a class="code" href="ensemble_8h.html#ac8b8082e3fa0171fe35373c3c6af36c4">ensemble_concatene</a>(<a class="code" href="structEnsemble.html">Ensemble</a>* e1, <a class="code" href="structEnsemble.html">Ensemble</a>* e2);
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105 <span class="preprocessor">#endif</span>
+<a name="l00102"></a>00102 <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a>* <a class="code" href="ensemble_8h.html#ab1f76a3f11864e53cbbed88004cb6872">ensemble_get_suivant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E);
+<a name="l00103"></a>00103 
+<a name="l00109"></a>00109 <span class="keywordtype">void</span>* <a class="code" href="ensemble_8h.html#ac32df2329e085c8172dd34c393e8e3e9">ensemble_get_courant_contenu</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> *E);
+<a name="l00110"></a>00110 
+<a name="l00116"></a>00116 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#a15184ddbccffd1cca2c8172118447af6">ensemble_set_courant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E, <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a> *c);
+<a name="l00117"></a>00117 
+<a name="l00122"></a>00122 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#aa786b13e0846e401cfc327d5f3876251">ensemble_suivant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E);
+<a name="l00123"></a>00123 
+<a name="l00130"></a>00130 <a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* <a class="code" href="ensemble_8h.html#ac8b8082e3fa0171fe35373c3c6af36c4">ensemble_concatene</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* e1, <a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* e2);
+<a name="l00131"></a>00131 
+<a name="l00136"></a>00136 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#a6992161c7ad25f6a41d9fe9e2f339f14">ensemble_reset_courant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a>* E);
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -138,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:17 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

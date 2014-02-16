@@ -6,20 +6,23 @@
 \-Une position.  
 
 
+{\ttfamily \#include $<$ensemble.\-h$>$}\*
 \subsection*{\-Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structPosition}{\-Position}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em structure d'une position qui permet de définir une position 2\-D. \-Cette structure comporte l'absice et l'ordonné de la position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a3ce5d573a1ead8523f53ab9dfec0730f}{\-Position}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em structure d'une position qui permet de définir une position 2\-D. \-Cette structure comporte l'absice et l'ordonné de la position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8h_a53b0b3e1eef3ea6d4a39729168fc5d74}{position\-\_\-creer} (int x, int y)
+\item 
+\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8h_a0fe16a57be214b54230f843ac61b2fc7}{position\-\_\-get\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
 \item 
 \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a560eb95832e1fa5b450a770fc0bbda3b}{haut} (\hyperlink{structPosition}{\-Position} p)
 \item 
@@ -51,7 +54,11 @@ typedef struct \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a3c
 \hypertarget{position_8h_a3ce5d573a1ead8523f53ab9dfec0730f}{\index{position.\-h@{position.\-h}!\-Position@{\-Position}}
 \index{\-Position@{\-Position}!position.h@{position.\-h}}
 \subsubsection[{\-Position}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Position}  {\bf \-Position}}}\label{position_8h_a3ce5d573a1ead8523f53ab9dfec0730f}
-\-Permet de définir une position 2\-D 
+
+
+structure d'une position qui permet de définir une position 2\-D. \-Cette structure comporte l'absice et l'ordonné de la position. 
+
+
 
 \subsection{\-Documentation des fonctions}
 \hypertarget{position_8h_a7e92be3f4b11fe045bd2faa5d121bc07}{\index{position.\-h@{position.\-h}!bas@{bas}}
@@ -131,4 +138,19 @@ nouvelle position
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
 un pointeur vers la position alloue 
+\end{DoxyReturn}
+\hypertarget{position_8h_a0fe16a57be214b54230f843ac61b2fc7}{\index{position.\-h@{position.\-h}!position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}}
+\index{position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}!position.h@{position.\-h}}
+\subsubsection[{position\-\_\-get\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf position\-\_\-get\-\_\-courant} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{position_8h_a0fe16a57be214b54230f843ac61b2fc7}
+\-Permet de récupérer la position actuelle d'un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+\-Un pointeur vers une position 
 \end{DoxyReturn}

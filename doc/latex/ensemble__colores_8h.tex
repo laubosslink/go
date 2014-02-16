@@ -6,24 +6,26 @@
 structures \-Ensemble\-\_\-colores permettant la manipulation d'un ensemble de position et d'une couleur  
 
 
-{\ttfamily \#include $<$ensemble.\-h$>$}\*
 {\ttfamily \#include $<$couleur.\-h$>$}\*
-{\ttfamily \#include $<$position.\-h$>$}\*
 {\ttfamily \#include $<$positions.\-h$>$}\*
+{\ttfamily \#include $<$ensemble.\-h$>$}\*
+{\ttfamily \#include $<$position.\-h$>$}\*
 \subsection*{\-Classes}
 \begin{DoxyCompactItemize}
 \item 
 struct \hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \-Structure d'un ensemble coloré contient une couleur, et un ensemble de positions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} \hyperlink{ensemble__colores_8h_ad9a9a10e36629d4adab5cddc52fd1d51}{\-Ensemble\-\_\-\-Colores}
+typedef struct \hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} \hyperlink{ensemble__colores_8h_a03bfe7bf4dafcbcc51a33c44489f6b41}{\-Ensemble\-\_\-\-Colores}
 \end{DoxyCompactItemize}
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} $\ast$ \hyperlink{ensemble__colores_8h_ab04091371c13add605fc680e5f47ad4c}{creer\-\_\-ensemble\-\_\-colores} ()
+\item 
+void \hyperlink{ensemble__colores_8h_a49dc4cbe77e610739541c1baa3bf2ccd}{ensemble\-\_\-colores\-\_\-init} (\hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} $\ast$\-E)
 \item 
 int \hyperlink{ensemble__colores_8h_a6c609986a7d91669933815f93e86cdac}{ensemble\-\_\-colores\-\_\-vide} (\hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} $\ast$\-E)
 \item 
@@ -38,8 +40,6 @@ void \hyperlink{ensemble__colores_8h_a8fe9b958da26667518265205fd50d0d1}{ensemble
 \hyperlink{structCell}{\-Cell} $\ast$ \hyperlink{ensemble__colores_8h_ab519c8243f96382acf4aa29af761d2f3}{ensemble\-\_\-colores\-\_\-courant} (\hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} $\ast$\-E)
 \item 
 int \hyperlink{ensemble__colores_8h_a74161295871ea5195cb841c53f1d759a}{ensemble\-\_\-colores\-\_\-suivant} (\hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} $\ast$\-E)
-\item 
-\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{ensemble__colores_8h_a563ec0ac9525bae5fb50ba261cbcdfbc}{ensemble\-\_\-colores\-\_\-contenu} (\hyperlink{structCell}{\-Cell} $\ast$c)
 \end{DoxyCompactItemize}
 
 
@@ -60,9 +60,9 @@ structures \-Ensemble\-\_\-colores permettant la manipulation d'un ensemble de p
 
 
 \subsection{\-Documentation des définitions de type}
-\hypertarget{ensemble__colores_8h_ad9a9a10e36629d4adab5cddc52fd1d51}{\index{ensemble\-\_\-colores.\-h@{ensemble\-\_\-colores.\-h}!\-Ensemble\-\_\-\-Colores@{\-Ensemble\-\_\-\-Colores}}
+\hypertarget{ensemble__colores_8h_a03bfe7bf4dafcbcc51a33c44489f6b41}{\index{ensemble\-\_\-colores.\-h@{ensemble\-\_\-colores.\-h}!\-Ensemble\-\_\-\-Colores@{\-Ensemble\-\_\-\-Colores}}
 \index{\-Ensemble\-\_\-\-Colores@{\-Ensemble\-\_\-\-Colores}!ensemble_colores.h@{ensemble\-\_\-colores.\-h}}
-\subsubsection[{\-Ensemble\-\_\-\-Colores}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Ensemble\-\_\-\-Colores}  {\bf \-Ensemble\-\_\-\-Colores}}}\label{ensemble__colores_8h_ad9a9a10e36629d4adab5cddc52fd1d51}
+\subsubsection[{\-Ensemble\-\_\-\-Colores}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Ensemble\-\_\-\-Colores} {\bf \-Ensemble\-\_\-\-Colores}}}\label{ensemble__colores_8h_a03bfe7bf4dafcbcc51a33c44489f6b41}
 
 
 \subsection{\-Documentation des fonctions}
@@ -105,21 +105,6 @@ un pointeur vers un ensemble
 \begin{DoxyReturn}{\-Renvoie}
 1 si il appartient, 0 sinon 
 \end{DoxyReturn}
-\hypertarget{ensemble__colores_8h_a563ec0ac9525bae5fb50ba261cbcdfbc}{\index{ensemble\-\_\-colores.\-h@{ensemble\-\_\-colores.\-h}!ensemble\-\_\-colores\-\_\-contenu@{ensemble\-\_\-colores\-\_\-contenu}}
-\index{ensemble\-\_\-colores\-\_\-contenu@{ensemble\-\_\-colores\-\_\-contenu}!ensemble_colores.h@{ensemble\-\_\-colores.\-h}}
-\subsubsection[{ensemble\-\_\-colores\-\_\-contenu}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf ensemble\-\_\-colores\-\_\-contenu} (
-\begin{DoxyParamCaption}
-\item[{{\bf \-Cell} $\ast$}]{c}
-\end{DoxyParamCaption}
-)}}\label{ensemble__colores_8h_a563ec0ac9525bae5fb50ba261cbcdfbc}
-\-Permet de récupérer le contenu d'une cellule d'ensemble colores 
-\begin{DoxyParams}{\-Paramètres}
-{\em c} & la cellule \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{\-Renvoie}
-une position 
-\end{DoxyReturn}
 \hypertarget{ensemble__colores_8h_ab519c8243f96382acf4aa29af761d2f3}{\index{ensemble\-\_\-colores.\-h@{ensemble\-\_\-colores.\-h}!ensemble\-\_\-colores\-\_\-courant@{ensemble\-\_\-colores\-\_\-courant}}
 \index{ensemble\-\_\-colores\-\_\-courant@{ensemble\-\_\-colores\-\_\-courant}!ensemble_colores.h@{ensemble\-\_\-colores.\-h}}
 \subsubsection[{ensemble\-\_\-colores\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Cell}$\ast$ {\bf ensemble\-\_\-colores\-\_\-courant} (
@@ -146,6 +131,18 @@ le pointeur sur l'élément courant
 \begin{DoxyReturn}{\-Renvoie}
 \-E pointeur vers le nouvel ensemble privé de l'élément supprimé 
 \end{DoxyReturn}
+\hypertarget{ensemble__colores_8h_a49dc4cbe77e610739541c1baa3bf2ccd}{\index{ensemble\-\_\-colores.\-h@{ensemble\-\_\-colores.\-h}!ensemble\-\_\-colores\-\_\-init@{ensemble\-\_\-colores\-\_\-init}}
+\index{ensemble\-\_\-colores\-\_\-init@{ensemble\-\_\-colores\-\_\-init}!ensemble_colores.h@{ensemble\-\_\-colores.\-h}}
+\subsubsection[{ensemble\-\_\-colores\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-colores\-\_\-init} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble\-\_\-\-Colores} $\ast$}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble__colores_8h_a49dc4cbe77e610739541c1baa3bf2ccd}
+\-Permet d'initialiser un ensemble coloré 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensenble coloré \\
+\hline
+\end{DoxyParams}
 \hypertarget{ensemble__colores_8h_a74161295871ea5195cb841c53f1d759a}{\index{ensemble\-\_\-colores.\-h@{ensemble\-\_\-colores.\-h}!ensemble\-\_\-colores\-\_\-suivant@{ensemble\-\_\-colores\-\_\-suivant}}
 \index{ensemble\-\_\-colores\-\_\-suivant@{ensemble\-\_\-colores\-\_\-suivant}!ensemble_colores.h@{ensemble\-\_\-colores.\-h}}
 \subsubsection[{ensemble\-\_\-colores\-\_\-suivant}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-colores\-\_\-suivant} (

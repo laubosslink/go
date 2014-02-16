@@ -11,13 +11,13 @@ void afficherPositions(Ensemble_Positions *E){
 	E->courant = E->tete;
 	
 	while(E->courant->suivant != NULL){
-		printf("{x=%d, ",  ((Position *) E->courant->contenu)->x);
-		printf("y=%d}\n",  ((Position *) E->courant->contenu)->y);
+		printf("{x=%d, ",  ((Position *) E->courant->contenu)->x+1);
+		printf("y=%d}\n",  ((Position *) E->courant->contenu)->y+1);
 		E->courant=E->courant->suivant;
 	}
 	
-	printf("{x=%d, ",  ((Position *) E->courant->contenu)->x);
-	printf("y=%d}\n",  ((Position *) E->courant->contenu)->y);
+	printf("{x=%d, ",  ((Position *) E->courant->contenu)->x+1);
+	printf("y=%d}\n",  ((Position *) E->courant->contenu)->y+1);
 	printf("\n\n");
 }
 
@@ -64,7 +64,7 @@ int main(){
 	afficherPositions(c.p);
 	
 	/* réalisation d'une capture de la chaine */
-	plateau_realiser_capture(p, c);
+	//plateau_realiser_capture(p, c);
 	
 	plateau_afficher(p);
 	
@@ -88,7 +88,7 @@ int main(){
 	
 	plateau_afficher(p);
 	
-	chainesCapturees = captureChaines(p, pion, valide);
+	//chainesCapturees = captureChaines(p, pion, valide);
 	
 	
 	return 0;

@@ -56,12 +56,7 @@ EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr>
 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos\&. Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur\&. Ce cas est exploite pas la fonction estUnSeki \fBBogue\fP
-.RS 4
-risque de bug sans utiliser init_ensemble ou creer_ensemble sur territoire ! 
-.RE
-.PP
-
+.SS "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos\&. Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur\&. Ce cas est exploite pas la fonction estUnSeki 
 .SS "void \fBdetermineTerritoireRec\fP (\fBPlateau\fPplateau, \fBPosition\fPpos, \fBTerritoire\fP *t)"
 .SH "Auteur"
 .PP 

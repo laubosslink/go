@@ -9,12 +9,16 @@ Une position\&.
 .SH SYNOPSIS
 .br
 .PP
+\fC#include <ensemble\&.h>\fP
+.br
+
 .SS "Classes"
 
 .in +1c
 .ti -1c
 .RI "struct \fBPosition\fP"
 .br
+.RI "\fIstructure d'une position qui permet de définir une position 2D\&. Cette structure comporte l'absice et l'ordonné de la position\&. \fP"
 .in -1c
 .SS "Définitions de type"
 
@@ -22,12 +26,16 @@ Une position\&.
 .ti -1c
 .RI "typedef struct \fBPosition\fP \fBPosition\fP"
 .br
+.RI "\fIstructure d'une position qui permet de définir une position 2D\&. Cette structure comporte l'absice et l'ordonné de la position\&. \fP"
 .in -1c
 .SS "Fonctions"
 
 .in +1c
 .ti -1c
 .RI "\fBPosition\fP * \fBposition_creer\fP (int x, int y)"
+.br
+.ti -1c
+.RI "\fBPosition\fP * \fBposition_get_courant\fP (\fBEnsemble\fP *E)"
 .br
 .ti -1c
 .RI "\fBPosition\fP \fBhaut\fP (\fBPosition\fP p)"
@@ -70,7 +78,9 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef struct \fBPosition\fP  \fBPosition\fP"Permet de définir une position 2D 
+.SS "typedef struct \fBPosition\fP  \fBPosition\fP"
+.PP
+structure d'une position qui permet de définir une position 2D\&. Cette structure comporte l'absice et l'ordonné de la position\&. 
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBPosition\fP \fBbas\fP (\fBPosition\fPp)"Permet de se deplacer vers le bas 
@@ -137,6 +147,19 @@ nouvelle position
 \fBRenvoie:\fP
 .RS 4
 un pointeur vers la position alloue 
+.RE
+.PP
+
+.SS "\fBPosition\fP* \fBposition_get_courant\fP (\fBEnsemble\fP *E)"Permet de récupérer la position actuelle d'un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+Un pointeur vers une position 
 .RE
 .PP
 

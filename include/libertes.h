@@ -24,12 +24,15 @@
 #ifndef LIBERTES_H_INCLUDED
 #define LIBERTES_H_INCLUDED 
 
-
 #include <ensemble_positions.h>
+
+/**
+ * @brief le type Ensemble_Positions est un ensemble de liberte determine les positions où il y a des libertes. Libertes est un alias de Ensemble_Positions.
+ */
+typedef Ensemble_Positions Libertes;
+
 #include <plateau.h>
 #include <chaine.h>
-
-typedef Ensemble_Positions Libertes;
 
 /**
  * Permet de determiner les libertes d'une chaine

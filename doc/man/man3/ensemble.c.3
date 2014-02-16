@@ -3,14 +3,15 @@
 .nh
 .SH NAME
 lib/ensemble/src/ensemble.c \- 
+.PP
+code source qui permet de gérer les ensembles  
+
 .SH SYNOPSIS
 .br
 .PP
 \fC#include <stdio\&.h>\fP
 .br
 \fC#include <stdlib\&.h>\fP
-.br
-\fC#include <position\&.h>\fP
 .br
 \fC#include <ensemble\&.h>\fP
 .br
@@ -34,7 +35,19 @@ lib/ensemble/src/ensemble.c \-
 .RI "\fBCell\fP * \fBensemble_courant\fP (\fBEnsemble\fP *E)"
 .br
 .ti -1c
+.RI "void \fBensemble_reset_courant\fP (\fBEnsemble\fP *E)"
+.br
+.ti -1c
 .RI "int \fBensemble_suivant\fP (\fBEnsemble\fP *E)"
+.br
+.ti -1c
+.RI "void * \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP *E)"
+.br
+.ti -1c
+.RI "\fBCell\fP * \fBensemble_get_suivant\fP (\fBEnsemble\fP *E)"
+.br
+.ti -1c
+.RI "void \fBensemble_set_courant\fP (\fBEnsemble\fP *E, \fBCell\fP *c)"
 .br
 .ti -1c
 .RI "int \fBensemble_appartient\fP (\fBEnsemble\fP *E, void *element)"
@@ -49,6 +62,37 @@ lib/ensemble/src/ensemble.c \-
 .RI "\fBEnsemble\fP * \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+code source qui permet de gérer les ensembles 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+.RE
+.PP
+
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBEnsemble\fP* \fBcreer_ensemble\fP ()"Permet de creer un ensemble 
@@ -80,7 +124,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "\fBEnsemble\fP* \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"Përmet de concatener deux ensembles 
+.SS "\fBEnsemble\fP* \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"Permet de concatener deux ensembles 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -95,11 +139,9 @@ un nouvel ensemble
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_courant\fP (\fBEnsemble\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
-.PP
-\fBRenvoie:\fP
+.SS "\fBCell\fP* \fBensemble_courant\fP (\fBEnsemble\fP *E)"\fBA faire\fP
 .RS 4
-le pointeur sur l'élément courant 
+get_ 
 .RE
 .PP
 
@@ -116,11 +158,55 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
+.SS "void* \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP *E)"Permet de récupérer le contenu de la cellule courante 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+void* le contenu 
+.RE
+.PP
+
+.SS "\fBCell\fP* \fBensemble_get_suivant\fP (\fBEnsemble\fP *E)"Permet de récupérer la cellule suivante d'un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la cellule suivante (par rapport à courant) 
+.RE
+.PP
+
 .SS "void \fBensemble_init\fP (\fBEnsemble\fP *E)"Permet d'initialiser un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
 \fIE\fP l'ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_reset_courant\fP (\fBEnsemble\fP *E)"Permet de remettre le pointeur courant sur la tête de l'ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_set_courant\fP (\fBEnsemble\fP *E, \fBCell\fP *c)"Permet de modifier le pointeur de la cellule courante sur une autre 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.br
+\fIc\fP la nouvelle celulle vers laquelle pointe courant 
 .RE
 .PP
 
@@ -132,11 +218,9 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_tete\fP (\fBEnsemble\fP *E)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
-.PP
-\fBRenvoie:\fP
+.SS "\fBCell\fP* \fBensemble_tete\fP (\fBEnsemble\fP *E)"\fBA faire\fP
 .RS 4
-le pointeur de la tete de l'ensemble 
+get_ 
 .RE
 .PP
 

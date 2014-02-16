@@ -88,25 +88,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00027"></a>00027 <span class="preprocessor"></span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
 <a name="l00029"></a>00029  
-<a name="l00031"></a><a class="code" href="structMatrice.html">00031</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structMatrice.html">Matrice</a> {
-<a name="l00032"></a><a class="code" href="structMatrice.html#a4ed59291b88d3ed8b30b3f74d4acf6b3">00032</a>         <span class="keywordtype">int</span> **<a class="code" href="structMatrice.html#a4ed59291b88d3ed8b30b3f74d4acf6b3">donnees</a>; 
-<a name="l00033"></a><a class="code" href="structMatrice.html#a27d7f184cab0fce2a40e173afca96f9f">00033</a>         <span class="keywordtype">int</span> <a class="code" href="structMatrice.html#a27d7f184cab0fce2a40e173afca96f9f">nbligne</a>; 
-<a name="l00034"></a><a class="code" href="structMatrice.html#a7bf8157909d60e8ff841b26fc5cb2bab">00034</a>         <span class="keywordtype">int</span> <a class="code" href="structMatrice.html#a7bf8157909d60e8ff841b26fc5cb2bab">nbcolonne</a>; 
-<a name="l00035"></a>00035 } <a class="code" href="matrice_8h.html#a4692c384a5050f8e48ebbd9e5b2d88ac">Matrice</a>;
-<a name="l00036"></a>00036 
-<a name="l00043"></a>00043 <a class="code" href="structMatrice.html">Matrice</a> <a class="code" href="matrice_8h.html#a634f509afa7d665d250bbc49f1229c1c">matrice_creer</a>(<span class="keywordtype">int</span> nblig, <span class="keywordtype">int</span> nbcol);
-<a name="l00044"></a>00044 
-<a name="l00050"></a>00050 <a class="code" href="structMatrice.html">Matrice</a> <a class="code" href="matrice_8h.html#a91edc9c5d80be64ff2431b1784cf1cc5">matrice_init</a>(<span class="keywordtype">char</span> *fichier);
+<a name="l00033"></a><a class="code" href="structMatrice.html">00033</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> {
+<a name="l00035"></a><a class="code" href="structMatrice.html#a4ed59291b88d3ed8b30b3f74d4acf6b3">00035</a>         <span class="keywordtype">int</span> **<a class="code" href="structMatrice.html#a4ed59291b88d3ed8b30b3f74d4acf6b3">donnees</a>; 
+<a name="l00036"></a>00036         
+<a name="l00038"></a><a class="code" href="structMatrice.html#a27d7f184cab0fce2a40e173afca96f9f">00038</a>         <span class="keywordtype">int</span> <a class="code" href="structMatrice.html#a27d7f184cab0fce2a40e173afca96f9f">nbligne</a>;
+<a name="l00039"></a>00039         
+<a name="l00041"></a><a class="code" href="structMatrice.html#a7bf8157909d60e8ff841b26fc5cb2bab">00041</a>         <span class="keywordtype">int</span> <a class="code" href="structMatrice.html#a7bf8157909d60e8ff841b26fc5cb2bab">nbcolonne</a>;
+<a name="l00042"></a>00042 } <a class="code" href="matrice_8h.html#a4692c384a5050f8e48ebbd9e5b2d88ac" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a>;
+<a name="l00043"></a>00043 
+<a name="l00050"></a>00050 <a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> <a class="code" href="matrice_8h.html#a634f509afa7d665d250bbc49f1229c1c">matrice_creer</a>(<span class="keywordtype">int</span> nblig, <span class="keywordtype">int</span> nbcol);
 <a name="l00051"></a>00051 
-<a name="l00057"></a>00057 <a class="code" href="structMatrice.html">Matrice</a> <a class="code" href="matrice_8h.html#ad3b953551d15e015f4f3027ae2f259da">matrice_chargement</a>(FILE *fichier);
+<a name="l00057"></a>00057 <a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> <a class="code" href="matrice_8h.html#a91edc9c5d80be64ff2431b1784cf1cc5">matrice_init</a>(<span class="keywordtype">char</span> *fichier);
 <a name="l00058"></a>00058 
-<a name="l00066"></a>00066 <span class="keywordtype">int</span> <a class="code" href="matrice_8h.html#abc0378614b84ad7d0fb507f8646887e0">matrice_position_appartient</a>(<a class="code" href="structMatrice.html">Matrice</a> m, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
-<a name="l00067"></a>00067 
-<a name="l00072"></a>00072 <span class="keywordtype">void</span> <a class="code" href="matrice_8h.html#a42e5dda540697aa95793e22c7641943a">matrice_affiche</a>(<a class="code" href="structMatrice.html">Matrice</a> m);
-<a name="l00073"></a>00073 
-<a name="l00079"></a>00079 <span class="keywordtype">int</span> <a class="code" href="matrice_8h.html#a715838df2af0c1e069d599aeaf4f5289">matrice_sauvegarde</a>(<a class="code" href="structMatrice.html">Matrice</a> m, FILE *fichier);
+<a name="l00064"></a>00064 <a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> <a class="code" href="matrice_8h.html#ad3b953551d15e015f4f3027ae2f259da">matrice_chargement</a>(FILE *fichier);
+<a name="l00065"></a>00065 
+<a name="l00073"></a>00073 <span class="keywordtype">int</span> <a class="code" href="matrice_8h.html#abc0378614b84ad7d0fb507f8646887e0">matrice_position_appartient</a>(<a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> m, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
+<a name="l00074"></a>00074 
+<a name="l00079"></a>00079 <span class="keywordtype">void</span> <a class="code" href="matrice_8h.html#a42e5dda540697aa95793e22c7641943a">matrice_affiche</a>(<a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> m);
 <a name="l00080"></a>00080 
-<a name="l00081"></a>00081 <span class="preprocessor">#endif</span>
+<a name="l00086"></a>00086 <span class="keywordtype">int</span> <a class="code" href="matrice_8h.html#a715838df2af0c1e069d599aeaf4f5289">matrice_sauvegarde</a>(<a class="code" href="structMatrice.html" title="Structure d&#39;une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de...">Matrice</a> m, FILE *fichier);
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -125,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:17 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

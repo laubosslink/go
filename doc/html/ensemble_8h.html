@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div><!--header-->
 <div class="contents">
 
-<p>structures cell et <a class="el" href="structEnsemble.html">Ensemble</a> permettant la manipulation d'ensembles  
+<p>structures cell et <a class="el" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> permettant la manipulation d'ensembles  
 <a href="#details">Plus de détails...</a></p>
 
 <p><a href="ensemble_8h_source.html">Aller au code source de ce fichier.</a></p>
@@ -95,7 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCell.html">Cell</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure <a class="el" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a> qui contient le contenu de la cellule et le pointeur vers la cellule suivante.  <a href="structCell.html#details">Plus de détails...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structEnsemble.html">Ensemble</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">structure <a class="el" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> contient le pointeur vers la cellule courante et le pointeur vers la tete de l'ensemble.  <a href="structEnsemble.html#details">Plus de détails...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structCell.html">Cell</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#a60bf09598e66928bf67a21a22bc17814">Cell</a></td></tr>
@@ -110,11 +112,15 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#a6839b221efdc6b7d38eb13e4591e58f6">ensemble_enlever</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E, void *element)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#a49fbcb97f3bb110025052809e42aad2f">ensemble_tete</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#afe671e087f7eae69e5e89df96f2eb1c4">ensemble_courant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCell.html">Cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#ab1f76a3f11864e53cbbed88004cb6872">ensemble_get_suivant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#ac32df2329e085c8172dd34c393e8e3e9">ensemble_get_courant_contenu</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#a15184ddbccffd1cca2c8172118447af6">ensemble_set_courant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E, <a class="el" href="structCell.html">Cell</a> *c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#aa786b13e0846e401cfc327d5f3876251">ensemble_suivant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#ac8b8082e3fa0171fe35373c3c6af36c4">ensemble_concatene</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *e1, <a class="el" href="structEnsemble.html">Ensemble</a> *e2)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ensemble_8h.html#a6992161c7ad25f6a41d9fe9e2f339f14">ensemble_reset_courant</a> (<a class="el" href="structEnsemble.html">Ensemble</a> *E)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
-<div class="textblock"><p>structures cell et <a class="el" href="structEnsemble.html">Ensemble</a> permettant la manipulation d'ensembles </p>
+<div class="textblock"><p>structures cell et <a class="el" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> permettant la manipulation d'ensembles </p>
 <p>ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex</p>
 <p>This file is owned by ENSICAEN students. No portion of this document may be reproduced, copied or revised without written premission of the authors </p>
 <dl class="author"><dt><b>Auteur:</b></dt><dd>ELHIMDI Yasmine &lt;<a href="mailto:elhimdi@ecole.ensicaen.fr">elhimdi@ecole.ensicaen.fr</a>&gt; </dd>
@@ -261,7 +267,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
       </table>
 </div>
 <div class="memdoc">
-<p>Përmet de concatener deux ensembles </p>
+<p>Permet de concatener deux ensembles </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">e1</td><td>l'ensemble e1 ajouter en "tête" </td></tr>
@@ -288,7 +294,8 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 </div>
 <div class="memdoc">
 <p>Permet de positionner le pointeur sur un des éléments de l'ensemble </p>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>le pointeur sur l'élément courant </dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>le pointeur sur l'élément courant</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">A faire:</a></b></dt><dd>get_ </dd></dl>
 
 </div>
 </div>
@@ -327,6 +334,56 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 </div>
 </div>
+<a class="anchor" id="ac32df2329e085c8172dd34c393e8e3e9"></a><!-- doxytag: member="ensemble.h::ensemble_get_courant_contenu" ref="ac32df2329e085c8172dd34c393e8e3e9" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="ensemble_8c.html#ac32df2329e085c8172dd34c393e8e3e9">ensemble_get_courant_contenu</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer le contenu de la cellule courante </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>void* le contenu </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab1f76a3f11864e53cbbed88004cb6872"></a><!-- doxytag: member="ensemble.h::ensemble_get_suivant" ref="ab1f76a3f11864e53cbbed88004cb6872" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structCell.html">Cell</a>* <a class="el" href="ensemble_8c.html#ab1f76a3f11864e53cbbed88004cb6872">ensemble_get_suivant</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer la cellule suivante d'un ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>la cellule suivante (par rapport à courant) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a5a38da96e292ee9603aa8c38b7eca270"></a><!-- doxytag: member="ensemble.h::ensemble_init" ref="a5a38da96e292ee9603aa8c38b7eca270" args="(Ensemble *E)" -->
 <div class="memitem">
 <div class="memproto">
@@ -345,6 +402,65 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a6992161c7ad25f6a41d9fe9e2f339f14"></a><!-- doxytag: member="ensemble.h::ensemble_reset_courant" ref="a6992161c7ad25f6a41d9fe9e2f339f14" args="(Ensemble *E)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="ensemble_8c.html#a6992161c7ad25f6a41d9fe9e2f339f14">ensemble_reset_courant</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de remettre le pointeur courant sur la tête de l'ensemble </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a15184ddbccffd1cca2c8172118447af6"></a><!-- doxytag: member="ensemble.h::ensemble_set_courant" ref="a15184ddbccffd1cca2c8172118447af6" args="(Ensemble *E, Cell *c)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="ensemble_8c.html#a15184ddbccffd1cca2c8172118447af6">ensemble_set_courant</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structEnsemble.html">Ensemble</a> *&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structCell.html">Cell</a> *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de modifier le pointeur de la cellule courante sur une autre </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">E</td><td>l'ensemble </td></tr>
+    <tr><td class="paramname">c</td><td>la nouvelle celulle vers laquelle pointe courant </td></tr>
   </table>
   </dd>
 </dl>
@@ -385,7 +501,8 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 </div>
 <div class="memdoc">
 <p>Permet de positionner le pointeur tête sur le debut de mon ensemble </p>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>le pointeur de la tete de l'ensemble </dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>le pointeur de la tete de l'ensemble</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">A faire:</a></b></dt><dd>get_ </dd></dl>
 
 </div>
 </div>
@@ -432,7 +549,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 19:30:37 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 21:54:18 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

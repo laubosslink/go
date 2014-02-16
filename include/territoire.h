@@ -26,6 +26,9 @@
 
 #include <ensemble_colores.h>
 
+/**
+ * @brief le type Territoire est un ensemble de positions colorés. C'est donc un alias du type Ensemble_Colores
+ */
 typedef Ensemble_Colores Territoire;
 
 #include <plateau.h>

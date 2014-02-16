@@ -3,6 +3,9 @@
 .nh
 .SH NAME
 src/libertes.c \- 
+.PP
+code source qui permet de gérer les libertés  
+
 .SH SYNOPSIS
 .br
 .PP
@@ -11,6 +14,10 @@ src/libertes.c \-
 \fC#include <stdlib\&.h>\fP
 .br
 \fC#include <matrice\&.h>\fP
+.br
+\fC#include <ensemble\&.h>\fP
+.br
+\fC#include <ensemble_colores\&.h>\fP
 .br
 \fC#include <libertes\&.h>\fP
 .br
@@ -22,8 +29,6 @@ src/libertes.c \-
 .br
 \fC#include <chaine\&.h>\fP
 .br
-\fC#include <ensemble\&.h>\fP
-.br
 
 .SS "Fonctions"
 
@@ -32,6 +37,37 @@ src/libertes.c \-
 .RI "\fBLibertes\fP \fBdetermineLiberte\fP (\fBPlateau\fP plateau, \fBChaine\fP chaine)"
 .br
 .in -1c
+.SH "Description détaillée"
+.PP 
+code source qui permet de gérer les libertés 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+.RE
+.PP
+
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBLibertes\fP \fBdetermineLiberte\fP (\fBPlateau\fPplateau, \fBChaine\fPchaine)"Permet de determiner les libertes d'une chaine 
@@ -47,6 +83,12 @@ src/libertes.c \-
 .RS 4
 un ensemble de positions qui represente les libertes 
 .RE
+.PP
+\fBA faire\fP
+.RS 4
+réfléchir sur le struct dans le \&.c, et conséquence sur chaine 
+.RE
+.PP
 .PP
 \fBA faire\fP
 .RS 4

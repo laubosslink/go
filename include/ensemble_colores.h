@@ -24,21 +24,34 @@
 #ifndef ENSEMBLE_COLORES_H_INCLUDED
 #define ENSEMBLE_COLORES_H_INCLUDED 
 
-#include <ensemble.h>
 #include <couleur.h>
-#include <position.h>
 #include <positions.h>
 
-typedef struct Ensemble_Colores{
-	Couleur c;
+
+typedef struct Ensemble_Colores Ensemble_Colores;
+
+/**
+ * @brief Structure d'un ensemble coloré contient une couleur, et un ensemble de positions
+ */
+struct Ensemble_Colores {
+	Couleur c; 
 	Positions* p;
-} Ensemble_Colores;
+};
+
+#include <ensemble.h>
+#include <position.h>
 
 /**
  * Permet de creer un ensemble
  * @return un pointeur vers un ensemble
  */
 Ensemble_Colores* creer_ensemble_colores();
+
+/**
+ * Permet d'initialiser un ensemble coloré
+ * @param E l'ensenble coloré
+ */
+void ensemble_colores_init(Ensemble_Colores* E);
 
 /**
  * Permet de vérifier si un ensemble est vide
@@ -84,12 +97,5 @@ Cell* ensemble_colores_courant(Ensemble_Colores* E);
  * @return 1 ou 0
  */
 int ensemble_colores_suivant(Ensemble_Colores* E);
-
-/**
- * Permet de récupérer le contenu d'une cellule d'ensemble colores
- * @param c la cellule
- * @return une position
- */
-Position* ensemble_colores_contenu(Cell* c);
 
 #endif
