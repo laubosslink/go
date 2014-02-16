@@ -24,9 +24,10 @@
 #ifndef TERRITOIRE_H_INCLUDED
 #define TERRITOIRE_H_INCLUDED
 
+#include <ensemble_colores.h>
+
 typedef Ensemble_Colores Territoire;
 
-#include <ensemble_colores.h>
 #include <plateau.h>
 #include <position.h>
 

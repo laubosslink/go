@@ -179,6 +179,8 @@ void plateau_realiser_capture(Plateau plateau, Chaine chaine){
 	}
 	
 	plateau.donnees[((Position*)p->courant->contenu)->y][((Position*)p->courant->contenu)->x] = VIDE;
+	
+	/* @todo free de chaine */
 }
 
 int plateau_est_identique(Plateau plateau, Plateau ancienPlateau){
@@ -285,7 +287,3 @@ void plateau_afficher(Plateau p){
 	printf("-\n");
 	
 }
-
-
-	
-	
