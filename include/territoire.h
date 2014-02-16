@@ -24,8 +24,19 @@
 #ifndef TERRITOIRE_H_INCLUDED
 #define TERRITOIRE_H_INCLUDED
 
-#include <ensemble_colores.h>
-
 typedef Ensemble_Colores Territoire;
+
+#include <ensemble_colores.h>
+#include <plateau.h>
+#include <position.h>
+
+/**
+ * Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des
+ * pierres de meme couleur en commencant par l'intersection vide a la position pos.
+ * Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble
+ * des intersections voisines mais en specifiant que territoire n'a aucune couleur. Ce cas est exploite pas la fonction
+ * estUnSeki
+ */
+Territoire determineTerritoire(Plateau plateau, Position pos);
 
 #endif
