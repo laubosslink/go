@@ -42,6 +42,16 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 # TESTS
 ##
 
+# Territoire
+
+test_territoire: libmatrice libensemble $(BINDIR)/test_territoire
+
+$(BINDIR)/test_territoire: $(OBJDIR)/test_territoire.o $(OBJDIR)/territoire.o $(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o 
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+$(OBJDIR)/test_territoire.o: $(TESTDIR)/test_territoire.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 # Plateau
 
 test_plateau: libmatrice libensemble $(BINDIR)/test_plateau

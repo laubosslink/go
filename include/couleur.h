@@ -28,6 +28,9 @@
  * Permet de représenter la couleur des pionts
  */
 typedef enum eCouleur {
+	/* non definis */
+	INDEFINI=-1,
+	
 	/* représente aucun pion */
 	VIDE=0,
 	
