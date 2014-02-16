@@ -34,11 +34,16 @@ void determineTerritoireRec(Plateau plateau, Position pos, Territoire* t){
 		return;
 	
 	/* si la couleur du territoire n'est pas definis et qu'on a trouve un pion, on definis la couleur */
-	if(t->c == INDEFINI && est_un_pion_plateau(plateau, pos))
+	if(t->c == INDEFINI && est_un_pion_plateau(plateau, pos)){
 		t->c = plateau_get_pos(plateau, pos);
-	else if(est_un_pion(t->c) && t->c != plateau_get_pos(plateau, pos)) /* si en revanche la couleur du territoire est deja definis et on trouve une couleur oppose, le territoire n'appartient a personne */
+	} else if(est_un_pion(t->c) && t->c != plateau_get_pos(plateau, pos) && plateau_get_pos(plateau, pos) != VIDE) /* si en revanche la couleur du territoire est deja definis et on trouve une couleur oppose, le territoire n'appartient a personne */
+	{
 		t->c = VIDE;
-		
+	}
+	
+	if(plateau_get_pos(plateau, pos) != VIDE)
+		return;
+	
 	if(ensemble_colores_appartient(t, &pos))
 		return;
 	

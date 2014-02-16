@@ -287,7 +287,6 @@ void plateau_afficher(Plateau p){
 	
 }
 
-/*
 Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
 	Chaines CC;
 	Pion pionChaine;
@@ -359,4 +358,4 @@ Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
 	}
 	
 }
-*/
+

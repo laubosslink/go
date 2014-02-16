@@ -33,8 +33,8 @@ int main(){
 		
 	Position pos;
 	
-	pos.x = 0;
-	pos.y = 3;
+	pos.x = 3;
+	pos.y = 4;
 	
 	fclose(f);
 	
