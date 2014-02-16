@@ -13,7 +13,7 @@ code source qui permet de gérer les positions
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8c_a53b0b3e1eef3ea6d4a39729168fc5d74}{position\-\_\-creer} (int x, int y)
+\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8c_a6b0ffa30310890f0f828dd785396f701}{creer\-\_\-position} (int x, int y)
 \item 
 \hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8c_a0fe16a57be214b54230f843ac61b2fc7}{position\-\_\-get\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} $\ast$\-E)
 \item 
@@ -61,6 +61,24 @@ code source qui permet de gérer les positions \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boul
 \begin{DoxyReturn}{\-Renvoie}
 nouvelle position 
 \end{DoxyReturn}
+\hypertarget{position_8c_a6b0ffa30310890f0f828dd785396f701}{\index{position.\-c@{position.\-c}!creer\-\_\-position@{creer\-\_\-position}}
+\index{creer\-\_\-position@{creer\-\_\-position}!position.c@{position.\-c}}
+\subsubsection[{creer\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf creer\-\_\-position} (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{position_8c_a6b0ffa30310890f0f828dd785396f701}
+\-Permet de creer une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em x} & l'abscisse \\
+\hline
+{\em y} & l'ordonnee \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un pointeur vers la position alloue 
+\end{DoxyReturn}
 \hypertarget{position_8c_aae3c656b6236e8cd8109d4486140fb38}{\index{position.\-c@{position.\-c}!droite@{droite}}
 \index{droite@{droite}!position.c@{position.\-c}}
 \subsubsection[{droite}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf droite} (
@@ -105,24 +123,6 @@ nouvelle position
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
 nouvelle position 
-\end{DoxyReturn}
-\hypertarget{position_8c_a53b0b3e1eef3ea6d4a39729168fc5d74}{\index{position.\-c@{position.\-c}!position\-\_\-creer@{position\-\_\-creer}}
-\index{position\-\_\-creer@{position\-\_\-creer}!position.c@{position.\-c}}
-\subsubsection[{position\-\_\-creer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf position\-\_\-creer} (
-\begin{DoxyParamCaption}
-\item[{int}]{x, }
-\item[{int}]{y}
-\end{DoxyParamCaption}
-)}}\label{position_8c_a53b0b3e1eef3ea6d4a39729168fc5d74}
-\-Permet de creer une position 
-\begin{DoxyParams}{\-Paramètres}
-{\em x} & l'abscisse \\
-\hline
-{\em y} & l'ordonnee \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{\-Renvoie}
-un pointeur vers la position alloue 
 \end{DoxyReturn}
 \hypertarget{position_8c_a0fe16a57be214b54230f843ac61b2fc7}{\index{position.\-c@{position.\-c}!position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}}
 \index{position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}!position.c@{position.\-c}}

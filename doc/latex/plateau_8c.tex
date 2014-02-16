@@ -49,6 +49,8 @@ int \hyperlink{plateau_8c_a396ddc6f1c29d908e92628deac9c07fc}{plateau\-\_\-copie}
 int \hyperlink{plateau_8c_ae8d9ec3267e5d16b943e20324a8944cd}{plateau\-\_\-sauvegarde} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \-F\-I\-L\-E $\ast$fichier)
 \item 
 void \hyperlink{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-afficher} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} p)
+\item 
+\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} \hyperlink{plateau_8c_a233209249792b1a2c99163fc53ce62aa}{capture\-Chaines} (\hyperlink{plateau_8h_a2f8eb6e8895bd97048918153353c99ac}{\-Plateau} plateau, \hyperlink{structPion}{\-Pion} pion, int $\ast$valide)
 \end{DoxyCompactItemize}
 
 
@@ -69,6 +71,29 @@ void \hyperlink{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-affic
 
 
 \subsection{\-Documentation des fonctions}
+\hypertarget{plateau_8c_a233209249792b1a2c99163fc53ce62aa}{\index{plateau.\-c@{plateau.\-c}!capture\-Chaines@{capture\-Chaines}}
+\index{capture\-Chaines@{capture\-Chaines}!plateau.c@{plateau.\-c}}
+\subsubsection[{capture\-Chaines}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Chaines} {\bf capture\-Chaines} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Plateau}}]{plateau, }
+\item[{{\bf \-Pion}}]{pion, }
+\item[{int $\ast$}]{valide}
+\end{DoxyParamCaption}
+)}}\label{plateau_8c_a233209249792b1a2c99163fc53ce62aa}
+\-En fonction de la position du pion et de sa couleur, retourne les chaines captures. \-Si aucune chaine n'est capturé par la pose du pion, alors la valeur \-N\-U\-L\-L est retournée. \-L'entier (référencé par) valide est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse). \-Dans le cas contraire l'entier référencé par valide est égale à 1
+
+
+\begin{DoxyParams}{\-Paramètres}
+{\em plateau} & \-Le plateau \\
+\hline
+{\em pion} & le pion \\
+\hline
+{\em valide} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+un ensemble de chaine 
+\end{DoxyReturn}
 \hypertarget{plateau_8c_a48347ca20160613e199cab541b9a261f}{\index{plateau.\-c@{plateau.\-c}!creer\-\_\-plateau@{creer\-\_\-plateau}}
 \index{creer\-\_\-plateau@{creer\-\_\-plateau}!plateau.c@{plateau.\-c}}
 \subsubsection[{creer\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf creer\-\_\-plateau} (
@@ -180,7 +205,7 @@ un plateau
 \begin{DoxyReturn}{\-Renvoie}
 \-N\-U\-L\-L si il n'y a pas de pion, une chaine sinon 
 \end{DoxyReturn}
-\-I\-M\-P\-O\-R\-T\-A\-N\-T \hypertarget{plateau_8c_abb2eff609b3c2f2072ae58b288552465}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-determiner\-\_\-chaine\-\_\-rec@{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}}
+\hypertarget{plateau_8c_abb2eff609b3c2f2072ae58b288552465}{\index{plateau.\-c@{plateau.\-c}!plateau\-\_\-determiner\-\_\-chaine\-\_\-rec@{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}}
 \index{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec@{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}!plateau.c@{plateau.\-c}}
 \subsubsection[{plateau\-\_\-determiner\-\_\-chaine\-\_\-rec}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf plateau\-\_\-determiner\-\_\-chaine\-\_\-rec} (
 \begin{DoxyParamCaption}

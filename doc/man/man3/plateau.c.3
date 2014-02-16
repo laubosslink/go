@@ -80,6 +80,9 @@ Le code source permettant de gérer le plateau\&.
 .ti -1c
 .RI "void \fBplateau_afficher\fP (\fBPlateau\fP p)"
 .br
+.ti -1c
+.RI "\fBChaines\fP \fBcaptureChaines\fP (\fBPlateau\fP plateau, \fBPion\fP pion, int *valide)"
+.br
 .in -1c
 .SH "Description détaillée"
 .PP 
@@ -109,6 +112,23 @@ EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr>
 
 .SH "Documentation des fonctions"
 .PP 
+.SS "\fBChaines\fP \fBcaptureChaines\fP (\fBPlateau\fPplateau, \fBPion\fPpion, int *valide)"En fonction de la position du pion et de sa couleur, retourne les chaines captures\&. Si aucune chaine n'est capturé par la pose du pion, alors la valeur NULL est retournée\&. L'entier (référencé par) valide est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse)\&. Dans le cas contraire l'entier référencé par valide est égale à 1
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIplateau\fP Le plateau 
+.br
+\fIpion\fP le pion 
+.br
+\fIvalide\fP 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un ensemble de chaine 
+.RE
+.PP
+
 .SS "\fBPlateau\fP \fBcreer_plateau\fP (inttaille)"Permet de creer un plateau [taille x taille] 
 .PP
 \fBParamètres:\fP
@@ -200,7 +220,7 @@ un plateau
 NULL si il n'y a pas de pion, une chaine sinon 
 .RE
 .PP
-IMPORTANT 
+
 .SS "void \fBplateau_determiner_chaine_rec\fP (\fBPlateau\fPplateau, \fBPosition\fPpos, \fBChaine\fP *chaine)"
 .SS "int \fBplateau_est_identique\fP (\fBPlateau\fPplateau, \fBPlateau\fPancienPlateau)"indique sur l'organisation du plateau est identique a une precedente organisation de plateau\&. 
 .PP

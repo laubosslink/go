@@ -116,6 +116,7 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a396ddc6f1c29d908e92628deac9c07fc">plateau_copie</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> from, <a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> to)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#ae8d9ec3267e5d16b943e20324a8944cd">plateau_sauvegarde</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, FILE *fichier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#ad68ec9a561a948d5452a6f9f0d47ad5e">plateau_afficher</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="chaines_8h.html#ace61862724812da656df963432df9db7">Chaines</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="plateau_8c.html#a233209249792b1a2c99163fc53ce62aa">captureChaines</a> (<a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a> plateau, <a class="el" href="structPion.html">Pion</a> pion, int *valide)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Le code source permettant de gérer le plateau. </p>
@@ -127,6 +128,49 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 <dl class="version"><dt><b>Version:</b></dt><dd>1.0 </dd></dl>
 <dl class="date"><dt><b>Date:</b></dt><dd>03-12-2013 </dd></dl>
 </div><hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="a233209249792b1a2c99163fc53ce62aa"></a><!-- doxytag: member="plateau.c::captureChaines" ref="a233209249792b1a2c99163fc53ce62aa" args="(Plateau plateau, Pion pion, int *valide)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="chaines_8h.html#ace61862724812da656df963432df9db7">Chaines</a> <a class="el" href="tmp_8c.html#a233209249792b1a2c99163fc53ce62aa">captureChaines</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a2f8eb6e8895bd97048918153353c99ac">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structPion.html">Pion</a>&#160;</td>
+          <td class="paramname"><em>pion</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>valide</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>En fonction de la position du pion et de sa couleur, retourne les chaines captures. Si aucune chaine n'est capturé par la pose du pion, alors la valeur NULL est retournée. L'entier (référencé par) valide est égal à zéro si le fait de placer le pion en cette position conduit à construire une chaine sans liberté de la couleur du pion (sauf si ce coup produit la capture d'au moins une chaine adverse). Dans le cas contraire l'entier référencé par valide est égale à 1</p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plateau</td><td>Le plateau </td></tr>
+    <tr><td class="paramname">pion</td><td>le pion </td></tr>
+    <tr><td class="paramname">valide</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un ensemble de chaine </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a48347ca20160613e199cab541b9a261f"></a><!-- doxytag: member="plateau.c::creer_plateau" ref="a48347ca20160613e199cab541b9a261f" args="(int taille)" -->
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +375,6 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
   </dd>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>NULL si il n'y a pas de pion, une chaine sinon </dd></dl>
-<p>IMPORTANT </p>
 
 </div>
 </div>
@@ -657,7 +700,7 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 21:54:18 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Dimanche Février 16 2014 22:42:40 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

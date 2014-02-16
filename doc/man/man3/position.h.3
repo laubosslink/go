@@ -32,7 +32,7 @@ Une position\&.
 
 .in +1c
 .ti -1c
-.RI "\fBPosition\fP * \fBposition_creer\fP (int x, int y)"
+.RI "\fBPosition\fP * \fBcreer_position\fP (int x, int y)"
 .br
 .ti -1c
 .RI "\fBPosition\fP * \fBposition_get_courant\fP (\fBEnsemble\fP *E)"
@@ -96,6 +96,21 @@ nouvelle position
 .RE
 .PP
 
+.SS "\fBPosition\fP* \fBcreer_position\fP (intx, inty)"Permet de creer une position 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIx\fP l'abscisse 
+.br
+\fIy\fP l'ordonnee 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un pointeur vers la position alloue 
+.RE
+.PP
+
 .SS "\fBPosition\fP \fBdroite\fP (\fBPosition\fPp)"Permet de se deplacer vers la droite 
 .PP
 \fBParamètres:\fP
@@ -132,21 +147,6 @@ nouvelle position
 \fBRenvoie:\fP
 .RS 4
 nouvelle position 
-.RE
-.PP
-
-.SS "\fBPosition\fP* \fBposition_creer\fP (intx, inty)"Permet de creer une position 
-.PP
-\fBParamètres:\fP
-.RS 4
-\fIx\fP l'abscisse 
-.br
-\fIy\fP l'ordonnee 
-.RE
-.PP
-\fBRenvoie:\fP
-.RS 4
-un pointeur vers la position alloue 
 .RE
 .PP
 

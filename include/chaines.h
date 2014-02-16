@@ -26,9 +26,22 @@
 
 #include <ensemble.h>
 
-/** Chaines est une ensemble de chaine (alias d'un ensemble)
+/** 
+ * @brief Chaines est une ensemble de chaine (alias d'un ensemble)
  * @see Ensemble
  */
 typedef Ensemble Chaines;
+
+#include <chaine.h>
+
+
+/**
+ * Permet de savoir si une chaine appartient a un ensemble de chaines
+ * Remarque : une chaine appartient a chaines si une seul des position de la chaine se trouve dans chaines
+ * @param chaines l'ensemble de chaines
+ * @param chaine la chaine a verifie
+ * @return 1 si chaine appartient a chaines, 0 sinon
+ */
+int chaines_appartient_chaine(Chaines chaines, Chaine chaine);
 
 #endif
