@@ -282,16 +282,58 @@ void plateau_afficher(Plateau p){
 	
 }
 
-/*
+
 Chaines captureChaines(Plateau plateau,Pion pion, int* valide){
+	int i,j,x,y;
 	Chaines CC; // chaines_capturees
-	Chaine ChainePion;
+	Chaine chaine;
+	Couleur couleur;
+	Pion pionChaine;
+	Pion pionVoisin;
+	Chaine chaineAdverse;
+		
+	chaine = plateau_determiner_chaine(plateau,pion.p);
+	couleur = chaine.c ; 
+	pionChaine.p = (*((Position *)(ensemble_colores_tete(&chaine)->contenu)));
 	
-	if( ensemble_vide(&CC) ) return NULL;
 	
-	ChainePion = plateau_determiner_chaine(plateau,pion.p);
-	if( (*valide) == 0 && ) 
+	while(ensemble_colores_suivant(&chaine)){
+		x=pionChaine.p.x;
+		y=pionChaine.p.y;
+		for(i=x-1;i<x+2;i++){
+			pionVoisin.p.x = i;
+			pionVoisin.p.y = y;
+			
+			if(plateau_position_appartient(plateau,pionVoisin.p) && plateau_get(plateau,pionVoisin.p.x,pionVoisin.p.y) != couleur && ensemble_colores_appartient(&chaineAdverse,&pionVoisin.p)){
+				ensemble_colores_ajouter(&chaineAdverse,(*pionAdverse.p));
+			}
+		}
+			
+		for(j=y-1;j<y+2;j++){
+			pionVoisin.p.x = x;
+			pionVoisin.p.y = j;
+			
+			if(plateau_position_appartient(plateau,pionVoisin.p) && plateau_get(plateau,pionVoisin.p.x,pionVoisin.p.y) != couleur && ensemble_colores_appartient(&chaineAdverse,&pionVoisin.p)){
+				ensemble_colores_ajouter(&chaineAdverse,(*pionAdverse.p));
+			}
+		}
+		
+		pionChaine.p = (*(ensemble_colores_tete(&chaine)->(Position*)contenu->suivant));
+	}
 	
-*/
+	if((*valide) == 0){
+		ensemble_ajouter(&CC,(Chaine*)&chaine);
+		return CC;
+	}
+	
+	if((*valide) == 1){
+		ensemble_ajouter(&CC,(Chaine*)&chaineAdverse);
+		return CC;
+	}
+	
+	if(ensemble_vide(&CC) && (*valide) != 0 && (*valide) != 1) 
+		return NULL;
+	
+}
 	
 	
