@@ -50,10 +50,10 @@ int ensemble_positions_suivant(Ensemble_Positions* E){
 }
 
 int ensemble_positions_appartient(Ensemble_Positions* E, Position* element){
-	ensemble_reset_courant(E);
-	
 	if(ensemble_vide(E))
 		return 0;
+	
+	ensemble_reset_courant(E);
 	
 	while(ensemble_positions_suivant(E))
 	{	

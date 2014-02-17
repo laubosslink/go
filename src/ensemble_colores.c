@@ -62,8 +62,11 @@ int ensemble_colores_suivant(Ensemble_Colores* E){
 int ensemble_colores_appartient(Ensemble_Colores* E, Position* element){
 	Positions* p = E->p;
 	
+	if(ensemble_vide(p))
+		return 0;
+	
 	ensemble_reset_courant(p);
-
+	
 	while(ensemble_suivant(p)){
 		if(element->x == position_get_courant(p)->x && element->y == position_get_courant(p)->y)
 			return 1;
@@ -83,6 +86,10 @@ Ensemble_Colores* ensemble_colores_enlever(Ensemble_Colores* E, Position* elemen
 } 
 	
 void ensemble_colores_ajouter(Ensemble_Colores* E, Position* element){
+	/* permet de ne pas ajouter des doublons ! */
+	if(ensemble_colores_appartient(E, element))
+		return;
+		
 	return ensemble_ajouter(E->p, (Position*) element);
 }
 
