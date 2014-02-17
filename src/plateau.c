@@ -230,7 +230,6 @@ void plateau_afficher(Plateau p){
 	
 }
 
-
 Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	Chaines chaines, chainesCapturees;
 	
@@ -254,7 +253,7 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	while(ensemble_positions_suivant(chaine.p)){
 		/** on regarde haut, bas, gauche, droite de chaque position de cette chaine */
 		
-		/** @todo risque de poser problème, on ajoute une adresse "chainede_determiner qui reste la même (seul le contenu chance à chaque appel
+		/** @bug risque de poser problème, on ajoute une adresse "chainede_determiner qui reste la même (seul le contenu chance à chaque appel
 		 * de plateau_determiner_chaine. */
 		chaine_determine = plateau_determiner_chaine(plateau, haut(*position_get_courant(chaine.p)));
 		if(!chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, haut(*position_get_courant(chaine.p))) != chaine.c){
