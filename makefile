@@ -25,7 +25,11 @@ all: go
 
 go: libensemble libmatrice $(BINDIR)/go
 
-$(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o
+$(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o \
+			  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/position.o \
+			  $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o \
+			  $(OBJDIR)/chaines.o
+			  
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 doc:
@@ -49,7 +53,10 @@ tests: test_chaines_appartient_chaine
 
 test_chaines_appartient_chaine: libmatrice libensemble $(BINDIR)/test_chaines_appartient_chaine
 
-$(BINDIR)/test_chaines_appartient_chaine: $(OBJDIR)/test_chaines_appartient_chaine.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o 
+$(BINDIR)/test_chaines_appartient_chaine: $(OBJDIR)/test_chaines_appartient_chaine.o \
+										  $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o \
+										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o 
+										  
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_chaines_appartient_chaine.o: $(TESTDIR)/test_chaines_appartient_chaine.c
@@ -60,7 +67,10 @@ $(OBJDIR)/test_chaines_appartient_chaine.o: $(TESTDIR)/test_chaines_appartient_c
 
 test_capture_chaines: libmatrice libensemble $(BINDIR)/test_capture_chaines
 
-$(BINDIR)/test_capture_chaines: $(OBJDIR)/test_capture_chaines.o $(OBJDIR)/territoire.o $(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o 
+$(BINDIR)/test_capture_chaines: $(OBJDIR)/test_capture_chaines.o $(OBJDIR)/territoire.o \
+								$(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o \
+								$(OBJDIR)/chaines.o $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o 
+								
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_capture_chaines.o: $(TESTDIR)/test_capture_chaines.c
@@ -70,7 +80,10 @@ $(OBJDIR)/test_capture_chaines.o: $(TESTDIR)/test_capture_chaines.c
 
 test_territoire: libmatrice libensemble $(BINDIR)/test_territoire
 
-$(BINDIR)/test_territoire: $(OBJDIR)/test_territoire.o $(OBJDIR)/territoire.o $(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o  $(OBJDIR)/chaines.o $(OBJDIR)/libertes.o  $(OBJDIR)/ensemble_positions.o 
+$(BINDIR)/test_territoire: $(OBJDIR)/test_territoire.o $(OBJDIR)/territoire.o \
+						   $(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o  \
+						   $(OBJDIR)/chaines.o $(OBJDIR)/libertes.o  $(OBJDIR)/ensemble_positions.o 
+						   
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_territoire.o: $(TESTDIR)/test_territoire.c
@@ -80,7 +93,10 @@ $(OBJDIR)/test_territoire.o: $(TESTDIR)/test_territoire.c
 
 test_plateau: libmatrice libensemble $(BINDIR)/test_plateau
 
-$(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o $(OBJDIR)/libertes.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/chaines.o 
+$(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o \
+						$(OBJDIR)/libertes.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o  \
+						$(OBJDIR)/chaines.o 
+						
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_plateau.o: $(TESTDIR)/test_plateau.c
