@@ -38,7 +38,7 @@ Position* creer_position(int x, int y){
 	return p;
 }
 
-Position* position_get_courant(Ensemble *E){
+Position* position_get_courant(Ensemble E){
 	return (Position *) ensemble_get_courant_contenu(E);
 }
 

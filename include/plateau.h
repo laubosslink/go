@@ -29,7 +29,7 @@
 /**
  * @brief Structure d'un plateau de jeu. Plateau est un alias du type Matrice.
  */
-typedef struct Matrice Plateau;
+typedef struct Matrice* Plateau;
 
 #include <matrice.h>
 #include <chaine.h>
@@ -170,5 +170,13 @@ Plateau plateau_chargement(FILE* fichier);
  * @return un ensemble de chaine
  */
 Chaines captureChaines(Plateau plateau, Pion pion, int *valide);
+
+
+/**
+ * Permet de récupérer la taille du plateau (largeur) sachant que hauteur est la même
+ * @param plateau le plateau
+ * @return le taille du plateau (largeur) 
+ */
+int plateau_get_taille(Plateau plateau);
 
 #endif

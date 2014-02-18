@@ -1,52 +1,54 @@
-#include <ensemble.h>
-#include <chaine.h>
-#include <chaines.h>
 #include <position.h>
+
+#include <ensemble.h>
 #include <ensemble_positions.h>
 #include <ensemble_colores.h>
 
+#include <chaine.h>
+#include <chaines.h>
+
 int chaines_appartient_chaine(Chaines chaines, Chaine chaine){
-	Chaine *cc; /* chaine courante */
+	Chaine cc; /* chaine courante */
 	
-	if(ensemble_vide(&chaines))
+	if(ensemble_vide(chaines))
 		return 0;
 	
-	if(ensemble_colores_vide(&chaine))
+	if(ensemble_colores_vide(chaine))
 		return 0;
 	
-	ensemble_reset_courant(chaine.p);
-	ensemble_reset_courant(&chaines);
+	ensemble_colores_reset(chaine);
+	ensemble_reset_courant(chaines);
 	
-	while(ensemble_suivant(&chaines)){
-		cc = ensemble_get_courant_contenu(&chaines);
+	while(ensemble_suivant(chaines)){
+		cc = ensemble_get_courant_contenu(chaines);
 		
-		ensemble_reset_courant(chaine.p);
+		ensemble_colores_reset(chaine);
 		
-		while(ensemble_suivant(chaine.p)){
-			if(ensemble_positions_appartient(cc->p, position_get_courant(chaine.p)))
+		while(ensemble_colores_suivant(chaine)){
+			if(ensemble_colores_appartient(cc, ensemble_colores_get_courant(chaine)))
 				return 1;
 			
-			ensemble_set_courant(chaine.p, ensemble_get_suivant(chaine.p));
+			ensemble_colores_set_courant(chaine, ensemble_colores_get_suivant(chaine));
 		}		
 	
-		if(ensemble_positions_appartient(cc->p, position_get_courant(chaine.p)))
+		if(ensemble_colores_appartient(cc, ensemble_colores_get_courant(chaine)))
 			return 1;
 		
-		ensemble_set_courant(&chaines, ensemble_get_suivant(&chaines));
+		ensemble_set_courant(chaines, ensemble_get_suivant(chaines));
 	}
 	
-	cc = ensemble_get_courant_contenu(&chaines);
+	cc = ensemble_get_courant_contenu(chaines);
 	
-	ensemble_reset_courant(chaine.p);
+	ensemble_colores_reset(chaine);
 	
-	while(ensemble_suivant(chaine.p)){
-		if(ensemble_positions_appartient(cc->p, position_get_courant(chaine.p)))
+	while(ensemble_colores_suivant(chaine)){
+		if(ensemble_colores_appartient(cc, ensemble_colores_get_courant(chaine)))
 			return 1;
 		
-		ensemble_set_courant(chaine.p, ensemble_get_suivant(chaine.p));
+		ensemble_colores_set_courant(chaine, ensemble_colores_get_suivant(chaine));
 	}		
 
-	if(ensemble_positions_appartient(cc->p, position_get_courant(chaine.p)))
+	if(ensemble_colores_appartient(cc, ensemble_colores_get_courant(chaine)))
 		return 1;
 	
 	return 0;

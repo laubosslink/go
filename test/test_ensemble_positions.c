@@ -4,8 +4,7 @@
 #include <positions.h>
 #include <ensemble_positions.h>
 
-
-void afficherEnsemblePositions(Ensemble_Positions *E){
+void afficherEnsemblePositions(Ensemble_Positions E){
 	if(ensemble_positions_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
 		return;
@@ -13,20 +12,20 @@ void afficherEnsemblePositions(Ensemble_Positions *E){
 	
 	printf("{");
 	
-	E->courant=E->tete;
+	ensemble_reset_courant(E);
 	
 	while(ensemble_positions_suivant(E)){
-		printf("{%d;%d} \t",  ((Position*)E->courant->contenu)->x, ((Position*)E->courant->contenu)->y );
-		E->courant=E->courant->suivant;
+		printf("{%d;%d} \t",  ((Position*) ensemble_get_courant_contenu(E))->x, ((Position*) ensemble_get_courant_contenu(E))->y );
+		ensemble_set_courant(E, ensemble_get_suivant(E));
 	}
 	
-	printf("{%d;%d} \t",  ((Position*)E->courant->contenu)->x, ((Position*)E->courant->contenu)->y );
+	printf("{%d;%d} \t",  ((Position*) ensemble_get_courant_contenu(E))->x, ((Position*) ensemble_get_courant_contenu(E))->y );
 	printf("}\n\n");
 }
 
 
 int main (){
-	Ensemble_Positions* Ep;
+	Ensemble_Positions Ep;
 	Position* element;
 	Position* p;
 	Position* pp;

@@ -16,6 +16,20 @@
  *
  */
  
+/**
+ * @brief Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne.
+ */ 
+struct Matrice {
+	/** Les tableau des données */
+	int **donnees; 
+	
+	/** Le nombre de lignes */
+	int nbligne;
+	
+	/** Le nombre de colonnes */
+	int nbcolonne;
+};
+ 
 /** 
  * @file matrice.c
  * 
@@ -26,25 +40,36 @@
 #include <stdio.h>
 #include <matrice.h>
 
-Matrice matrice_creer(int nblig, int nbcol){
+Matrice creer_matrice(int nblig, int nbcol){
 	int i;
 	
-	Matrice m;
+	Matrice m = (Matrice) malloc(sizeof(struct Matrice));
 	
-	m.nbligne = nblig;
-	m.nbcolonne = nbcol;
+	m->nbligne = nblig;
+	m->nbcolonne = nbcol;
 	
-	m.donnees = (int **) malloc(nblig * sizeof(int *));
+	m->donnees = (int **) malloc(nblig * sizeof(int *));
 	
 	for(i=0; i<nblig; i++){
-		m.donnees[i] = (int *) malloc(nbcol * sizeof(int));
+		m->donnees[i] = (int *) malloc(nbcol * sizeof(int));
 	}
 	
 	return m;
 }
 
+void detruire_matrice(Matrice m){
+	int i;
+	
+	for(i=0; i<m->nbligne; i++){
+		free(m->donnees[i]);
+	}
+	
+	free(m);
+}
+
 Matrice matrice_chargement(FILE *fichier){
 	Matrice m;
+	
 	int nbligne, nbcolonne, i, j;
 	
 	if(fichier == NULL){ 
@@ -69,13 +94,13 @@ Matrice matrice_chargement(FILE *fichier){
 	fgetc(fichier);
 	
 	/* initialisation de la matrice (allocation mémoire) */
-	m = matrice_creer(nbligne, nbcolonne);
-	m.nbcolonne = nbcolonne;
-	m.nbligne = nbligne;	
+	m = creer_matrice(nbligne, nbcolonne);
+	m->nbcolonne = nbcolonne;
+	m->nbligne = nbligne;	
 	
 	/* récupération des données */
-	for(j=0, i=0; j<nbligne && m.donnees[j][i] != EOF; i++, i %= nbcolonne){
-		m.donnees[j][i] = (int) fgetc(fichier) - '0';
+	for(j=0, i=0; j<nbligne && m->donnees[j][i] != EOF; i++, i %= nbcolonne){
+		m->donnees[j][i] = (int) fgetc(fichier) - '0';
 		
 		if((char) fgetc(fichier) == '\n'){
 			j++;
@@ -104,15 +129,15 @@ Matrice matrice_init(char *fichier){
 }
 
 int matrice_position_appartient(Matrice m, int x, int y){
-	return (x < m.nbcolonne && x >= 0 && y < m.nbligne && y >= 0);
+	return (x < m->nbcolonne && x >= 0 && y < m->nbligne && y >= 0);
 }
 
 void matrice_affiche(Matrice m){
 	int i, j;
 	
-	for(j=0; j<m.nbligne; j++){
-		for(i=0; i<m.nbcolonne; i++){
-			printf("%d ", m.donnees[j][i]);
+	for(j=0; j<m->nbligne; j++){
+		for(i=0; i<m->nbcolonne; i++){
+			printf("%d ", m->donnees[j][i]);
 		}
 		printf("\n");
 	}
@@ -126,24 +151,24 @@ int matrice_sauvegarde(Matrice m, FILE *fichier){
 		return 0;
 
 	/* "en-tête" du fichier contenant le nombre de ligne et de colonnes de la matrice */
-	r = fputc(m.nbligne + '0', fichier);
+	r = fputc(m->nbligne + '0', fichier);
 	if(r == EOF) return 0;
 	
 	r = fputc(' ', fichier);
 	if(r == EOF) return 0;
 	
-	r = fputc(m.nbcolonne + '0', fichier);
+	r = fputc(m->nbcolonne + '0', fichier);
 	if(r == EOF) return 0;
 	
 	r = fputc('\n', fichier);
 	if(r == EOF) return 0;
 	
-	for(j=0; j<m.nbligne; j++){
-		for(i=0; i<m.nbcolonne; i++){
-			r = fputc(m.donnees[j][i] + '0', fichier);
+	for(j=0; j<m->nbligne; j++){
+		for(i=0; i<m->nbcolonne; i++){
+			r = fputc(m->donnees[j][i] + '0', fichier);
 			if(r == EOF) return 0;
 
-			if(i<m.nbcolonne-1){
+			if(i<m->nbcolonne-1){
 				r = fputc(' ', fichier);
 				if(r == EOF) return 0; 
 			}
@@ -156,5 +181,22 @@ int matrice_sauvegarde(Matrice m, FILE *fichier){
 	return 1;
 }
 
+int matrice_get_nombre_ligne(Matrice m){
+	return m->nbligne;
+}
 
+int matrice_get_nombre_colonne(Matrice m){
+	return m->nbcolonne;
+}
 
+int matrice_get_donnees(Matrice m, int i, int j){
+	return m->donnees[j][i];
+}
+
+int* matrice_get_donnees_ligne(Matrice m, int j){
+	return m->donnees[j];
+}
+
+void matrice_set_donnees(Matrice m, int i, int j, int data){
+	m->donnees[j][i] = data;
+}

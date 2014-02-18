@@ -10,4 +10,6 @@ Ce fichier respecte la norme DokuWiki.
 
   * Pour creer le jeu : <code bash> make </code>
   * Pour creer la documentation : <code bash> make doc </code>
+  * Pour réaliser l'ensemble des tests: <code bash>make tests</code>
   * Pour creer les tests : <code bash> make test_FILE </code>
+

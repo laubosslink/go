@@ -9,10 +9,17 @@
 {\ttfamily \#include $<$stdlib.\-h$>$}\*
 {\ttfamily \#include $<$stdio.\-h$>$}\*
 {\ttfamily \#include $<$matrice.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structMatrice}{\-Matrice}
+\begin{DoxyCompactList}\small\item\em \-Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structMatrice}{\-Matrice} \hyperlink{matrice_8c_a634f509afa7d665d250bbc49f1229c1c}{matrice\-\_\-creer} (int nblig, int nbcol)
+\hyperlink{structMatrice}{\-Matrice} \hyperlink{matrice_8c_a1ae4f5dc3c9e06c598edb6c21f73a2bd}{creer\-\_\-matrice} (int nblig, int nbcol)
+\item 
+void \hyperlink{matrice_8c_a1f4213acef407b243d9c108c94ecf887}{detruire\-\_\-matrice} (\hyperlink{structMatrice}{\-Matrice} m)
 \item 
 \hyperlink{structMatrice}{\-Matrice} \hyperlink{matrice_8c_ad3b953551d15e015f4f3027ae2f259da}{matrice\-\_\-chargement} (\-F\-I\-L\-E $\ast$fichier)
 \item 
@@ -23,26 +30,36 @@ int \hyperlink{matrice_8c_abc0378614b84ad7d0fb507f8646887e0}{matrice\-\_\-positi
 void \hyperlink{matrice_8c_a42e5dda540697aa95793e22c7641943a}{matrice\-\_\-affiche} (\hyperlink{structMatrice}{\-Matrice} m)
 \item 
 int \hyperlink{matrice_8c_a715838df2af0c1e069d599aeaf4f5289}{matrice\-\_\-sauvegarde} (\hyperlink{structMatrice}{\-Matrice} m, \-F\-I\-L\-E $\ast$fichier)
+\item 
+int \hyperlink{matrice_8c_a953581802ad453995a4aa2734a4811ec}{matrice\-\_\-get\-\_\-nombre\-\_\-ligne} (\hyperlink{structMatrice}{\-Matrice} m)
+\item 
+int \hyperlink{matrice_8c_a41a8f1e3137415b39aa71bed0726acb9}{matrice\-\_\-get\-\_\-nombre\-\_\-colonne} (\hyperlink{structMatrice}{\-Matrice} m)
+\item 
+int $\ast$$\ast$ \hyperlink{matrice_8c_af5b766a59878a3e786a71504aa229392}{matrice\-\_\-get\-\_\-donnees} (\hyperlink{structMatrice}{\-Matrice} m)
+\item 
+void \hyperlink{matrice_8c_a60ac0ff9f5194157c8ce2e1fbb66a233}{matrice\-\_\-set\-\_\-donnees} (\hyperlink{structMatrice}{\-Matrice} m, int i, int j, int data)
 \end{DoxyCompactItemize}
 
 
 \subsection{\-Description détaillée}
-\-Le code source permettant de gérer des matrices. \-E\-N\-S\-I\-C\-A\-E\-N 6 \-Boulevard \-Marechal \-Juin \-F-\/14050 \-Caen \-Cedex
-
-\-This file is owned by \-E\-N\-S\-I\-C\-A\-E\-N students. \-No portion of this document may be reproduced, copied or revised without written premission of the authors \begin{DoxyAuthor}{\-Auteur}
-\-P\-A\-R\-M\-E\-N\-T\-I\-E\-R \-Laurent $<$\href{mailto:parmentier@ecole.ensicaen.fr}{\tt parmentier@ecole.\-ensicaen.\-fr}, \href{mailto:laubosslink@society-lbl.com}{\tt laubosslink@society-\/lbl.\-com}$>$ 
-
-\-E\-L \-H\-I\-M\-D\-I \-Yasmine $<$\href{mailto:yasmine.elhimdi@ecole.enciscaen.fr}{\tt yasmine.\-elhimdi@ecole.\-enciscaen.\-fr}$>$ 
-\end{DoxyAuthor}
-\begin{DoxyVersion}{\-Version}
-1.\-0 
-\end{DoxyVersion}
-\begin{DoxyDate}{\-Date}
-03-\/12-\/2013 
-\end{DoxyDate}
-
+\-Le code source permettant de gérer des matrices. 
 
 \subsection{\-Documentation des fonctions}
+\hypertarget{matrice_8c_a1ae4f5dc3c9e06c598edb6c21f73a2bd}{\index{matrice.\-c@{matrice.\-c}!creer\-\_\-matrice@{creer\-\_\-matrice}}
+\index{creer\-\_\-matrice@{creer\-\_\-matrice}!matrice.c@{matrice.\-c}}
+\subsubsection[{creer\-\_\-matrice}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Matrice} {\bf creer\-\_\-matrice} (
+\begin{DoxyParamCaption}
+\item[{int}]{nblig, }
+\item[{int}]{nbcol}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a1ae4f5dc3c9e06c598edb6c21f73a2bd}
+\hypertarget{matrice_8c_a1f4213acef407b243d9c108c94ecf887}{\index{matrice.\-c@{matrice.\-c}!detruire\-\_\-matrice@{detruire\-\_\-matrice}}
+\index{detruire\-\_\-matrice@{detruire\-\_\-matrice}!matrice.c@{matrice.\-c}}
+\subsubsection[{detruire\-\_\-matrice}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf detruire\-\_\-matrice} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a1f4213acef407b243d9c108c94ecf887}
 \hypertarget{matrice_8c_a42e5dda540697aa95793e22c7641943a}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-affiche@{matrice\-\_\-affiche}}
 \index{matrice\-\_\-affiche@{matrice\-\_\-affiche}!matrice.c@{matrice.\-c}}
 \subsubsection[{matrice\-\_\-affiche}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf matrice\-\_\-affiche} (
@@ -72,23 +89,50 @@ une matrice initialisé à partir d'un fichier
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{\-Bogue}
 \item[\hyperlink{bug__bug000001}{\-Bogue}]si dans un fichier la taille est $>$ 9, il y a un problème pour récupérer le nombre de ligne, et de colonnes. \-Il faut changer fgetc par autre chose. \end{DoxyRefDesc}
-\hypertarget{matrice_8c_a634f509afa7d665d250bbc49f1229c1c}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-creer@{matrice\-\_\-creer}}
-\index{matrice\-\_\-creer@{matrice\-\_\-creer}!matrice.c@{matrice.\-c}}
-\subsubsection[{matrice\-\_\-creer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Matrice} {\bf matrice\-\_\-creer} (
+\hypertarget{matrice_8c_af5b766a59878a3e786a71504aa229392}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-get\-\_\-donnees@{matrice\-\_\-get\-\_\-donnees}}
+\index{matrice\-\_\-get\-\_\-donnees@{matrice\-\_\-get\-\_\-donnees}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-get\-\_\-donnees}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$$\ast$ {\bf matrice\-\_\-get\-\_\-donnees} (
 \begin{DoxyParamCaption}
-\item[{int}]{nblig, }
-\item[{int}]{nbcol}
+\item[{{\bf \-Matrice}}]{m}
 \end{DoxyParamCaption}
-)}}\label{matrice_8c_a634f509afa7d665d250bbc49f1229c1c}
-\-Permet d'allouer une matrice vide 
+)}}\label{matrice_8c_af5b766a59878a3e786a71504aa229392}
+\-Permet de récupérer l'ensemble des données de la matrice 
 \begin{DoxyParams}{\-Paramètres}
-{\em nblig} & le nombre de lignes à allouer \\
-\hline
-{\em nbcol} & le nombre de colonnes à allouer \\
+{\em m} & la matrice \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
-une matrice nblig$\ast$nbcol 
+les données 
+\end{DoxyReturn}
+\hypertarget{matrice_8c_a41a8f1e3137415b39aa71bed0726acb9}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-get\-\_\-nombre\-\_\-colonne@{matrice\-\_\-get\-\_\-nombre\-\_\-colonne}}
+\index{matrice\-\_\-get\-\_\-nombre\-\_\-colonne@{matrice\-\_\-get\-\_\-nombre\-\_\-colonne}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-get\-\_\-nombre\-\_\-colonne}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf matrice\-\_\-get\-\_\-nombre\-\_\-colonne} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a41a8f1e3137415b39aa71bed0726acb9}
+\-Permet de récupérer la taille de la matrice en largeur 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+le nombre de colonne 
+\end{DoxyReturn}
+\hypertarget{matrice_8c_a953581802ad453995a4aa2734a4811ec}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-get\-\_\-nombre\-\_\-ligne@{matrice\-\_\-get\-\_\-nombre\-\_\-ligne}}
+\index{matrice\-\_\-get\-\_\-nombre\-\_\-ligne@{matrice\-\_\-get\-\_\-nombre\-\_\-ligne}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-get\-\_\-nombre\-\_\-ligne}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf matrice\-\_\-get\-\_\-nombre\-\_\-ligne} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a953581802ad453995a4aa2734a4811ec}
+\-Permet de récupérer la taille de la matrice en hauteur 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+le nombre de ligne 
 \end{DoxyReturn}
 \hypertarget{matrice_8c_a91edc9c5d80be64ff2431b1784cf1cc5}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-init@{matrice\-\_\-init}}
 \index{matrice\-\_\-init@{matrice\-\_\-init}!matrice.c@{matrice.\-c}}
@@ -139,5 +183,26 @@ une matrice initialisé à partir d'un fichier
 {\em m} & la matrice à sauvegarder \\
 \hline
 {\em fichier} & le nom du fichier dans lequel on sauvegarde la matrice \\
+\hline
+\end{DoxyParams}
+\hypertarget{matrice_8c_a60ac0ff9f5194157c8ce2e1fbb66a233}{\index{matrice.\-c@{matrice.\-c}!matrice\-\_\-set\-\_\-donnees@{matrice\-\_\-set\-\_\-donnees}}
+\index{matrice\-\_\-set\-\_\-donnees@{matrice\-\_\-set\-\_\-donnees}!matrice.c@{matrice.\-c}}
+\subsubsection[{matrice\-\_\-set\-\_\-donnees}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf matrice\-\_\-set\-\_\-donnees} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Matrice}}]{m, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{data}
+\end{DoxyParamCaption}
+)}}\label{matrice_8c_a60ac0ff9f5194157c8ce2e1fbb66a233}
+\-Permet de modifier une données de la matrice 
+\begin{DoxyParams}{\-Paramètres}
+{\em m} & la matrice \\
+\hline
+{\em i} & la hauteur (ligne) \\
+\hline
+{\em j} & la largeur (colonne) \\
+\hline
+{\em data} & la donnée à insérer \\
 \hline
 \end{DoxyParams}

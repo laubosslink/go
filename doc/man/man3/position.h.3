@@ -1,4 +1,4 @@
-.TH "include/position.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/position.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,7 +26,6 @@ Une position\&.
 .ti -1c
 .RI "typedef struct \fBPosition\fP \fBPosition\fP"
 .br
-.RI "\fIstructure d'une position qui permet de définir une position 2D\&. Cette structure comporte l'absice et l'ordonné de la position\&. \fP"
 .in -1c
 .SS "Fonctions"
 
@@ -35,7 +34,7 @@ Une position\&.
 .RI "\fBPosition\fP * \fBcreer_position\fP (int x, int y)"
 .br
 .ti -1c
-.RI "\fBPosition\fP * \fBposition_get_courant\fP (\fBEnsemble\fP *E)"
+.RI "\fBPosition\fP * \fBposition_get_courant\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
 .RI "\fBPosition\fP \fBhaut\fP (\fBPosition\fP p)"
@@ -78,9 +77,7 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef struct \fBPosition\fP  \fBPosition\fP"
-.PP
-structure d'une position qui permet de définir une position 2D\&. Cette structure comporte l'absice et l'ordonné de la position\&. 
+.SS "typedef struct \fBPosition\fP \fBPosition\fP"
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBPosition\fP \fBbas\fP (\fBPosition\fPp)"Permet de se deplacer vers le bas 
@@ -150,7 +147,7 @@ nouvelle position
 .RE
 .PP
 
-.SS "\fBPosition\fP* \fBposition_get_courant\fP (\fBEnsemble\fP *E)"Permet de récupérer la position actuelle d'un ensemble 
+.SS "\fBPosition\fP* \fBposition_get_courant\fP (\fBEnsemble\fPE)"Permet de récupérer la position actuelle d'un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4

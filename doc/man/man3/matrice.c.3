@@ -1,4 +1,4 @@
-.TH "lib/matrice/src/matrice.c" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "lib/matrice/src/matrice.c" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,11 +16,22 @@ Le code source permettant de gérer des matrices\&.
 \fC#include <matrice\&.h>\fP
 .br
 
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBMatrice\fP"
+.br
+.RI "\fIStructure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne\&. \fP"
+.in -1c
 .SS "Fonctions"
 
 .in +1c
 .ti -1c
-.RI "\fBMatrice\fP \fBmatrice_creer\fP (int nblig, int nbcol)"
+.RI "\fBMatrice\fP \fBcreer_matrice\fP (int nblig, int nbcol)"
+.br
+.ti -1c
+.RI "void \fBdetruire_matrice\fP (\fBMatrice\fP m)"
 .br
 .ti -1c
 .RI "\fBMatrice\fP \fBmatrice_chargement\fP (FILE *fichier)"
@@ -37,35 +48,28 @@ Le code source permettant de gérer des matrices\&.
 .ti -1c
 .RI "int \fBmatrice_sauvegarde\fP (\fBMatrice\fP m, FILE *fichier)"
 .br
+.ti -1c
+.RI "int \fBmatrice_get_nombre_ligne\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "int \fBmatrice_get_nombre_colonne\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "int ** \fBmatrice_get_donnees\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "void \fBmatrice_set_donnees\fP (\fBMatrice\fP m, int i, int j, int data)"
+.br
 .in -1c
 .SH "Description détaillée"
 .PP 
 Le code source permettant de gérer des matrices\&. 
 
-ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
-.PP
-This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
-.PP
-\fBAuteur:\fP
-.RS 4
-PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
-.PP
-EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr> 
-.RE
-.PP
-\fBVersion:\fP
-.RS 4
-1\&.0 
-.RE
-.PP
-\fBDate:\fP
-.RS 4
-03-12-2013 
-.RE
-.PP
 
 .SH "Documentation des fonctions"
 .PP 
+.SS "\fBMatrice\fP \fBcreer_matrice\fP (intnblig, intnbcol)"
+.SS "void \fBdetruire_matrice\fP (\fBMatrice\fPm)"
 .SS "void \fBmatrice_affiche\fP (\fBMatrice\fPm)"Permet d'afficher une matrice 
 .PP
 \fBParamètres:\fP
@@ -92,18 +96,42 @@ si dans un fichier la taille est > 9, il y a un problème pour récupérer le no
 .RE
 .PP
 
-.SS "\fBMatrice\fP \fBmatrice_creer\fP (intnblig, intnbcol)"Permet d'allouer une matrice vide 
+.SS "int** \fBmatrice_get_donnees\fP (\fBMatrice\fPm)"Permet de récupérer l'ensemble des données de la matrice 
 .PP
 \fBParamètres:\fP
 .RS 4
-\fInblig\fP le nombre de lignes à allouer 
-.br
-\fInbcol\fP le nombre de colonnes à allouer 
+\fIm\fP la matrice 
 .RE
 .PP
 \fBRenvoie:\fP
 .RS 4
-une matrice nblig*nbcol 
+les données 
+.RE
+.PP
+
+.SS "int \fBmatrice_get_nombre_colonne\fP (\fBMatrice\fPm)"Permet de récupérer la taille de la matrice en largeur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+le nombre de colonne 
+.RE
+.PP
+
+.SS "int \fBmatrice_get_nombre_ligne\fP (\fBMatrice\fPm)"Permet de récupérer la taille de la matrice en hauteur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+le nombre de ligne 
 .RE
 .PP
 
@@ -144,6 +172,20 @@ une matrice initialisé à partir d'un fichier
 \fIm\fP la matrice à sauvegarder 
 .br
 \fIfichier\fP le nom du fichier dans lequel on sauvegarde la matrice 
+.RE
+.PP
+
+.SS "void \fBmatrice_set_donnees\fP (\fBMatrice\fPm, inti, intj, intdata)"Permet de modifier une données de la matrice 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.br
+\fIi\fP la hauteur (ligne) 
+.br
+\fIj\fP la largeur (colonne) 
+.br
+\fIdata\fP la donnée à insérer 
 .RE
 .PP
 

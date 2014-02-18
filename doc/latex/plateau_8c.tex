@@ -94,7 +94,25 @@ void \hyperlink{plateau_8c_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-affic
 \begin{DoxyReturn}{\-Renvoie}
 un ensemble de chaine 
 \end{DoxyReturn}
-\hypertarget{plateau_8c_a48347ca20160613e199cab541b9a261f}{\index{plateau.\-c@{plateau.\-c}!creer\-\_\-plateau@{creer\-\_\-plateau}}
+initialisation des chaines
+
+on determine la chaine a laquelle appartient le pion
+
+on se deplace sur cette chaine
+
+on regarde haut, bas, gauche, droite de chaque position de cette chaine
+
+\begin{DoxyRefDesc}{\-Bogue}
+\item[\hyperlink{bug__bug000002}{\-Bogue}]risque de poser problème, on ajoute une adresse "chainede\-\_\-determiner qui reste la même (seul le contenu chance à chaque appel de plateau\-\_\-determiner\-\_\-chaine. \end{DoxyRefDesc}
+
+
+on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
+
+on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
+
+on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
+
+on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine \hypertarget{plateau_8c_a48347ca20160613e199cab541b9a261f}{\index{plateau.\-c@{plateau.\-c}!creer\-\_\-plateau@{creer\-\_\-plateau}}
 \index{creer\-\_\-plateau@{creer\-\_\-plateau}!plateau.c@{plateau.\-c}}
 \subsubsection[{creer\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf creer\-\_\-plateau} (
 \begin{DoxyParamCaption}

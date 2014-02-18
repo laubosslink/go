@@ -7,10 +7,16 @@
 
 
 {\ttfamily \#include $<$ensemble.\-h$>$}\*
+{\ttfamily \#include $<$chaine.\-h$>$}\*
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
 typedef \hyperlink{structEnsemble}{\-Ensemble} \hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines}
+\begin{DoxyCompactList}\small\item\em \-Chaines est une ensemble de chaine (alias d'un ensemble) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{chaines_8h_ae83a67970fc196b94fd7ac799056ccc1}{chaines\-\_\-appartient\-\_\-chaine} (\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} chaines, \hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} chaine)
 \end{DoxyCompactItemize}
 
 
@@ -34,6 +40,31 @@ typedef \hyperlink{structEnsemble}{\-Ensemble} \hyperlink{chaines_8h_ace61862724
 \hypertarget{chaines_8h_ace61862724812da656df963432df9db7}{\index{chaines.\-h@{chaines.\-h}!\-Chaines@{\-Chaines}}
 \index{\-Chaines@{\-Chaines}!chaines.h@{chaines.\-h}}
 \subsubsection[{\-Chaines}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \-Ensemble} {\bf \-Chaines}}}\label{chaines_8h_ace61862724812da656df963432df9db7}
-\-Chaines est une ensemble de chaine (alias d'un ensemble) \begin{DoxySeeAlso}{\-Voir également}
+
+
+\-Chaines est une ensemble de chaine (alias d'un ensemble) 
+
+\begin{DoxySeeAlso}{\-Voir également}
 \hyperlink{structEnsemble}{\-Ensemble} 
 \end{DoxySeeAlso}
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{chaines_8h_ae83a67970fc196b94fd7ac799056ccc1}{\index{chaines.\-h@{chaines.\-h}!chaines\-\_\-appartient\-\_\-chaine@{chaines\-\_\-appartient\-\_\-chaine}}
+\index{chaines\-\_\-appartient\-\_\-chaine@{chaines\-\_\-appartient\-\_\-chaine}!chaines.h@{chaines.\-h}}
+\subsubsection[{chaines\-\_\-appartient\-\_\-chaine}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf chaines\-\_\-appartient\-\_\-chaine} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Chaines}}]{chaines, }
+\item[{{\bf \-Chaine}}]{chaine}
+\end{DoxyParamCaption}
+)}}\label{chaines_8h_ae83a67970fc196b94fd7ac799056ccc1}
+\-Permet de savoir si une chaine appartient a un ensemble de chaines \-Remarque \-: une chaine appartient a chaines si une seul des position de la chaine se trouve dans chaines 
+\begin{DoxyParams}{\-Paramètres}
+{\em chaines} & l'ensemble de chaines \\
+\hline
+{\em chaine} & la chaine a verifie \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+1 si chaine appartient a chaines, 0 sinon 
+\end{DoxyReturn}

@@ -1,4 +1,4 @@
-.TH "include/chaines.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/chaines.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,12 +11,22 @@ include/chaines.h \-
 .PP
 \fC#include <ensemble\&.h>\fP
 .br
+\fC#include <chaine\&.h>\fP
+.br
 
 .SS "Définitions de type"
 
 .in +1c
 .ti -1c
 .RI "typedef \fBEnsemble\fP \fBChaines\fP"
+.br
+.RI "\fIChaines est une ensemble de chaine (alias d'un ensemble) \fP"
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "int \fBchaines_appartient_chaine\fP (\fBChaines\fP chaines, \fBChaine\fP chaine)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -47,11 +57,28 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef \fBEnsemble\fP \fBChaines\fP"Chaines est une ensemble de chaine (alias d'un ensemble) 
+.SS "typedef \fBEnsemble\fP \fBChaines\fP"
 .PP
-\fBVoir également:\fP
+Chaines est une ensemble de chaine (alias d'un ensemble) \fBVoir également:\fP
 .RS 4
 \fBEnsemble\fP 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "int \fBchaines_appartient_chaine\fP (\fBChaines\fPchaines, \fBChaine\fPchaine)"Permet de savoir si une chaine appartient a un ensemble de chaines Remarque : une chaine appartient a chaines si une seul des position de la chaine se trouve dans chaines 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIchaines\fP l'ensemble de chaines 
+.br
+\fIchaine\fP la chaine a verifie 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si chaine appartient a chaines, 0 sinon 
 .RE
 .PP
 

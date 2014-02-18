@@ -1,0 +1,48 @@
+.TH "src/chaines.c" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/chaines.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <position\&.h>\fP
+.br
+\fC#include <ensemble\&.h>\fP
+.br
+\fC#include <ensemble_positions\&.h>\fP
+.br
+\fC#include <ensemble_colores\&.h>\fP
+.br
+\fC#include <chaine\&.h>\fP
+.br
+\fC#include <chaines\&.h>\fP
+.br
+
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "int \fBchaines_appartient_chaine\fP (\fBChaines\fP chaines, \fBChaine\fP chaine)"
+.br
+.in -1c
+.SH "Documentation des fonctions"
+.PP 
+.SS "int \fBchaines_appartient_chaine\fP (\fBChaines\fPchaines, \fBChaine\fPchaine)"Permet de savoir si une chaine appartient a un ensemble de chaines Remarque : une chaine appartient a chaines si une seul des position de la chaine se trouve dans chaines 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIchaines\fP l'ensemble de chaines 
+.br
+\fIchaine\fP la chaine a verifie 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+1 si chaine appartient a chaines, 0 sinon 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

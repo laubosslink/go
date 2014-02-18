@@ -1,65 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <position.h>
-#include <positions.h>
+
 #include <ensemble_colores.h>
 
-
-void afficherEnsembleColores(Ensemble_Colores *E){
-	if(ensemble_colores_vide(E)){
-		printf("Rien à afficher, la liste est vide\n");
-		return;
-	}
-	
-	printf("{");
-	
-	E->p.courant=E->p.tete;
-	
-	while(ensemble_colores_suivant(E)){
-		//ensemble_colores_courant(E)
-		printf("%d \t",  position_get_courant(E)->x);
-		printf("%d \t",  position_get_courant(E)->y);
-		//printf("%d\t", E->p.courant->contenu->y);
-		E->p.courant=E->p.courant->suivant;
-	}
-	
-	printf("%d \t",  position_get_courant(E)->x);
-	printf("%d \t",  position_get_courant(E)->y);
-	printf("}\n\n");
-}
-
-
 int main () {
-	Ensemble_Colores* Ec;
-	Position* pos;
-	Position* p;
-	Position* m;
+	Ensemble_Colores Ec = creer_ensemble_colores();
 	
-	pos=(Position*)malloc(sizeof(Position));  //@TODO : faire une fonction d'allocation dynamique 
-	p=(Position*)malloc(sizeof(Position));
-	m=(Position*)malloc(sizeof(Position));
+	ensemble_colores_set_couleur(Ec, NOIR);
 	
-	Ec->c=NOIR; 
-	
-	pos->x=5;
-	pos->y=3;
-	
-	p->x=1;
-	p->y=0;
-	
-	m->x=7;
-	m->y=10;
-	
-	Ec = creer_ensemble_colores();
-	
-	ensemble_colores_ajouter(Ec,pos);
-	ensemble_colores_ajouter(Ec,p);
-	ensemble_colores_ajouter(Ec,m);
+	ensemble_colores_ajouter(Ec, creer_position(5, 3));
+	ensemble_colores_ajouter(Ec, creer_position(1, 0));
+	ensemble_colores_ajouter(Ec, creer_position(7, 10));
 
-	afficherEnsembleColores(Ec);
+	ensemble_colores_affiche(Ec);
 	
-	//printf("%d\n", Ec->c);
-	
-
 	return 0;
 }

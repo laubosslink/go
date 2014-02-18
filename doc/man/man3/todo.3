@@ -1,4 +1,4 @@
-.TH "todo" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "todo" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,25 +7,27 @@ todo \- Liste des choses à faire
 réfléchir sur le struct dans le \&.c, et conséquence sur chaine 
 .PP
 utiliser haut,bas,gauche,droite  
-.IP "\fBFichier \fBensemble\&.c\fP \fP" 1c
-revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
+.IP "\fBMembre \fBdetruire_ensemble\fP (\fBEnsemble\fP E)\fP" 1c
+réaliser la destruction d'un ensemble  
 .IP "\fBFichier \fBensemble_colores\&.c\fP \fP" 1c
 revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
-.IP "\fBMembre \fBensemble_courant\fP (\fBEnsemble\fP *E)\fP" 1c
-get_  
+.IP "\fBMembre \fBensemble_colores_appartient\fP (\fBEnsemble_Colores\fP E, \fBPosition\fP *element)\fP" 1c
+il ne devrait pas y avoir de cast\&.\&.\&. on attend les fonctions pour position_get_x, etc\&.\&.\&.  
+.IP "\fBMembre \fBensemble_courant\fP (\fBEnsemble\fP E)\fP" 1c
+insérer le mot get_ dans le nom pour plus de cohérence  
 .IP "\fBFichier \fBensemble_positions\&.c\fP \fP" 1c
 revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
-.IP "\fBMembre \fBensemble_tete\fP (\fBEnsemble\fP *E)\fP" 1c
-get_  
+.IP "\fBMembre \fBensemble_tete\fP (\fBEnsemble\fP E)\fP" 1c
+insérer le mot get_ dans le nom pour plus de cohérence  
 .IP "\fBFichier \fBlibertes\&.c\fP \fP" 1c
 revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
+.IP "\fBFichier \fBmatrice\&.h\fP \fP" 1c
+pouvoir modifier la taille de la matrice (utilisation de realloc, modification nbligne, nbcolonne)  
 .IP "\fBFichier \fBposition\&.c\fP \fP" 1c
 revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
 .IP "\fBFichier \fBpositions\&.h\fP \fP" 1c
 revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
 .IP "\fBFichier \fBtest_ensemble\&.c\fP \fP" 1c
-revoir la doc / remplacer Ensemble_Positions par Ensemble_Position  
-.IP "\fBFichier \fBtest_matrice\&.c\fP \fP" 1c
 revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
 .PP
 

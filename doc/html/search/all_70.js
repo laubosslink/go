@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['p',['p',['../structEnsemble__Colores.html#ade944f566879fa1e8e29bd4eaad1cbe4',1,'Ensemble_Colores::p()'],['../structPion.html#a1a131c2aae6a64827c7fcd6f52fcb47c',1,'Pion::p()']]],
+  ['p',['p',['../structPion.html#a1a131c2aae6a64827c7fcd6f52fcb47c',1,'Pion::p()'],['../structEnsemble__Colores.html#a8196a1e36f0e484351842f53d892045a',1,'Ensemble_Colores::p()']]],
   ['partie',['Partie',['../structPartie.html',1,'Partie'],['../partie_8h.html#a7135444ad2f38a510cd8f34366d673e7',1,'Partie():&#160;partie.h']]],
   ['partie_2ec',['partie.c',['../partie_8c.html',1,'']]],
   ['partie_2eh',['partie.h',['../partie_8h.html',1,'']]],
@@ -29,10 +29,10 @@ var searchData=
   ['plateau_5frealiser_5fcapture',['plateau_realiser_capture',['../plateau_8h.html#a68c23e65cb6394bb0d2d7d81e184d644',1,'plateau_realiser_capture(Plateau plateau, Chaine chaine):&#160;plateau.c'],['../plateau_8c.html#a68c23e65cb6394bb0d2d7d81e184d644',1,'plateau_realiser_capture(Plateau plateau, Chaine chaine):&#160;plateau.c']]],
   ['plateau_5fsauvegarde',['plateau_sauvegarde',['../plateau_8h.html#ae8d9ec3267e5d16b943e20324a8944cd',1,'plateau_sauvegarde(Plateau plateau, FILE *fichier):&#160;plateau.c'],['../plateau_8c.html#ae8d9ec3267e5d16b943e20324a8944cd',1,'plateau_sauvegarde(Plateau plateau, FILE *fichier):&#160;plateau.c']]],
   ['plateau_5fset',['plateau_set',['../plateau_8h.html#a8827f1d4c586d4cc0bec0d30c659ccf8',1,'plateau_set(Plateau m, int i, int j, Couleur c):&#160;plateau.c'],['../plateau_8c.html#aa50accd3b4f1e4eefbe7dc2852a097da',1,'plateau_set(Plateau p, int i, int j, Couleur c):&#160;plateau.c']]],
-  ['position',['Position',['../structPosition.html',1,'Position'],['../position_8h.html#a3ce5d573a1ead8523f53ab9dfec0730f',1,'Position():&#160;position.h']]],
+  ['position',['Position',['../structPosition.html',1,'Position'],['../position_8h.html#aa78012e27ba983f9620fe4ff4bf1d616',1,'Position():&#160;position.h']]],
   ['position_2ec',['position.c',['../position_8c.html',1,'']]],
   ['position_2eh',['position.h',['../position_8h.html',1,'']]],
-  ['position_5fget_5fcourant',['position_get_courant',['../position_8h.html#a0fe16a57be214b54230f843ac61b2fc7',1,'position_get_courant(Ensemble *E):&#160;position.c'],['../position_8c.html#a0fe16a57be214b54230f843ac61b2fc7',1,'position_get_courant(Ensemble *E):&#160;position.c']]],
+  ['position_5fget_5fcourant',['position_get_courant',['../position_8h.html#a2f0f1db494c1a565d38b0f6ad50aa764',1,'position_get_courant(Ensemble E):&#160;position.c'],['../position_8c.html#a2f0f1db494c1a565d38b0f6ad50aa764',1,'position_get_courant(Ensemble E):&#160;position.c']]],
   ['positions',['Positions',['../positions_8h.html#abfec3f4df359d071393d062f4aa9bf82',1,'positions.h']]],
   ['positions_2eh',['positions.h',['../positions_8h.html',1,'']]]
 ];

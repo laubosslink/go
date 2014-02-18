@@ -1,4 +1,4 @@
-.TH "include/ensemble.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/ensemble.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -9,72 +9,66 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .SH SYNOPSIS
 .br
 .PP
-.SS "Classes"
-
-.in +1c
-.ti -1c
-.RI "struct \fBCell\fP"
-.br
-.RI "\fIstructure \fBCell\fP qui contient le contenu de la cellule et le pointeur vers la cellule suivante\&. \fP"
-.ti -1c
-.RI "struct \fBEnsemble\fP"
-.br
-.RI "\fIstructure \fBEnsemble\fP contient le pointeur vers la cellule courante et le pointeur vers la tete de l'ensemble\&. \fP"
-.in -1c
 .SS "Définitions de type"
 
 .in +1c
 .ti -1c
-.RI "typedef struct \fBCell\fP \fBCell\fP"
+.RI "typedef struct \fBCell\fP * \fBCell\fP"
 .br
 .ti -1c
-.RI "typedef struct \fBEnsemble\fP \fBEnsemble\fP"
+.RI "typedef struct \fBEnsemble\fP * \fBEnsemble\fP"
 .br
 .in -1c
 .SS "Fonctions"
 
 .in +1c
 .ti -1c
-.RI "void \fBensemble_init\fP (\fBEnsemble\fP *E)"
+.RI "\fBEnsemble\fP \fBcreer_ensemble\fP ()"
 .br
 .ti -1c
-.RI "\fBEnsemble\fP * \fBcreer_ensemble\fP ()"
+.RI "void \fBdetruire_ensemble\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "int \fBensemble_vide\fP (\fBEnsemble\fP *E)"
+.RI "int \fBensemble_vide\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "int \fBensemble_appartient\fP (\fBEnsemble\fP *E, void *element)"
+.RI "int \fBensemble_appartient\fP (\fBEnsemble\fP E, void *element)"
 .br
 .ti -1c
-.RI "void \fBensemble_ajouter\fP (\fBEnsemble\fP *E, void *element)"
+.RI "void \fBensemble_ajouter\fP (\fBEnsemble\fP E, void *element)"
 .br
 .ti -1c
-.RI "\fBEnsemble\fP * \fBensemble_enlever\fP (\fBEnsemble\fP *E, void *element)"
+.RI "\fBEnsemble\fP \fBensemble_enlever\fP (\fBEnsemble\fP E, void *element)"
 .br
 .ti -1c
-.RI "\fBCell\fP * \fBensemble_tete\fP (\fBEnsemble\fP *E)"
+.RI "\fBCell\fP \fBensemble_tete\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "\fBCell\fP * \fBensemble_courant\fP (\fBEnsemble\fP *E)"
+.RI "\fBCell\fP \fBensemble_courant\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "\fBCell\fP * \fBensemble_get_suivant\fP (\fBEnsemble\fP *E)"
+.RI "\fBCell\fP \fBensemble_get_suivant\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "void * \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP *E)"
+.RI "void * \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "void \fBensemble_set_courant\fP (\fBEnsemble\fP *E, \fBCell\fP *c)"
+.RI "void \fBensemble_set_courant\fP (\fBEnsemble\fP E, \fBCell\fP c)"
 .br
 .ti -1c
-.RI "int \fBensemble_suivant\fP (\fBEnsemble\fP *E)"
+.RI "int \fBensemble_suivant\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
-.RI "\fBEnsemble\fP * \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"
+.RI "\fBEnsemble\fP \fBensemble_concatene\fP (\fBEnsemble\fP e1, \fBEnsemble\fP e2)"
 .br
 .ti -1c
-.RI "void \fBensemble_reset_courant\fP (\fBEnsemble\fP *E)"
+.RI "void \fBensemble_reset_courant\fP (\fBEnsemble\fP E)"
+.br
+.ti -1c
+.RI "void \fBensemble_afficher_pointeur\fP (\fBEnsemble\fP E)"
+.br
+.ti -1c
+.RI "void \fBensemble_afficher_entier\fP (\fBEnsemble\fP E)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -105,11 +99,11 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef struct \fBCell\fP \fBCell\fP"
-.SS "typedef struct \fBEnsemble\fP \fBEnsemble\fP"
+.SS "typedef struct \fBCell\fP* \fBCell\fP"
+.SS "typedef struct \fBEnsemble\fP* \fBEnsemble\fP"
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBEnsemble\fP* \fBcreer_ensemble\fP ()"Permet de creer un ensemble 
+.SS "\fBEnsemble\fP \fBcreer_ensemble\fP ()"Permet de creer un ensemble 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -117,7 +111,36 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "void \fBensemble_ajouter\fP (\fBEnsemble\fP *E, void *element)"Permet d'ajouter un élément dans un ensemble 
+.SS "void \fBdetruire_ensemble\fP (\fBEnsemble\fPE)"Permet de détruire un ensemble (désalocation) 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+réaliser la destruction d'un ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_afficher_entier\fP (\fBEnsemble\fPE)"Permet d'afficher le contenu de l'ensemble comme des entiers 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_afficher_pointeur\fP (\fBEnsemble\fPE)"Permet d'afficher le contenu de l'ensemble comme des adresses pointeurs 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+
+.SS "void \fBensemble_ajouter\fP (\fBEnsemble\fPE, void *element)"Permet d'ajouter un élément dans un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -125,7 +148,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "int \fBensemble_appartient\fP (\fBEnsemble\fP *E, void *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
+.SS "int \fBensemble_appartient\fP (\fBEnsemble\fPE, void *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -138,7 +161,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "\fBEnsemble\fP* \fBensemble_concatene\fP (\fBEnsemble\fP *e1, \fBEnsemble\fP *e2)"Permet de concatener deux ensembles 
+.SS "\fBEnsemble\fP \fBensemble_concatene\fP (\fBEnsemble\fPe1, \fBEnsemble\fPe2)"Permet de concatener deux ensembles 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -153,7 +176,7 @@ un nouvel ensemble
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_courant\fP (\fBEnsemble\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
+.SS "\fBCell\fP \fBensemble_courant\fP (\fBEnsemble\fPE)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -162,11 +185,11 @@ le pointeur sur l'élément courant
 .PP
 \fBA faire\fP
 .RS 4
-get_ 
+insérer le mot get_ dans le nom pour plus de cohérence 
 .RE
 .PP
 
-.SS "\fBEnsemble\fP* \fBensemble_enlever\fP (\fBEnsemble\fP *E, void *element)"Permet de supprimer un élément dans l'ensemble 
+.SS "\fBEnsemble\fP \fBensemble_enlever\fP (\fBEnsemble\fPE, void *element)"Permet de supprimer un élément dans l'ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -179,7 +202,7 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
-.SS "void* \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP *E)"Permet de récupérer le contenu de la cellule courante 
+.SS "void* \fBensemble_get_courant_contenu\fP (\fBEnsemble\fPE)"Permet de récupérer le contenu de la cellule courante 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -192,7 +215,7 @@ void* le contenu
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_get_suivant\fP (\fBEnsemble\fP *E)"Permet de récupérer la cellule suivante d'un ensemble 
+.SS "\fBCell\fP \fBensemble_get_suivant\fP (\fBEnsemble\fPE)"Permet de récupérer la cellule suivante d'un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -205,7 +228,7 @@ la cellule suivante (par rapport à courant)
 .RE
 .PP
 
-.SS "void \fBensemble_init\fP (\fBEnsemble\fP *E)"Permet d'initialiser un ensemble 
+.SS "void \fBensemble_reset_courant\fP (\fBEnsemble\fPE)"Permet de remettre le pointeur courant sur la tête de l'ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -213,15 +236,7 @@ la cellule suivante (par rapport à courant)
 .RE
 .PP
 
-.SS "void \fBensemble_reset_courant\fP (\fBEnsemble\fP *E)"Permet de remettre le pointeur courant sur la tête de l'ensemble 
-.PP
-\fBParamètres:\fP
-.RS 4
-\fIE\fP l'ensemble 
-.RE
-.PP
-
-.SS "void \fBensemble_set_courant\fP (\fBEnsemble\fP *E, \fBCell\fP *c)"Permet de modifier le pointeur de la cellule courante sur une autre 
+.SS "void \fBensemble_set_courant\fP (\fBEnsemble\fPE, \fBCell\fPc)"Permet de modifier le pointeur de la cellule courante sur une autre 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -231,7 +246,7 @@ la cellule suivante (par rapport à courant)
 .RE
 .PP
 
-.SS "int \fBensemble_suivant\fP (\fBEnsemble\fP *E)"Permet de dire s'il y a un élément suivant ou non 
+.SS "int \fBensemble_suivant\fP (\fBEnsemble\fPE)"Permet de dire s'il y a un élément suivant ou non 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -239,7 +254,7 @@ la cellule suivante (par rapport à courant)
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_tete\fP (\fBEnsemble\fP *E)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
+.SS "\fBCell\fP \fBensemble_tete\fP (\fBEnsemble\fPE)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -248,11 +263,11 @@ le pointeur de la tete de l'ensemble
 .PP
 \fBA faire\fP
 .RS 4
-get_ 
+insérer le mot get_ dans le nom pour plus de cohérence 
 .RE
 .PP
 
-.SS "int \fBensemble_vide\fP (\fBEnsemble\fP *E)"Permet de vérifier si un ensemble est vide 
+.SS "int \fBensemble_vide\fP (\fBEnsemble\fPE)"Permet de vérifier si un ensemble est vide 
 .PP
 \fBParamètres:\fP
 .RS 4

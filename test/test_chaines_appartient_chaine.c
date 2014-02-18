@@ -4,41 +4,45 @@
 #include <ensemble.h>
 
 int main(){
-	Chaines chaines;
+	int tests = 0;
 	
-	Chaine chaine1;
-	Chaine chaine2;
-	Chaine chaine3;
+	Chaines chaines = creer_ensemble_positions();
+	
+	Chaine chaine1 = creer_ensemble_colores();
+	Chaine chaine2 = creer_ensemble_colores();
+	Chaine chaine3 = creer_ensemble_colores();
+	Chaine chaine4 = creer_ensemble_colores();
 	
 	Position pos;
 	
 	pos.x = 5;
 	pos.y = 5;
 	
-	ensemble_colores_init(&chaine1);
-	ensemble_colores_init(&chaine2);
-	ensemble_colores_init(&chaine3);
+	ensemble_colores_set_couleur(chaine1, 1);
+	ensemble_colores_ajouter(chaine1, creer_position(pos.x, pos.y));
+	ensemble_colores_ajouter(chaine1, creer_position(pos.x++, pos.y++));
 	
-	chaine1.c = 1;
-	ensemble_colores_ajouter(&chaine1, creer_position(pos.x, pos.y));
-	ensemble_colores_ajouter(&chaine1, creer_position(pos.x++, pos.y++));
 	
-	chaine2.c = 1;
-	ensemble_colores_ajouter(&chaine2, creer_position(pos.x, pos.y));
-	ensemble_colores_ajouter(&chaine2, creer_position(pos.x+1, pos.y+1));
+	ensemble_colores_set_couleur(chaine2, 1);
+	ensemble_colores_ajouter(chaine2, creer_position(pos.x, pos.y));
+	ensemble_colores_ajouter(chaine2, creer_position(pos.x+1, pos.y+1));
 	
-	chaine3.c = 1;
-	ensemble_colores_ajouter(&chaine3, creer_position(pos.x--, pos.y--));
+	ensemble_colores_set_couleur(chaine3, 1);
+	ensemble_colores_ajouter(chaine3, creer_position(pos.x--, pos.y--));
 	
-	ensemble_init(&chaines);
-	
-	ensemble_ajouter(&chaines, &chaine1);
-	ensemble_ajouter(&chaines, &chaine2);
+	ensemble_ajouter(chaines, chaine1);
+	ensemble_ajouter(chaines, chaine2);
 	
 	if(chaines_appartient_chaine(chaines, chaine3))
-		printf("chaine3 est dans chaines\n");
+		tests = 1;
+	
+	if(!chaines_appartient_chaine(chaines, chaine4) && tests == 1)
+		tests = 1;
+	
+	if(tests == 1)
+		printf("Tests chaines_appartient_chaine(...): OK\n");
 	else
-		printf("chaine3 n'est PAS dans chaines\n");
+		printf("Tests: Problèmes durant les tests...");
 		
 	return 0;
 }

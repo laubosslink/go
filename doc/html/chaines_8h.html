@@ -79,7 +79,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#typedef-members">Définitions de type</a>  </div>
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier include/chaines.h</div>  </div>
 </div><!--header-->
@@ -88,12 +89,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <p><a class="el" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> des chaines.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="ensemble_8h_source.html">ensemble.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="chaine_8h_source.html">chaine.h</a>&gt;</code><br/>
 </div>
 <p><a href="chaines_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structEnsemble.html">Ensemble</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chaines_8h.html#ace61862724812da656df963432df9db7">Chaines</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Chaines est une ensemble de chaine (alias d'un ensemble)  <a href="#ace61862724812da656df963432df9db7"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="chaines_8h.html#ae83a67970fc196b94fd7ac799056ccc1">chaines_appartient_chaine</a> (<a class="el" href="chaines_8h.html#ace61862724812da656df963432df9db7">Chaines</a> chaines, <a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a> chaine)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p><a class="el" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> des chaines. </p>
@@ -115,8 +121,46 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
       </table>
 </div>
 <div class="memdoc">
+
 <p>Chaines est une ensemble de chaine (alias d'un ensemble) </p>
 <dl class="see"><dt><b>Voir également:</b></dt><dd><a class="el" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Documentation des fonctions</h2>
+<a class="anchor" id="ae83a67970fc196b94fd7ac799056ccc1"></a><!-- doxytag: member="chaines.h::chaines_appartient_chaine" ref="ae83a67970fc196b94fd7ac799056ccc1" args="(Chaines chaines, Chaine chaine)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="chaines_8c.html#ae83a67970fc196b94fd7ac799056ccc1">chaines_appartient_chaine</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="chaines_8h.html#ace61862724812da656df963432df9db7">Chaines</a>&#160;</td>
+          <td class="paramname"><em>chaines</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c">Chaine</a>&#160;</td>
+          <td class="paramname"><em>chaine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de savoir si une chaine appartient a un ensemble de chaines Remarque : une chaine appartient a chaines si une seul des position de la chaine se trouve dans chaines </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">chaines</td><td>l'ensemble de chaines </td></tr>
+    <tr><td class="paramname">chaine</td><td>la chaine a verifie </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>1 si chaine appartient a chaines, 0 sinon </dd></dl>
 
 </div>
 </div>
@@ -138,7 +182,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 22:42:40 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi Février 18 2014 20:38:26 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

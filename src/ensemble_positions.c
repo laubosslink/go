@@ -29,27 +29,31 @@
 #include <ensemble_positions.h>
 #include <position.h>
 
-Ensemble_Positions* creer_ensemble_positions(){
-	return (Ensemble_Positions*) creer_ensemble();
+Ensemble_Positions creer_ensemble_positions(){
+	return (Ensemble_Positions) creer_ensemble();
 }
 
-int ensemble_positions_vide(Ensemble_Positions* E){
+void detruire_ensemble_positions(Ensemble_Positions E){
+	detruire_ensemble(E);
+}
+
+int ensemble_positions_vide(Ensemble_Positions E){
 	return ensemble_tete(E) == NULL;
 }
 
-Cell* ensemble_positions_tete(Ensemble_Positions* E){
+Cell ensemble_positions_tete(Ensemble_Positions E){
 	return ensemble_tete(E);
 }
 
-Cell* ensemble_positions_courant(Ensemble_Positions* E){
+Cell ensemble_positions_courant(Ensemble_Positions E){
 	return ensemble_courant(E);
 }
 
-int ensemble_positions_suivant(Ensemble_Positions* E){
+int ensemble_positions_suivant(Ensemble_Positions E){
 	return ensemble_get_suivant(E) != NULL;
 }
 
-int ensemble_positions_appartient(Ensemble_Positions* E, Position* element){
+int ensemble_positions_appartient(Ensemble_Positions E, Position* element){
 	if(ensemble_vide(E))
 		return 0;
 	
@@ -57,26 +61,29 @@ int ensemble_positions_appartient(Ensemble_Positions* E, Position* element){
 	
 	while(ensemble_positions_suivant(E))
 	{	
-		if(position_get_courant(E)->x == element->x && position_get_courant(E)->y == element->y )
+		if(ensemble_positions_get_courant(E)->x == element->x && ensemble_positions_get_courant(E)->y == element->y)
 			return 1;
 		
 		ensemble_set_courant(E, ensemble_get_suivant(E));
 	}
 	
-	if(position_get_courant(E)->x == element->x && position_get_courant(E)->y == element->y) return 1;
+	if(ensemble_positions_get_courant(E)->x == element->x && ensemble_positions_get_courant(E)->y == element->y) return 1;
 	
 	return 0;
 }
-	
 
-Ensemble_Positions* ensemble_positions_enlever(Ensemble_Positions* E, Position* element){
+Ensemble_Positions ensemble_positions_enlever(Ensemble_Positions E, Position* element){
 	return ensemble_enlever(E,(Position*)element);
 }
 	
-void ensemble_positions_ajouter(Ensemble_Positions* E, Position* element){
+void ensemble_positions_ajouter(Ensemble_Positions E, Position* element){
 	/* permet de ne pas ajouter des doublons ! */
 	if(ensemble_positions_appartient(E, element))
 		return;
 		
 	ensemble_ajouter(E, (Position*) element);
+}
+
+Position* ensemble_positions_get_courant(Ensemble_Positions E){
+	return (Position *) ensemble_get_courant_contenu(E);
 }

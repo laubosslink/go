@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
- * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
@@ -34,11 +32,13 @@ int main(){
 	
 	matrice_affiche(m);
 	
-	m.donnees[1][1] = BLANC;
+	matrice_set_donnees(m, 1, 1, BLANC);
 	
 	printf("\n");
 	
 	matrice_affiche(m);
+	
+	detruire_matrice(m);
 	
 	return 0;
 }

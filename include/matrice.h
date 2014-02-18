@@ -14,6 +14,7 @@
  * @version 1.0 
  * @date 03-02-2013
  * 
+ * @todo pouvoir modifier la taille de la matrice (utilisation de realloc, modification nbligne, nbcolonne)
  */
  
 /** 
@@ -26,20 +27,8 @@
 #define MATRICE_H_INCLUDED
 
 #include <stdio.h>
- 
-/**
- * @brief Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne.
- */ 
-typedef struct Matrice {
-	/** Les tableau des données */
-	int **donnees; 
-	
-	/** Le nombre de lignes */
-	int nbligne;
-	
-	/** Le nombre de colonnes */
-	int nbcolonne;
-} Matrice;
+
+typedef struct Matrice* Matrice;
 
 /**
  * Permet d'allouer une matrice vide
@@ -84,5 +73,45 @@ void matrice_affiche(Matrice m);
  * @param fichier le nom du fichier dans lequel on sauvegarde la matrice
  */
 int matrice_sauvegarde(Matrice m, FILE *fichier);
+
+/**
+ * Permet de récupérer la taille de la matrice en hauteur
+ * @param m la matrice
+ * @return le nombre de ligne
+ */
+int matrice_get_nombre_ligne(Matrice m);
+
+/**
+ * Permet de récupérer la taille de la matrice en largeur
+ * @param m la matrice
+ * @return le nombre de colonne
+ */
+int matrice_get_nombre_colonne(Matrice m);
+
+/**
+ * Permet de récupérer une donnée de la matrice
+ * @param m la matrice
+ * @param j la hauteur (ligne)
+ * @param i la largeur (colonne)
+ * @return une donnée
+ */
+int matrice_get_donnees(Matrice m, int i, int j);
+
+/**
+ * Permet de récupérer les données d'une ligne
+ * @param m la matrice
+ * @param j la ligne
+ * @return un tableau de données
+ */
+int* matrice_get_donnees_ligne(Matrice m, int j);
+
+/**
+ * Permet de modifier une données de la matrice
+ * @param m la matrice
+ * @param j la hauteur (ligne)
+ * @param i la largeur (colonne)
+ * @param data la donnée à insérer
+ */
+void matrice_set_donnees(Matrice m, int i, int j, int data);
 
 #endif

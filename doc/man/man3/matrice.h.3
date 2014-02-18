@@ -1,4 +1,4 @@
-.TH "include/matrice.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/matrice.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,21 +12,12 @@ Le fichier d'en tête qui contient la matrice\&.
 \fC#include <stdio\&.h>\fP
 .br
 
-.SS "Classes"
-
-.in +1c
-.ti -1c
-.RI "struct \fBMatrice\fP"
-.br
-.RI "\fIStructure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne\&. \fP"
-.in -1c
 .SS "Définitions de type"
 
 .in +1c
 .ti -1c
-.RI "typedef struct \fBMatrice\fP \fBMatrice\fP"
+.RI "typedef struct \fBMatrice\fP * \fBMatrice\fP"
 .br
-.RI "\fIStructure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne\&. \fP"
 .in -1c
 .SS "Fonctions"
 
@@ -48,6 +39,18 @@ Le fichier d'en tête qui contient la matrice\&.
 .br
 .ti -1c
 .RI "int \fBmatrice_sauvegarde\fP (\fBMatrice\fP m, FILE *fichier)"
+.br
+.ti -1c
+.RI "int \fBmatrice_get_nombre_ligne\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "int \fBmatrice_get_nombre_colonne\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "int ** \fBmatrice_get_donnees\fP (\fBMatrice\fP m)"
+.br
+.ti -1c
+.RI "void \fBmatrice_set_donnees\fP (\fBMatrice\fP m, int i, int j, int data)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -72,15 +75,18 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 .PP
 \fBDate:\fP
 .RS 4
-03-02-2013 
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+pouvoir modifier la taille de la matrice (utilisation de realloc, modification nbligne, nbcolonne) 
 .RE
 .PP
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef struct \fBMatrice\fP  \fBMatrice\fP"
-.PP
-Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne\&. 
+.SS "typedef struct \fBMatrice\fP* \fBMatrice\fP"
 .SH "Documentation des fonctions"
 .PP 
 .SS "void \fBmatrice_affiche\fP (\fBMatrice\fPm)"Permet d'afficher une matrice 
@@ -124,6 +130,45 @@ une matrice nblig*nbcol
 .RE
 .PP
 
+.SS "int** \fBmatrice_get_donnees\fP (\fBMatrice\fPm)"Permet de récupérer l'ensemble des données de la matrice 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+les données 
+.RE
+.PP
+
+.SS "int \fBmatrice_get_nombre_colonne\fP (\fBMatrice\fPm)"Permet de récupérer la taille de la matrice en largeur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+le nombre de colonne 
+.RE
+.PP
+
+.SS "int \fBmatrice_get_nombre_ligne\fP (\fBMatrice\fPm)"Permet de récupérer la taille de la matrice en hauteur 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+le nombre de ligne 
+.RE
+.PP
+
 .SS "\fBMatrice\fP \fBmatrice_init\fP (char *fichier)"Permet d'initialiser une matrice à partir d'un fichier 
 .PP
 \fBParamètres:\fP
@@ -161,6 +206,20 @@ une matrice initialisé à partir d'un fichier
 \fIm\fP la matrice à sauvegarder 
 .br
 \fIfichier\fP le nom du fichier dans lequel on sauvegarde la matrice 
+.RE
+.PP
+
+.SS "void \fBmatrice_set_donnees\fP (\fBMatrice\fPm, inti, intj, intdata)"Permet de modifier une données de la matrice 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.br
+\fIi\fP la hauteur (ligne) 
+.br
+\fIj\fP la largeur (colonne) 
+.br
+\fIdata\fP la donnée à insérer 
 .RE
 .PP
 

@@ -24,6 +24,7 @@
  
 #include <partie.h>
 #include <plateau.h>
+#include <matrice.h>
 #include <couleur.h>
 
 void partie_demande_questions(int numero_question, Partie *partie){
@@ -70,17 +71,19 @@ void echange_joueur(Couleur* c){
 int partie_sauvegarde(Partie partie, FILE* fichier){
 	int est_sauve = 0, i, j;
 	
+	int taille = plateau_get_taille(partie.plateau);
+	
 	/* sauvegarde des noms et couleur du joueur */
 	est_sauve = (fwrite(&(partie.joueur1), sizeof(char) * 20, 1, fichier) == 1);
 	est_sauve = (fwrite(&(partie.joueur2), sizeof(char) * 20, 1, fichier) == 1 && est_sauve == 1);
 	est_sauve = (fwrite(&(partie.joueur), sizeof(Couleur), 1, fichier) == 1 && est_sauve == 1);
 	
 	/* sauvegarde des informations du plateau (taille, donnees) */
-	est_sauve = (fwrite(&(partie.plateau.nbligne), sizeof(int), 1, fichier) == 1 && est_sauve == 1);
+	est_sauve = (fwrite(&taille, sizeof(int), 1, fichier) == 1 && est_sauve == 1);
 		
-	for(i=0; i<partie.plateau.nbligne; i++)
+	for(i=0; i<taille; i++)
 	{
-		est_sauve = (fwrite(partie.plateau.donnees[i], sizeof(int), partie.plateau.nbcolonne, fichier) == partie.plateau.nbcolonne && est_sauve == 1);
+		est_sauve = (fwrite(matrice_get_donnees_ligne((Matrice) partie.plateau, i), sizeof(int), taille, fichier) == taille && est_sauve == 1);
 	}
 
 	return est_sauve;
@@ -90,18 +93,19 @@ Partie partie_charge(FILE* fichier){
 	Partie partie;
 	int i, j;
 	
+	int taille;
+	
 	fread(&(partie.joueur1), sizeof(char) * 20, 1, fichier);
 	fread(&(partie.joueur2), sizeof(char) * 20, 1, fichier);
 	fread(&(partie.joueur), sizeof(Couleur), 1, fichier);
 	
-	fread(&(partie.plateau.nbligne), sizeof(int), 1, fichier);
-	partie.plateau.nbcolonne = partie.plateau.nbligne;
+	fread(&taille, sizeof(int), 1, fichier);
 	
-	partie.plateau = creer_plateau(partie.plateau.nbcolonne);
+	partie.plateau = creer_plateau(taille);
 
-	for(i=0; i<partie.plateau.nbligne; i++)
+	for(i=0; i<taille; i++)
 	{
-		fread(partie.plateau.donnees[i], sizeof(int), partie.plateau.nbcolonne, fichier);
+		fread(matrice_get_donnees_ligne((Matrice) partie.plateau, i), sizeof(int), taille, fichier);
 	}
 	
 	return partie;

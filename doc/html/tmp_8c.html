@@ -130,6 +130,15 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>un ensemble de chaine </dd></dl>
+<p>initialisation des chaines</p>
+<p>on determine la chaine a laquelle appartient le pion</p>
+<p>on se deplace sur cette chaine</p>
+<p>on regarde haut, bas, gauche, droite de chaque position de cette chaine</p>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000002">Bogue:</a></b></dt><dd>risque de poser problème, on ajoute une adresse "chainede_determiner qui reste la même (seul le contenu chance à chaque appel de plateau_determiner_chaine. </dd></dl>
+<p>on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"</p>
+<p>on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine</p>
+<p>on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"</p>
+<p>on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine </p>
 
 </div>
 </div>
@@ -151,7 +160,7 @@ Fonctions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 22:42:40 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi Février 18 2014 20:38:26 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

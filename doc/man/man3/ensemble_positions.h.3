@@ -1,4 +1,4 @@
-.TH "include/ensemble_positions.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/ensemble_positions.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -26,28 +26,34 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 
 .in +1c
 .ti -1c
-.RI "\fBEnsemble_Positions\fP * \fBcreer_ensemble_positions\fP ()"
+.RI "\fBEnsemble_Positions\fP \fBcreer_ensemble_positions\fP ()"
 .br
 .ti -1c
-.RI "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fP *E)"
+.RI "void \fBdetruire_ensemble_positions\fP (\fBEnsemble_Positions\fP E)"
 .br
 .ti -1c
-.RI "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"
+.RI "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fP E)"
 .br
 .ti -1c
-.RI "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"
+.RI "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP *element)"
 .br
 .ti -1c
-.RI "\fBEnsemble_Positions\fP * \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"
+.RI "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP *element)"
 .br
 .ti -1c
-.RI "\fBCell\fP * \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fP *E)"
+.RI "\fBEnsemble_Positions\fP \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP *element)"
 .br
 .ti -1c
-.RI "\fBCell\fP * \fBensemble_positions_courant\fP (\fBEnsemble_Positions\fP *E)"
+.RI "\fBCell\fP \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fP E)"
 .br
 .ti -1c
-.RI "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fP *E)"
+.RI "\fBCell\fP \fBensemble_positions_courant\fP (\fBEnsemble_Positions\fP E)"
+.br
+.ti -1c
+.RI "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fP E)"
+.br
+.ti -1c
+.RI "\fBPosition\fP * \fBensemble_positions_get_courant\fP (\fBEnsemble_Positions\fP E)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -83,7 +89,7 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 Ensemble_Positions est un alias du type \fBEnsemble\fP\&. 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBEnsemble_Positions\fP* \fBcreer_ensemble_positions\fP ()"Permet de creer un ensemble 
+.SS "\fBEnsemble_Positions\fP \fBcreer_ensemble_positions\fP ()"Permet de creer un ensemble 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -91,7 +97,15 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"Permet d'ajouter un élément dans un ensemble 
+.SS "void \fBdetruire_ensemble_positions\fP (\fBEnsemble_Positions\fPE)"Permet de détruire un ensemble de positions 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble de positions 
+.RE
+.PP
+
+.SS "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fPE, \fBPosition\fP *element)"Permet d'ajouter un élément dans un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -99,7 +113,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
+.SS "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fPE, \fBPosition\fP *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -112,7 +126,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_positions_courant\fP (\fBEnsemble_Positions\fP *E)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
+.SS "\fBCell\fP \fBensemble_positions_courant\fP (\fBEnsemble_Positions\fPE)"Permet de positionner le pointeur sur un des éléments de l'ensemble 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -120,7 +134,7 @@ le pointeur sur l'élément courant
 .RE
 .PP
 
-.SS "\fBEnsemble_Positions\fP* \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP *E, \fBPosition\fP *element)"Permet de supprimer un élément dans l'ensemble 
+.SS "\fBEnsemble_Positions\fP \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fPE, \fBPosition\fP *element)"Permet de supprimer un élément dans l'ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -133,7 +147,20 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
-.SS "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fP *E)"Permet de dire s'il y a un élément suivant ou non 
+.SS "\fBPosition\fP* \fBensemble_positions_get_courant\fP (\fBEnsemble_Positions\fPE)"Permet de récupérer la position courrante de l'ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble de positions 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une position 
+.RE
+.PP
+
+.SS "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fPE)"Permet de dire s'il y a un élément suivant ou non 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -141,7 +168,7 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
-.SS "\fBCell\fP* \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fP *E)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
+.SS "\fBCell\fP \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fPE)"Permet de positionner le pointeur tête sur le debut de mon ensemble 
 .PP
 \fBRenvoie:\fP
 .RS 4
@@ -149,7 +176,7 @@ le pointeur de la tete de l'ensemble
 .RE
 .PP
 
-.SS "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fP *E)"Permet de vérifier si un ensemble est vide 
+.SS "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fPE)"Permet de vérifier si un ensemble est vide 
 .PP
 \fBParamètres:\fP
 .RS 4

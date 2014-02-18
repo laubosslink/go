@@ -26,16 +26,18 @@
 
 #include <ensemble.h>
 
+typedef struct Position Position;
+
 /**
  * @brief structure d'une position qui permet de définir une position 2D. Cette structure comporte l'absice et l'ordonné de la position.
  */
-typedef struct Position {
+struct Position {
 	/** Position x */
 	int x;
 
 	/** Position y */
 	int y;
-} Position;
+};
 
 /**
  * Permet de creer une position
@@ -50,7 +52,7 @@ Position* creer_position(int x, int y);
  * @param E l'ensemble
  * @return Un pointeur vers une position
  */
-Position* position_get_courant(Ensemble *E);
+Position* position_get_courant(Ensemble E);
 
 /**
  * Permet de se deplacer vers le haut

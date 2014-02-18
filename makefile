@@ -42,6 +42,9 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 # TESTS
 ##
 
+tests: test_chaines_appartient_chaine
+	$(BINDIR)/test_chaines_appartient_chaine
+
 # chaines_appartient_chaine
 
 test_chaines_appartient_chaine: libmatrice libensemble $(BINDIR)/test_chaines_appartient_chaine
@@ -85,9 +88,9 @@ $(OBJDIR)/test_plateau.o: $(TESTDIR)/test_plateau.c
 
 # Ensembles Colores 
 
-ensemble_colores_test: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/ensemble_colores_test 
+test_ensemble_colores: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/test_ensemble_colores 
 
-$(BINDIR)/ensemble_colores_test: $(OBJDIR)/ensemble_colores.o $(OBJDIR)/test_ensemble_colores.o $(OBJDIR)/position.o
+$(BINDIR)/test_ensemble_colores: $(OBJDIR)/ensemble_colores.o $(OBJDIR)/test_ensemble_colores.o $(OBJDIR)/position.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble 
 	
 $(OBJDIR)/test_ensemble_colores.o : $(TESTDIR)/test_ensemble_colores.c
@@ -96,9 +99,9 @@ $(OBJDIR)/test_ensemble_colores.o : $(TESTDIR)/test_ensemble_colores.c
 
 # Ensembles Positions
 
-ensemble_positions_test: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/ensemble_positions_test
+test_ensemble_positions: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/test_ensemble_positions
 
-$(BINDIR)/ensemble_positions_test: $(OBJDIR)/ensemble_positions.o $(OBJDIR)/test_ensemble_positions.o $(OBJDIR)/position.o
+$(BINDIR)/test_ensemble_positions: $(OBJDIR)/ensemble_positions.o $(OBJDIR)/test_ensemble_positions.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble
 	
 $(OBJDIR)/test_ensemble_positions.o : $(TESTDIR)/test_ensemble_positions.c

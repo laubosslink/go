@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
- * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
@@ -25,64 +23,82 @@
  
 #include <stdio.h>
 #include <stdlib.h>
+
 #include <ensemble.h>
 
-void ensemble_init(Ensemble *E){
-	E->tete = NULL;
-	E->courant = NULL;
-}
+/** 
+ *@brief structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante. 
+ */
+struct Cell{
+	void* contenu;
+	Cell suivant;
+};
 
-Ensemble* creer_ensemble(){
-	Ensemble* E;
+/** 
+ *@brief structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l'ensemble. 
+ */
+struct Ensemble{
+	Cell courant;
+	Cell tete;
+};
+
+Ensemble creer_ensemble(){
+	Ensemble E = (Ensemble) malloc(sizeof(struct Ensemble));
 	
-	E = (Ensemble*) malloc(sizeof(Ensemble));
 	E->tete = NULL;
 	E->courant = NULL;
 	
 	return E;
 }
 
-int ensemble_vide(Ensemble* E){
+/** @todo réaliser la destruction d'un ensemble */
+void detruire_ensemble(Ensemble E){
+	/* parcour des noeuds */
+	/* désalocation de chaque noeud */
+	/* désalocation de l'ensemble */
+}
+
+int ensemble_vide(Ensemble E){
 	return (E == NULL || E->tete == NULL);
 }
 
-/** @todo get_ */
-Cell* ensemble_tete(Ensemble* E){
+/** @todo insérer le mot get_ dans le nom pour plus de cohérence */
+Cell ensemble_tete(Ensemble E){
 	return E->tete;
 }
 
-/** @todo get_ */
-Cell* ensemble_courant(Ensemble* E){
+/** @todo insérer le mot get_ dans le nom pour plus de cohérence */
+Cell ensemble_courant(Ensemble E){
 	return E->courant;
 }
 
-void ensemble_reset_courant(Ensemble* E){
+void ensemble_reset_courant(Ensemble E){
 	E->courant = E->tete;
 }
 
-int ensemble_suivant(Ensemble* E){
+int ensemble_suivant(Ensemble E){
 	if(ensemble_courant(E) == NULL) 	
 		return 0;
 	
 	return(ensemble_courant(E))->suivant != NULL;
 }
 
-void* ensemble_get_courant_contenu(Ensemble *E){
+void* ensemble_get_courant_contenu(Ensemble E){
 	return E->courant->contenu;
 }
 
-Cell* ensemble_get_suivant(Ensemble* E){
+Cell ensemble_get_suivant(Ensemble E){
 	if(E->courant == NULL)
 		return NULL;
 		
 	return E->courant->suivant;
 }
 
-void ensemble_set_courant(Ensemble* E, Cell *c){
+void ensemble_set_courant(Ensemble E, Cell c){
 	E->courant = c;
 }
 
-int ensemble_appartient(Ensemble* E, void* element){
+int ensemble_appartient(Ensemble E, void* element){
 	if(ensemble_vide(E))
 		return 0;
 		
@@ -98,13 +114,13 @@ int ensemble_appartient(Ensemble* E, void* element){
 	return 1;
 }
 
-Ensemble* ensemble_enlever(Ensemble* E, void* element){
-	Cell* cellule;
+Ensemble ensemble_enlever(Ensemble E, void* element){
+	Cell cellule;
 	
 	if(!ensemble_appartient(E, element))
 		return E;
 	
-	cellule = (Cell*) malloc(sizeof(Cell));
+	cellule = (Cell) malloc(sizeof(struct Cell));
 	E->courant=E->tete;
 	
 	while(ensemble_suivant(E) && E->courant->suivant->contenu != element){
@@ -123,14 +139,14 @@ Ensemble* ensemble_enlever(Ensemble* E, void* element){
 	
 } 
 	
-void ensemble_ajouter(Ensemble* E, void* element){
-	Cell* cellule;
+void ensemble_ajouter(Ensemble E, void* element){
+	Cell cellule;
 	
 	/* Si l'élément est NULL ou il appartient déjà à l'ensemble on ne fait rien */
 	if(element == NULL || ensemble_appartient(E, element))
 		return;
 	
-	cellule = (Cell*) malloc(sizeof(Cell));
+	cellule = (Cell) malloc(sizeof(struct Cell));
 
 	cellule->contenu = element;
 	cellule->suivant = NULL;
@@ -149,8 +165,8 @@ void ensemble_ajouter(Ensemble* E, void* element){
 	}
 }
 
-Ensemble* ensemble_concatene(Ensemble* e1, Ensemble* e2){
-	Ensemble* e = creer_ensemble();
+Ensemble ensemble_concatene(Ensemble e1, Ensemble e2){
+	Ensemble e = creer_ensemble();
 			
 	if(!ensemble_vide(e1)){
 		/* ajout des éléments de l'ensemble e1 */
@@ -178,4 +194,39 @@ Ensemble* ensemble_concatene(Ensemble* e1, Ensemble* e2){
 
 	/* retourne les deux ensembles */
 	return e;
+}
+
+
+void ensemble_afficher_pointeur(Ensemble E){
+	if(ensemble_vide(E)){
+		fprintf(stderr, "Rien à afficher, la liste est vide\n");
+		return;
+	}
+	
+	printf("[");
+	ensemble_reset_courant(E);
+	
+	while(ensemble_suivant(E)){
+		printf("%p, ",  ensemble_get_courant_contenu(E));
+		ensemble_set_courant(E, ensemble_get_suivant(E));
+	}
+	
+	printf("%p]\n", ensemble_get_courant_contenu(E));
+}
+
+void ensemble_afficher_entier(Ensemble E){
+	if(ensemble_vide(E)){
+		fprintf(stderr, "Rien à afficher, la liste est vide\n");
+		return;
+	}
+	
+	printf("[");
+	ensemble_reset_courant(E);
+	
+	while(ensemble_suivant(E)){
+		printf("%d, ",  *((int *) ensemble_get_courant_contenu(E)));
+		ensemble_set_courant(E, ensemble_get_suivant(E));
+	}
+	
+	printf("%d]\n", *((int *) ensemble_get_courant_contenu(E)));
 }

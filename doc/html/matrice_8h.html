@@ -79,7 +79,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Définitions de type</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
@@ -93,14 +92,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <p><a href="matrice_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMatrice.html">Matrice</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne.  <a href="structMatrice.html#details">Plus de détails...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structMatrice.html">Matrice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a4692c384a5050f8e48ebbd9e5b2d88ac">Matrice</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne.  <a href="#a4692c384a5050f8e48ebbd9e5b2d88ac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structMatrice.html">Matrice</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a336e07814f307d4b8858bd402caf0c3b">Matrice</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a634f509afa7d665d250bbc49f1229c1c">matrice_creer</a> (int nblig, int nbcol)</td></tr>
@@ -109,6 +103,10 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#abc0378614b84ad7d0fb507f8646887e0">matrice_position_appartient</a> (<a class="el" href="structMatrice.html">Matrice</a> m, int x, int y)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a42e5dda540697aa95793e22c7641943a">matrice_affiche</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a715838df2af0c1e069d599aeaf4f5289">matrice_sauvegarde</a> (<a class="el" href="structMatrice.html">Matrice</a> m, FILE *fichier)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a953581802ad453995a4aa2734a4811ec">matrice_get_nombre_ligne</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a41a8f1e3137415b39aa71bed0726acb9">matrice_get_nombre_colonne</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#af5b766a59878a3e786a71504aa229392">matrice_get_donnees</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a60ac0ff9f5194157c8ce2e1fbb66a233">matrice_set_donnees</a> (<a class="el" href="structMatrice.html">Matrice</a> m, int i, int j, int data)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Le fichier d'en tête qui contient la matrice. </p>
@@ -118,20 +116,19 @@ Fonctions</h2></td></tr>
 <dd>
 PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@ecole.ensicaen.fr</a>, <a href="mailto:laubosslink@society-lbl.com">laubosslink@society-lbl.com</a>&gt; </dd></dl>
 <dl class="version"><dt><b>Version:</b></dt><dd>1.0 </dd></dl>
-<dl class="date"><dt><b>Date:</b></dt><dd>03-02-2013 </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>03-02-2013</dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">A faire:</a></b></dt><dd>pouvoir modifier la taille de la matrice (utilisation de realloc, modification nbligne, nbcolonne) </dd></dl>
 </div><hr/><h2>Documentation des définitions de type</h2>
-<a class="anchor" id="a4692c384a5050f8e48ebbd9e5b2d88ac"></a><!-- doxytag: member="matrice.h::Matrice" ref="a4692c384a5050f8e48ebbd9e5b2d88ac" args="" -->
+<a class="anchor" id="a336e07814f307d4b8858bd402caf0c3b"></a><!-- doxytag: member="matrice.h::Matrice" ref="a336e07814f307d4b8858bd402caf0c3b" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structMatrice.html">Matrice</a>  <a class="el" href="structMatrice.html">Matrice</a></td>
+          <td class="memname">typedef struct <a class="el" href="structMatrice.html">Matrice</a>* <a class="el" href="structMatrice.html">Matrice</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Structure d'une matrice qui contient les données de cette matrice, le nombre de ligne et le nombre de colonne. </p>
 
 </div>
 </div>
@@ -191,7 +188,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structMatrice.html">Matrice</a> <a class="el" href="matrice_8c.html#a634f509afa7d665d250bbc49f1229c1c">matrice_creer</a> </td>
+          <td class="memname"><a class="el" href="structMatrice.html">Matrice</a> <a class="el" href="matrice_8h.html#a634f509afa7d665d250bbc49f1229c1c">matrice_creer</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>nblig</em>, </td>
@@ -219,6 +216,81 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
   </dd>
 </dl>
 <dl class="return"><dt><b>Renvoie:</b></dt><dd>une matrice nblig*nbcol </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af5b766a59878a3e786a71504aa229392"></a><!-- doxytag: member="matrice.h::matrice_get_donnees" ref="af5b766a59878a3e786a71504aa229392" args="(Matrice m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int** <a class="el" href="matrice_8c.html#af5b766a59878a3e786a71504aa229392">matrice_get_donnees</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer l'ensemble des données de la matrice </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>les données </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a41a8f1e3137415b39aa71bed0726acb9"></a><!-- doxytag: member="matrice.h::matrice_get_nombre_colonne" ref="a41a8f1e3137415b39aa71bed0726acb9" args="(Matrice m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="matrice_8c.html#a41a8f1e3137415b39aa71bed0726acb9">matrice_get_nombre_colonne</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer la taille de la matrice en largeur </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>le nombre de colonne </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a953581802ad453995a4aa2734a4811ec"></a><!-- doxytag: member="matrice.h::matrice_get_nombre_ligne" ref="a953581802ad453995a4aa2734a4811ec" args="(Matrice m)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="matrice_8c.html#a953581802ad453995a4aa2734a4811ec">matrice_get_nombre_ligne</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer la taille de la matrice en hauteur </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>le nombre de ligne </dd></dl>
 
 </div>
 </div>
@@ -325,6 +397,55 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 </div>
 </div>
+<a class="anchor" id="a60ac0ff9f5194157c8ce2e1fbb66a233"></a><!-- doxytag: member="matrice.h::matrice_set_donnees" ref="a60ac0ff9f5194157c8ce2e1fbb66a233" args="(Matrice m, int i, int j, int data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="matrice_8c.html#a60ac0ff9f5194157c8ce2e1fbb66a233">matrice_set_donnees</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de modifier une données de la matrice </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+    <tr><td class="paramname">i</td><td>la hauteur (ligne) </td></tr>
+    <tr><td class="paramname">j</td><td>la largeur (colonne) </td></tr>
+    <tr><td class="paramname">data</td><td>la donnée à insérer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -343,7 +464,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Dimanche Février 16 2014 22:42:40 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mardi Février 18 2014 20:38:26 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

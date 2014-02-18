@@ -1,4 +1,4 @@
-.TH "include/plateau.h" 3 "Dimanche Février 16 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/plateau.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -133,7 +133,27 @@ Structure d'un plateau de jeu\&. Plateau est un alias du type \fBMatrice\fP\&.
 un ensemble de chaine 
 .RE
 .PP
-
+initialisation des chaines
+.PP
+on determine la chaine a laquelle appartient le pion
+.PP
+on se deplace sur cette chaine
+.PP
+on regarde haut, bas, gauche, droite de chaque position de cette chaine
+.PP
+\fBBogue\fP
+.RS 4
+risque de poser problème, on ajoute une adresse "chainede_determiner qui reste la même (seul le contenu chance à chaque appel de plateau_determiner_chaine\&. 
+.RE
+.PP
+.PP
+on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines 'tmp'
+.PP
+on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine
+.PP
+on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines 'tmp'
+.PP
+on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine 
 .SS "\fBPlateau\fP \fBcreer_plateau\fP (inttaille)"Permet de creer un plateau [taille x taille] 
 .PP
 \fBParamètres:\fP
