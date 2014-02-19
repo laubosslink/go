@@ -69,13 +69,13 @@ int main(){
 		do {
 			numero_tour++;
 			
-			plateau_afficher(partie.plateau);
+			plateau_afficher(partie_get_plateau(partie));
 			
-			if(partie.joueur == BLANC){
-				printf("Au tour de %s (pion o - tour n°%d)\n", partie.joueur1, numero_tour);
-			} else if(partie.joueur == NOIR)
+			if(partie_get_joueur(partie) == BLANC){
+				printf("Au tour de %s (pion o - tour n°%d)\n", partie_get_joueur1(partie), numero_tour);
+			} else if(partie_get_joueur(partie) == NOIR)
 			{
-				printf("Au tour de %s (pion x - tour n°%d)\n", partie.joueur2, numero_tour);
+				printf("Au tour de %s (pion x - tour n°%d)\n", partie_get_joueur2(partie), numero_tour);
 			}
 			
 			choix = getchar();
@@ -109,13 +109,13 @@ int main(){
 					pos.y = y;				
 					
 				/* on demande la position jusqu'a avoir des coordonnees dans la plateau, et sur une case vide */
-				} while(!matrice_position_appartient(partie.plateau, x, y) || est_un_pion_plateau(partie.plateau, pos));
+				} while(!matrice_position_appartient(partie_get_plateau(partie), x, y) || est_un_pion_plateau(partie_get_plateau(partie), pos));
 				
 				/* on pose le pion */
-				plateau_set(partie.plateau, x, y, partie.joueur);
+				plateau_set(partie_get_plateau(partie), x, y, partie_get_joueur(partie));
 				
 				/* changement du joueur */
-				echange_joueur(&partie.joueur);
+				partie_echange_joueur(partie);
 				
 				/* @todo faire une fonction pour le numero, evite allocaton dans main, et bordel */
 				nom_fichier = malloc(sizeof(char) * 50);
@@ -126,7 +126,7 @@ int main(){
 				
 				fichier_plateau = fopen(nom_fichier, "w+");
 	
-				plateau_sauvegarde(partie.plateau, fichier_plateau);
+				plateau_sauvegarde(partie_get_plateau(partie), fichier_plateau);
 				
 				fclose(fichier_plateau);
 
@@ -151,7 +151,7 @@ int main(){
 				
 				fichier_plateau = fopen(nom_fichier, "r");
 	
-				partie.plateau = plateau_chargement(fichier_plateau);
+				partie_set_plateau(partie, plateau_chargement(fichier_plateau));
 				
 				numero_tour = choix_tour-1;
 				

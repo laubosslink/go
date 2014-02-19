@@ -15,6 +15,6 @@ int main () {
 	ensemble_colores_ajouter(Ec, creer_position(7, 10));
 
 	ensemble_colores_affiche(Ec);
-	
+
 	return 0;
 }

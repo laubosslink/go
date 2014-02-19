@@ -31,13 +31,16 @@
 /**
  * @brief Structure d'une partie qui comporte les noms des joueurs, la couleur que choisit chaque joueur et le plateau du jeu
  */
-typedef struct Partie {
-	char joueur1[20], joueur2[20]; /* nom des joueurs */
-	Couleur joueur; /* joueur actuel */
-	Plateau plateau;
-} Partie;
+ 
+typedef struct Partie* Partie;
 
-typedef void (*FonctionQuestions)(int numeroQuestion, Partie* partie); 
+typedef void (*FonctionQuestions)(int numeroQuestion, Partie partie); 
+
+/**
+ * Permet de créer une partie
+ * @return un pointeur vers une partie
+ */
+Partie creer_partie();
 
 /**
  * Permet d'initialiser une partie !
@@ -76,6 +79,18 @@ void partie_score_joueurs(Partie p, int *scores, float valKomi);
  * @param numero de la question
  * @param partie pointeur vers une partie
  */
-void partie_demande_questions(int numero_question, Partie *partie);
+void partie_demande_questions(int numero_question, Partie partie);
+
+void partie_echange_joueur(Partie p);
+
+Plateau partie_get_plateau(Partie p);
+
+char* partie_get_joueur1(Partie p);
+
+char* partie_get_joueur2(Partie p);
+
+Couleur partie_get_joueur(Partie p);
+
+void partie_set_plateau(Partie p, Plateau plateau);
 
 #endif

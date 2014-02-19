@@ -39,70 +39,69 @@
 
 Libertes determineLiberte(Plateau plateau, Chaine chaine){ /** @todo réfléchir sur le struct dans le .c, et conséquence sur chaine */
 	Libertes l;
-	Positions* p = chaine.p; /* l'ensemble des positions de la chaine */
 	Position pc; /* la position courante */
 	//Position pd; /* la position de déplacement */ 
 	Position* pa; /* la position a ajouter */
 	
-	if(ensemble_vide(p))
-		return;
+	if(ensemble_colores_vide(chaine))
+		return NULL;
+
+	l = creer_ensemble_positions();
 	
-	ensemble_init(&l);
+	ensemble_colores_reset(chaine);
 	
-	ensemble_reset_courant(p);
-	
-	while(ensemble_suivant(p)){
-		pc.x = position_get_courant(p)->x;
-		pc.y = position_get_courant(p)->y;
+	while(ensemble_colores_suivant(chaine)){
+		pc.x = ((Position *) ensemble_colores_get_courant(chaine))->x;
+		pc.y = ((Position *) ensemble_colores_get_courant(chaine))->y;
 		
 		pc.x++; /** @todo utiliser haut,bas,gauche,droite */
 		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 		}
 		
 		pc.x -= 2;
 		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 		}
 		pc.x++;
 		
 		pc.y++;
 		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 		}
 		
 		pc.y -= 2;
 		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 		}
 		pc.y++;
 		
-		ensemble_set_courant(p, ensemble_get_suivant(p));
+		ensemble_colores_set_courant(chaine, ensemble_colores_get_suivant(chaine));
 	}
 	
-	pc.x = position_get_courant(p)->x;
-	pc.y = position_get_courant(p)->y;
+	pc.x = ((Position *) ensemble_colores_get_courant(chaine))->x;
+	pc.y = ((Position *) ensemble_colores_get_courant(chaine))->y;
 
 	pc.x++;
 	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
 		pa = creer_position(pc.x, pc.y);
-		ensemble_positions_ajouter(&l, pa);
+		ensemble_positions_ajouter(l, pa);
 	}
 	
 	pc.x -= 2;
 	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 	}
 	pc.x++;
 	
 	pc.y++;
 	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 	}
 	
 	pc.y -= 2;
 	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		ensemble_positions_ajouter(&l, creer_position(pc.x, pc.y));
+		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 	}
 	pc.y++;
 
