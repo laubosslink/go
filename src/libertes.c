@@ -37,11 +37,9 @@
 #include <plateau.h>
 #include <chaine.h>
 
-Libertes determineLiberte(Plateau plateau, Chaine chaine){ /** @todo réfléchir sur le struct dans le .c, et conséquence sur chaine */
+Libertes determineLiberte(Plateau plateau, Chaine chaine){
 	Libertes l;
 	Position pc; /* la position courante */
-	//Position pd; /* la position de déplacement */ 
-	Position* pa; /* la position a ajouter */
 	
 	if(ensemble_colores_vide(chaine))
 		return NULL;
@@ -84,8 +82,7 @@ Libertes determineLiberte(Plateau plateau, Chaine chaine){ /** @todo réfléchir
 
 	pc.x++;
 	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		pa = creer_position(pc.x, pc.y);
-		ensemble_positions_ajouter(l, pa);
+		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
 	}
 	
 	pc.x -= 2;
