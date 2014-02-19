@@ -22,23 +22,35 @@
  */
  
 #include <matrice.h>
-#include <couleur.h>
 #include <stdio.h>
 
 int main(){
+	int tests = 0;
+	
 	Matrice m;
 	
 	m = matrice_init("extra/plateau_test.txt");
 	
+#if DEBUG_AFFICHE == 1	
 	matrice_affiche(m);
-	
-	matrice_set_donnees(m, 1, 1, BLANC);
-	
-	printf("\n");
-	
+#endif
+
+	matrice_set_donnees(m, 1, 1, 1);
+
+#if DEBUG_AFFICHE == 1	
+	printf("\n");	
 	matrice_affiche(m);
-	
+#endif
+		
+	if(matrice_get_donnees(m, 1, 1) == 1)
+		tests = 1;
+		
 	detruire_matrice(m);
+	
+	if(tests == 1)
+		printf("Tests libmatrice: OK\n");
+	else
+		printf("Tests libmatrice: Problèmes durant les tests...\n");
 	
 	return 0;
 }

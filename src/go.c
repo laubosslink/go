@@ -40,8 +40,12 @@ int main(){
 	Partie partie;
 	
 	Position pos;
+	int abcisse, ordonne;
 	
 	FILE* fichier_plateau;
+	
+	abcisse = position_get_x(pos);
+	ordonne = position_get_y(pos);
 
 	printf("Bienvenue au jeu de Go!\n\n");
 	
@@ -105,8 +109,8 @@ int main(){
 					x--;
 					y--;
 					
-					pos.x = x;
-					pos.y = y;				
+					abcisse = x;
+					ordonne = y;				
 					
 				/* on demande la position jusqu'a avoir des coordonnees dans la plateau, et sur une case vide */
 				} while(!matrice_position_appartient(partie_get_plateau(partie), x, y) || est_un_pion_plateau(partie_get_plateau(partie), pos));

@@ -29,8 +29,24 @@
 #include <position.h>
 #include <ensemble.h>
 
-Position* creer_position(int x, int y){
-	Position* p = (Position *) malloc(sizeof(Position));
+struct Position {
+	/** Position x */
+	int x;
+
+	/** Position y */
+	int y;
+};
+
+int position_get_x(Position p){
+	return p->x;
+}
+
+int position_get_y(Position p){
+	return p->y;
+}
+
+Position creer_position(int x, int y){
+	Position p = (Position) malloc(sizeof(struct Position));
 	
 	p->x = x;
 	p->y = y;
@@ -38,30 +54,31 @@ Position* creer_position(int x, int y){
 	return p;
 }
 
-Position* position_get_courant(Ensemble E){
-	return (Position *) ensemble_get_courant_contenu(E);
+Position position_copy(Position pos){
+	return creer_position(pos->x, pos->y);
+}
+
+void detruire_position(Position p){
+	free(p);
+}
+
+Position position_get_courant(Ensemble E){
+	return (Position) ensemble_get_courant_contenu(E);
 }
 
 Position haut(Position p){
-	p.y--;
-	
-	return p;
+	return creer_position(p->x, p->y-1);
 }
 
 Position bas(Position p){
-	p.y++;
-	
-	return p;
+	return creer_position(p->x, p->y+1);
 }
 
 Position gauche(Position p){
-	p.x--;
-	
-	return p;
+	return creer_position(p->x-1, p->y);
 }
 
 Position droite(Position p){
-	p.x++;
-	
-	return p;
+	return creer_position(p->x+1, p->y);
 }
+

@@ -4,24 +4,6 @@
 #include <pion.h>
 #include <position.h>
 
-int nbr_elmt(Chaines E)
-{
-	int x = 1;
-	
-	if(ensemble_vide(E)){
-		return 0;
-	}
-	
-	ensemble_reset_courant(E);
-	
-	while(ensemble_suivant(E)){
-		x++;
-		ensemble_set_courant(E, ensemble_get_suivant(E));
-	}
-	
-	return x;
-}
-
 void affiche_positions(Ensemble_Colores E){
 	if(ensemble_colores_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
@@ -31,14 +13,14 @@ void affiche_positions(Ensemble_Colores E){
 	ensemble_colores_reset(E);
 	
 	while(ensemble_colores_suivant(E)){
-		printf("{x=%d, ",  ((Position *) ensemble_colores_get_courant(E))->x+1);
-		printf("y=%d}\n",  ((Position *) ensemble_colores_get_courant(E))->y+1);
+		printf("{x=%d, ",  position_get_x(ensemble_colores_get_courant(E))+1);
+		printf("y=%d}\n",  position_get_y(ensemble_colores_get_courant(E))+1);
 		
 		ensemble_colores_set_courant(E, ensemble_colores_get_suivant(E));
 	}
 	
-	printf("{x=%d, ",  ((Position *) ensemble_colores_get_courant(E))->x+1);
-	printf("y=%d}\n",  ((Position *) ensemble_colores_get_courant(E))->y+1);
+	printf("{x=%d, ",  position_get_x(ensemble_colores_get_courant(E))+1);
+	printf("y=%d}\n",  position_get_y(ensemble_colores_get_courant(E))+1);
 	printf("\n");
 }
 
@@ -76,35 +58,36 @@ int main(){
 	
 	Plateau plateau = plateau_chargement(f);
 	
-	Pion pion;
+	Position position = creer_position(4, 4);
 	
-	Position position;
+	Pion pion = creer_pion(BLANC, position);
 	
 	int valide;
 	
-	position.x = 4;
-	position.y = 4;
-	
-	pion.p = position;
-	pion.c = BLANC;
-	
-	//plateau_afficher(plateau);
+#if DEBUG_AFFICHE == 1
+	plateau_afficher(plateau);
+#endif
 
 	chaine = plateau_determiner_chaine(plateau, position);
-	
-	//printf("\nChaine du pion posé: \n");
-	//affiche_positions(chaine);
-	
+
+#if DEBUG_AFFICHE == 1	
+	printf("\nChaine du pion posé: \n");
+	affiche_positions(chaine);
+#endif
+
 	Chaines chaines_captures = captureChaines(plateau, pion, &valide);
-	
-	//affiche_captures(chaines_captures);
-	
-	if(nbr_elmt(chaines_captures) == 3)
+
+#if DEBUG_AFFICHE == 1	
+	affiche_captures(chaines_captures);
+#endif
+
+	if(ensemble_nbr_element(chaines_captures) == 3)
 		tests = 1;
 	
 	if(tests == 1)
 		printf("Tests captureChaines(...): OK\n");
 	else
 		printf("Tests captureChaines(...): Problèmes durant les tests...\n");
-		
+	
+	return 0;
 }

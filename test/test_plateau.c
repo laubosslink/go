@@ -2,26 +2,9 @@
 #include <libertes.h>
 #include <position.h>
 
-void afficherPositions(Ensemble_Positions *E){
-	if(ensemble_vide(E)){
-		printf("Rien à afficher, la liste est vide\n");
-		return;
-	}
-	
-	E->courant = E->tete;
-	
-	while(E->courant->suivant != NULL){
-		printf("{x=%d, ",  ((Position *) E->courant->contenu)->x+1);
-		printf("y=%d}\n",  ((Position *) E->courant->contenu)->y+1);
-		E->courant=E->courant->suivant;
-	}
-	
-	printf("{x=%d, ",  ((Position *) E->courant->contenu)->x+1);
-	printf("y=%d}\n",  ((Position *) E->courant->contenu)->y+1);
-	printf("\n\n");
-}
-
 int main(){
+	int tests = 0;
+	
 	FILE *f = fopen("extra/plateau_test.txt", "r+");
 	FILE *f2 = fopen("extra/plateau_test_output.txt", "w+");
 	
@@ -31,53 +14,49 @@ int main(){
 
 	Libertes libertes;
 		
-	Position pos,position;
-	
-	Pion pion;
+	Position pos = creer_position(2, 3);
 	
 	Chaines chainesCapturees;
 	
-	int* valide;
-	
-	valide = (int*)malloc(sizeof(int));
-	
-	pos.x = 2;
-	pos.y = 3;
-	
-	position.x = 6;
-	position.y = 5;
-	
-	pion.p = position;
-	pion.c = BLANC ;
-	
 	fclose(f);
 	
+#if DEBUG_AFFICHE == 1
 	plateau_afficher(p);
-	
+#endif
+
 	/* Test de la détermination d'une chaine */
 	c = plateau_determiner_chaine(p, pos);
-	
+
+#if DEBUG_AFFICHE == 1	
 	/* couleur de la chaine ?*/
-	printf("\nCouleur: %d\n", c.c);
+	printf("\nCouleur: %d\n\n", ensemble_colores_get_couleur(c));
 	
 	/* Les différentes positions de la chaine même couleur*/
-	afficherPositions(c.p);
+	printf("Chaine : ");
+	ensemble_colores_affiche(c);
+	printf("\n");
 	
 	/* réalisation d'une capture de la chaine */
 	//plateau_realiser_capture(p, c);
 	
 	plateau_afficher(p);
-	
+#endif
+
 	/* on détermine les libertés de la chaine */
 	libertes = determineLiberte(p, c);
-	
-	afficherPositions(&libertes);
-	
-	printf("largeur: %d\n", p.nbcolonne);
-	printf("hauteur: %d\n", p.nbligne);
+
+#if DEBUG_AFFICHE == 1		
+	printf("Libertes :\n");
+	ensemble_positions_affiche(libertes);
+	printf("\n");
+#endif
+
+	//printf("largeur: %d\n", p.nbcolonne);
+	//printf("hauteur: %d\n", p.nbligne);
 	
 	/* test de la sauvegarde du plateau */
-	printf("save ? %d\n", plateau_sauvegarde((Matrice) p, f2));
+	if(plateau_sauvegarde((Matrice) p, f2))
+		tests = 1;
 	
 	fclose(f2);
 	
@@ -85,11 +64,17 @@ int main(){
 	
 	/* test de l'ouverture puis de l'affichage du plateau sauvegardé */
 	p = plateau_chargement(f2);
-	
+
+#if DEBUG_AFFICHE == 1			
 	plateau_afficher(p);
+#endif
 	
-	//chainesCapturees = captureChaines(p, pion, valide);
-	
+	if(tests == 1)
+		printf("Tests test_plateau.c: OK \n");
+	else
+		printf("Tests test_plateau.c: Problèmes durant les tests...\n");
+		
+
 	
 	return 0;
 }

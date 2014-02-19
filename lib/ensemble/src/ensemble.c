@@ -230,3 +230,22 @@ void ensemble_afficher_entier(Ensemble E){
 	
 	printf("%d]\n", *((int *) ensemble_get_courant_contenu(E)));
 }
+
+int ensemble_nbr_element(Ensemble E){
+	int x;
+	
+	if(ensemble_vide(E)){
+		return 0;
+	}
+	
+	x = 1;
+	
+	ensemble_reset_courant(E);
+	
+	while(ensemble_suivant(E)){
+		x++;
+		ensemble_set_courant(E, ensemble_get_suivant(E));
+	}
+	
+	return x;
+}

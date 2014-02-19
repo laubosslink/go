@@ -1,5 +1,7 @@
 LD_LIBRARY_PATH=$(shell pwd)
 
+DEBUG=1
+
 INCDIR=./include
 BINDIR=./bin
 LIBDIR=./lib
@@ -14,9 +16,9 @@ LDFLAGS=-L $(LIBDIR)/ensemble/bin -L $(LIBDIR)/matrice/bin \
 		-Wl,-rpath,$(LD_LIBRARY_PATH)/lib/ensemble/bin \
 		-Wl,-rpath,$(LD_LIBRARY_PATH)/lib/matrice/bin
 
-CFLAGS=-I $(INCDIR)
+CFLAGS=-I $(INCDIR) -DDEBUG_AFFICHE=$(DEBUG)
 
-.PHONY: all go doc \
+.PHONY: all go doc tests \
 		test_plateau test_libensemble test_libmatrice ensemble_colores_test \
 		libensemble libmatrice \
 		clean distclean
@@ -28,7 +30,7 @@ go: libensemble libmatrice $(BINDIR)/go
 $(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o \
 			  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/position.o \
 			  $(OBJDIR)/ensemble_positions.o $(OBJDIR)/libertes.o \
-			  $(OBJDIR)/chaines.o
+			  $(OBJDIR)/chaines.o $(OBJDIR)/pion.o
 			  
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
@@ -47,10 +49,46 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 ##
 
 # Permet d'appliquer l'ensemble des tests
-tests: test_chaines_appartient_chaine test_capture_chaines
-	$(BINDIR)/test_chaines_appartient_chaine
-	$(BINDIR)/test_capture_chaines
+tests: test_libmatrice test_libensemble test_chaines_appartient_chaine \
+		test_plateau test_determine_chaine test_determine_libertes \
+		test_capture_chaines
+	@$(LIBDIR)/matrice/bin/test_libmatrice
+	@$(LIBDIR)/ensemble/bin/test_libensemble
+	@$(BINDIR)/test_chaines_appartient_chaine
+	@$(BINDIR)/test_plateau
+	@$(BINDIR)/test_determine_chaine
+#	@$(BINDIR)/test_determine_territoire
+#	@$(BINDIR)/test_determine_libertes
+	@$(BINDIR)/test_capture_chaines
+	
+# determine_chaine
 
+test_determine_chaine: libmatrice libensemble $(BINDIR)/test_determine_chaine
+
+$(BINDIR)/test_determine_chaine: $(OBJDIR)/test_determine_chaine.o \
+										  $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o \
+										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o \
+										  $(OBJDIR)/pion.o $(OBJDIR)/plateau.o \
+										  $(OBJDIR)/libertes.o
+										  
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+$(OBJDIR)/test_determine_chaine.o: $(TESTDIR)/test_determine_chaine.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# determine_libertes
+
+test_determine_libertes: libmatrice libensemble $(BINDIR)/test_determine_libertes
+
+$(BINDIR)/test_determine_libertes: $(OBJDIR)/test_determine_libertes.o \
+										  $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o \
+										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o \
+										  $(OBJDIR)/plateau.o $(OBJDIR)/libertes.o $(OBJDIR)/pion.o 
+										  
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+$(OBJDIR)/test_determine_libertes.o: $(TESTDIR)/test_determine_libertes.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 # chaines_appartient_chaine
 
@@ -58,7 +96,7 @@ test_chaines_appartient_chaine: libmatrice libensemble $(BINDIR)/test_chaines_ap
 
 $(BINDIR)/test_chaines_appartient_chaine: $(OBJDIR)/test_chaines_appartient_chaine.o \
 										  $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o \
-										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o 
+										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o
 										  
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
@@ -67,13 +105,14 @@ $(OBJDIR)/test_chaines_appartient_chaine.o: $(TESTDIR)/test_chaines_appartient_c
 
 
 # captureChaines
-
 test_capture_chaines: libmatrice libensemble $(BINDIR)/test_capture_chaines
 
-$(BINDIR)/test_capture_chaines: $(OBJDIR)/test_capture_chaines.o $(OBJDIR)/territoire.o \
-								$(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o \
-								$(OBJDIR)/chaines.o $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o 
-								
+$(BINDIR)/test_capture_chaines: $(OBJDIR)/test_capture_chaines.o \
+										  $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o \
+										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o \
+										  $(OBJDIR)/plateau.o $(OBJDIR)/pion.o \
+										  $(OBJDIR)/libertes.o
+										  
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
 $(OBJDIR)/test_capture_chaines.o: $(TESTDIR)/test_capture_chaines.c
@@ -85,7 +124,8 @@ test_territoire: libmatrice libensemble $(BINDIR)/test_territoire
 
 $(BINDIR)/test_territoire: $(OBJDIR)/test_territoire.o $(OBJDIR)/territoire.o \
 						   $(OBJDIR)/position.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o  \
-						   $(OBJDIR)/chaines.o $(OBJDIR)/libertes.o  $(OBJDIR)/ensemble_positions.o 
+						   $(OBJDIR)/chaines.o $(OBJDIR)/libertes.o  $(OBJDIR)/ensemble_positions.o \
+						   $(OBJDIR)/pion.o
 						   
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 
@@ -98,7 +138,7 @@ test_plateau: libmatrice libensemble $(BINDIR)/test_plateau
 
 $(BINDIR)/test_plateau: $(OBJDIR)/test_plateau.o $(OBJDIR)/plateau.o $(OBJDIR)/ensemble_colores.o \
 						$(OBJDIR)/libertes.o $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o  \
-						$(OBJDIR)/chaines.o 
+						$(OBJDIR)/chaines.o $(OBJDIR)/pion.o 
 						
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
 

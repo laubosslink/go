@@ -35,6 +35,12 @@ typedef Ensemble_Colores Territoire;
 #include <position.h>
 
 /**
+ * Permet de créer un territoire
+ * @return un territoire
+ */
+Territoire creer_territoire();
+
+/**
  * Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des
  * pierres de meme couleur en commencant par l'intersection vide a la position pos.
  * Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble

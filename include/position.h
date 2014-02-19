@@ -26,18 +26,11 @@
 
 #include <ensemble.h>
 
-typedef struct Position Position;
-
 /**
  * @brief structure d'une position qui permet de définir une position 2D. Cette structure comporte l'absice et l'ordonné de la position.
  */
-struct Position {
-	/** Position x */
-	int x;
+typedef struct Position* Position;
 
-	/** Position y */
-	int y;
-};
 
 /**
  * Permet de creer une position
@@ -45,14 +38,41 @@ struct Position {
  * @param y l'ordonnee
  * @return un pointeur vers la position alloue
  */
-Position* creer_position(int x, int y);
+Position creer_position(int x, int y);
+
+/**
+ * Permet de copier une position actuelle dans une nouvelle
+ * @param pos la position actuelle
+ * @return une nouvelle position
+ */
+Position position_copy(Position pos);
+
+/**
+ * Permet de détruire une position
+ * @param p la position
+ */
+void detruire_position(Position p);
+
+/**
+ * Permet de récupérer l'abcisse de la position p
+ * @param p le pointeur sur la position
+ * @return x l'abcisse
+ */
+int position_get_x(Position p);
+
+/**
+ * Permet de récupérer l'ordonnée de la position p
+ * @param p le pointeur sur la position
+ * @return x l'ordonnée
+ */
+int position_get_y(Position p); 
 
 /**
  * Permet de récupérer la position actuelle d'un ensemble
  * @param E l'ensemble
  * @return Un pointeur vers une position
  */
-Position* position_get_courant(Ensemble E);
+Position position_get_courant(Ensemble E);
 
 /**
  * Permet de se deplacer vers le haut

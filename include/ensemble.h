@@ -131,4 +131,11 @@ void ensemble_afficher_pointeur(Ensemble E);
  */
 void ensemble_afficher_entier(Ensemble E);
 
+/**
+ * Permet de connaitre le nombre d'éléments d'un ensemble
+ * @param E l'ensemble
+ * @return le nombre d'éléments
+ */
+int ensemble_nbr_element(Ensemble E);
+
 #endif

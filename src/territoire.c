@@ -27,7 +27,13 @@
 #include <plateau.h>
 #include <position.h>
 
+Territoire creer_territoire(){
+	return (Territoire) creer_ensemble_colores();
+}
+
 void determineTerritoireRec(Plateau plateau, Position pos, Territoire t){
+	
+	/* si la position n'est pas dans le plateau on s'arrête */
 	if(!plateau_position_appartient(plateau, pos))
 		return;
 	
@@ -42,17 +48,24 @@ void determineTerritoireRec(Plateau plateau, Position pos, Territoire t){
 	if(plateau_get_pos(plateau, pos) != VIDE)
 		return;
 	
-	if(ensemble_colores_appartient(t, &pos))
+	/* si la position appartient déjà à l'ensemble on s'arrête la */
+	if(ensemble_colores_appartient(t, pos))
 		return;
 	
 	/* ajout de la position actuelle */
-	ensemble_colores_ajouter(t, creer_position(pos.x, pos.y));
+	ensemble_colores_ajouter(t, position_copy(pos));
 	
 	determineTerritoireRec(plateau, haut(pos), t);
-	determineTerritoireRec(plateau, bas(pos), t);
-	determineTerritoireRec(plateau, gauche(pos), t);
-	determineTerritoireRec(plateau, droite(pos), t);
+	bas(pos);
 	
+	determineTerritoireRec(plateau, bas(pos), t);
+	haut(pos);
+	
+	determineTerritoireRec(plateau, gauche(pos), t);
+	droite(pos);
+	
+	determineTerritoireRec(plateau, droite(pos), t);
+	gauche(pos);
 }
 
 Territoire determineTerritoire(Plateau plateau, Position pos){
@@ -60,22 +73,28 @@ Territoire determineTerritoire(Plateau plateau, Position pos){
 	
 	/* si la position n'appartient pas au plateau on s'arrete */
 	if(!plateau_position_appartient(plateau, pos))
-		return;
+		return NULL;
 	
 	/* si ce n'est pas une case vide, on est deja pas sur un territoire */
 	if(plateau_get_pos(plateau, pos) != VIDE)
-		return;
+		return NULL;
 	
-	/* @todo creer_territoire */
-	t = creer_ensemble_colores();
+	t = creer_territoire();
 	ensemble_colores_set_couleur(t, INDEFINI);
 
-	ensemble_colores_ajouter(t, creer_position(pos.x, pos.y));
+	ensemble_colores_ajouter(t, position_copy(pos));
 	
 	determineTerritoireRec(plateau, haut(pos), t);
+	bas(pos);
+	
 	determineTerritoireRec(plateau, bas(pos), t);
+	haut(pos);
+	
 	determineTerritoireRec(plateau, gauche(pos), t);
+	droite(pos);
+	
 	determineTerritoireRec(plateau, droite(pos), t);
+	gauche(pos);
 	
 	return t;
 }

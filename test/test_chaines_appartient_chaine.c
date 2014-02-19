@@ -13,24 +13,28 @@ int main(){
 	Chaine chaine3 = creer_ensemble_colores();
 	Chaine chaine4 = creer_ensemble_colores();
 	
-	Position pos;
+	Position pos = creer_position(5, 5);
 	
-	pos.x = 5;
-	pos.y = 5;
+	Position pos_check = creer_position(5, 5);
 	
 	ensemble_colores_set_couleur(chaine1, 1);
-	ensemble_colores_ajouter(chaine1, creer_position(pos.x, pos.y));
-	ensemble_colores_ajouter(chaine1, creer_position(pos.x++, pos.y++));
+	ensemble_colores_ajouter(chaine1, position_copy(pos));
 	
+	haut(pos); gauche(pos);
+	ensemble_colores_ajouter(chaine1, position_copy(pos));
 	
+	haut(pos); gauche(pos);
 	ensemble_colores_set_couleur(chaine2, 1);
-	ensemble_colores_ajouter(chaine2, creer_position(pos.x, pos.y));
-	ensemble_colores_ajouter(chaine2, creer_position(pos.x+1, pos.y+1));
+	ensemble_colores_ajouter(chaine2, position_copy(pos));
+	
+	haut(pos); gauche(pos);
+	ensemble_colores_ajouter(chaine2, position_copy(pos));
 	
 	ensemble_colores_set_couleur(chaine3, 1);
-	ensemble_colores_ajouter(chaine3, creer_position(pos.x--, pos.y--));
+	ensemble_colores_ajouter(chaine3, pos_check);
 
-	ensemble_colores_ajouter(chaine4, creer_position(pos.x+20, pos.y));
+	haut(pos); gauche(pos);
+	ensemble_colores_ajouter(chaine4, position_copy(pos));
 	
 	ensemble_ajouter(chaines, chaine1);
 	ensemble_ajouter(chaines, chaine2);

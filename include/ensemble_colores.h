@@ -56,20 +56,20 @@ int ensemble_colores_vide(Ensemble_Colores E);
  * @param element l'élément
  * @return 1 si il appartient, 0 sinon
  */
-int ensemble_colores_appartient(Ensemble_Colores E, Position* element);
+int ensemble_colores_appartient(Ensemble_Colores E, Position element);
 
 /**
  * Permet d'ajouter un élément dans un ensemble
  * @param element l'élément à ajouter
  */	
-void ensemble_colores_ajouter(Ensemble_Colores E, Position* element);
+void ensemble_colores_ajouter(Ensemble_Colores E, Position element);
 
 /**
  * Permet de supprimer un élément dans l'ensemble
  * @param element l'élement à supprimer
  * @return E pointeur vers le nouvel ensemble privé de l'élément supprimé
  */
-Ensemble_Colores ensemble_colores_enlever(Ensemble_Colores E, Position* element);
+Ensemble_Colores ensemble_colores_enlever(Ensemble_Colores E, Position element);
 
 /**
  * Permet de positionner le pointeur tête sur le debut de mon ensemble
@@ -114,7 +114,7 @@ void ensemble_colores_reset(Ensemble_Colores E);
  * @param l'ensemble E
  * @return un pointeur sur la position courante
  */
-Position* ensemble_colores_get_courant(Ensemble_Colores E);
+Position ensemble_colores_get_courant(Ensemble_Colores E);
 
 /**
  * Permet de pointer le courant sur une autre cellule
@@ -135,5 +135,12 @@ Cell ensemble_colores_get_suivant(Ensemble_Colores E);
  * @param E l'ensemble colores
  */
 void ensemble_colores_affiche(Ensemble_Colores E);
+
+/**
+ * Permet de connaitre le nombre d'éléments dans l'ensemble de positions
+ * @param l'ensemble colores
+ * @return le nombre d'éléments
+ */
+int ensemble_colores_nbr_element(Ensemble_Colores E);
 
 #endif

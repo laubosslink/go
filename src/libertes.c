@@ -12,7 +12,7 @@
  */
  
 /**
- * @author ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr>
+ * @author ELHIMDI Yasmine <yasmine.elhimdi@ecole.ensicaen.fr>
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
@@ -37,11 +37,9 @@
 #include <plateau.h>
 #include <chaine.h>
 
-Libertes determineLiberte(Plateau plateau, Chaine chaine){ /** @todo réfléchir sur le struct dans le .c, et conséquence sur chaine */
+Libertes determineLiberte(Plateau plateau, Chaine chaine){ 
 	Libertes l;
-	Position pc; /* la position courante */
-	//Position pd; /* la position de déplacement */ 
-	Position* pa; /* la position a ajouter */
+	Position pos, pos_haut, pos_bas, pos_gauche, pos_droite;
 	
 	if(ensemble_colores_vide(chaine))
 		return NULL;
@@ -51,59 +49,54 @@ Libertes determineLiberte(Plateau plateau, Chaine chaine){ /** @todo réfléchir
 	ensemble_colores_reset(chaine);
 	
 	while(ensemble_colores_suivant(chaine)){
-		pc.x = ((Position *) ensemble_colores_get_courant(chaine))->x;
-		pc.y = ((Position *) ensemble_colores_get_courant(chaine))->y;
+		pos = ensemble_colores_get_courant(chaine);
 		
-		pc.x++; /** @todo utiliser haut,bas,gauche,droite */
-		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
+		pos_haut = haut(pos);
+		pos_bas = bas(pos);
+		pos_gauche = gauche(pos);
+		pos_droite = droite(pos);
+		
+		if(plateau_position_appartient(plateau, pos_haut) && plateau_get_pos(plateau, pos_haut) == VIDE){
+			ensemble_positions_ajouter(l, pos_haut);
 		}
 		
-		pc.x -= 2;
-		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
-		}
-		pc.x++;
-		
-		pc.y++;
-		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
+		if(plateau_position_appartient(plateau, pos_bas) && plateau_get_pos(plateau, pos_bas) == VIDE){
+			ensemble_positions_ajouter(l, pos_bas);
 		}
 		
-		pc.y -= 2;
-		if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-			ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
+		if(plateau_position_appartient(plateau, pos_gauche) && plateau_get_pos(plateau, pos_gauche) == VIDE){
+			ensemble_positions_ajouter(l, pos_gauche);
 		}
-		pc.y++;
+		
+		if(plateau_position_appartient(plateau, pos_droite) && plateau_get_pos(plateau, pos_droite) == VIDE){
+			ensemble_positions_ajouter(l, pos_droite);
+		}
 		
 		ensemble_colores_set_courant(chaine, ensemble_colores_get_suivant(chaine));
 	}
 	
-	pc.x = ((Position *) ensemble_colores_get_courant(chaine))->x;
-	pc.y = ((Position *) ensemble_colores_get_courant(chaine))->y;
+	pos = ensemble_colores_get_courant(chaine);
+	
+	pos_haut = haut(pos);
+	pos_bas = bas(pos);
+	pos_gauche = gauche(pos);
+	pos_droite = droite(pos);
 
-	pc.x++;
-	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		pa = creer_position(pc.x, pc.y);
-		ensemble_positions_ajouter(l, pa);
+	if(plateau_position_appartient(plateau, pos_haut) && plateau_get_pos(plateau, pos_haut) == VIDE){
+		ensemble_positions_ajouter(l, pos_haut);
 	}
 	
-	pc.x -= 2;
-	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
-	}
-	pc.x++;
-	
-	pc.y++;
-	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
+	if(plateau_position_appartient(plateau, pos_bas) && plateau_get_pos(plateau, pos_bas) == VIDE){
+		ensemble_positions_ajouter(l, pos_bas);
 	}
 	
-	pc.y -= 2;
-	if(plateau_position_appartient(plateau, pc) && plateau_get(plateau, pc.x, pc.y) == VIDE){
-		ensemble_positions_ajouter(l, creer_position(pc.x, pc.y));
+	if(plateau_position_appartient(plateau, pos_gauche) && plateau_get_pos(plateau, pos_gauche) == VIDE){
+		ensemble_positions_ajouter(l, pos_gauche);
 	}
-	pc.y++;
+	
+	if(plateau_position_appartient(plateau, pos_droite) && plateau_get_pos(plateau, pos_droite) == VIDE){
+		ensemble_positions_ajouter(l, pos_droite);
+	}
 
 	return l;
 }

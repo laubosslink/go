@@ -52,6 +52,9 @@ void ensemble_colores_init(Ensemble_Colores E){
 }
 
 int ensemble_colores_vide(Ensemble_Colores E){
+	if(E == NULL)
+		return 1;
+	
 	return ensemble_vide(E->p);
 }
 
@@ -67,12 +70,16 @@ int ensemble_colores_suivant(Ensemble_Colores E){
 	return ensemble_suivant(E->p);
 }
 
-Position* ensemble_colores_get_courant(Ensemble_Colores E){
-	return (Position *) ensemble_get_courant_contenu(E->p);
+Position ensemble_colores_get_courant(Ensemble_Colores E){
+	return (Position) ensemble_get_courant_contenu(E->p);
 }
 
-int ensemble_colores_appartient(Ensemble_Colores E, Position* element){
+int ensemble_colores_appartient(Ensemble_Colores E, Position element){
 	Positions p = E->p;
+	int x,y;
+	
+	x=position_get_x(element);
+	y=position_get_y(element);
 	
 	if(ensemble_vide(p))
 		return 0;
@@ -80,30 +87,30 @@ int ensemble_colores_appartient(Ensemble_Colores E, Position* element){
 	ensemble_reset_courant(p);
 	
 	while(ensemble_suivant(p)){
-		/** @todo il ne devrait pas y avoir de cast... on attend les fonctions pour position_get_x, etc... */
-		if(element->x == ((Position*)ensemble_colores_get_courant(E))->x && element->y == ((Position*)ensemble_colores_get_courant(E))->y)
+		/** @todo cast ??*/
+		if(x == position_get_x(((Position)ensemble_colores_get_courant(E))) && y == position_get_y(((Position)ensemble_colores_get_courant(E))))
 			return 1;
 			
 		ensemble_set_courant(p, ensemble_get_suivant(p));
 	}
 	
-	if(element->x == ((Position*)ensemble_colores_get_courant(E))->x && element->y == ((Position*)ensemble_colores_get_courant(E))->y)
+	if(x == position_get_x(((Position)ensemble_colores_get_courant(E))) && y == position_get_y(((Position)ensemble_colores_get_courant(E))))
 		return 1;
 	
 	return 0;
 }
 
-Ensemble_Colores ensemble_colores_enlever(Ensemble_Colores E, Position* element){
+Ensemble_Colores ensemble_colores_enlever(Ensemble_Colores E, Position element){
 	ensemble_enlever(E->p, element);
 	return E;
 } 
 	
-void ensemble_colores_ajouter(Ensemble_Colores E, Position* element){
+void ensemble_colores_ajouter(Ensemble_Colores E, Position element){
 	/* permet de ne pas ajouter des doublons ! */
 	if(ensemble_colores_appartient(E, element))
 		return;
 		
-	return ensemble_ajouter(E->p, (Position*) element);
+	return ensemble_ajouter(E->p, (Position) element);
 }
 
 void ensemble_colores_set_couleur(Ensemble_Colores E, Couleur c){
@@ -136,9 +143,13 @@ void ensemble_colores_affiche(Ensemble_Colores E){
 	ensemble_colores_reset(E);
 	
 	while(ensemble_colores_suivant(E)){
-		printf("{%d, %d}, ",  ((Position*)ensemble_colores_get_courant(E))->x, ((Position*)ensemble_colores_get_courant(E))->y);
+		printf("{%d, %d}, ",  position_get_x(((Position)ensemble_colores_get_courant(E))), position_get_y(((Position)ensemble_colores_get_courant(E))));
 		ensemble_colores_set_courant(E, ensemble_colores_get_suivant(E));
 	}
 	
-	printf("{%d, %d}]\n",  ((Position*)ensemble_colores_get_courant(E))->x, ((Position*)ensemble_colores_get_courant(E))->y);
+	printf("{%d, %d}]\n",  position_get_x(((Position)ensemble_colores_get_courant(E))), position_get_y(((Position)ensemble_colores_get_courant(E))));
+}
+
+int ensemble_colores_nbr_element(Ensemble_Colores E){
+	return ensemble_nbr_element(E->p);
 }

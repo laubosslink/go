@@ -30,12 +30,26 @@
 /**
  * @brief Structure d'un pion qui contient la position du pion et sa couleur.
  */
-typedef struct Pion {
-	/** La position du pion */
-	Position p;
+typedef struct Pion* Pion;
 
-	/** La couleur du pion */
-	Couleur c;
-} Pion;
+/**
+ * Permet de créer un pion
+ * @return un nouveau pion
+ */
+Pion creer_pion(Couleur c, Position p);
+
+/**
+ * Permet de récupérer la position du pion 
+ * @param pion 
+ * @return la position du pion
+ */
+Position pion_get_position(Pion pion);
+
+/**
+ * Permet de récupérer la couleur du pion
+ * @param pion
+ * @return la couleur du pion
+ */
+Couleur pion_get_color(Pion pion);
 
 #endif

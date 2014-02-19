@@ -58,20 +58,20 @@ int ensemble_positions_vide(Ensemble_Positions E);
  * @param element l'élément
  * @return 1 si il appartient, 0 sinon
  */
-int ensemble_positions_appartient(Ensemble_Positions E, Position* element);
+int ensemble_positions_appartient(Ensemble_Positions E, Position element);
 
 /**
  * Permet d'ajouter un élément dans un ensemble
  * @param element l'élément à ajouter
  */	
-void ensemble_positions_ajouter(Ensemble_Positions E, Position* element);
+void ensemble_positions_ajouter(Ensemble_Positions E, Position element);
 
 /**
  * Permet de supprimer un élément dans l'ensemble
  * @param element l'élement à supprimer
  * @return E pointeur vers le nouvel ensemble privé de l'élément supprimé
  */
-Ensemble_Positions ensemble_positions_enlever(Ensemble_Positions E, Position* element);
+Ensemble_Positions ensemble_positions_enlever(Ensemble_Positions E, Position element);
 
 /**
  * Permet de positionner le pointeur tête sur le debut de mon ensemble
@@ -96,7 +96,7 @@ int ensemble_positions_suivant(Ensemble_Positions E);
  * @param E l'ensemble de positions
  * @return une position
  */
-Position* ensemble_positions_get_courant(Ensemble_Positions E);
+Position ensemble_positions_get_courant(Ensemble_Positions E);
 
 /**
  * Permet d'afficher l'ensemble des positions

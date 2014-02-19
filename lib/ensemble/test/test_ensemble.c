@@ -28,6 +28,8 @@
 #include <ensemble.h>
 	
 int main(){
+	int tests = 0;
+	
 	Ensemble E;
 	Ensemble A;
 	Ensemble e;
@@ -41,13 +43,17 @@ int main(){
 	ensemble_ajouter(E, t+1);
 	ensemble_ajouter(E, t+2);
 	ensemble_ajouter(E, t+3);
-	
+
+	if(ensemble_nbr_element(E) == 4)
+		tests = 1;
+
+#if DEBUG_AFFICHE == 1	
 	// on regarde les adresses du tableau t
 	printf("adr1: %p\n", t); 
 	printf("adr2: %p\n", t+1); 
 	printf("adr3: %p\n", t+2); 
 	printf("adr3: %p\n\n", t+3); 
-	
+
 	// on affiche les adresses des contenus dans la liste pour voir si elles sont exactement pareil que celle du tableau t
 	ensemble_afficher_pointeur(E);
 	
@@ -59,20 +65,35 @@ int main(){
 	
 	// On check si une adresse appartient à l'ensemble
 	printf("Appartient (%p): %d\n\n", t+4, ensemble_appartient(E, t+4));
+#endif
 	
+	tests = (ensemble_appartient(E, t+2) && tests == 1) ? 1 : 0;
+		
+	tests = (!ensemble_appartient(E, t+4) && tests == 1) ? 1 : 0;
+		
 	ensemble_enlever(E, t+3);
+	
+	tests = (!ensemble_appartient(E, t+3) && tests == 1) ? 1 : 0;
 	
 	A = creer_ensemble();
 	
 	ensemble_ajouter(A, t+3);
 	ensemble_ajouter(A, t+3);
 	ensemble_ajouter(A, t+3);
-	
+
+	tests = (ensemble_nbr_element(A) == 1 && tests == 1) ? 1 : 0;
+
+#if DEBUG_AFFICHE == 1	
 	ensemble_afficher_entier(A);
-	
+#endif
+
 	A = ensemble_concatene(A, E);
 	
+	tests = (ensemble_nbr_element(A) == 4 && tests == 1) ? 1 : 0;
+		
+#if DEBUG_AFFICHE == 1
 	ensemble_afficher_entier(A);
+#endif
 	
 	e = creer_ensemble();
 	
@@ -80,8 +101,18 @@ int main(){
 	ensemble_ajouter(e, t+2);
 	ensemble_ajouter(e, t+3);
 	ensemble_ajouter(e, t+3);
-	ensemble_afficher_entier(e);
+
+	tests = (ensemble_nbr_element(e) == 3 && tests == 1) ? 1 : 0;
 	
+#if DEBUG_AFFICHE == 1
+	ensemble_afficher_entier(e);
+#endif
+
+	if(tests == 1)
+		printf("Tests libensemble: OK\n");
+	else
+		printf("Tests libensemble: Problèmes durant les tests...\n");
+
 	return 0;
 }
 
