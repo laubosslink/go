@@ -71,8 +71,6 @@ void plateau_set(Plateau p, int i, int j, Couleur c){
 }
 
 void plateau_determiner_chaine_rec(Plateau plateau, Position pos, Chaine chaine){
-	Position p;
-	
 	/* Si la position reçu sort du plateau, ou qu'elle ne correspond pas à la couleur rechercher, on s'arrête */
 	if(!plateau_position_appartient(plateau, pos) || plateau_get_pos(plateau, pos) != ensemble_colores_get_couleur(chaine))
 		return;
