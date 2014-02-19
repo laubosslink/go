@@ -27,7 +27,7 @@ go: libensemble libmatrice $(BINDIR)/go
 
 $(BINDIR)/go: $(OBJDIR)/go.o $(OBJDIR)/partie.o $(OBJDIR)/plateau.o \
 			  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/position.o \
-			  $(OBJDIR)/ensemble_positions.o  $(OBJDIR)/libertes.o \
+			  $(OBJDIR)/ensemble_positions.o $(OBJDIR)/libertes.o \
 			  $(OBJDIR)/chaines.o
 			  
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
@@ -46,8 +46,11 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 # TESTS
 ##
 
-tests: test_chaines_appartient_chaine
+# Permet d'appliquer l'ensemble des tests
+tests: test_chaines_appartient_chaine test_capture_chaines
 	$(BINDIR)/test_chaines_appartient_chaine
+	$(BINDIR)/test_capture_chaines
+
 
 # chaines_appartient_chaine
 

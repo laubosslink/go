@@ -105,7 +105,8 @@ Fonctions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a715838df2af0c1e069d599aeaf4f5289">matrice_sauvegarde</a> (<a class="el" href="structMatrice.html">Matrice</a> m, FILE *fichier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a953581802ad453995a4aa2734a4811ec">matrice_get_nombre_ligne</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a41a8f1e3137415b39aa71bed0726acb9">matrice_get_nombre_colonne</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#af5b766a59878a3e786a71504aa229392">matrice_get_donnees</a> (<a class="el" href="structMatrice.html">Matrice</a> m)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a4541b516f58ce4f53fbf62cc47423498">matrice_get_donnees</a> (<a class="el" href="structMatrice.html">Matrice</a> m, int i, int j)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a4c816bfdbcac924c457605a9557ce4e2">matrice_get_donnees_ligne</a> (<a class="el" href="structMatrice.html">Matrice</a> m, int j)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="matrice_8h.html#a60ac0ff9f5194157c8ce2e1fbb66a233">matrice_set_donnees</a> (<a class="el" href="structMatrice.html">Matrice</a> m, int i, int j, int data)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
@@ -219,28 +220,82 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 </div>
 </div>
-<a class="anchor" id="af5b766a59878a3e786a71504aa229392"></a><!-- doxytag: member="matrice.h::matrice_get_donnees" ref="af5b766a59878a3e786a71504aa229392" args="(Matrice m)" -->
+<a class="anchor" id="a4541b516f58ce4f53fbf62cc47423498"></a><!-- doxytag: member="matrice.h::matrice_get_donnees" ref="a4541b516f58ce4f53fbf62cc47423498" args="(Matrice m, int i, int j)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int** <a class="el" href="matrice_8c.html#af5b766a59878a3e786a71504aa229392">matrice_get_donnees</a> </td>
+          <td class="memname">int <a class="el" href="matrice_8c.html#a4541b516f58ce4f53fbf62cc47423498">matrice_get_donnees</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td>
-          <td class="paramname"><em>m</em></td><td>)</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Permet de récupérer l'ensemble des données de la matrice </p>
+<p>Permet de récupérer une donnée de la matrice </p>
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>la matrice </td></tr>
+    <tr><td class="paramname">j</td><td>la hauteur (ligne) </td></tr>
+    <tr><td class="paramname">i</td><td>la largeur (colonne) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Renvoie:</b></dt><dd>les données </dd></dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>une donnée </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4c816bfdbcac924c457605a9557ce4e2"></a><!-- doxytag: member="matrice.h::matrice_get_donnees_ligne" ref="a4c816bfdbcac924c457605a9557ce4e2" args="(Matrice m, int j)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int* <a class="el" href="matrice_8c.html#a4c816bfdbcac924c457605a9557ce4e2">matrice_get_donnees_ligne</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMatrice.html">Matrice</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Permet de récupérer les données d'une ligne </p>
+<dl class="params"><dt><b>Paramètres:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>la matrice </td></tr>
+    <tr><td class="paramname">j</td><td>la ligne </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un tableau de données </dd></dl>
 
 </div>
 </div>
@@ -437,8 +492,8 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 <dl class="params"><dt><b>Paramètres:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>la matrice </td></tr>
-    <tr><td class="paramname">i</td><td>la hauteur (ligne) </td></tr>
-    <tr><td class="paramname">j</td><td>la largeur (colonne) </td></tr>
+    <tr><td class="paramname">j</td><td>la hauteur (ligne) </td></tr>
+    <tr><td class="paramname">i</td><td>la largeur (colonne) </td></tr>
     <tr><td class="paramname">data</td><td>la donnée à insérer </td></tr>
   </table>
   </dd>
@@ -464,7 +519,7 @@ PARMENTIER Laurent &lt;<a href="mailto:parmentier@ecole.ensicaen.fr">parmentier@
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi Février 18 2014 20:38:26 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi Février 19 2014 17:48:20 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

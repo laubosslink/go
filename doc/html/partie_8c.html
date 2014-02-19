@@ -79,6 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 </div>
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle">
 <div class="title">Référence du fichier src/partie.c</div>  </div>
@@ -87,17 +88,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 <p>Le code source permettant de gérer une partie.  
 <a href="#details">Plus de détails...</a></p>
-<div class="textblock"><code>#include &lt;<a class="el" href="partie_8h_source.html">partie.h</a>&gt;</code><br/>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;<a class="el" href="partie_8h_source.html">partie.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="plateau_8h_source.html">plateau.h</a>&gt;</code><br/>
+<code>#include &lt;<a class="el" href="matrice_8h_source.html">matrice.h</a>&gt;</code><br/>
 <code>#include &lt;<a class="el" href="couleur_8h_source.html">couleur.h</a>&gt;</code><br/>
 </div><table class="memberdecls">
+<tr><td colspan="2"><h2><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPartie.html">Partie</a></td></tr>
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a6c8191cb2c1c0a145d01a5208d2017cc">partie_demande_questions</a> (int numero_question, <a class="el" href="structPartie.html">Partie</a> *partie)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPartie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a2257cb4beec2250fb4d0b5304b8de1ba">partie_initialisation</a> (<a class="el" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">FonctionQuestions</a> fonctionQuestions)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a758a38126f1d4fcdb0ea333a7238941d">echange_joueur</a> (<a class="el" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> *c)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#ac4b786eb0646ecac599b5e21f1d71982">partie_demande_questions</a> (int numero_question, <a class="el" href="structPartie.html">Partie</a> partie)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPartie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#af26b54c1a5509d0b4cae3778b320ccac">creer_partie</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPartie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a2257cb4beec2250fb4d0b5304b8de1ba">partie_initialisation</a> (<a class="el" href="partie_8h.html#a491931ba8172cd858a362e26a430d17d">FonctionQuestions</a> fonctionQuestions)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#ad8d53bf8e33d1c36956d1acd7f771cf1">partie_get_joueur1</a> (<a class="el" href="structPartie.html">Partie</a> p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a27f066b43e4e82be7346ed9ac1c99d56">partie_get_joueur2</a> (<a class="el" href="structPartie.html">Partie</a> p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#ae5c18f6afc31d5c9aa71c426b429ed7a">partie_echange_joueur</a> (<a class="el" href="structPartie.html">Partie</a> p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="plateau_8h.html#a200ab4b9e2219fb369612bcb1d40f9d5">Plateau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#aa94c71c908fa5f6aacd6c41a4435c790">partie_get_plateau</a> (<a class="el" href="structPartie.html">Partie</a> p)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#adc47d26c2f34e3fe441461fedaa7c0bb">partie_get_joueur</a> (<a class="el" href="structPartie.html">Partie</a> p)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#ae887d9089d029f0f4df07e96dae63523">partie_sauvegarde</a> (<a class="el" href="structPartie.html">Partie</a> partie, FILE *fichier)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPartie.html">Partie</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a2ab987532fb030da5d66eb14e1648e18">partie_charge</a> (FILE *fichier)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="partie_8c.html#a4e5f4a5501863be8e5a21a1bd93f21ab">partie_set_plateau</a> (<a class="el" href="structPartie.html">Partie</a> p, <a class="el" href="plateau_8h.html#a200ab4b9e2219fb369612bcb1d40f9d5">Plateau</a> plateau)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Description détaillée</h2>
 <div class="textblock"><p>Le code source permettant de gérer une partie. </p>
@@ -109,20 +122,21 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 <dl class="version"><dt><b>Version:</b></dt><dd>1.0 </dd></dl>
 <dl class="date"><dt><b>Date:</b></dt><dd>03-12-2013 </dd></dl>
 </div><hr/><h2>Documentation des fonctions</h2>
-<a class="anchor" id="a758a38126f1d4fcdb0ea333a7238941d"></a><!-- doxytag: member="partie.c::echange_joueur" ref="a758a38126f1d4fcdb0ea333a7238941d" args="(Couleur *c)" -->
+<a class="anchor" id="af26b54c1a5509d0b4cae3778b320ccac"></a><!-- doxytag: member="partie.c::creer_partie" ref="af26b54c1a5509d0b4cae3778b320ccac" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="partie_8c.html#a758a38126f1d4fcdb0ea333a7238941d">echange_joueur</a> </td>
+          <td class="memname"><a class="el" href="structPartie.html">Partie</a> <a class="el" href="partie_8c.html#af26b54c1a5509d0b4cae3778b320ccac">creer_partie</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> *&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>Permet de créer une partie </p>
+<dl class="return"><dt><b>Renvoie:</b></dt><dd>un pointeur vers une partie </dd></dl>
 
 </div>
 </div>
@@ -151,12 +165,12 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 
 </div>
 </div>
-<a class="anchor" id="a6c8191cb2c1c0a145d01a5208d2017cc"></a><!-- doxytag: member="partie.c::partie_demande_questions" ref="a6c8191cb2c1c0a145d01a5208d2017cc" args="(int numero_question, Partie *partie)" -->
+<a class="anchor" id="ac4b786eb0646ecac599b5e21f1d71982"></a><!-- doxytag: member="partie.c::partie_demande_questions" ref="ac4b786eb0646ecac599b5e21f1d71982" args="(int numero_question, Partie partie)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="partie_8c.html#a6c8191cb2c1c0a145d01a5208d2017cc">partie_demande_questions</a> </td>
+          <td class="memname">void <a class="el" href="partie_8c.html#ac4b786eb0646ecac599b5e21f1d71982">partie_demande_questions</a> </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>numero_question</em>, </td>
@@ -164,7 +178,7 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
           <td class="paramname"><em>partie</em>&#160;</td>
         </tr>
         <tr>
@@ -186,6 +200,91 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 
 </div>
 </div>
+<a class="anchor" id="ae5c18f6afc31d5c9aa71c426b429ed7a"></a><!-- doxytag: member="partie.c::partie_echange_joueur" ref="ae5c18f6afc31d5c9aa71c426b429ed7a" args="(Partie p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="partie_8c.html#ae5c18f6afc31d5c9aa71c426b429ed7a">partie_echange_joueur</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adc47d26c2f34e3fe441461fedaa7c0bb"></a><!-- doxytag: member="partie.c::partie_get_joueur" ref="adc47d26c2f34e3fe441461fedaa7c0bb" args="(Partie p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="el" href="partie_8c.html#adc47d26c2f34e3fe441461fedaa7c0bb">partie_get_joueur</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad8d53bf8e33d1c36956d1acd7f771cf1"></a><!-- doxytag: member="partie.c::partie_get_joueur1" ref="ad8d53bf8e33d1c36956d1acd7f771cf1" args="(Partie p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="partie_8c.html#ad8d53bf8e33d1c36956d1acd7f771cf1">partie_get_joueur1</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a27f066b43e4e82be7346ed9ac1c99d56"></a><!-- doxytag: member="partie.c::partie_get_joueur2" ref="a27f066b43e4e82be7346ed9ac1c99d56" args="(Partie p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* <a class="el" href="partie_8c.html#a27f066b43e4e82be7346ed9ac1c99d56">partie_get_joueur2</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aa94c71c908fa5f6aacd6c41a4435c790"></a><!-- doxytag: member="partie.c::partie_get_plateau" ref="aa94c71c908fa5f6aacd6c41a4435c790" args="(Partie p)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="plateau_8h.html#a200ab4b9e2219fb369612bcb1d40f9d5">Plateau</a> <a class="el" href="partie_8c.html#aa94c71c908fa5f6aacd6c41a4435c790">partie_get_plateau</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a2257cb4beec2250fb4d0b5304b8de1ba"></a><!-- doxytag: member="partie.c::partie_initialisation" ref="a2257cb4beec2250fb4d0b5304b8de1ba" args="(FonctionQuestions fonctionQuestions)" -->
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +292,7 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
         <tr>
           <td class="memname"><a class="el" href="structPartie.html">Partie</a> <a class="el" href="partie_8c.html#a2257cb4beec2250fb4d0b5304b8de1ba">partie_initialisation</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="partie_8h.html#ac95c1237507b0e72ab459319522c1c43">FonctionQuestions</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="partie_8h.html#a491931ba8172cd858a362e26a430d17d">FonctionQuestions</a>&#160;</td>
           <td class="paramname"><em>fonctionQuestions</em></td><td>)</td>
           <td></td>
         </tr>
@@ -247,6 +346,33 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 
 </div>
 </div>
+<a class="anchor" id="a4e5f4a5501863be8e5a21a1bd93f21ab"></a><!-- doxytag: member="partie.c::partie_set_plateau" ref="a4e5f4a5501863be8e5a21a1bd93f21ab" args="(Partie p, Plateau plateau)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="partie_8c.html#a4e5f4a5501863be8e5a21a1bd93f21ab">partie_set_plateau</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structPartie.html">Partie</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="plateau_8h.html#a200ab4b9e2219fb369612bcb1d40f9d5">Plateau</a>&#160;</td>
+          <td class="paramname"><em>plateau</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -265,7 +391,7 @@ EL HIMDI Yasmine &lt;<a href="mailto:yasmine.elhimdi@ecole.enciscaen.fr">yasmine
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi Février 18 2014 20:38:26 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi Février 19 2014 17:48:20 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

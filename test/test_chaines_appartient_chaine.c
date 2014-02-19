@@ -29,6 +29,8 @@ int main(){
 	
 	ensemble_colores_set_couleur(chaine3, 1);
 	ensemble_colores_ajouter(chaine3, creer_position(pos.x--, pos.y--));
+
+	ensemble_colores_ajouter(chaine4, creer_position(pos.x+20, pos.y));
 	
 	ensemble_ajouter(chaines, chaine1);
 	ensemble_ajouter(chaines, chaine2);
@@ -42,7 +44,7 @@ int main(){
 	if(tests == 1)
 		printf("Tests chaines_appartient_chaine(...): OK\n");
 	else
-		printf("Tests: Problèmes durant les tests...");
+		printf("Tests chaines_appartient_chaine(...): Problèmes durant les tests...\n");
 		
 	return 0;
 }

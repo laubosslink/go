@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['echange_5fjoueur',['echange_joueur',['../partie_8c.html#a758a38126f1d4fcdb0ea333a7238941d',1,'partie.c']]],
   ['ensemble',['Ensemble',['../structEnsemble.html',1,'Ensemble'],['../ensemble_8h.html#a1923a9717c2c221963ac521c7743711f',1,'Ensemble():&#160;ensemble.h']]],
   ['ensemble_2ec',['ensemble.c',['../ensemble_8c.html',1,'']]],
   ['ensemble_2eh',['ensemble.h',['../ensemble_8h.html',1,'']]],
@@ -34,6 +33,7 @@ var searchData=
   ['ensemble_5fpositions',['Ensemble_Positions',['../ensemble__positions_8h.html#aa8ccfd582dee1b5a703aee4c0c809de1',1,'ensemble_positions.h']]],
   ['ensemble_5fpositions_2ec',['ensemble_positions.c',['../ensemble__positions_8c.html',1,'']]],
   ['ensemble_5fpositions_2eh',['ensemble_positions.h',['../ensemble__positions_8h.html',1,'']]],
+  ['ensemble_5fpositions_5faffiche',['ensemble_positions_affiche',['../ensemble__positions_8h.html#a21c54da9cd6ede0ff72040097011404d',1,'ensemble_positions_affiche(Ensemble_Positions E):&#160;ensemble_positions.c'],['../ensemble__positions_8c.html#a21c54da9cd6ede0ff72040097011404d',1,'ensemble_positions_affiche(Ensemble_Positions E):&#160;ensemble_positions.c']]],
   ['ensemble_5fpositions_5fajouter',['ensemble_positions_ajouter',['../ensemble__positions_8h.html#a1d7df599796910bc729d25ba737d356d',1,'ensemble_positions_ajouter(Ensemble_Positions E, Position *element):&#160;ensemble_positions.c'],['../ensemble__positions_8c.html#a1d7df599796910bc729d25ba737d356d',1,'ensemble_positions_ajouter(Ensemble_Positions E, Position *element):&#160;ensemble_positions.c']]],
   ['ensemble_5fpositions_5fappartient',['ensemble_positions_appartient',['../ensemble__positions_8h.html#a29bcd0ec665670c98cbe8033713fe26d',1,'ensemble_positions_appartient(Ensemble_Positions E, Position *element):&#160;ensemble_positions.c'],['../ensemble__positions_8c.html#a29bcd0ec665670c98cbe8033713fe26d',1,'ensemble_positions_appartient(Ensemble_Positions E, Position *element):&#160;ensemble_positions.c']]],
   ['ensemble_5fpositions_5fcourant',['ensemble_positions_courant',['../ensemble__positions_8h.html#aee5c47d90a36aa00ab556d06bd94c2aa',1,'ensemble_positions_courant(Ensemble_Positions E):&#160;ensemble_positions.c'],['../ensemble__positions_8c.html#aee5c47d90a36aa00ab556d06bd94c2aa',1,'ensemble_positions_courant(Ensemble_Positions E):&#160;ensemble_positions.c']]],

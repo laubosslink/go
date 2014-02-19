@@ -4,6 +4,24 @@
 #include <pion.h>
 #include <position.h>
 
+int nbr_elmt(Chaines E)
+{
+	int x = 1;
+	
+	if(ensemble_vide(E)){
+		return 0;
+	}
+	
+	ensemble_reset_courant(E);
+	
+	while(ensemble_suivant(E)){
+		x++;
+		ensemble_set_courant(E, ensemble_get_suivant(E));
+	}
+	
+	return x;
+}
+
 void affiche_positions(Ensemble_Colores E){
 	if(ensemble_colores_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
@@ -37,7 +55,7 @@ void affiche_captures(Chaines chaines){
 	while(ensemble_suivant(chaines)){
 		cc = ensemble_get_courant_contenu(chaines);
 		
-		printf("\n\nChaine capturée: \n");
+		printf("\nChaine capturée: \n");
 		affiche_positions(cc);
 		
 		ensemble_set_courant(chaines, ensemble_get_suivant(chaines));
@@ -50,6 +68,8 @@ void affiche_captures(Chaines chaines){
 }
 
 int main(){
+	int tests = 0;
+	
 	FILE *f = fopen("extra/plateau_test_capture_chaines.txt", "r+");
 	
 	Chaine chaine;
@@ -68,13 +88,23 @@ int main(){
 	pion.p = position;
 	pion.c = BLANC;
 	
-	plateau_afficher(plateau);
-	
+	//plateau_afficher(plateau);
+
 	chaine = plateau_determiner_chaine(plateau, position);
 	
-	affiche_positions(chaine);
+	//printf("\nChaine du pion posé: \n");
+	//affiche_positions(chaine);
 	
 	Chaines chaines_captures = captureChaines(plateau, pion, &valide);
 	
-	affiche_captures(chaines_captures);
+	//affiche_captures(chaines_captures);
+	
+	if(nbr_elmt(chaines_captures) == 3)
+		tests = 1;
+	
+	if(tests == 1)
+		printf("Tests captureChaines(...): OK\n");
+	else
+		printf("Tests captureChaines(...): Problèmes durant les tests...\n");
+		
 }

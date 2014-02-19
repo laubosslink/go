@@ -98,4 +98,10 @@ int ensemble_positions_suivant(Ensemble_Positions E);
  */
 Position* ensemble_positions_get_courant(Ensemble_Positions E);
 
+/**
+ * Permet d'afficher l'ensemble des positions
+ * @param E l'ensemble de positions
+ */
+void ensemble_positions_affiche(Ensemble_Positions E);
+
 #endif

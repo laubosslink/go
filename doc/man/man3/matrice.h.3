@@ -1,4 +1,4 @@
-.TH "include/matrice.h" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/matrice.h" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -47,7 +47,10 @@ Le fichier d'en tête qui contient la matrice\&.
 .RI "int \fBmatrice_get_nombre_colonne\fP (\fBMatrice\fP m)"
 .br
 .ti -1c
-.RI "int ** \fBmatrice_get_donnees\fP (\fBMatrice\fP m)"
+.RI "int \fBmatrice_get_donnees\fP (\fBMatrice\fP m, int i, int j)"
+.br
+.ti -1c
+.RI "int * \fBmatrice_get_donnees_ligne\fP (\fBMatrice\fP m, int j)"
 .br
 .ti -1c
 .RI "void \fBmatrice_set_donnees\fP (\fBMatrice\fP m, int i, int j, int data)"
@@ -130,16 +133,35 @@ une matrice nblig*nbcol
 .RE
 .PP
 
-.SS "int** \fBmatrice_get_donnees\fP (\fBMatrice\fPm)"Permet de récupérer l'ensemble des données de la matrice 
+.SS "int \fBmatrice_get_donnees\fP (\fBMatrice\fPm, inti, intj)"Permet de récupérer une donnée de la matrice 
 .PP
 \fBParamètres:\fP
 .RS 4
 \fIm\fP la matrice 
+.br
+\fIj\fP la hauteur (ligne) 
+.br
+\fIi\fP la largeur (colonne) 
 .RE
 .PP
 \fBRenvoie:\fP
 .RS 4
-les données 
+une donnée 
+.RE
+.PP
+
+.SS "int* \fBmatrice_get_donnees_ligne\fP (\fBMatrice\fPm, intj)"Permet de récupérer les données d'une ligne 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIm\fP la matrice 
+.br
+\fIj\fP la ligne 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+un tableau de données 
 .RE
 .PP
 
@@ -215,9 +237,9 @@ une matrice initialisé à partir d'un fichier
 .RS 4
 \fIm\fP la matrice 
 .br
-\fIi\fP la hauteur (ligne) 
+\fIj\fP la hauteur (ligne) 
 .br
-\fIj\fP la largeur (colonne) 
+\fIi\fP la largeur (colonne) 
 .br
 \fIdata\fP la donnée à insérer 
 .RE

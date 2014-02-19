@@ -87,3 +87,23 @@ void ensemble_positions_ajouter(Ensemble_Positions E, Position* element){
 Position* ensemble_positions_get_courant(Ensemble_Positions E){
 	return (Position *) ensemble_get_courant_contenu(E);
 }
+
+void ensemble_positions_affiche(Ensemble_Positions E){
+	if(ensemble_positions_vide(E)){
+		printf("Rien à afficher, la liste est vide\n");
+		return;
+	}
+	
+	ensemble_reset_courant(E);
+	
+	while(ensemble_positions_suivant(E)){
+		printf("{x=%d, ",  ((Position *) ensemble_positions_get_courant(E))->x+1);
+		printf("y=%d}\n",  ((Position *) ensemble_positions_get_courant(E))->y+1);
+		
+		ensemble_set_courant(E, ensemble_get_suivant(E));
+	}
+	
+	printf("{x=%d, ",  ((Position *) ensemble_positions_get_courant(E))->x+1);
+	printf("y=%d}\n",  ((Position *) ensemble_positions_get_courant(E))->y+1);
+	printf("\n");
+}

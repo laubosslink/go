@@ -6,21 +6,41 @@
 \-Le code source permettant de gérer une partie.  
 
 
+{\ttfamily \#include $<$stdio.\-h$>$}\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\*
 {\ttfamily \#include $<$partie.\-h$>$}\*
 {\ttfamily \#include $<$plateau.\-h$>$}\*
+{\ttfamily \#include $<$matrice.\-h$>$}\*
 {\ttfamily \#include $<$couleur.\-h$>$}\*
+\subsection*{\-Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPartie}{\-Partie}
+\end{DoxyCompactItemize}
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{partie_8c_a6c8191cb2c1c0a145d01a5208d2017cc}{partie\-\_\-demande\-\_\-questions} (int numero\-\_\-question, \hyperlink{structPartie}{\-Partie} $\ast$partie)
+void \hyperlink{partie_8c_ac4b786eb0646ecac599b5e21f1d71982}{partie\-\_\-demande\-\_\-questions} (int numero\-\_\-question, \hyperlink{structPartie}{\-Partie} partie)
 \item 
-\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8c_a2257cb4beec2250fb4d0b5304b8de1ba}{partie\-\_\-initialisation} (\hyperlink{partie_8h_ac95c1237507b0e72ab459319522c1c43}{\-Fonction\-Questions} fonction\-Questions)
+\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8c_af26b54c1a5509d0b4cae3778b320ccac}{creer\-\_\-partie} ()
 \item 
-void \hyperlink{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}{echange\-\_\-joueur} (\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} $\ast$c)
+\hyperlink{structPartie}{\-Partie} \hyperlink{partie_8c_a2257cb4beec2250fb4d0b5304b8de1ba}{partie\-\_\-initialisation} (\hyperlink{partie_8h_a491931ba8172cd858a362e26a430d17d}{\-Fonction\-Questions} fonction\-Questions)
+\item 
+char $\ast$ \hyperlink{partie_8c_ad8d53bf8e33d1c36956d1acd7f771cf1}{partie\-\_\-get\-\_\-joueur1} (\hyperlink{structPartie}{\-Partie} p)
+\item 
+char $\ast$ \hyperlink{partie_8c_a27f066b43e4e82be7346ed9ac1c99d56}{partie\-\_\-get\-\_\-joueur2} (\hyperlink{structPartie}{\-Partie} p)
+\item 
+void \hyperlink{partie_8c_ae5c18f6afc31d5c9aa71c426b429ed7a}{partie\-\_\-echange\-\_\-joueur} (\hyperlink{structPartie}{\-Partie} p)
+\item 
+\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} \hyperlink{partie_8c_aa94c71c908fa5f6aacd6c41a4435c790}{partie\-\_\-get\-\_\-plateau} (\hyperlink{structPartie}{\-Partie} p)
+\item 
+\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} \hyperlink{partie_8c_adc47d26c2f34e3fe441461fedaa7c0bb}{partie\-\_\-get\-\_\-joueur} (\hyperlink{structPartie}{\-Partie} p)
 \item 
 int \hyperlink{partie_8c_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegarde} (\hyperlink{structPartie}{\-Partie} partie, \-F\-I\-L\-E $\ast$fichier)
 \item 
 \hyperlink{structPartie}{\-Partie} \hyperlink{partie_8c_a2ab987532fb030da5d66eb14e1648e18}{partie\-\_\-charge} (\-F\-I\-L\-E $\ast$fichier)
+\item 
+void \hyperlink{partie_8c_a4e5f4a5501863be8e5a21a1bd93f21ab}{partie\-\_\-set\-\_\-plateau} (\hyperlink{structPartie}{\-Partie} p, \hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau)
 \end{DoxyCompactItemize}
 
 
@@ -41,13 +61,16 @@ int \hyperlink{partie_8c_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegar
 
 
 \subsection{\-Documentation des fonctions}
-\hypertarget{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}{\index{partie.\-c@{partie.\-c}!echange\-\_\-joueur@{echange\-\_\-joueur}}
-\index{echange\-\_\-joueur@{echange\-\_\-joueur}!partie.c@{partie.\-c}}
-\subsubsection[{echange\-\_\-joueur}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf echange\-\_\-joueur} (
+\hypertarget{partie_8c_af26b54c1a5509d0b4cae3778b320ccac}{\index{partie.\-c@{partie.\-c}!creer\-\_\-partie@{creer\-\_\-partie}}
+\index{creer\-\_\-partie@{creer\-\_\-partie}!partie.c@{partie.\-c}}
+\subsubsection[{creer\-\_\-partie}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf creer\-\_\-partie} (
 \begin{DoxyParamCaption}
-\item[{{\bf \-Couleur} $\ast$}]{c}
+{}
 \end{DoxyParamCaption}
-)}}\label{partie_8c_a758a38126f1d4fcdb0ea333a7238941d}
+)}}\label{partie_8c_af26b54c1a5509d0b4cae3778b320ccac}
+\-Permet de créer une partie \begin{DoxyReturn}{\-Renvoie}
+un pointeur vers une partie 
+\end{DoxyReturn}
 \hypertarget{partie_8c_a2ab987532fb030da5d66eb14e1648e18}{\index{partie.\-c@{partie.\-c}!partie\-\_\-charge@{partie\-\_\-charge}}
 \index{partie\-\_\-charge@{partie\-\_\-charge}!partie.c@{partie.\-c}}
 \subsubsection[{partie\-\_\-charge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf partie\-\_\-charge} (
@@ -63,14 +86,14 @@ int \hyperlink{partie_8c_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegar
 \begin{DoxyReturn}{\-Renvoie}
 \-La partie, ou \-N\-U\-L\-L si le chargement n'est pas possible 
 \end{DoxyReturn}
-\hypertarget{partie_8c_a6c8191cb2c1c0a145d01a5208d2017cc}{\index{partie.\-c@{partie.\-c}!partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}}
+\hypertarget{partie_8c_ac4b786eb0646ecac599b5e21f1d71982}{\index{partie.\-c@{partie.\-c}!partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}}
 \index{partie\-\_\-demande\-\_\-questions@{partie\-\_\-demande\-\_\-questions}!partie.c@{partie.\-c}}
 \subsubsection[{partie\-\_\-demande\-\_\-questions}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf partie\-\_\-demande\-\_\-questions} (
 \begin{DoxyParamCaption}
 \item[{int}]{numero\-\_\-question, }
-\item[{{\bf \-Partie} $\ast$}]{partie}
+\item[{{\bf \-Partie}}]{partie}
 \end{DoxyParamCaption}
-)}}\label{partie_8c_a6c8191cb2c1c0a145d01a5208d2017cc}
+)}}\label{partie_8c_ac4b786eb0646ecac599b5e21f1d71982}
 \-Questions a demande a l'utilisateur 
 \begin{DoxyParams}{\-Paramètres}
 {\em numero} & de la question \\
@@ -78,6 +101,41 @@ int \hyperlink{partie_8c_ae887d9089d029f0f4df07e96dae63523}{partie\-\_\-sauvegar
 {\em partie} & pointeur vers une partie \\
 \hline
 \end{DoxyParams}
+\hypertarget{partie_8c_ae5c18f6afc31d5c9aa71c426b429ed7a}{\index{partie.\-c@{partie.\-c}!partie\-\_\-echange\-\_\-joueur@{partie\-\_\-echange\-\_\-joueur}}
+\index{partie\-\_\-echange\-\_\-joueur@{partie\-\_\-echange\-\_\-joueur}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-echange\-\_\-joueur}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf partie\-\_\-echange\-\_\-joueur} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_ae5c18f6afc31d5c9aa71c426b429ed7a}
+\hypertarget{partie_8c_adc47d26c2f34e3fe441461fedaa7c0bb}{\index{partie.\-c@{partie.\-c}!partie\-\_\-get\-\_\-joueur@{partie\-\_\-get\-\_\-joueur}}
+\index{partie\-\_\-get\-\_\-joueur@{partie\-\_\-get\-\_\-joueur}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-get\-\_\-joueur}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Couleur} {\bf partie\-\_\-get\-\_\-joueur} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_adc47d26c2f34e3fe441461fedaa7c0bb}
+\hypertarget{partie_8c_ad8d53bf8e33d1c36956d1acd7f771cf1}{\index{partie.\-c@{partie.\-c}!partie\-\_\-get\-\_\-joueur1@{partie\-\_\-get\-\_\-joueur1}}
+\index{partie\-\_\-get\-\_\-joueur1@{partie\-\_\-get\-\_\-joueur1}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-get\-\_\-joueur1}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf partie\-\_\-get\-\_\-joueur1} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_ad8d53bf8e33d1c36956d1acd7f771cf1}
+\hypertarget{partie_8c_a27f066b43e4e82be7346ed9ac1c99d56}{\index{partie.\-c@{partie.\-c}!partie\-\_\-get\-\_\-joueur2@{partie\-\_\-get\-\_\-joueur2}}
+\index{partie\-\_\-get\-\_\-joueur2@{partie\-\_\-get\-\_\-joueur2}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-get\-\_\-joueur2}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf partie\-\_\-get\-\_\-joueur2} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_a27f066b43e4e82be7346ed9ac1c99d56}
+\hypertarget{partie_8c_aa94c71c908fa5f6aacd6c41a4435c790}{\index{partie.\-c@{partie.\-c}!partie\-\_\-get\-\_\-plateau@{partie\-\_\-get\-\_\-plateau}}
+\index{partie\-\_\-get\-\_\-plateau@{partie\-\_\-get\-\_\-plateau}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-get\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Plateau} {\bf partie\-\_\-get\-\_\-plateau} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_aa94c71c908fa5f6aacd6c41a4435c790}
 \hypertarget{partie_8c_a2257cb4beec2250fb4d0b5304b8de1ba}{\index{partie.\-c@{partie.\-c}!partie\-\_\-initialisation@{partie\-\_\-initialisation}}
 \index{partie\-\_\-initialisation@{partie\-\_\-initialisation}!partie.c@{partie.\-c}}
 \subsubsection[{partie\-\_\-initialisation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Partie} {\bf partie\-\_\-initialisation} (
@@ -111,3 +169,11 @@ une partie initialise
 \begin{DoxyReturn}{\-Renvoie}
 0 si il n'y a pas de problème, 1 sinon 
 \end{DoxyReturn}
+\hypertarget{partie_8c_a4e5f4a5501863be8e5a21a1bd93f21ab}{\index{partie.\-c@{partie.\-c}!partie\-\_\-set\-\_\-plateau@{partie\-\_\-set\-\_\-plateau}}
+\index{partie\-\_\-set\-\_\-plateau@{partie\-\_\-set\-\_\-plateau}!partie.c@{partie.\-c}}
+\subsubsection[{partie\-\_\-set\-\_\-plateau}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf partie\-\_\-set\-\_\-plateau} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Partie}}]{p, }
+\item[{{\bf \-Plateau}}]{plateau}
+\end{DoxyParamCaption}
+)}}\label{partie_8c_a4e5f4a5501863be8e5a21a1bd93f21ab}

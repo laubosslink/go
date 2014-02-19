@@ -6,6 +6,7 @@ var searchData=
   ['creer_5fensemble_5fcolores',['creer_ensemble_colores',['../ensemble__colores_8h.html#ab3cbea101a3eb9d8bc4daaf2f33b01ed',1,'creer_ensemble_colores():&#160;ensemble_colores.c'],['../ensemble__colores_8c.html#ab3cbea101a3eb9d8bc4daaf2f33b01ed',1,'creer_ensemble_colores():&#160;ensemble_colores.c']]],
   ['creer_5fensemble_5fpositions',['creer_ensemble_positions',['../ensemble__positions_8h.html#a853a71393a6aa266039f453e963ed814',1,'creer_ensemble_positions():&#160;ensemble_positions.c'],['../ensemble__positions_8c.html#a853a71393a6aa266039f453e963ed814',1,'creer_ensemble_positions():&#160;ensemble_positions.c']]],
   ['creer_5fmatrice',['creer_matrice',['../matrice_8c.html#a1ae4f5dc3c9e06c598edb6c21f73a2bd',1,'matrice.c']]],
+  ['creer_5fpartie',['creer_partie',['../partie_8h.html#af26b54c1a5509d0b4cae3778b320ccac',1,'creer_partie():&#160;partie.c'],['../partie_8c.html#af26b54c1a5509d0b4cae3778b320ccac',1,'creer_partie():&#160;partie.c']]],
   ['creer_5fplateau',['creer_plateau',['../plateau_8h.html#a48347ca20160613e199cab541b9a261f',1,'creer_plateau(int taille):&#160;plateau.c'],['../plateau_8c.html#a48347ca20160613e199cab541b9a261f',1,'creer_plateau(int taille):&#160;plateau.c']]],
   ['creer_5fposition',['creer_position',['../position_8h.html#a6b0ffa30310890f0f828dd785396f701',1,'creer_position(int x, int y):&#160;position.c'],['../position_8c.html#a6b0ffa30310890f0f828dd785396f701',1,'creer_position(int x, int y):&#160;position.c']]]
 ];

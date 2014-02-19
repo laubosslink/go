@@ -1,4 +1,4 @@
-.TH "src/territoire.c" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "src/territoire.c" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,7 +22,7 @@ Le code source permettant de gérer un territoire\&.
 
 .in +1c
 .ti -1c
-.RI "void \fBdetermineTerritoireRec\fP (\fBPlateau\fP plateau, \fBPosition\fP pos, \fBTerritoire\fP *t)"
+.RI "void \fBdetermineTerritoireRec\fP (\fBPlateau\fP plateau, \fBPosition\fP pos, \fBTerritoire\fP t)"
 .br
 .ti -1c
 .RI "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
@@ -57,7 +57,7 @@ EL HIMDI Yasmine <yasmine.elhimdi@ecole.enciscaen.fr>
 .SH "Documentation des fonctions"
 .PP 
 .SS "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos\&. Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur\&. Ce cas est exploite pas la fonction estUnSeki 
-.SS "void \fBdetermineTerritoireRec\fP (\fBPlateau\fPplateau, \fBPosition\fPpos, \fBTerritoire\fP *t)"
+.SS "void \fBdetermineTerritoireRec\fP (\fBPlateau\fPplateau, \fBPosition\fPpos, \fBTerritoire\fPt)"
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

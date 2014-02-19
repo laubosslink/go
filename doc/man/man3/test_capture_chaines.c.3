@@ -1,4 +1,4 @@
-.TH "test/test_capture_chaines.c" 3 "Mardi Février 18 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "test/test_capture_chaines.c" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,7 +19,10 @@ test/test_capture_chaines.c \-
 
 .in +1c
 .ti -1c
-.RI "void \fBaffiche_positions\fP (\fBEnsemble_Positions\fP *E)"
+.RI "int \fBnbr_elmt\fP (\fBChaines\fP E)"
+.br
+.ti -1c
+.RI "void \fBaffiche_positions\fP (\fBEnsemble_Colores\fP E)"
 .br
 .ti -1c
 .RI "void \fBaffiche_captures\fP (\fBChaines\fP chaines)"
@@ -31,8 +34,9 @@ test/test_capture_chaines.c \-
 .SH "Documentation des fonctions"
 .PP 
 .SS "void \fBaffiche_captures\fP (\fBChaines\fPchaines)"
-.SS "void \fBaffiche_positions\fP (\fBEnsemble_Positions\fP *E)"
+.SS "void \fBaffiche_positions\fP (\fBEnsemble_Colores\fPE)"
 .SS "int \fBmain\fP ()"
+.SS "int \fBnbr_elmt\fP (\fBChaines\fPE)"
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.
