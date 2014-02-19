@@ -4,49 +4,49 @@
 #include <pion.h>
 #include <position.h>
 
-void affiche_positions(Ensemble_Positions *E){
-	if(ensemble_vide(E)){
+void affiche_positions(Ensemble_Colores E){
+	if(ensemble_colores_vide(E)){
 		printf("Rien à afficher, la liste est vide\n");
 		return;
 	}
 	
-	ensemble_reset_courant(E);
+	ensemble_colores_reset(E);
 	
-	while(ensemble_suivant(E)){
-		printf("{x=%d, ",  position_get_courant(E)->x+1);
-		printf("y=%d}\n",  position_get_courant(E)->y+1);
+	while(ensemble_colores_suivant(E)){
+		printf("{x=%d, ",  ((Position *) ensemble_colores_get_courant(E))->x+1);
+		printf("y=%d}\n",  ((Position *) ensemble_colores_get_courant(E))->y+1);
 		
-		ensemble_set_courant(E, ensemble_get_suivant(E));
+		ensemble_colores_set_courant(E, ensemble_colores_get_suivant(E));
 	}
 	
-	printf("{x=%d, ",  position_get_courant(E)->x+1);
-	printf("y=%d}\n",  position_get_courant(E)->y+1);
+	printf("{x=%d, ",  ((Position *) ensemble_colores_get_courant(E))->x+1);
+	printf("y=%d}\n",  ((Position *) ensemble_colores_get_courant(E))->y+1);
 	printf("\n");
 }
 
 void affiche_captures(Chaines chaines){
-	Chaine* cc; /* chaine courante */
+	Chaine cc; /* chaine courante */
 	
-	if(ensemble_vide(&chaines)){
+	if(ensemble_vide(chaines)){
 		printf("Aucune capture !\n");
 		return;
 	}
 	
-	ensemble_reset_courant(&chaines);
+	ensemble_reset_courant(chaines);
 	
-	while(ensemble_suivant(&chaines)){
-		cc = ensemble_get_courant_contenu(&chaines);
+	while(ensemble_suivant(chaines)){
+		cc = ensemble_get_courant_contenu(chaines);
 		
 		printf("\n\nChaine capturée: \n");
-		affiche_positions(cc->p);
+		affiche_positions(cc);
 		
-		ensemble_set_courant(&chaines, ensemble_get_suivant(&chaines));
+		ensemble_set_courant(chaines, ensemble_get_suivant(chaines));
 	}
 	
-	cc = ensemble_get_courant_contenu(&chaines);
+	cc = ensemble_get_courant_contenu(chaines);
 	
 	printf("Chaine capturée: \n");
-	affiche_positions(cc->p);
+	affiche_positions(cc);
 }
 
 int main(){
@@ -72,7 +72,7 @@ int main(){
 	
 	chaine = plateau_determiner_chaine(plateau, position);
 	
-	affiche_positions(chaine.p);
+	affiche_positions(chaine);
 	
 	Chaines chaines_captures = captureChaines(plateau, pion, &valide);
 	

@@ -245,6 +245,9 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	
 	/** on determine la chaine a laquelle appartient le pion */
 	chaine = plateau_determiner_chaine(plateau, pion.p);
+	libertes = determineLiberte(plateau, chaine);
+	if(ensemble_vide(libertes))
+		ensemble_ajouter(chainesCapturees, chaine);
 	
 	if(ensemble_colores_vide(chaine))
 		return chainesCapturees;
@@ -254,9 +257,7 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	/** on se deplace sur cette chaine */
 	while(ensemble_colores_suivant(chaine)){
 		/** on regarde haut, bas, gauche, droite de chaque position de cette chaine */
-		
-		/** @bug risque de poser problème, on ajoute une adresse "chainede_determiner qui reste la même (seul le contenu chance à chaque appel
-		 * de plateau_determiner_chaine. */
+
 		chaine_determine = plateau_determiner_chaine(plateau, haut(*((Position*) ensemble_colores_get_courant(chaine))));
 		if(!chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, haut(*((Position*) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
 			/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */

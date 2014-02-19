@@ -27,18 +27,16 @@
 #include <plateau.h>
 #include <position.h>
 
-void determineTerritoireRec(Plateau plateau, Position pos, Territoire* t){
-	Position *pp;
-	
+void determineTerritoireRec(Plateau plateau, Position pos, Territoire t){
 	if(!plateau_position_appartient(plateau, pos))
 		return;
 	
 	/* si la couleur du territoire n'est pas definis et qu'on a trouve un pion, on definis la couleur */
-	if(t->c == INDEFINI && est_un_pion_plateau(plateau, pos)){
-		t->c = plateau_get_pos(plateau, pos);
-	} else if(est_un_pion(t->c) && t->c != plateau_get_pos(plateau, pos) && plateau_get_pos(plateau, pos) != VIDE) /* si en revanche la couleur du territoire est deja definis et on trouve une couleur oppose, le territoire n'appartient a personne */
+	if(ensemble_colores_get_couleur(t) == INDEFINI && est_un_pion_plateau(plateau, pos)){
+		ensemble_colores_set_couleur(t, plateau_get_pos(plateau, pos));
+	} else if(est_un_pion(ensemble_colores_get_couleur(t)) && ensemble_colores_get_couleur(t) != plateau_get_pos(plateau, pos) && plateau_get_pos(plateau, pos) != VIDE) /* si en revanche la couleur du territoire est deja definis et on trouve une couleur oppose, le territoire n'appartient a personne */
 	{
-		t->c = VIDE;
+		ensemble_colores_set_couleur(t, VIDE);
 	}
 	
 	if(plateau_get_pos(plateau, pos) != VIDE)
@@ -47,10 +45,8 @@ void determineTerritoireRec(Plateau plateau, Position pos, Territoire* t){
 	if(ensemble_colores_appartient(t, &pos))
 		return;
 	
-	pp = creer_position(pos.x, pos.y);
-	
 	/* ajout de la position actuelle */
-	ensemble_colores_ajouter(t, pp);
+	ensemble_colores_ajouter(t, creer_position(pos.x, pos.y));
 	
 	determineTerritoireRec(plateau, haut(pos), t);
 	determineTerritoireRec(plateau, bas(pos), t);
@@ -61,7 +57,6 @@ void determineTerritoireRec(Plateau plateau, Position pos, Territoire* t){
 
 Territoire determineTerritoire(Plateau plateau, Position pos){
 	Territoire t;
-	Position *pp;
 	
 	/* si la position n'appartient pas au plateau on s'arrete */
 	if(!plateau_position_appartient(plateau, pos))
@@ -71,16 +66,16 @@ Territoire determineTerritoire(Plateau plateau, Position pos){
 	if(plateau_get_pos(plateau, pos) != VIDE)
 		return;
 	
-	t.p = creer_ensemble();
-	t.c = INDEFINI;
+	/* @todo creer_territoire */
+	t = creer_ensemble_colores();
+	ensemble_colores_set_couleur(t, INDEFINI);
+
+	ensemble_colores_ajouter(t, creer_position(pos.x, pos.y));
 	
-	pp = creer_position(pos.x, pos.y);
-	ensemble_ajouter(t.p, pp);
-	
-	determineTerritoireRec(plateau, haut(pos), &t);
-	determineTerritoireRec(plateau, bas(pos), &t);
-	determineTerritoireRec(plateau, gauche(pos), &t);
-	determineTerritoireRec(plateau, droite(pos), &t);
+	determineTerritoireRec(plateau, haut(pos), t);
+	determineTerritoireRec(plateau, bas(pos), t);
+	determineTerritoireRec(plateau, gauche(pos), t);
+	determineTerritoireRec(plateau, droite(pos), t);
 	
 	return t;
 }
