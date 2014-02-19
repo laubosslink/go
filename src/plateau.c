@@ -106,7 +106,7 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	ensemble_colores_set_couleur(chaine, plateau_get_pos(plateau, pos));
 	
 	/* ajoute de la position actuel dans la chaine */
-	//ensemble_colores_ajouter(chaine, position_copy(pos));
+	ensemble_colores_ajouter(chaine, position_copy(pos));
 
 	/* lancement récursif à droite, gauche, haut, bas pour rechercher des pions de même couleur */
 	plateau_determiner_chaine_rec(plateau, droite(pos), chaine);
@@ -254,6 +254,8 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	
 	Libertes libertes;
 	
+	Position pos, pos_haut, pos_bas, pos_gauche, pos_droite;
+	
 	/** initialisation des chaines */
 	chaines = creer_ensemble();
 	chainesCapturees = creer_ensemble();
@@ -277,12 +279,15 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	/** on se deplace sur cette chaine */
 	while(ensemble_colores_suivant(chaine)){
 		/** on regarde haut, bas, gauche, droite de chaque position de cette chaine */
-
-		chaine_determine = plateau_determiner_chaine(plateau, haut(((Position) ensemble_colores_get_courant(chaine))));
-		bas(((Position) ensemble_colores_get_courant(chaine)));
-		if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, haut(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-			bas(((Position) ensemble_colores_get_courant(chaine)));
-			
+		pos = ensemble_colores_get_courant(chaine);
+		
+		pos_haut = haut(pos);
+		pos_bas = bas(pos);
+		pos_gauche = gauche(pos);
+		pos_droite = droite(pos);
+		
+		chaine_determine = plateau_determiner_chaine(plateau, pos_haut);
+		if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_haut) != ensemble_colores_get_couleur(chaine)){
 			/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
 			ensemble_ajouter(chaines, chaine_determine);
 			
@@ -292,40 +297,28 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 				ensemble_ajouter(chainesCapturees, chaine_determine);
 		}
 		
-		chaine_determine = plateau_determiner_chaine(plateau, bas(((Position) ensemble_colores_get_courant(chaine))));
-		haut(((Position) ensemble_colores_get_courant(chaine)));
-		if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, bas(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-			haut(((Position) ensemble_colores_get_courant(chaine)));
-			/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+		chaine_determine = plateau_determiner_chaine(plateau, pos_bas);
+		if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_bas) != ensemble_colores_get_couleur(chaine)){			
 			ensemble_ajouter(chaines, chaine_determine);
 			
-			/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 			libertes = determineLiberte(plateau, chaine_determine);
 			if(ensemble_vide(libertes))
 				ensemble_ajouter(chainesCapturees, chaine_determine);
 		}
 		
-		chaine_determine = plateau_determiner_chaine(plateau, gauche(((Position) ensemble_colores_get_courant(chaine))));
-		droite(((Position) ensemble_colores_get_courant(chaine)));
-		if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, gauche(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-			droite(((Position) ensemble_colores_get_courant(chaine)));
-			/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+		chaine_determine = plateau_determiner_chaine(plateau, pos_gauche);
+		if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_gauche) != ensemble_colores_get_couleur(chaine)){
 			ensemble_ajouter(chaines, chaine_determine);
 			
-			/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 			libertes = determineLiberte(plateau, chaine_determine);
 			if(ensemble_vide(libertes))
 				ensemble_ajouter(chainesCapturees, chaine_determine);
 		}
 		
-		chaine_determine = plateau_determiner_chaine(plateau, droite(((Position) ensemble_colores_get_courant(chaine))));
-		gauche(((Position) ensemble_colores_get_courant(chaine)));
-		if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, droite(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-			gauche(((Position) ensemble_colores_get_courant(chaine)));
-			/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+		chaine_determine = plateau_determiner_chaine(plateau, pos_droite);
+		if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_droite) != ensemble_colores_get_couleur(chaine)){
 			ensemble_ajouter(chaines, chaine_determine);
 			
-			/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 			libertes = determineLiberte(plateau, chaine_determine);
 			if(ensemble_vide(libertes))
 				ensemble_ajouter(chainesCapturees, chaine_determine);
@@ -333,54 +326,45 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 		
 		ensemble_colores_set_courant(chaine, ensemble_colores_get_suivant(chaine));
 	}
+
+	pos = ensemble_colores_get_courant(chaine);
 	
-	chaine_determine = plateau_determiner_chaine(plateau, haut(((Position) ensemble_colores_get_courant(chaine))));
-	bas(((Position) ensemble_colores_get_courant(chaine)));
-	if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, haut(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-		bas(((Position) ensemble_colores_get_courant(chaine)));
-		/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+	pos_haut = haut(pos);
+	pos_bas = bas(pos);
+	pos_gauche = gauche(pos);
+	pos_droite = droite(pos);
+	
+	chaine_determine = plateau_determiner_chaine(plateau, pos_haut);
+	if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_haut)){
 		ensemble_ajouter(chaines, chaine_determine);
 		
-		/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 		libertes = determineLiberte(plateau, chaine_determine);
 		if(ensemble_vide(libertes))
 			ensemble_ajouter(chainesCapturees, chaine_determine);
 	}
 	
-	chaine_determine = plateau_determiner_chaine(plateau, bas(((Position) ensemble_colores_get_courant(chaine))));
-	haut(((Position) ensemble_colores_get_courant(chaine)));
-	if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, bas(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-		haut(((Position) ensemble_colores_get_courant(chaine)));
-		/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+	chaine_determine = plateau_determiner_chaine(plateau, pos_bas);
+	if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_bas) != ensemble_colores_get_couleur(chaine)){
 		ensemble_ajouter(chaines, chaine_determine);
 		
-		/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 		libertes = determineLiberte(plateau, chaine_determine);
 		if(ensemble_vide(libertes))
 			ensemble_ajouter(chainesCapturees, chaine_determine);
 	}
 	
-	chaine_determine = plateau_determiner_chaine(plateau, gauche(((Position) ensemble_colores_get_courant(chaine))));
-	droite(((Position) ensemble_colores_get_courant(chaine)));
-	if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, gauche(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-		droite(((Position) ensemble_colores_get_courant(chaine)));
-		/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+	chaine_determine = plateau_determiner_chaine(plateau, pos_gauche);
+	if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_gauche) != ensemble_colores_get_couleur(chaine)){
 		ensemble_ajouter(chaines, chaine_determine);
 		
-		/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 		libertes = determineLiberte(plateau, chaine_determine);
 		if(ensemble_vide(libertes))
 			ensemble_ajouter(chainesCapturees, chaine_determine);
 	}
 	
-	chaine_determine = plateau_determiner_chaine(plateau, droite(((Position) ensemble_colores_get_courant(chaine))));
-	gauche(((Position) ensemble_colores_get_courant(chaine)));
-	if(chaine_determine !=NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, droite(((Position) ensemble_colores_get_courant(chaine)))) != ensemble_colores_get_couleur(chaine)){
-		gauche(((Position) ensemble_colores_get_courant(chaine)));
-		/** on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une Chaines "tmp"  */
+	chaine_determine = plateau_determiner_chaine(plateau, pos_droite);
+	if(chaine_determine != NULL && !chaines_appartient_chaine(chaines, chaine_determine) && plateau_get_pos(plateau, pos_droite) != ensemble_colores_get_couleur(chaine)){
 		ensemble_ajouter(chaines, chaine_determine);
 		
-		/** on vérifie les libertés de chaque chaine, et si ensemble_vide(libertes) == 1 pour une chaine, on capture cette chaine */
 		libertes = determineLiberte(plateau, chaine_determine);
 		if(ensemble_vide(libertes))
 			ensemble_ajouter(chainesCapturees, chaine_determine);

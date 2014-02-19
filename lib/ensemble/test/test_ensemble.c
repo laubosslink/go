@@ -104,6 +104,17 @@ int main(){
 
 	tests = (ensemble_nbr_element(e) == 3 && tests == 1) ? 1 : 0;
 	
+	ensemble_enlever(e, t+1);
+	ensemble_enlever(e, t+2);
+	ensemble_enlever(e, t+3);
+	
+	tests = (ensemble_nbr_element(e) == 0 && tests == 1) ? 1 : 0;
+	
+	ensemble_ajouter(e, t+3);
+	detruire_ensemble(e);
+	
+	tests = (ensemble_nbr_element(e) == 0 && ensemble_tete(e) == NULL && tests == 1) ? 1 : 0;
+	
 #if DEBUG_AFFICHE == 1
 	ensemble_afficher_entier(e);
 #endif

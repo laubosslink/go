@@ -56,6 +56,7 @@ void detruire_ensemble(Ensemble E){
 	/* parcour des noeuds */
 	/* désalocation de chaque noeud */
 	/* désalocation de l'ensemble */
+	/* pointer courant et tete sur NULL*/
 }
 
 int ensemble_vide(Ensemble E){
@@ -80,7 +81,7 @@ int ensemble_suivant(Ensemble E){
 	if(ensemble_courant(E) == NULL) 	
 		return 0;
 	
-	return(ensemble_courant(E))->suivant != NULL;
+	return (ensemble_courant(E))->suivant != NULL;
 }
 
 void* ensemble_get_courant_contenu(Ensemble E){
@@ -117,11 +118,14 @@ int ensemble_appartient(Ensemble E, void* element){
 Ensemble ensemble_enlever(Ensemble E, void* element){
 	Cell cellule;
 	
+	if(ensemble_vide(E))
+		return NULL;
+	
 	if(!ensemble_appartient(E, element))
 		return E;
 	
 	cellule = (Cell) malloc(sizeof(struct Cell));
-	E->courant=E->tete;
+	E->courant = E->tete;
 	
 	while(ensemble_suivant(E) && E->courant->suivant->contenu != element){
 		E->courant = E->courant->suivant;
@@ -134,6 +138,9 @@ Ensemble ensemble_enlever(Ensemble E, void* element){
 	E->courant->suivant = cellule->suivant;
 	
 	free(cellule);
+	
+	if(E->tete->suivant == NULL)
+		E->tete = NULL;
 	
 	return E;
 	

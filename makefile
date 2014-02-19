@@ -1,6 +1,6 @@
 LD_LIBRARY_PATH=$(shell pwd)
 
-DEBUG=1
+DEBUG=0
 
 INCDIR=./include
 BINDIR=./bin
@@ -49,11 +49,12 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 ##
 
 # Permet d'appliquer l'ensemble des tests
-tests: test_libmatrice test_libensemble test_chaines_appartient_chaine \
+tests: test_libmatrice test_libensemble test_ensemble_colores test_chaines_appartient_chaine \
 		test_plateau test_determine_chaine test_determine_libertes \
 		test_capture_chaines
 	@$(LIBDIR)/matrice/bin/test_libmatrice
 	@$(LIBDIR)/ensemble/bin/test_libensemble
+	@$(BINDIR)/test_ensemble_colores
 	@$(BINDIR)/test_chaines_appartient_chaine
 	@$(BINDIR)/test_plateau
 	@$(BINDIR)/test_determine_chaine
