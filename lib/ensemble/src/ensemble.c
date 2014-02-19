@@ -51,12 +51,19 @@ Ensemble creer_ensemble(){
 	return E;
 }
 
-/** @todo réaliser la destruction d'un ensemble */
 void detruire_ensemble(Ensemble E){
-	/* parcour des noeuds */
-	/* désalocation de chaque noeud */
+	if(ensemble_vide(E)) return;
+	/* parcour des cellules */
+	E->courant = E->tete;
+	while(E->courant->suivant != NULL){
+	E->courant = E->courant->suivant;
+	free(E->courant); /* désalocation de chaque cellule */
+	}
+	free(E->courant);
 	/* désalocation de l'ensemble */
 	/* pointer courant et tete sur NULL*/
+	E->tete = NULL;
+	E->courant = NULL;
 }
 
 int ensemble_vide(Ensemble E){
