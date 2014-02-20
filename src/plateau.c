@@ -138,8 +138,6 @@ void plateau_realiser_capture(Plateau plateau, Chaine chaine){
 	/* @todo free de chaine */
 }
 
-/*** ARRET DEPUIS DERNIER COMMIT ***/
-
 int plateau_est_identique(Plateau plateau, Plateau ancienPlateau){
 	int i, j;
 	
@@ -370,4 +368,133 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 
 	/* on retourne Chaines "sortie" (les chaines captures) */
 	return chainesCapturees;
+}
+
+void plateau_entoure_un_territoire_rec(Plateau plateau, Position pos, Chaines chaines, Territoire t){
+	
+	if(!plateau_position_appartient(plateau, pos))
+		return;
+		
+	//if(ensemble_colores_appartient(t, pos))
+	
+}
+
+Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau){
+	Chaines chaines;
+	Chaine ct; /* chaine territoire */
+	Position pc; /* position courante */
+	
+	if(ensemble_colores_vide(leTerritoire))
+		return NULL;
+		
+	chaines = creer_ensemble();
+	
+	ensemble_colores_reset(leTerritoire);
+	
+	/** 
+	 * on determine la chaine qui forme le territoire 
+	 */
+	
+	while(ensemble_colores_suivant(leTerritoire)){
+		pc = ensemble_colores_get_courant(leTerritoire);
+		
+		deplacer_haut(pc);
+		if(plateau_position_appartient(plateau, pc)){
+			ct = plateau_determiner_chaine(plateau, pc);
+			
+			/* on a trouver la chaine qui forme le territoire */
+			if(!ensemble_colores_vide(ct))
+				break; /* on arrête la boucle */
+		}
+		
+		deplacer_bas(pc);
+		
+		deplacer_bas(pc);
+		if(plateau_position_appartient(plateau, pc)){
+			ct = plateau_determiner_chaine(plateau, pc);
+			
+			/* on a trouver la chaine qui forme le territoire */
+			if(!ensemble_colores_vide(ct))
+				break; /* on arrête la boucle */
+		}
+		
+		deplacer_haut(pc);
+		
+		deplacer_gauche(pc);
+		if(plateau_position_appartient(plateau, pc)){
+			ct = plateau_determiner_chaine(plateau, pc);
+			
+			/* on a trouver la chaine qui forme le territoire */
+			if(!ensemble_colores_vide(ct))
+				break; /* on arrête la boucle */
+		}
+		
+		deplacer_droite(pc);
+		
+		deplacer_droite(pc);
+		if(plateau_position_appartient(plateau, pc)){
+			ct = plateau_determiner_chaine(plateau, pc);
+			
+			/* on a trouver la chaine qui forme le territoire */
+			if(!ensemble_colores_vide(ct))
+				break; /* on arrête la boucle */
+		}
+		
+		deplacer_gauche(pc);
+		
+		ensemble_colores_set_courant(leTerritoire, ensemble_colores_get_suivant(leTerritoire));
+	}
+
+	pc = ensemble_colores_get_courant(leTerritoire);
+	
+	deplacer_haut(pc);
+	if(ensemble_colores_vide(ct) && plateau_position_appartient(plateau, pc)){
+		ct = plateau_determiner_chaine(plateau, pc);
+	}
+	
+	deplacer_bas(pc);
+	
+	deplacer_bas(pc);
+	if(ensemble_colores_vide(ct) && plateau_position_appartient(plateau, pc)){
+		ct = plateau_determiner_chaine(plateau, pc);
+	}
+	
+	deplacer_haut(pc);
+	
+	deplacer_gauche(pc);
+	if(ensemble_colores_vide(ct) && plateau_position_appartient(plateau, pc)){
+		ct = plateau_determiner_chaine(plateau, pc);
+	}
+	
+	deplacer_droite(pc);
+	
+	deplacer_droite(pc);
+	if(ensemble_colores_vide(ct) && plateau_position_appartient(plateau, pc)){
+		ct = plateau_determiner_chaine(plateau, pc);
+	}
+	
+	deplacer_gauche(pc);
+	
+	/** 
+	 * une fois qu'on à la chaine du territoire, on parcours cette chaine 
+	 */
+	while(ensemble_colores_suivant(ct)){
+		pc = ensemble_colores_get_courant(ct);
+		
+		/** on cherche uniquement recursivement la determination de chaines sur les potisions en dehors de cette chaine*/
+		deplacer_haut(pc);
+		if(plateau_position_appartient(plateau, pc) && !ensemble_colores_appartient(ct, pc) && !ensemble_colores_appartient(leTerritoire, pc))
+		{
+			
+		}
+		
+		deplacer_bas(pc);
+		
+		ensemble_colores_set_courant(ct, ensemble_colores_get_suivant(ct));
+	}
+	
+	pc = ensemble_colores_get_courant(ct);
+	
+	
+	return chaines;
 }

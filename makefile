@@ -50,7 +50,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 # Permet d'appliquer l'ensemble des tests
 tests: test_libmatrice test_libensemble test_ensemble_colores test_chaines_appartient_chaine \
-		test_plateau test_determine_chaine test_determine_territoire test_determine_libertes \
+		test_plateau test_determine_chaine test_determine_territoire test_entoure_territoire test_determine_libertes \
 		test_capture_chaines
 	@$(LIBDIR)/matrice/bin/test_libmatrice
 	@$(LIBDIR)/ensemble/bin/test_libensemble
@@ -59,9 +59,26 @@ tests: test_libmatrice test_libensemble test_ensemble_colores test_chaines_appar
 	@$(BINDIR)/test_plateau
 	@$(BINDIR)/test_determine_chaine
 	@$(BINDIR)/test_determine_territoire
+	@$(BINDIR)/test_entoure_territoire
 	@$(BINDIR)/test_determine_libertes
 	@$(BINDIR)/test_capture_chaines
 	
+
+# entoire_territoire
+
+test_entoure_territoire: libmatrice libensemble $(BINDIR)/test_entoure_territoire
+
+$(BINDIR)/test_entoure_territoire: $(OBJDIR)/test_entoure_territoire.o \
+										  $(OBJDIR)/position.o $(OBJDIR)/ensemble_positions.o \
+										  $(OBJDIR)/ensemble_colores.o $(OBJDIR)/chaines.o \
+										  $(OBJDIR)/pion.o $(OBJDIR)/plateau.o \
+										  $(OBJDIR)/libertes.o $(OBJDIR)/territoire.o
+										  
+	$(CC) $(LDFLAGS) $^ -o $@ -lensemble -lmatrice
+
+$(OBJDIR)/test_entoure_territoire.o: $(TESTDIR)/test_entoure_territoire.c
+	$(CC) $(CFLAGS) -c $< -o $@	
+
 # determine_chaine
 
 test_determine_chaine: libmatrice libensemble $(BINDIR)/test_determine_chaine
