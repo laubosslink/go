@@ -75,31 +75,59 @@ int position_get_y(Position p);
 Position position_get_courant(Ensemble E);
 
 /**
- * Permet de se deplacer vers le haut
+ * Permet d'avoir une nouvelle position déplacé vers le haut
  * @param p la position a deplacer
- * @return nouvelle position
+ * @return une nouvelle position déplacé
  */
 Position haut(Position p);
 
 /**
- * Permet de se deplacer vers le bas
+ * Permet d'avoir une nouvelle position déplacé vers le bas
  * @param p la position a deplacer
- * @return nouvelle position
+ * @return une nouvelle position déplacé
  */
 Position bas(Position p);
 
 /**
- * Permet de se deplacer vers la gauche
+ * Permet d'avoir une nouvelle position déplacé vers la gauche
  * @param p la position a deplacer
- * @return nouvelle position
+ * @return une nouvelle position déplacé
  */
 Position gauche(Position p);
 
 /**
- * Permet de se deplacer vers la droite
+ * Permet d'avoir une nouvelle position déplacé vers la droite
  * @param p la position a deplacer
- * @return nouvelle position
+ * @return une nouvelle position déplacé
  */
 Position droite(Position p);
+
+/**
+ * Permet de se deplacer vers le haut
+ * @param p la position a deplacer
+ * @return la position deplacer
+ */
+Position deplacer_haut(Position p);
+
+/**
+ * Permet de se deplacer vers le bas
+ * @param p la position a deplacer
+ * @return la position deplacer
+ */
+Position deplacer_bas(Position p);
+
+/**
+ * Permet de se deplacer vers la gauche
+ * @param p la position a deplacer
+ * @return la position deplacer
+ */
+Position deplacer_gauche(Position p);
+
+/**
+ * Permet de se deplacer vers la droite
+ * @param p la position a deplacer
+ * @return la position deplacer
+ */
+Position deplacer_droite(Position p);
 
 #endif

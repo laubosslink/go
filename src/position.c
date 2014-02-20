@@ -82,3 +82,23 @@ Position droite(Position p){
 	return creer_position(p->x+1, p->y);
 }
 
+Position deplacer_haut(Position p){
+	p->y--;
+	return p;
+}
+
+Position deplacer_bas(Position p){
+	p->y++;
+	return p;
+}
+
+Position deplacer_gauche(Position p){
+	p->x--;
+	return p;
+}
+
+Position deplacer_droite(Position p){
+	p->x++;
+	return p;
+}
+

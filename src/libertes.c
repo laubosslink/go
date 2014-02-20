@@ -56,6 +56,8 @@ Libertes determineLiberte(Plateau plateau, Chaine chaine){
 		pos_gauche = gauche(pos);
 		pos_droite = droite(pos);
 		
+		/** @todo optimisation en utilisant deplacer_...() mais peut poser problème car deux appels dans la condition... */
+		
 		if(plateau_position_appartient(plateau, pos_haut) && plateau_get_pos(plateau, pos_haut) == VIDE){
 			ensemble_positions_ajouter(l, pos_haut);
 		}

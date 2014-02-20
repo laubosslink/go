@@ -38,9 +38,9 @@ int main(){
 		tests = 1;
 
 	if(tests == 1)
-		printf("Tests plateau_determine_libertes(...): OK\n");
+		printf("Tests determineLiberte(...): OK\n");
 	else
-		printf("Tests plateau_determine_libertes(...): Problèmes durant les tests...\n");
+		printf("Tests determineLiberte(...): Problèmes durant les tests...\n");
 		
 
 	return 0;
