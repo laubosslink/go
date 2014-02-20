@@ -93,6 +93,13 @@ Cell ensemble_get_suivant(Ensemble E);
 void* ensemble_get_courant_contenu(Ensemble E);
 
 /**
+ * Permet de récupérer le contenu de la cellule suivante
+ * @param E l'ensemble
+ * @return void* le contenu
+ */
+void* ensemble_get_suivant_contenu(Ensemble E);
+
+/**
  * Permet de modifier le pointeur de la cellule courante sur une autre
  * @param E l'ensemble
  * @param c la nouvelle celulle vers laquelle pointe courant

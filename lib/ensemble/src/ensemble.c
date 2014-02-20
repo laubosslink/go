@@ -52,15 +52,22 @@ Ensemble creer_ensemble(){
 }
 
 void detruire_ensemble(Ensemble E){
-	if(ensemble_vide(E)) return;
+	Cell cellule;
+	
+	if(ensemble_vide(E)) 
+		return;
+
 	/* parcour des cellules */
 	E->courant = E->tete;
+
 	while(E->courant->suivant != NULL){
-	E->courant = E->courant->suivant;
-	free(E->courant); /* désalocation de chaque cellule */
+		cellule = E->courant->suivant;	
+		free(E->courant); /* désalocation de chaque cellule */
+		E->courant = cellule;
 	}
+	
 	free(E->courant);
-	/* désalocation de l'ensemble */
+	
 	/* pointer courant et tete sur NULL*/
 	E->tete = NULL;
 	E->courant = NULL;
@@ -93,6 +100,13 @@ int ensemble_suivant(Ensemble E){
 
 void* ensemble_get_courant_contenu(Ensemble E){
 	return E->courant->contenu;
+}
+
+void* ensemble_get_suivant_contenu(Ensemble E){
+	if (E->courant == NULL)
+		return NULL;
+	
+	return E->courant->suivant->contenu;
 }
 
 Cell ensemble_get_suivant(Ensemble E){
@@ -131,15 +145,19 @@ Ensemble ensemble_enlever(Ensemble E, void* element){
 	if(!ensemble_appartient(E, element))
 		return E;
 	
-	cellule = (Cell) malloc(sizeof(struct Cell));
 	E->courant = E->tete;
+	
+	if(E->courant->contenu == element){
+		cellule = E->courant;
+		E->courant = E->courant->suivant;
+		E->tete = E->courant;
+		free(cellule);
+		return E;
+	}
 	
 	while(ensemble_suivant(E) && E->courant->suivant->contenu != element){
 		E->courant = E->courant->suivant;
 	}
-	
-	if(!ensemble_suivant(E) && E->courant->contenu != element)
-		return E;
 	
 	cellule = E->courant->suivant;
 	E->courant->suivant = cellule->suivant;

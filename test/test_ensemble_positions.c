@@ -15,57 +15,47 @@ void afficherEnsemblePositions(Ensemble_Positions E){
 	ensemble_reset_courant(E);
 	
 	while(ensemble_positions_suivant(E)){
-		printf("{%d;%d} \t",  ((Position*) ensemble_get_courant_contenu(E))->x, ((Position*) ensemble_get_courant_contenu(E))->y );
+		printf("{%d;%d} \t",  position_get_x((Position)ensemble_get_courant_contenu(E)), position_get_y((Position)ensemble_get_courant_contenu(E)) );
 		ensemble_set_courant(E, ensemble_get_suivant(E));
 	}
 	
-	printf("{%d;%d} \t",  ((Position*) ensemble_get_courant_contenu(E))->x, ((Position*) ensemble_get_courant_contenu(E))->y );
+	printf("{%d;%d} \t",  position_get_x((Position)ensemble_get_courant_contenu(E)), position_get_y((Position)ensemble_get_courant_contenu(E)) );
 	printf("}\n\n");
 }
 
 
 int main (){
 	Ensemble_Positions Ep;
-	Position* element;
-	Position* p;
-	Position* pp;
-	Position* app;
-	int test;
+	Position element, p, pp, app;
+	int tests = 0;
 	
 	Ep = creer_ensemble_positions();
 	
-	element = (Position*)malloc(sizeof(Position));
-	p = (Position*)malloc(sizeof(Position));
-	pp = (Position*)malloc(sizeof(Position));
-	app = (Position*)malloc(sizeof(Position));
+	element = creer_position(5,10);
+	p = creer_position(4,9);
+	pp = creer_position(1,2);
+	app = creer_position(8,1);
 	
-	element->x = 5;
-	element->y = 10;
-	
-	p->x = 4;
-	p->y = 9;
-	
-	pp->x = 1;
-	pp->y = 2;
-	
-	app->x=8;
-	app->y=1;
-	
-	ensemble_positions_ajouter(Ep,element);
-	ensemble_positions_ajouter(Ep,p);
-	ensemble_positions_ajouter(Ep,pp);
-	
-	afficherEnsemblePositions(Ep);
-	
-	test = ensemble_positions_appartient(Ep,app);
-	if(test == 1)
-		printf("L'element appartient à l'ensemble.\n");
-	if(test == 0)
-		printf("L'element n'appartient pas à l'ensemble. \n");
+	ensemble_positions_ajouter(Ep,creer_position(5,10));
+	ensemble_positions_ajouter(Ep,creer_position(4,9));
+	ensemble_positions_ajouter(Ep,creer_position(8,1));
+
+	if(ensemble_positions_appartient(Ep, app))
+		tests = 1;
 		
+	tests = (ensemble_nbr_element(Ep) == 3 && tests == 1) ? 1 : 0;
+
+#if DEBUG_AFFICHE == 1		
+	afficherEnsemblePositions(Ep);
+#endif
+	
+	if(tests == 1)
+		printf("Tests ensemble_positions.c: OK\n");
+	else
+		printf("Tests ensemble_positions.c: Problèmes durant les tests...\n");
+	
+	detruire_ensemble(Ep);
 		
 	return 0;
 	
 }
-	
-	
