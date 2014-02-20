@@ -55,17 +55,17 @@ void determineTerritoireRec(Plateau plateau, Position pos, Territoire t){
 	/* ajout de la position actuelle */
 	ensemble_colores_ajouter(t, position_copy(pos));
 	
-	determineTerritoireRec(plateau, haut(pos), t);
-	bas(pos);
+	determineTerritoireRec(plateau, deplacer_haut(pos), t);
+	deplacer_bas(pos);
 	
-	determineTerritoireRec(plateau, bas(pos), t);
-	haut(pos);
+	determineTerritoireRec(plateau, deplacer_bas(pos), t);
+	deplacer_haut(pos);
 	
-	determineTerritoireRec(plateau, gauche(pos), t);
-	droite(pos);
+	determineTerritoireRec(plateau, deplacer_gauche(pos), t);
+	deplacer_droite(pos);
 	
-	determineTerritoireRec(plateau, droite(pos), t);
-	gauche(pos);
+	determineTerritoireRec(plateau, deplacer_droite(pos), t);
+	deplacer_gauche(pos);
 }
 
 Territoire determineTerritoire(Plateau plateau, Position pos){
@@ -84,17 +84,17 @@ Territoire determineTerritoire(Plateau plateau, Position pos){
 
 	ensemble_colores_ajouter(t, position_copy(pos));
 	
-	determineTerritoireRec(plateau, haut(pos), t);
-	bas(pos);
+	determineTerritoireRec(plateau, deplacer_haut(pos), t);
+	deplacer_bas(pos);
 	
-	determineTerritoireRec(plateau, bas(pos), t);
-	haut(pos);
+	determineTerritoireRec(plateau, deplacer_bas(pos), t);
+	deplacer_haut(pos);
 	
-	determineTerritoireRec(plateau, gauche(pos), t);
-	droite(pos);
+	determineTerritoireRec(plateau, deplacer_gauche(pos), t);
+	deplacer_droite(pos);
 	
-	determineTerritoireRec(plateau, droite(pos), t);
-	gauche(pos);
+	determineTerritoireRec(plateau, deplacer_droite(pos), t);
+	deplacer_gauche(pos);
 	
 	return t;
 }

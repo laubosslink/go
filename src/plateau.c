@@ -80,17 +80,17 @@ void plateau_determiner_chaine_rec(Plateau plateau, Position pos, Chaine chaine)
 	
 	ensemble_colores_ajouter(chaine, position_copy(pos));
 	
-	plateau_determiner_chaine_rec(plateau, haut(pos), chaine);
-	bas(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_haut(pos), chaine);
+	deplacer_bas(pos);
 	
-	plateau_determiner_chaine_rec(plateau, bas(pos), chaine);
-	haut(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_bas(pos), chaine);
+	deplacer_haut(pos);
 	
-	plateau_determiner_chaine_rec(plateau, gauche(pos), chaine);
-	droite(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_gauche(pos), chaine);
+	deplacer_droite(pos);
 	
-	plateau_determiner_chaine_rec(plateau, droite(pos), chaine);
-	gauche(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_droite(pos), chaine);
+	deplacer_gauche(pos);
 }
 
 Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
@@ -107,17 +107,17 @@ Chaine plateau_determiner_chaine(Plateau plateau, Position pos){
 	ensemble_colores_ajouter(chaine, position_copy(pos));
 
 	/* lancement récursif à droite, gauche, haut, bas pour rechercher des pions de même couleur */
-	plateau_determiner_chaine_rec(plateau, droite(pos), chaine);
-	gauche(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_droite(pos), chaine);
+	deplacer_gauche(pos);
 	
-	plateau_determiner_chaine_rec(plateau, gauche(pos), chaine);
-	droite(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_gauche(pos), chaine);
+	deplacer_droite(pos);
 	
-	plateau_determiner_chaine_rec(plateau, haut(pos), chaine);
-	bas(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_haut(pos), chaine);
+	deplacer_bas(pos);
 	
-	plateau_determiner_chaine_rec(plateau, bas(pos), chaine);
-	haut(pos);
+	plateau_determiner_chaine_rec(plateau, deplacer_bas(pos), chaine);
+	deplacer_haut(pos);
 	
 	return chaine;
 }
