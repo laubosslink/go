@@ -25,13 +25,13 @@
 #define PLATEAU_H_INCLUDED
 
 #include <stdio.h>
+#include <matrice.h>
 
 /**
  * @brief Structure d'un plateau de jeu. Plateau est un alias du type Matrice.
  */
-typedef struct Matrice* Plateau;
+typedef Matrice Plateau;
 
-#include <matrice.h>
 #include <chaine.h>
 #include <position.h>
 #include <pion.h>

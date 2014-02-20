@@ -14,6 +14,7 @@
  * @version 1.0 
  * @date 03-12-2013
  *
+ * @todo fichier assez bordelique, non optimisé, à revoir (nom fichiers, taille des malloc, test des ouvertures) !
  */
  
 /** 
@@ -35,17 +36,13 @@ int main(){
 	
 	char *nom_fichier, string_choix_tour[80];
 	
-	int x, y, numero_tour, choix_tour;
+	int x, y, choix_tour;
 	
 	Partie partie;
 	
-	Position pos;
-	int abcisse, ordonne;
+	Position pos = creer_position(0, 0);
 	
 	FILE* fichier_plateau;
-	
-	abcisse = position_get_x(pos);
-	ordonne = position_get_y(pos);
 
 	printf("Bienvenue au jeu de Go!\n\n");
 	
@@ -57,8 +54,6 @@ int main(){
 	choix = getchar();
 	
 	if(choix =='j' || choix == 'c'){	
-		numero_tour = 0;
-		
 		if(choix == 'j'){
 			partie = partie_initialisation(partie_demande_questions);
 		} else if(choix == 'c')
@@ -71,15 +66,13 @@ int main(){
 		}
 		
 		do {
-			numero_tour++;
-			
 			plateau_afficher(partie_get_plateau(partie));
 			
 			if(partie_get_joueur(partie) == BLANC){
-				printf("Au tour de %s (pion o - tour n°%d)\n", partie_get_joueur1(partie), numero_tour);
+				printf("Au tour de %s (pion o - tour n°%d)\n", partie_get_joueur1(partie), partie_get_numero_tour(partie));
 			} else if(partie_get_joueur(partie) == NOIR)
 			{
-				printf("Au tour de %s (pion x - tour n°%d)\n", partie_get_joueur2(partie), numero_tour);
+				printf("Au tour de %s (pion x - tour n°%d)\n", partie_get_joueur2(partie), partie_get_numero_tour(partie));
 			}
 			
 			choix = getchar();
@@ -107,13 +100,12 @@ int main(){
 					printf("\n");
 					
 					x--;
-					y--;
+					y--;			
 					
-					abcisse = x;
-					ordonne = y;				
+					position_set(pos, x, y);
 					
 				/* on demande la position jusqu'a avoir des coordonnees dans la plateau, et sur une case vide */
-				} while(!matrice_position_appartient(partie_get_plateau(partie), x, y) || est_un_pion_plateau(partie_get_plateau(partie), pos));
+				} while(!plateau_position_appartient(partie_get_plateau(partie), pos) || est_un_pion_plateau(partie_get_plateau(partie), pos));
 				
 				/* on pose le pion */
 				plateau_set(partie_get_plateau(partie), x, y, partie_get_joueur(partie));
@@ -121,19 +113,24 @@ int main(){
 				/* changement du joueur */
 				partie_echange_joueur(partie);
 				
+				partie_numero_tour_incremente(partie);
+				
 				/* @todo faire une fonction pour le numero, evite allocaton dans main, et bordel */
-				nom_fichier = malloc(sizeof(char) * 50);
+				nom_fichier = calloc(50, sizeof(char));
 				strcat(nom_fichier, "extra/sauvegardes/");
 				
-				sprintf(string_choix_tour, "%d", numero_tour);
+				sprintf(string_choix_tour, "%d", partie_get_numero_tour(partie)+1);
 				strcat(nom_fichier, string_choix_tour);
 				
 				fichier_plateau = fopen(nom_fichier, "w+");
-	
+				
+				if(fichier_plateau == NULL)
+					fprintf(stderr, "fichier '%s' impossible à ouvrir pour la sauvegarde !\n", nom_fichier);
+					
 				plateau_sauvegarde(partie_get_plateau(partie), fichier_plateau);
 				
 				fclose(fichier_plateau);
-
+				
 			} else if(choix == 'r')
 			{
 				do {
@@ -142,10 +139,10 @@ int main(){
 					scanf("%d", &choix_tour);
 					
 					/* on controle le choix du tour */
-					if(choix_tour <= 0 || choix_tour >= numero_tour)
+					if(choix_tour <= 0 || choix_tour >= partie_get_numero_tour(partie))
 						printf("Veuillez entrer un tour > 0 et < au tour actuel ! ");
 						
-				} while(choix_tour <= 0 || choix_tour >= numero_tour);
+				} while(choix_tour <= 0 || choix_tour >= partie_get_numero_tour(partie));
 				
 				nom_fichier = malloc(sizeof(char) * 50);
 				strcat(nom_fichier, "extra/sauvegardes/");
@@ -157,7 +154,7 @@ int main(){
 	
 				partie_set_plateau(partie, plateau_chargement(fichier_plateau));
 				
-				numero_tour = choix_tour-1;
+				partie_set_numero_tour(partie, choix_tour-1);
 				
 				fclose(fichier_plateau);
 				

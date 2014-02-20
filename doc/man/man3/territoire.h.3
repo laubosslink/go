@@ -1,4 +1,4 @@
-.TH "include/territoire.h" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/territoire.h" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -27,6 +27,9 @@ Une portion de plateau encadré par une ou plusieurs chaines de pions en tenant 
 .SS "Fonctions"
 
 .in +1c
+.ti -1c
+.RI "\fBTerritoire\fP \fBcreer_territoire\fP ()"
+.br
 .ti -1c
 .RI "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fP plateau, \fBPosition\fP pos)"
 .br
@@ -64,6 +67,14 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 le type Territoire est un ensemble de positions colorés\&. C'est donc un alias du type \fBEnsemble_Colores\fP 
 .SH "Documentation des fonctions"
 .PP 
+.SS "\fBTerritoire\fP \fBcreer_territoire\fP ()"Permet de créer un territoire 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un territoire 
+.RE
+.PP
+
 .SS "\fBTerritoire\fP \fBdetermineTerritoire\fP (\fBPlateau\fPplateau, \fBPosition\fPpos)"Retourne un ensemble d'intersection innocupees voisines de proche en proche delimites par des pierres de meme couleur en commencant par l'intersection vide a la position pos\&. Important: si la case ne fait pas partie d'un territoire de meme couleur, retourne quand meme l'ensemble des intersections voisines mais en specifiant que territoire n'a aucune couleur\&. Ce cas est exploite pas la fonction estUnSeki 
 .SH "Auteur"
 .PP 

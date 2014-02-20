@@ -89,13 +89,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="position_8h.html" title="Une position.">position.h</a>&gt;</span>
 <a name="l00028"></a>00028 <span class="preprocessor">#include &lt;<a class="code" href="couleur_8h.html" title="La couleur d&#39;un pion.">couleur.h</a>&gt;</span>
 <a name="l00029"></a>00029 
-<a name="l00033"></a><a class="code" href="structPion.html">00033</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structPion.html" title="Structure d&#39;un pion qui contient la position du pion et sa couleur.">Pion</a> {
-<a name="l00035"></a><a class="code" href="structPion.html#a1a131c2aae6a64827c7fcd6f52fcb47c">00035</a>         <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> <a class="code" href="structPion.html#a1a131c2aae6a64827c7fcd6f52fcb47c">p</a>;
-<a name="l00036"></a>00036 
-<a name="l00038"></a><a class="code" href="structPion.html#a3811851abd3312e2e60a78fbc75081cb">00038</a>         <a class="code" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="structPion.html#a3811851abd3312e2e60a78fbc75081cb">c</a>;
-<a name="l00039"></a>00039 } <a class="code" href="pion_8h.html#a2040109f29e949222c8d3093fa6c1c58" title="Structure d&#39;un pion qui contient la position du pion et sa couleur.">Pion</a>;
+<a name="l00033"></a><a class="code" href="pion_8h.html#a05b6030deff75b425dd897d5e37cc036">00033</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structPion.html" title="Structure qui représente un pion.">Pion</a>* <a class="code" href="pion_8h.html#a05b6030deff75b425dd897d5e37cc036" title="Structure d&#39;un pion qui contient la position du pion et sa couleur.">Pion</a>;
+<a name="l00034"></a>00034 
+<a name="l00039"></a>00039 Pion <a class="code" href="pion_8h.html#a07ae5fd0f580a91bc9ce492fb2026fc7">creer_pion</a>(<a class="code" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="structPion.html#a3811851abd3312e2e60a78fbc75081cb">c</a>, <a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a> <a class="code" href="structPion.html#a1a131c2aae6a64827c7fcd6f52fcb47c">p</a>);
 <a name="l00040"></a>00040 
-<a name="l00041"></a>00041 <span class="preprocessor">#endif</span>
+<a name="l00046"></a>00046 <a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a> <a class="code" href="pion_8h.html#af1486d10c2ecd0b068b23a13e36e3cb6">pion_get_position</a>(Pion pion);
+<a name="l00047"></a>00047 
+<a name="l00053"></a>00053 <a class="code" href="couleur_8h.html#aa304d0ca681f782b1d7735da33037dd7">Couleur</a> <a class="code" href="pion_8h.html#a123002f7117dfbf4ef4acaf198654e65">pion_get_color</a>(Pion pion);
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -114,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi Février 19 2014 17:48:20 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi Février 20 2014 05:34:12 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

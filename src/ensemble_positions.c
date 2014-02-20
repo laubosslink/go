@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
- * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
@@ -75,7 +73,8 @@ int ensemble_positions_appartient(Ensemble_Positions E, Position element){
 	x = position_get_x(ensemble_positions_get_courant(E));
 	y = position_get_y(ensemble_positions_get_courant(E));
 	
-	if(x == position_get_x(element) && y == position_get_y(element)) return 1;
+	if(x == position_get_x(element) && y == position_get_y(element)) 
+		return 1;
 	
 	return 0;
 }

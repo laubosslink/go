@@ -49,12 +49,14 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 ##
 
 # Permet d'appliquer l'ensemble des tests
-tests: test_libmatrice test_libensemble test_ensemble_colores test_chaines_appartient_chaine \
+tests: test_libmatrice test_libensemble test_ensemble_colores test_ensemble_positions test_chaines_appartient_chaine \
 		test_plateau test_determine_chaine test_determine_territoire test_entoure_territoire test_determine_libertes \
 		test_capture_chaines
+		
 	@$(LIBDIR)/matrice/bin/test_libmatrice
 	@$(LIBDIR)/ensemble/bin/test_libensemble
 	@$(BINDIR)/test_ensemble_colores
+	@$(BINDIR)/test_ensemble_positions
 	@$(BINDIR)/test_chaines_appartient_chaine
 	@$(BINDIR)/test_plateau
 	@$(BINDIR)/test_determine_chaine
@@ -178,7 +180,7 @@ $(OBJDIR)/test_ensemble_colores.o : $(TESTDIR)/test_ensemble_colores.c
 
 test_ensemble_positions: $(LIBDIR)/ensemble/bin/libensemble.so $(BINDIR)/test_ensemble_positions
 
-$(BINDIR)/test_ensemble_positions: $(OBJDIR)/ensemble_positions.o $(OBJDIR)/test_ensemble_positions.o
+$(BINDIR)/test_ensemble_positions: $(OBJDIR)/ensemble_positions.o $(OBJDIR)/test_ensemble_positions.o $(OBJDIR)/position.o
 	$(CC) $(LDFLAGS) $^ -o $@ -lensemble
 	
 $(OBJDIR)/test_ensemble_positions.o : $(TESTDIR)/test_ensemble_positions.c

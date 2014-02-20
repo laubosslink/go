@@ -88,27 +88,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00026"></a>00026 <span class="preprocessor"></span>
 <a name="l00027"></a>00027 <span class="preprocessor">#include &lt;<a class="code" href="ensemble_8h.html" title="structures cell et Ensemble permettant la manipulation d&#39;ensembles">ensemble.h</a>&gt;</span>
 <a name="l00028"></a>00028 
-<a name="l00029"></a><a class="code" href="position_8h.html#aa78012e27ba983f9620fe4ff4bf1d616">00029</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>;
-<a name="l00030"></a>00030 
-<a name="l00034"></a><a class="code" href="structPosition.html">00034</a> <span class="keyword">struct </span><a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> {
-<a name="l00036"></a><a class="code" href="structPosition.html#aeda152ffeee17ae5be9c02327b2408d8">00036</a>         <span class="keywordtype">int</span> <a class="code" href="structPosition.html#aeda152ffeee17ae5be9c02327b2408d8">x</a>;
-<a name="l00037"></a>00037 
-<a name="l00039"></a><a class="code" href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">00039</a>         <span class="keywordtype">int</span> <a class="code" href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">y</a>;
-<a name="l00040"></a>00040 };
-<a name="l00041"></a>00041 
-<a name="l00048"></a>00048 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* <a class="code" href="position_8h.html#a6b0ffa30310890f0f828dd785396f701">creer_position</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);
+<a name="l00032"></a><a class="code" href="position_8h.html#a862614b88e8512d811dfea1749266cae">00032</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a>* <a class="code" href="position_8h.html#a862614b88e8512d811dfea1749266cae" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034 
+<a name="l00041"></a>00041 Position <a class="code" href="position_8h.html#a73242e281124e6b97f4302dc6ff40a99">creer_position</a>(<span class="keywordtype">int</span> <a class="code" href="structPosition.html#aeda152ffeee17ae5be9c02327b2408d8">x</a>, <span class="keywordtype">int</span> <a class="code" href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">y</a>);
+<a name="l00042"></a>00042 
+<a name="l00048"></a>00048 Position <a class="code" href="position_8h.html#a4d84fcda8774658150df72cd8651c2c3">position_copy</a>(Position pos);
 <a name="l00049"></a>00049 
-<a name="l00055"></a>00055 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* <a class="code" href="position_8h.html#a2f0f1db494c1a565d38b0f6ad50aa764">position_get_courant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> E);
-<a name="l00056"></a>00056 
-<a name="l00062"></a>00062 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> <a class="code" href="position_8h.html#a560eb95832e1fa5b450a770fc0bbda3b">haut</a>(<a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> p);
-<a name="l00063"></a>00063 
-<a name="l00069"></a>00069 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> <a class="code" href="position_8h.html#a7e92be3f4b11fe045bd2faa5d121bc07">bas</a>(<a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> p);
-<a name="l00070"></a>00070 
-<a name="l00076"></a>00076 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> <a class="code" href="position_8h.html#af85ae3fae0ab221ae8f7f52ca740b584">gauche</a>(<a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> p);
-<a name="l00077"></a>00077 
-<a name="l00083"></a>00083 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> <a class="code" href="position_8h.html#aae3c656b6236e8cd8109d4486140fb38">droite</a>(<a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a> p);
+<a name="l00054"></a>00054 <span class="keywordtype">void</span> <a class="code" href="position_8h.html#a8293d59c70bb407560d9ffe00b5c7133">detruire_position</a>(Position p);
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061 <span class="keywordtype">int</span> <a class="code" href="position_8h.html#ab50df18c9a2325dbd85c98ea49571d39">position_get_x</a>(Position p);
+<a name="l00062"></a>00062 
+<a name="l00068"></a>00068 <span class="keywordtype">int</span> <a class="code" href="position_8h.html#ae402557c71f8e787a60a2d9190eae731">position_get_y</a>(Position p); 
+<a name="l00069"></a>00069 
+<a name="l00075"></a>00075 Position <a class="code" href="position_8h.html#a38fc7708cc1de8410a7714ba1db94b79">position_get_courant</a>(<a class="code" href="structEnsemble.html" title="structure Ensemble contient le pointeur vers la cellule courante et le pointeur vers la tete de l&#39;ens...">Ensemble</a> E);
+<a name="l00076"></a>00076 
+<a name="l00083"></a>00083 <span class="keywordtype">void</span> <a class="code" href="position_8h.html#a5caa3a99a0ca91bbb36cc3dc282007d4">position_set</a>(Position p, <span class="keywordtype">int</span> <a class="code" href="structPosition.html#aeda152ffeee17ae5be9c02327b2408d8">x</a>, <span class="keywordtype">int</span> <a class="code" href="structPosition.html#a3c08e9213d4726b21caba3073192c4a3">y</a>);
 <a name="l00084"></a>00084 
-<a name="l00085"></a>00085 <span class="preprocessor">#endif</span>
+<a name="l00090"></a>00090 Position <a class="code" href="position_8h.html#a560eb95832e1fa5b450a770fc0bbda3b">haut</a>(Position p);
+<a name="l00091"></a>00091 
+<a name="l00097"></a>00097 Position <a class="code" href="position_8h.html#a7e92be3f4b11fe045bd2faa5d121bc07">bas</a>(Position p);
+<a name="l00098"></a>00098 
+<a name="l00104"></a>00104 Position <a class="code" href="position_8h.html#af85ae3fae0ab221ae8f7f52ca740b584">gauche</a>(Position p);
+<a name="l00105"></a>00105 
+<a name="l00111"></a>00111 Position <a class="code" href="position_8h.html#aae3c656b6236e8cd8109d4486140fb38">droite</a>(Position p);
+<a name="l00112"></a>00112 
+<a name="l00118"></a>00118 Position <a class="code" href="position_8h.html#a5b7858de1e3aab7e713b2eb66a1f54b7">deplacer_haut</a>(Position p);
+<a name="l00119"></a>00119 
+<a name="l00125"></a>00125 Position <a class="code" href="position_8h.html#aba995956a9501ededbbc9ae12848b212">deplacer_bas</a>(Position p);
+<a name="l00126"></a>00126 
+<a name="l00132"></a>00132 Position <a class="code" href="position_8h.html#a9ef10054e5f37ee5be99d725739898bb">deplacer_gauche</a>(Position p);
+<a name="l00133"></a>00133 
+<a name="l00139"></a>00139 Position <a class="code" href="position_8h.html#aaedef3af49544909468c2048c1fe43de">deplacer_droite</a>(Position p);
+<a name="l00140"></a>00140 
+<a name="l00141"></a>00141 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -127,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi Février 19 2014 17:48:20 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi Février 20 2014 05:34:12 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

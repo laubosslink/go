@@ -8,16 +8,20 @@
 
 {\ttfamily \#include $<$position.\-h$>$}\*
 {\ttfamily \#include $<$couleur.\-h$>$}\*
-\subsection*{\-Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{structPion}{\-Pion}
-\begin{DoxyCompactList}\small\item\em \-Structure d'un pion qui contient la position du pion et sa couleur. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{structPion}{\-Pion} \hyperlink{pion_8h_a2040109f29e949222c8d3093fa6c1c58}{\-Pion}
+typedef struct \hyperlink{structPion}{\-Pion} $\ast$ \hyperlink{pion_8h_a05b6030deff75b425dd897d5e37cc036}{\-Pion}
 \begin{DoxyCompactList}\small\item\em \-Structure d'un pion qui contient la position du pion et sa couleur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structPion}{\-Pion} \hyperlink{pion_8h_a07ae5fd0f580a91bc9ce492fb2026fc7}{creer\-\_\-pion} (\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} c, \hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{pion_8h_af1486d10c2ecd0b068b23a13e36e3cb6}{pion\-\_\-get\-\_\-position} (\hyperlink{structPion}{\-Pion} pion)
+\item 
+\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} \hyperlink{pion_8h_a123002f7117dfbf4ef4acaf198654e65}{pion\-\_\-get\-\_\-color} (\hyperlink{structPion}{\-Pion} pion)
+\end{DoxyCompactItemize}
 
 
 \subsection{\-Description détaillée}
@@ -37,10 +41,54 @@ typedef struct \hyperlink{structPion}{\-Pion} \hyperlink{pion_8h_a2040109f29e949
 
 
 \subsection{\-Documentation des définitions de type}
-\hypertarget{pion_8h_a2040109f29e949222c8d3093fa6c1c58}{\index{pion.\-h@{pion.\-h}!\-Pion@{\-Pion}}
+\hypertarget{pion_8h_a05b6030deff75b425dd897d5e37cc036}{\index{pion.\-h@{pion.\-h}!\-Pion@{\-Pion}}
 \index{\-Pion@{\-Pion}!pion.h@{pion.\-h}}
-\subsubsection[{\-Pion}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Pion}  {\bf \-Pion}}}\label{pion_8h_a2040109f29e949222c8d3093fa6c1c58}
+\subsubsection[{\-Pion}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Pion}$\ast$ {\bf \-Pion}}}\label{pion_8h_a05b6030deff75b425dd897d5e37cc036}
 
 
 \-Structure d'un pion qui contient la position du pion et sa couleur. 
 
+
+
+\subsection{\-Documentation des fonctions}
+\hypertarget{pion_8h_a07ae5fd0f580a91bc9ce492fb2026fc7}{\index{pion.\-h@{pion.\-h}!creer\-\_\-pion@{creer\-\_\-pion}}
+\index{creer\-\_\-pion@{creer\-\_\-pion}!pion.h@{pion.\-h}}
+\subsubsection[{creer\-\_\-pion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Pion} {\bf creer\-\_\-pion} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Couleur}}]{c, }
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{pion_8h_a07ae5fd0f580a91bc9ce492fb2026fc7}
+\-Permet de créer un pion \begin{DoxyReturn}{\-Renvoie}
+un nouveau pion 
+\end{DoxyReturn}
+\hypertarget{pion_8h_a123002f7117dfbf4ef4acaf198654e65}{\index{pion.\-h@{pion.\-h}!pion\-\_\-get\-\_\-color@{pion\-\_\-get\-\_\-color}}
+\index{pion\-\_\-get\-\_\-color@{pion\-\_\-get\-\_\-color}!pion.h@{pion.\-h}}
+\subsubsection[{pion\-\_\-get\-\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Couleur} {\bf pion\-\_\-get\-\_\-color} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Pion}}]{pion}
+\end{DoxyParamCaption}
+)}}\label{pion_8h_a123002f7117dfbf4ef4acaf198654e65}
+\-Permet de récupérer la couleur du pion 
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la couleur du pion 
+\end{DoxyReturn}
+\hypertarget{pion_8h_af1486d10c2ecd0b068b23a13e36e3cb6}{\index{pion.\-h@{pion.\-h}!pion\-\_\-get\-\_\-position@{pion\-\_\-get\-\_\-position}}
+\index{pion\-\_\-get\-\_\-position@{pion\-\_\-get\-\_\-position}!pion.h@{pion.\-h}}
+\subsubsection[{pion\-\_\-get\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf pion\-\_\-get\-\_\-position} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Pion}}]{pion}
+\end{DoxyParamCaption}
+)}}\label{pion_8h_af1486d10c2ecd0b068b23a13e36e3cb6}
+\-Permet de récupérer la position du pion 
+\begin{DoxyParams}{\-Paramètres}
+{\em pion} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la position du pion 
+\end{DoxyReturn}

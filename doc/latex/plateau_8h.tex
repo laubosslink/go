@@ -16,44 +16,44 @@
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{structMatrice}{\-Matrice} $\ast$ \hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau}
+typedef \hyperlink{structMatrice}{\-Matrice} \hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau}
 \begin{DoxyCompactList}\small\item\em \-Structure d'un plateau de jeu. \-Plateau est un alias du type \hyperlink{structMatrice}{\-Matrice}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{plateau_8h_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-afficher} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} p)
+void \hyperlink{plateau_8h_ad68ec9a561a948d5452a6f9f0d47ad5e}{plateau\-\_\-afficher} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} p)
 \item 
-\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} \hyperlink{plateau_8h_a48347ca20160613e199cab541b9a261f}{creer\-\_\-plateau} (int taille)
+\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} \hyperlink{plateau_8h_a48347ca20160613e199cab541b9a261f}{creer\-\_\-plateau} (int taille)
 \item 
 int \hyperlink{plateau_8h_aa1e22cd1f62f82a372ea9064bf20dc1a}{est\-\_\-un\-\_\-pion} (\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} c)
 \item 
-int \hyperlink{plateau_8h_a1c743ade7c4b882ed744379644771532}{est\-\_\-un\-\_\-pion\-\_\-plateau} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
+int \hyperlink{plateau_8h_a1c743ade7c4b882ed744379644771532}{est\-\_\-un\-\_\-pion\-\_\-plateau} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
 \item 
-\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} \hyperlink{plateau_8h_a5c7b6365c1a6de4969afc180f5527275}{plateau\-\_\-get} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} m, int x, int y)
+\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} \hyperlink{plateau_8h_a5c7b6365c1a6de4969afc180f5527275}{plateau\-\_\-get} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} m, int x, int y)
 \item 
-\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} \hyperlink{plateau_8h_a6418474ffc4c3ca31e65af92ed12444b}{plateau\-\_\-get\-\_\-pos} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} p, \hyperlink{structPosition}{\-Position} pos)
+\hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} \hyperlink{plateau_8h_a6418474ffc4c3ca31e65af92ed12444b}{plateau\-\_\-get\-\_\-pos} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} p, \hyperlink{structPosition}{\-Position} pos)
 \item 
-void \hyperlink{plateau_8h_a8827f1d4c586d4cc0bec0d30c659ccf8}{plateau\-\_\-set} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} m, int i, int j, \hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} c)
+void \hyperlink{plateau_8h_a8827f1d4c586d4cc0bec0d30c659ccf8}{plateau\-\_\-set} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} m, int i, int j, \hyperlink{couleur_8h_aa304d0ca681f782b1d7735da33037dd7}{\-Couleur} c)
 \item 
-\hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} \hyperlink{plateau_8h_a9e30ba185721b4e439f27ff5e29be474}{plateau\-\_\-determiner\-\_\-chaine} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
+\hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} \hyperlink{plateau_8h_a9e30ba185721b4e439f27ff5e29be474}{plateau\-\_\-determiner\-\_\-chaine} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} pos)
 \item 
-void \hyperlink{plateau_8h_a68c23e65cb6394bb0d2d7d81e184d644}{plateau\-\_\-realiser\-\_\-capture} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} chaine)
+void \hyperlink{plateau_8h_a68c23e65cb6394bb0d2d7d81e184d644}{plateau\-\_\-realiser\-\_\-capture} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \hyperlink{chaine_8h_af8ce15b2345494c42b553ea1e9963f3c}{\-Chaine} chaine)
 \item 
-int \hyperlink{plateau_8h_a29b162a052880b4bc14ecab174be380b}{plateau\-\_\-est\-\_\-identique} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} ancien\-Plateau)
+int \hyperlink{plateau_8h_a29b162a052880b4bc14ecab174be380b}{plateau\-\_\-est\-\_\-identique} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} ancien\-Plateau)
 \item 
-int \hyperlink{plateau_8h_a396ddc6f1c29d908e92628deac9c07fc}{plateau\-\_\-copie} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} from, \hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} to)
+int \hyperlink{plateau_8h_a396ddc6f1c29d908e92628deac9c07fc}{plateau\-\_\-copie} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} from, \hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} to)
 \item 
-\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} \hyperlink{plateau_8h_a9839296d31f66c2bf4e7aa29c33be92b}{plateau\-\_\-entoure\-\_\-un\-\_\-territoire} (\hyperlink{territoire_8h_acd8ada3b62a70edf9027b633cd14db5c}{\-Territoire} le\-Territoire, \hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau)
+\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} \hyperlink{plateau_8h_a9839296d31f66c2bf4e7aa29c33be92b}{plateau\-\_\-entoure\-\_\-un\-\_\-territoire} (\hyperlink{territoire_8h_acd8ada3b62a70edf9027b633cd14db5c}{\-Territoire} le\-Territoire, \hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau)
 \item 
-int \hyperlink{plateau_8h_ae8d9ec3267e5d16b943e20324a8944cd}{plateau\-\_\-sauvegarde} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \-F\-I\-L\-E $\ast$fichier)
+int \hyperlink{plateau_8h_ae8d9ec3267e5d16b943e20324a8944cd}{plateau\-\_\-sauvegarde} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \-F\-I\-L\-E $\ast$fichier)
 \item 
-int \hyperlink{plateau_8h_aa32daf7f27e57e0994beb62b3bba2611}{plateau\-\_\-position\-\_\-appartient} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} position)
+int \hyperlink{plateau_8h_aa32daf7f27e57e0994beb62b3bba2611}{plateau\-\_\-position\-\_\-appartient} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \hyperlink{structPosition}{\-Position} position)
 \item 
-\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} \hyperlink{plateau_8h_a07f20c49b80703211e7a8949f2e702b1}{plateau\-\_\-chargement} (\-F\-I\-L\-E $\ast$fichier)
+\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} \hyperlink{plateau_8h_a07f20c49b80703211e7a8949f2e702b1}{plateau\-\_\-chargement} (\-F\-I\-L\-E $\ast$fichier)
 \item 
-\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} \hyperlink{plateau_8h_a233209249792b1a2c99163fc53ce62aa}{capture\-Chaines} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau, \hyperlink{structPion}{\-Pion} pion, int $\ast$valide)
+\hyperlink{chaines_8h_ace61862724812da656df963432df9db7}{\-Chaines} \hyperlink{plateau_8h_a233209249792b1a2c99163fc53ce62aa}{capture\-Chaines} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau, \hyperlink{structPion}{\-Pion} pion, int $\ast$valide)
 \item 
-int \hyperlink{plateau_8h_a878237e4b66184d2db14b6b7cbfbb431}{plateau\-\_\-get\-\_\-taille} (\hyperlink{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\-Plateau} plateau)
+int \hyperlink{plateau_8h_a878237e4b66184d2db14b6b7cbfbb431}{plateau\-\_\-get\-\_\-taille} (\hyperlink{plateau_8h_a1d931a164827223830c123a512b04c5b}{\-Plateau} plateau)
 \end{DoxyCompactItemize}
 
 
@@ -74,9 +74,9 @@ int \hyperlink{plateau_8h_a878237e4b66184d2db14b6b7cbfbb431}{plateau\-\_\-get\-\
 
 
 \subsection{\-Documentation des définitions de type}
-\hypertarget{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}{\index{plateau.\-h@{plateau.\-h}!\-Plateau@{\-Plateau}}
+\hypertarget{plateau_8h_a1d931a164827223830c123a512b04c5b}{\index{plateau.\-h@{plateau.\-h}!\-Plateau@{\-Plateau}}
 \index{\-Plateau@{\-Plateau}!plateau.h@{plateau.\-h}}
-\subsubsection[{\-Plateau}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Matrice}$\ast$ {\bf \-Plateau}}}\label{plateau_8h_a200ab4b9e2219fb369612bcb1d40f9d5}
+\subsubsection[{\-Plateau}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf \-Matrice} {\bf \-Plateau}}}\label{plateau_8h_a1d931a164827223830c123a512b04c5b}
 
 
 \-Structure d'un plateau de jeu. \-Plateau est un alias du type \hyperlink{structMatrice}{\-Matrice}. 
@@ -111,37 +111,13 @@ initialisation des chaines
 
 on determine la chaine a laquelle appartient le pion
 
+\begin{DoxyRefDesc}{\-A faire}
+\item[\hyperlink{todo__todo000007}{\-A faire}]valide vaudra toujours 1 !? d'où valide=0 au dessus inutile !? il n'y a aucun return... donc on arrivera forcément ici ! \end{DoxyRefDesc}
+
+
 on se deplace sur cette chaine
 
 on regarde haut, bas, gauche, droite de chaque position de cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
-
-on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
-
-on vérifie les libertés de chaque chaine, et si ensemble\-\_\-vide(libertes) == 1 pour une chaine, on capture cette chaine
 
 on determine la chaine de chaque haut/bas/gauche/droite, et on l'ajoute dans une \-Chaines \char`\"{}tmp\char`\"{}
 
@@ -274,7 +250,9 @@ un plateau
 \begin{DoxyReturn}{\-Renvoie}
 une ou plusieurs chaines 
 \end{DoxyReturn}
-\hypertarget{plateau_8h_a29b162a052880b4bc14ecab174be380b}{\index{plateau.\-h@{plateau.\-h}!plateau\-\_\-est\-\_\-identique@{plateau\-\_\-est\-\_\-identique}}
+on determine la chaine qui forme le territoire
+
+une fois qu'on à la chaine du territoire on prend chaque position pour lancer recursivement la recherche des chaines qui sont autours\hypertarget{plateau_8h_a29b162a052880b4bc14ecab174be380b}{\index{plateau.\-h@{plateau.\-h}!plateau\-\_\-est\-\_\-identique@{plateau\-\_\-est\-\_\-identique}}
 \index{plateau\-\_\-est\-\_\-identique@{plateau\-\_\-est\-\_\-identique}!plateau.h@{plateau.\-h}}
 \subsubsection[{plateau\-\_\-est\-\_\-identique}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf plateau\-\_\-est\-\_\-identique} (
 \begin{DoxyParamCaption}

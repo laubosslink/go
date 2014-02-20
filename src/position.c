@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
- * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
@@ -29,6 +27,9 @@
 #include <position.h>
 #include <ensemble.h>
 
+/**
+ * @brief Structure qui représente une position
+ */
 struct Position {
 	/** Position x */
 	int x;
@@ -52,6 +53,11 @@ Position creer_position(int x, int y){
 	p->y = y;
 	
 	return p;
+}
+
+void position_set(Position p, int x, int y){
+	p->x = x;
+	p->y = y;
 }
 
 Position position_copy(Position pos){

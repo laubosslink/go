@@ -1,0 +1,113 @@
+.TH "src/pion.c" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/pion.c \- 
+.PP
+code source qui permet de gérer les pions  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <pion\&.h>\fP
+.br
+\fC#include <position\&.h>\fP
+.br
+\fC#include <couleur\&.h>\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPion\fP"
+.br
+.RI "\fIStructure qui représente un pion\&. \fP"
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBPion\fP \fBcreer_pion\fP (\fBCouleur\fP c, \fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBpion_get_position\fP (\fBPion\fP pion)"
+.br
+.ti -1c
+.RI "\fBCouleur\fP \fBpion_get_color\fP (\fBPion\fP pion)"
+.br
+.in -1c
+.SH "Description détaillée"
+.PP 
+code source qui permet de gérer les pions 
+
+ENSICAEN 6 Boulevard Marechal Juin F-14050 Caen Cedex
+.PP
+This file is owned by ENSICAEN students\&. No portion of this document may be reproduced, copied or revised without written premission of the authors 
+.PP
+\fBAuteur:\fP
+.RS 4
+ELHIMDI Yasmine <elhimdi@ecole.ensicaen.fr> 
+.PP
+PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com> 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.1 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+03-02-2013
+.RE
+.PP
+\fBA faire\fP
+.RS 4
+revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+.RE
+.PP
+
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBPion\fP \fBcreer_pion\fP (\fBCouleur\fPc, \fBPosition\fPp)"Permet de créer un pion 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un nouveau pion 
+.RE
+.PP
+
+.SS "\fBCouleur\fP \fBpion_get_color\fP (\fBPion\fPpion)"Permet de récupérer la couleur du pion 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpion\fP 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la couleur du pion 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBpion_get_position\fP (\fBPion\fPpion)"Permet de récupérer la position du pion 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpion\fP 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la position du pion 
+.RE
+.PP
+
+.SH "Auteur"
+.PP 
+Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

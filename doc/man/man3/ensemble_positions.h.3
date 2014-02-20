@@ -1,4 +1,4 @@
-.TH "include/ensemble_positions.h" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/ensemble_positions.h" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,13 +35,13 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .RI "int \fBensemble_positions_vide\fP (\fBEnsemble_Positions\fP E)"
 .br
 .ti -1c
-.RI "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP *element)"
+.RI "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP element)"
 .br
 .ti -1c
-.RI "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP *element)"
+.RI "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP element)"
 .br
 .ti -1c
-.RI "\fBEnsemble_Positions\fP \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP *element)"
+.RI "\fBEnsemble_Positions\fP \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fP E, \fBPosition\fP element)"
 .br
 .ti -1c
 .RI "\fBCell\fP \fBensemble_positions_tete\fP (\fBEnsemble_Positions\fP E)"
@@ -53,7 +53,7 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .RI "int \fBensemble_positions_suivant\fP (\fBEnsemble_Positions\fP E)"
 .br
 .ti -1c
-.RI "\fBPosition\fP * \fBensemble_positions_get_courant\fP (\fBEnsemble_Positions\fP E)"
+.RI "\fBPosition\fP \fBensemble_positions_get_courant\fP (\fBEnsemble_Positions\fP E)"
 .br
 .ti -1c
 .RI "void \fBensemble_positions_affiche\fP (\fBEnsemble_Positions\fP E)"
@@ -116,7 +116,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fPE, \fBPosition\fP *element)"Permet d'ajouter un élément dans un ensemble 
+.SS "void \fBensemble_positions_ajouter\fP (\fBEnsemble_Positions\fPE, \fBPosition\fPelement)"Permet d'ajouter un élément dans un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -124,7 +124,7 @@ un pointeur vers un ensemble
 .RE
 .PP
 
-.SS "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fPE, \fBPosition\fP *element)"Permet de vérifier qu'un élément appartiennent à un ensemble 
+.SS "int \fBensemble_positions_appartient\fP (\fBEnsemble_Positions\fPE, \fBPosition\fPelement)"Permet de vérifier qu'un élément appartiennent à un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -145,7 +145,7 @@ le pointeur sur l'élément courant
 .RE
 .PP
 
-.SS "\fBEnsemble_Positions\fP \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fPE, \fBPosition\fP *element)"Permet de supprimer un élément dans l'ensemble 
+.SS "\fBEnsemble_Positions\fP \fBensemble_positions_enlever\fP (\fBEnsemble_Positions\fPE, \fBPosition\fPelement)"Permet de supprimer un élément dans l'ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -158,7 +158,7 @@ E pointeur vers le nouvel ensemble privé de l'élément supprimé
 .RE
 .PP
 
-.SS "\fBPosition\fP* \fBensemble_positions_get_courant\fP (\fBEnsemble_Positions\fPE)"Permet de récupérer la position courrante de l'ensemble 
+.SS "\fBPosition\fP \fBensemble_positions_get_courant\fP (\fBEnsemble_Positions\fPE)"Permet de récupérer la position courrante de l'ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4

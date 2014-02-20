@@ -1,4 +1,4 @@
-.TH "src/position.c" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "src/position.c" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -18,14 +18,37 @@ code source qui permet de gérer les positions
 \fC#include <ensemble\&.h>\fP
 .br
 
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBPosition\fP"
+.br
+.RI "\fIStructure qui représente une position\&. \fP"
+.in -1c
 .SS "Fonctions"
 
 .in +1c
 .ti -1c
-.RI "\fBPosition\fP * \fBcreer_position\fP (int x, int y)"
+.RI "int \fBposition_get_x\fP (\fBPosition\fP p)"
 .br
 .ti -1c
-.RI "\fBPosition\fP * \fBposition_get_courant\fP (\fBEnsemble\fP E)"
+.RI "int \fBposition_get_y\fP (\fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBcreer_position\fP (int x, int y)"
+.br
+.ti -1c
+.RI "void \fBposition_set\fP (\fBPosition\fP p, int x, int y)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBposition_copy\fP (\fBPosition\fP pos)"
+.br
+.ti -1c
+.RI "void \fBdetruire_position\fP (\fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBposition_get_courant\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
 .RI "\fBPosition\fP \fBhaut\fP (\fBPosition\fP p)"
@@ -38,6 +61,18 @@ code source qui permet de gérer les positions
 .br
 .ti -1c
 .RI "\fBPosition\fP \fBdroite\fP (\fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBdeplacer_haut\fP (\fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBdeplacer_bas\fP (\fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBdeplacer_gauche\fP (\fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBdeplacer_droite\fP (\fBPosition\fP p)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -62,18 +97,13 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 .PP
 \fBDate:\fP
 .RS 4
-03-02-2013
-.RE
-.PP
-\fBA faire\fP
-.RS 4
-revoir la doc / remplacer Ensemble_Positions par Ensemble_Position 
+03-02-2013 
 .RE
 .PP
 
 .SH "Documentation des fonctions"
 .PP 
-.SS "\fBPosition\fP \fBbas\fP (\fBPosition\fPp)"Permet de se deplacer vers le bas 
+.SS "\fBPosition\fP \fBbas\fP (\fBPosition\fPp)"Permet d'avoir une nouvelle position déplacé vers le bas 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -82,11 +112,11 @@ revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
 .PP
 \fBRenvoie:\fP
 .RS 4
-nouvelle position 
+une nouvelle position déplacé 
 .RE
 .PP
 
-.SS "\fBPosition\fP* \fBcreer_position\fP (intx, inty)"Permet de creer une position 
+.SS "\fBPosition\fP \fBcreer_position\fP (intx, inty)"Permet de creer une position 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -101,7 +131,7 @@ un pointeur vers la position alloue
 .RE
 .PP
 
-.SS "\fBPosition\fP \fBdroite\fP (\fBPosition\fPp)"Permet de se deplacer vers la droite 
+.SS "\fBPosition\fP \fBdeplacer_bas\fP (\fBPosition\fPp)"Permet de se deplacer vers le bas 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -110,11 +140,11 @@ un pointeur vers la position alloue
 .PP
 \fBRenvoie:\fP
 .RS 4
-nouvelle position 
+la position deplacer 
 .RE
 .PP
 
-.SS "\fBPosition\fP \fBgauche\fP (\fBPosition\fPp)"Permet de se deplacer vers la gauche 
+.SS "\fBPosition\fP \fBdeplacer_droite\fP (\fBPosition\fPp)"Permet de se deplacer vers la droite 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -123,11 +153,11 @@ nouvelle position
 .PP
 \fBRenvoie:\fP
 .RS 4
-nouvelle position 
+la position deplacer 
 .RE
 .PP
 
-.SS "\fBPosition\fP \fBhaut\fP (\fBPosition\fPp)"Permet de se deplacer vers le haut 
+.SS "\fBPosition\fP \fBdeplacer_gauche\fP (\fBPosition\fPp)"Permet de se deplacer vers la gauche 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -136,11 +166,84 @@ nouvelle position
 .PP
 \fBRenvoie:\fP
 .RS 4
-nouvelle position 
+la position deplacer 
 .RE
 .PP
 
-.SS "\fBPosition\fP* \fBposition_get_courant\fP (\fBEnsemble\fPE)"Permet de récupérer la position actuelle d'un ensemble 
+.SS "\fBPosition\fP \fBdeplacer_haut\fP (\fBPosition\fPp)"Permet de se deplacer vers le haut 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP la position a deplacer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la position deplacer 
+.RE
+.PP
+
+.SS "void \fBdetruire_position\fP (\fBPosition\fPp)"Permet de détruire une position 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP la position 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBdroite\fP (\fBPosition\fPp)"Permet d'avoir une nouvelle position déplacé vers la droite 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP la position a deplacer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une nouvelle position déplacé 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBgauche\fP (\fBPosition\fPp)"Permet d'avoir une nouvelle position déplacé vers la gauche 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP la position a deplacer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une nouvelle position déplacé 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBhaut\fP (\fBPosition\fPp)"Permet d'avoir une nouvelle position déplacé vers le haut 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP la position a deplacer 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une nouvelle position déplacé 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBposition_copy\fP (\fBPosition\fPpos)"Permet de copier une position actuelle dans une nouvelle 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpos\fP la position actuelle 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+une nouvelle position 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBposition_get_courant\fP (\fBEnsemble\fPE)"Permet de récupérer la position actuelle d'un ensemble 
 .PP
 \fBParamètres:\fP
 .RS 4
@@ -150,6 +253,44 @@ nouvelle position
 \fBRenvoie:\fP
 .RS 4
 Un pointeur vers une position 
+.RE
+.PP
+
+.SS "int \fBposition_get_x\fP (\fBPosition\fPp)"Permet de récupérer l'abcisse de la position p 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP le pointeur sur la position 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+x l'abcisse 
+.RE
+.PP
+
+.SS "int \fBposition_get_y\fP (\fBPosition\fPp)"Permet de récupérer l'ordonnée de la position p 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP le pointeur sur la position 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+x l'ordonnée 
+.RE
+.PP
+
+.SS "void \fBposition_set\fP (\fBPosition\fPp, intx, inty)"Permet de modifier une position 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIp\fP la position 
+.br
+\fIx\fP nouvelle abscisse 
+.br
+\fIy\fP nouvelle ordonnée 
 .RE
 .PP
 

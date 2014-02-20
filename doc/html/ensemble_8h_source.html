@@ -109,19 +109,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00087"></a>00087 
 <a name="l00093"></a>00093 <span class="keywordtype">void</span>* <a class="code" href="ensemble_8h.html#a20852de7430ad36817fcbf25686b083b">ensemble_get_courant_contenu</a>(Ensemble E);
 <a name="l00094"></a>00094 
-<a name="l00100"></a>00100 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#a983751950264eb587db709ee5b0b08c8">ensemble_set_courant</a>(Ensemble E, Cell c);
+<a name="l00100"></a>00100 <span class="keywordtype">void</span>* <a class="code" href="ensemble_8h.html#a57875cb73815f63cba85084f464cf2b5">ensemble_get_suivant_contenu</a>(Ensemble E);
 <a name="l00101"></a>00101 
-<a name="l00106"></a>00106 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#ab619d79442f10aff2b26fb9f29fa984a">ensemble_suivant</a>(Ensemble E);
-<a name="l00107"></a>00107 
-<a name="l00114"></a>00114 Ensemble <a class="code" href="ensemble_8h.html#a4fd875b8bb4225e555a12dd36fe7e4bb">ensemble_concatene</a>(Ensemble e1, Ensemble e2);
-<a name="l00115"></a>00115 
-<a name="l00120"></a>00120 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#af6b32ae127a0ba5999cecc124f3d5e1f">ensemble_reset_courant</a>(Ensemble E);
-<a name="l00121"></a>00121 
-<a name="l00126"></a>00126 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#ad3602de5998378106d62fb93b699fe5d">ensemble_afficher_pointeur</a>(Ensemble E);
-<a name="l00127"></a>00127 
-<a name="l00132"></a>00132 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#aba22cf19e1316944ad99abf110f236df">ensemble_afficher_entier</a>(Ensemble E);
-<a name="l00133"></a>00133 
-<a name="l00134"></a>00134 <span class="preprocessor">#endif</span>
+<a name="l00107"></a>00107 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#a983751950264eb587db709ee5b0b08c8">ensemble_set_courant</a>(Ensemble E, Cell c);
+<a name="l00108"></a>00108 
+<a name="l00113"></a>00113 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#ab619d79442f10aff2b26fb9f29fa984a">ensemble_suivant</a>(Ensemble E);
+<a name="l00114"></a>00114 
+<a name="l00121"></a>00121 Ensemble <a class="code" href="ensemble_8h.html#a4fd875b8bb4225e555a12dd36fe7e4bb">ensemble_concatene</a>(Ensemble e1, Ensemble e2);
+<a name="l00122"></a>00122 
+<a name="l00127"></a>00127 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#af6b32ae127a0ba5999cecc124f3d5e1f">ensemble_reset_courant</a>(Ensemble E);
+<a name="l00128"></a>00128 
+<a name="l00133"></a>00133 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#ad3602de5998378106d62fb93b699fe5d">ensemble_afficher_pointeur</a>(Ensemble E);
+<a name="l00134"></a>00134 
+<a name="l00139"></a>00139 <span class="keywordtype">void</span> <a class="code" href="ensemble_8h.html#aba22cf19e1316944ad99abf110f236df">ensemble_afficher_entier</a>(Ensemble E);
+<a name="l00140"></a>00140 
+<a name="l00146"></a>00146 <span class="keywordtype">int</span> <a class="code" href="ensemble_8h.html#ab00d715d36a31802ed60e9522a205632">ensemble_nbr_element</a>(Ensemble E);
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -140,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi Février 19 2014 17:48:20 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi Février 20 2014 05:34:12 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

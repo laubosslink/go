@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
- * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
@@ -75,26 +73,27 @@ Position ensemble_colores_get_courant(Ensemble_Colores E){
 }
 
 int ensemble_colores_appartient(Ensemble_Colores E, Position element){
-	Positions p = E->p;
-	int x,y;
+	int x, y;
 	
-	x=position_get_x(element);
-	y=position_get_y(element);
-	
-	if(ensemble_vide(p))
+	if(ensemble_colores_vide(E))
 		return 0;
 	
-	ensemble_reset_courant(p);
+	ensemble_colores_reset(E);
 	
-	while(ensemble_suivant(p)){
-		/** @todo cast ??*/
-		if(x == position_get_x(((Position)ensemble_colores_get_courant(E))) && y == position_get_y(((Position)ensemble_colores_get_courant(E))))
+	while(ensemble_colores_suivant(E)){
+		x = position_get_x(ensemble_colores_get_courant(E));
+		y = position_get_y(ensemble_colores_get_courant(E));
+		
+		if(x == position_get_x(element) && y == position_get_y(element))
 			return 1;
 			
-		ensemble_set_courant(p, ensemble_get_suivant(p));
+		ensemble_colores_set_courant(E, ensemble_colores_get_suivant(E));
 	}
-	
-	if(x == position_get_x(((Position)ensemble_colores_get_courant(E))) && y == position_get_y(((Position)ensemble_colores_get_courant(E))))
+		
+	x = position_get_x(ensemble_colores_get_courant(E));
+	y = position_get_y(ensemble_colores_get_courant(E));
+		
+	if(x == position_get_x(element) && y == position_get_y(element))
 		return 1;
 	
 	return 0;

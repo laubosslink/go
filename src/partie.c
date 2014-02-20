@@ -30,10 +30,14 @@
 #include <matrice.h>
 #include <couleur.h>
 
+/**
+ * @brief Structure qui représente une partie
+ */
 struct Partie {
 	char joueur1[20], joueur2[20]; /* nom des joueurs */
 	Couleur joueur; /* joueur actuel */
 	Plateau plateau;
+	int numero_tour;
 };
 
 void partie_demande_questions(int numero_question, Partie partie){
@@ -70,6 +74,8 @@ Partie partie_initialisation(FonctionQuestions fonctionQuestions){
 	/* le premier joueur a le pion blanc */
 	partie->joueur = BLANC;
 	
+	partie->numero_tour = 0;
+	
 	return partie;
 }
 
@@ -86,6 +92,17 @@ void partie_echange_joueur(Partie p){
 		p->joueur = NOIR;
 	else if(p->joueur == NOIR)
 		p->joueur = BLANC;
+}
+
+int partie_get_numero_tour(Partie p){
+	return p->numero_tour;
+}
+void partie_set_numero_tour(Partie p, int n){
+	p->numero_tour = n;
+}
+
+int partie_numero_tour_incremente(Partie p){
+	p->numero_tour++;
 }
 
 Plateau partie_get_plateau(Partie p){
@@ -106,6 +123,7 @@ int partie_sauvegarde(Partie partie, FILE* fichier){
 	est_sauve = (fwrite(partie->joueur1, sizeof(char) * 20, 1, fichier) == 1);
 	est_sauve = (fwrite(partie->joueur2, sizeof(char) * 20, 1, fichier) == 1 && est_sauve == 1);
 	est_sauve = (fwrite(&(partie->joueur), sizeof(Couleur), 1, fichier) == 1 && est_sauve == 1);
+	est_sauve = (fwrite(&(partie->numero_tour), sizeof(int), 1, fichier) == 1 && est_sauve == 1);
 	
 	/* sauvegarde des informations du plateau (taille, donnees) */
 	est_sauve = (fwrite(&taille, sizeof(int), 1, fichier) == 1 && est_sauve == 1);
@@ -120,6 +138,7 @@ int partie_sauvegarde(Partie partie, FILE* fichier){
 
 Partie partie_charge(FILE* fichier){
 	Partie partie = creer_partie();
+	
 	int i, j;
 
 	int taille;
@@ -127,6 +146,7 @@ Partie partie_charge(FILE* fichier){
 	fread(partie->joueur1, sizeof(char) * 20, 1, fichier);
 	fread(partie->joueur2, sizeof(char) * 20, 1, fichier);
 	fread(&(partie->joueur), sizeof(Couleur), 1, fichier);
+	fread(&(partie->numero_tour), sizeof(int), 1, fichier);
 	
 	fread(&taille, sizeof(int), 1, fichier);
 	

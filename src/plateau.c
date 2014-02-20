@@ -264,7 +264,7 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 		*valide = 0;
 	}
 	
-	/* @bug valide vaudra toujours 1 !? d'où valide=0 au dessus inutile !? il n'y a aucun return... donc on arrivera forcément ici ! */
+	/** @todo valide vaudra toujours 1 !? d'où valide=0 au dessus inutile !? il n'y a aucun return... donc on arrivera forcément ici ! */
 	*valide = 1;
 	
 	if(ensemble_colores_vide(chaine))
@@ -370,18 +370,51 @@ Chaines captureChaines(Plateau plateau, Pion pion, int* valide){
 	return chainesCapturees;
 }
 
-void plateau_entoure_un_territoire_rec(Plateau plateau, Position pos, Chaines chaines, Territoire t){
+void plateau_entoure_un_territoire_rec(Plateau plateau, Position pos, Chaines chaines, Chaine ct, Territoire t){
+	Chaine chaine;
 	
 	if(!plateau_position_appartient(plateau, pos))
 		return;
-		
-	//if(ensemble_colores_appartient(t, pos))
+
+	/* si la position regardé appartient à la chaine du territoire ou au territoire ou s'arrête */
+	if(ensemble_colores_appartient(t, pos) || ensemble_colores_appartient(ct, pos))
+		return;
+	
+	if(plateau_get_pos(plateau, pos) == VIDE)
+		return;
+	
+	chaine = plateau_determiner_chaine(plateau, pos);
+	
+	if(!ensemble_colores_vide(chaine) && !chaines_appartient_chaine(chaines, chaine))		
+		ensemble_ajouter(chaines, chaine);
+
+	
+	deplacer_haut(pos);
+	plateau_entoure_un_territoire_rec(plateau, pos, chaines, ct, t);
+	
+	deplacer_bas(pos);
+	
+	deplacer_bas(pos);
+	plateau_entoure_un_territoire_rec(plateau, pos, chaines, ct, t);
+	
+	deplacer_haut(pos);
+	
+	deplacer_gauche(pos);
+	plateau_entoure_un_territoire_rec(plateau, pos, chaines, ct, t);
+	
+	deplacer_droite(pos);
+	
+	deplacer_droite(pos);
+	plateau_entoure_un_territoire_rec(plateau, pos, chaines, ct, t);
+	
+	deplacer_gauche(pos);
 	
 }
 
 Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau){
 	Chaines chaines;
 	Chaine ct; /* chaine territoire */
+	Cell ct_next_cell;
 	Position pc; /* position courante */
 	
 	if(ensemble_colores_vide(leTerritoire))
@@ -394,9 +427,8 @@ Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau){
 	/** 
 	 * on determine la chaine qui forme le territoire 
 	 */
-	
 	while(ensemble_colores_suivant(leTerritoire)){
-		pc = ensemble_colores_get_courant(leTerritoire);
+		pc = position_copy(ensemble_colores_get_courant(leTerritoire));
 		
 		deplacer_haut(pc);
 		if(plateau_position_appartient(plateau, pc)){
@@ -445,7 +477,7 @@ Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau){
 		ensemble_colores_set_courant(leTerritoire, ensemble_colores_get_suivant(leTerritoire));
 	}
 
-	pc = ensemble_colores_get_courant(leTerritoire);
+	pc = position_copy(ensemble_colores_get_courant(leTerritoire));
 	
 	deplacer_haut(pc);
 	if(ensemble_colores_vide(ct) && plateau_position_appartient(plateau, pc)){
@@ -474,27 +506,63 @@ Chaines plateau_entoure_un_territoire(Territoire leTerritoire, Plateau plateau){
 	}
 	
 	deplacer_gauche(pc);
-	
+
 	/** 
-	 * une fois qu'on à la chaine du territoire, on parcours cette chaine 
+	 * une fois qu'on à la chaine du territoire on prend chaque position pour lancer recursivement
+	 * la recherche des chaines qui sont autours
 	 */
+	ensemble_colores_reset(ct);
+	
 	while(ensemble_colores_suivant(ct)){
-		pc = ensemble_colores_get_courant(ct);
-		
-		/** on cherche uniquement recursivement la determination de chaines sur les potisions en dehors de cette chaine*/
+		pc = position_copy(ensemble_colores_get_courant(ct));
+		ct_next_cell = ensemble_colores_get_suivant(ct);
+	
 		deplacer_haut(pc);
-		if(plateau_position_appartient(plateau, pc) && !ensemble_colores_appartient(ct, pc) && !ensemble_colores_appartient(leTerritoire, pc))
-		{
-			
-		}
+		plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
 		
 		deplacer_bas(pc);
 		
-		ensemble_colores_set_courant(ct, ensemble_colores_get_suivant(ct));
+		deplacer_bas(pc);
+		plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+		
+		deplacer_haut(pc);
+		
+		deplacer_gauche(pc);
+		plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+		
+		deplacer_droite(pc);
+		
+		deplacer_droite(pc);
+		plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+		
+		deplacer_gauche(pc);
+	
+		ensemble_colores_set_courant(ct, ct_next_cell);
+		
+		pc = position_copy(ensemble_colores_get_courant(ct));
 	}
 	
-	pc = ensemble_colores_get_courant(ct);
+	pc = position_copy(ensemble_colores_get_courant(ct));
 	
+	deplacer_haut(pc);
+	plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+	
+	deplacer_bas(pc);
+	
+	deplacer_bas(pc);
+	plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+	
+	deplacer_haut(pc);
+	
+	deplacer_gauche(pc);
+	plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+	
+	deplacer_droite(pc);
+	
+	deplacer_droite(pc);
+	plateau_entoure_un_territoire_rec(plateau, pc, chaines, ct, leTerritoire);
+	
+	deplacer_gauche(pc);
 	
 	return chaines;
 }

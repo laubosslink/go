@@ -18,9 +18,9 @@
  */
  
 /** 
- * @file position.c
+ * @file pion.c
  * 
- * @brief code source qui permet de gérer les positions
+ * @brief code source qui permet de gérer les pions
  */
  
 #include <stdlib.h>
@@ -31,6 +31,9 @@
 #include <couleur.h>
 
 
+/**
+ * @brief Structure qui représente un pion
+ */
 struct Pion {
 	/** La position du pion */
 	Position p;

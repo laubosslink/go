@@ -1,4 +1,4 @@
-.TH "src/partie.c" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "src/partie.c" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -28,6 +28,7 @@ Le code source permettant de gérer une partie\&.
 .ti -1c
 .RI "struct \fBPartie\fP"
 .br
+.RI "\fIStructure qui représente une partie\&. \fP"
 .in -1c
 .SS "Fonctions"
 
@@ -49,6 +50,15 @@ Le code source permettant de gérer une partie\&.
 .br
 .ti -1c
 .RI "void \fBpartie_echange_joueur\fP (\fBPartie\fP p)"
+.br
+.ti -1c
+.RI "int \fBpartie_get_numero_tour\fP (\fBPartie\fP p)"
+.br
+.ti -1c
+.RI "void \fBpartie_set_numero_tour\fP (\fBPartie\fP p, int n)"
+.br
+.ti -1c
+.RI "int \fBpartie_numero_tour_incremente\fP (\fBPartie\fP p)"
 .br
 .ti -1c
 .RI "\fBPlateau\fP \fBpartie_get_plateau\fP (\fBPartie\fP p)"
@@ -129,6 +139,7 @@ La partie, ou NULL si le chargement n'est pas possible
 .SS "\fBCouleur\fP \fBpartie_get_joueur\fP (\fBPartie\fPp)"
 .SS "char* \fBpartie_get_joueur1\fP (\fBPartie\fPp)"
 .SS "char* \fBpartie_get_joueur2\fP (\fBPartie\fPp)"
+.SS "int \fBpartie_get_numero_tour\fP (\fBPartie\fPp)"
 .SS "\fBPlateau\fP \fBpartie_get_plateau\fP (\fBPartie\fPp)"
 .SS "\fBPartie\fP \fBpartie_initialisation\fP (\fBFonctionQuestions\fPfonctionQuestions)"Permet d'initialiser une partie ! 
 .PP
@@ -143,6 +154,7 @@ une partie initialise
 .RE
 .PP
 
+.SS "int \fBpartie_numero_tour_incremente\fP (\fBPartie\fPp)"
 .SS "int \fBpartie_sauvegarde\fP (\fBPartie\fPpartie, FILE *fichier)"Sauvegarde la partie dans sa position actuelle\&. Si la sauvegarde se passe sans problème la fonction retourne 1, 0 sinon 
 .PP
 \fBParamètres:\fP
@@ -158,6 +170,7 @@ une partie initialise
 .RE
 .PP
 
+.SS "void \fBpartie_set_numero_tour\fP (\fBPartie\fPp, intn)"
 .SS "void \fBpartie_set_plateau\fP (\fBPartie\fPp, \fBPlateau\fPplateau)"
 .SH "Auteur"
 .PP 

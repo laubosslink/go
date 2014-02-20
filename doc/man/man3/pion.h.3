@@ -1,4 +1,4 @@
-.TH "include/pion.h" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/pion.h" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,21 +14,26 @@ Les informations sur un pion : sa position et sa couleur\&.
 \fC#include <couleur\&.h>\fP
 .br
 
-.SS "Classes"
-
-.in +1c
-.ti -1c
-.RI "struct \fBPion\fP"
-.br
-.RI "\fIStructure d'un pion qui contient la position du pion et sa couleur\&. \fP"
-.in -1c
 .SS "Définitions de type"
 
 .in +1c
 .ti -1c
-.RI "typedef struct \fBPion\fP \fBPion\fP"
+.RI "typedef struct \fBPion\fP * \fBPion\fP"
 .br
 .RI "\fIStructure d'un pion qui contient la position du pion et sa couleur\&. \fP"
+.in -1c
+.SS "Fonctions"
+
+.in +1c
+.ti -1c
+.RI "\fBPion\fP \fBcreer_pion\fP (\fBCouleur\fP c, \fBPosition\fP p)"
+.br
+.ti -1c
+.RI "\fBPosition\fP \fBpion_get_position\fP (\fBPion\fP pion)"
+.br
+.ti -1c
+.RI "\fBCouleur\fP \fBpion_get_color\fP (\fBPion\fP pion)"
+.br
 .in -1c
 .SH "Description détaillée"
 .PP 
@@ -58,9 +63,45 @@ PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
 
 .SH "Documentation des définitions de type"
 .PP 
-.SS "typedef struct \fBPion\fP  \fBPion\fP"
+.SS "typedef struct \fBPion\fP* \fBPion\fP"
 .PP
 Structure d'un pion qui contient la position du pion et sa couleur\&. 
+.SH "Documentation des fonctions"
+.PP 
+.SS "\fBPion\fP \fBcreer_pion\fP (\fBCouleur\fPc, \fBPosition\fPp)"Permet de créer un pion 
+.PP
+\fBRenvoie:\fP
+.RS 4
+un nouveau pion 
+.RE
+.PP
+
+.SS "\fBCouleur\fP \fBpion_get_color\fP (\fBPion\fPpion)"Permet de récupérer la couleur du pion 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpion\fP 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la couleur du pion 
+.RE
+.PP
+
+.SS "\fBPosition\fP \fBpion_get_position\fP (\fBPion\fPpion)"Permet de récupérer la position du pion 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIpion\fP 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+la position du pion 
+.RE
+.PP
+
 .SH "Auteur"
 .PP 
 Généré automatiquement par Doxygen pour Jeu du GO à partir du code source\&.

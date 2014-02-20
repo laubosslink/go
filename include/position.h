@@ -75,6 +75,14 @@ int position_get_y(Position p);
 Position position_get_courant(Ensemble E);
 
 /**
+ * Permet de modifier une position
+ * @param p la position
+ * @param x nouvelle abscisse
+ * @param y nouvelle ordonnée
+ */
+void position_set(Position p, int x, int y);
+
+/**
  * Permet d'avoir une nouvelle position déplacé vers le haut
  * @param p la position a deplacer
  * @return une nouvelle position déplacé

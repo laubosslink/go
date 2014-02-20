@@ -7,22 +7,27 @@
 
 
 {\ttfamily \#include $<$ensemble.\-h$>$}\*
-\subsection*{\-Classes}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{structPosition}{\-Position}
-\begin{DoxyCompactList}\small\item\em structure d'une position qui permet de définir une position 2\-D. \-Cette structure comporte l'absice et l'ordonné de la position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aa78012e27ba983f9620fe4ff4bf1d616}{\-Position}
-\end{DoxyCompactItemize}
+typedef struct \hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8h_a862614b88e8512d811dfea1749266cae}{\-Position}
+\begin{DoxyCompactList}\small\item\em structure d'une position qui permet de définir une position 2\-D. \-Cette structure comporte l'absice et l'ordonné de la position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{\-Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8h_a6b0ffa30310890f0f828dd785396f701}{creer\-\_\-position} (int x, int y)
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a73242e281124e6b97f4302dc6ff40a99}{creer\-\_\-position} (int x, int y)
 \item 
-\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{position_8h_a2f0f1db494c1a565d38b0f6ad50aa764}{position\-\_\-get\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a4d84fcda8774658150df72cd8651c2c3}{position\-\_\-copy} (\hyperlink{structPosition}{\-Position} pos)
+\item 
+void \hyperlink{position_8h_a8293d59c70bb407560d9ffe00b5c7133}{detruire\-\_\-position} (\hyperlink{structPosition}{\-Position} p)
+\item 
+int \hyperlink{position_8h_ab50df18c9a2325dbd85c98ea49571d39}{position\-\_\-get\-\_\-x} (\hyperlink{structPosition}{\-Position} p)
+\item 
+int \hyperlink{position_8h_ae402557c71f8e787a60a2d9190eae731}{position\-\_\-get\-\_\-y} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a38fc7708cc1de8410a7714ba1db94b79}{position\-\_\-get\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
+\item 
+void \hyperlink{position_8h_a5caa3a99a0ca91bbb36cc3dc282007d4}{position\-\_\-set} (\hyperlink{structPosition}{\-Position} p, int x, int y)
 \item 
 \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a560eb95832e1fa5b450a770fc0bbda3b}{haut} (\hyperlink{structPosition}{\-Position} p)
 \item 
@@ -31,6 +36,14 @@ typedef struct \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aa7
 \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_af85ae3fae0ab221ae8f7f52ca740b584}{gauche} (\hyperlink{structPosition}{\-Position} p)
 \item 
 \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aae3c656b6236e8cd8109d4486140fb38}{droite} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a5b7858de1e3aab7e713b2eb66a1f54b7}{deplacer\-\_\-haut} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aba995956a9501ededbbc9ae12848b212}{deplacer\-\_\-bas} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_a9ef10054e5f37ee5be99d725739898bb}{deplacer\-\_\-gauche} (\hyperlink{structPosition}{\-Position} p)
+\item 
+\hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aaedef3af49544909468c2048c1fe43de}{deplacer\-\_\-droite} (\hyperlink{structPosition}{\-Position} p)
 \end{DoxyCompactItemize}
 
 
@@ -51,9 +64,13 @@ typedef struct \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aa7
 
 
 \subsection{\-Documentation des définitions de type}
-\hypertarget{position_8h_aa78012e27ba983f9620fe4ff4bf1d616}{\index{position.\-h@{position.\-h}!\-Position@{\-Position}}
+\hypertarget{position_8h_a862614b88e8512d811dfea1749266cae}{\index{position.\-h@{position.\-h}!\-Position@{\-Position}}
 \index{\-Position@{\-Position}!position.h@{position.\-h}}
-\subsubsection[{\-Position}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Position} {\bf \-Position}}}\label{position_8h_aa78012e27ba983f9620fe4ff4bf1d616}
+\subsubsection[{\-Position}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-Position}$\ast$ {\bf \-Position}}}\label{position_8h_a862614b88e8512d811dfea1749266cae}
+
+
+structure d'une position qui permet de définir une position 2\-D. \-Cette structure comporte l'absice et l'ordonné de la position. 
+
 
 
 \subsection{\-Documentation des fonctions}
@@ -64,22 +81,22 @@ typedef struct \hyperlink{structPosition}{\-Position} \hyperlink{position_8h_aa7
 \item[{{\bf \-Position}}]{p}
 \end{DoxyParamCaption}
 )}}\label{position_8h_a7e92be3f4b11fe045bd2faa5d121bc07}
-\-Permet de se deplacer vers le bas 
+\-Permet d'avoir une nouvelle position déplacé vers le bas 
 \begin{DoxyParams}{\-Paramètres}
 {\em p} & la position a deplacer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
-nouvelle position 
+une nouvelle position déplacé 
 \end{DoxyReturn}
-\hypertarget{position_8h_a6b0ffa30310890f0f828dd785396f701}{\index{position.\-h@{position.\-h}!creer\-\_\-position@{creer\-\_\-position}}
+\hypertarget{position_8h_a73242e281124e6b97f4302dc6ff40a99}{\index{position.\-h@{position.\-h}!creer\-\_\-position@{creer\-\_\-position}}
 \index{creer\-\_\-position@{creer\-\_\-position}!position.h@{position.\-h}}
-\subsubsection[{creer\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf creer\-\_\-position} (
+\subsubsection[{creer\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf creer\-\_\-position} (
 \begin{DoxyParamCaption}
 \item[{int}]{x, }
 \item[{int}]{y}
 \end{DoxyParamCaption}
-)}}\label{position_8h_a6b0ffa30310890f0f828dd785396f701}
+)}}\label{position_8h_a73242e281124e6b97f4302dc6ff40a99}
 \-Permet de creer une position 
 \begin{DoxyParams}{\-Paramètres}
 {\em x} & l'abscisse \\
@@ -90,6 +107,78 @@ nouvelle position
 \begin{DoxyReturn}{\-Renvoie}
 un pointeur vers la position alloue 
 \end{DoxyReturn}
+\hypertarget{position_8h_aba995956a9501ededbbc9ae12848b212}{\index{position.\-h@{position.\-h}!deplacer\-\_\-bas@{deplacer\-\_\-bas}}
+\index{deplacer\-\_\-bas@{deplacer\-\_\-bas}!position.h@{position.\-h}}
+\subsubsection[{deplacer\-\_\-bas}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf deplacer\-\_\-bas} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_aba995956a9501ededbbc9ae12848b212}
+\-Permet de se deplacer vers le bas 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la position deplacer 
+\end{DoxyReturn}
+\hypertarget{position_8h_aaedef3af49544909468c2048c1fe43de}{\index{position.\-h@{position.\-h}!deplacer\-\_\-droite@{deplacer\-\_\-droite}}
+\index{deplacer\-\_\-droite@{deplacer\-\_\-droite}!position.h@{position.\-h}}
+\subsubsection[{deplacer\-\_\-droite}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf deplacer\-\_\-droite} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_aaedef3af49544909468c2048c1fe43de}
+\-Permet de se deplacer vers la droite 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la position deplacer 
+\end{DoxyReturn}
+\hypertarget{position_8h_a9ef10054e5f37ee5be99d725739898bb}{\index{position.\-h@{position.\-h}!deplacer\-\_\-gauche@{deplacer\-\_\-gauche}}
+\index{deplacer\-\_\-gauche@{deplacer\-\_\-gauche}!position.h@{position.\-h}}
+\subsubsection[{deplacer\-\_\-gauche}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf deplacer\-\_\-gauche} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_a9ef10054e5f37ee5be99d725739898bb}
+\-Permet de se deplacer vers la gauche 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la position deplacer 
+\end{DoxyReturn}
+\hypertarget{position_8h_a5b7858de1e3aab7e713b2eb66a1f54b7}{\index{position.\-h@{position.\-h}!deplacer\-\_\-haut@{deplacer\-\_\-haut}}
+\index{deplacer\-\_\-haut@{deplacer\-\_\-haut}!position.h@{position.\-h}}
+\subsubsection[{deplacer\-\_\-haut}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf deplacer\-\_\-haut} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_a5b7858de1e3aab7e713b2eb66a1f54b7}
+\-Permet de se deplacer vers le haut 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position a deplacer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+la position deplacer 
+\end{DoxyReturn}
+\hypertarget{position_8h_a8293d59c70bb407560d9ffe00b5c7133}{\index{position.\-h@{position.\-h}!detruire\-\_\-position@{detruire\-\_\-position}}
+\index{detruire\-\_\-position@{detruire\-\_\-position}!position.h@{position.\-h}}
+\subsubsection[{detruire\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf detruire\-\_\-position} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_a8293d59c70bb407560d9ffe00b5c7133}
+\-Permet de détruire une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position \\
+\hline
+\end{DoxyParams}
 \hypertarget{position_8h_aae3c656b6236e8cd8109d4486140fb38}{\index{position.\-h@{position.\-h}!droite@{droite}}
 \index{droite@{droite}!position.h@{position.\-h}}
 \subsubsection[{droite}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf droite} (
@@ -97,13 +186,13 @@ un pointeur vers la position alloue
 \item[{{\bf \-Position}}]{p}
 \end{DoxyParamCaption}
 )}}\label{position_8h_aae3c656b6236e8cd8109d4486140fb38}
-\-Permet de se deplacer vers la droite 
+\-Permet d'avoir une nouvelle position déplacé vers la droite 
 \begin{DoxyParams}{\-Paramètres}
 {\em p} & la position a deplacer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
-nouvelle position 
+une nouvelle position déplacé 
 \end{DoxyReturn}
 \hypertarget{position_8h_af85ae3fae0ab221ae8f7f52ca740b584}{\index{position.\-h@{position.\-h}!gauche@{gauche}}
 \index{gauche@{gauche}!position.h@{position.\-h}}
@@ -112,13 +201,13 @@ nouvelle position
 \item[{{\bf \-Position}}]{p}
 \end{DoxyParamCaption}
 )}}\label{position_8h_af85ae3fae0ab221ae8f7f52ca740b584}
-\-Permet de se deplacer vers la gauche 
+\-Permet d'avoir une nouvelle position déplacé vers la gauche 
 \begin{DoxyParams}{\-Paramètres}
 {\em p} & la position a deplacer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
-nouvelle position 
+une nouvelle position déplacé 
 \end{DoxyReturn}
 \hypertarget{position_8h_a560eb95832e1fa5b450a770fc0bbda3b}{\index{position.\-h@{position.\-h}!haut@{haut}}
 \index{haut@{haut}!position.h@{position.\-h}}
@@ -127,21 +216,36 @@ nouvelle position
 \item[{{\bf \-Position}}]{p}
 \end{DoxyParamCaption}
 )}}\label{position_8h_a560eb95832e1fa5b450a770fc0bbda3b}
-\-Permet de se deplacer vers le haut 
+\-Permet d'avoir une nouvelle position déplacé vers le haut 
 \begin{DoxyParams}{\-Paramètres}
 {\em p} & la position a deplacer \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
-nouvelle position 
+une nouvelle position déplacé 
 \end{DoxyReturn}
-\hypertarget{position_8h_a2f0f1db494c1a565d38b0f6ad50aa764}{\index{position.\-h@{position.\-h}!position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}}
+\hypertarget{position_8h_a4d84fcda8774658150df72cd8651c2c3}{\index{position.\-h@{position.\-h}!position\-\_\-copy@{position\-\_\-copy}}
+\index{position\-\_\-copy@{position\-\_\-copy}!position.h@{position.\-h}}
+\subsubsection[{position\-\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf position\-\_\-copy} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{pos}
+\end{DoxyParamCaption}
+)}}\label{position_8h_a4d84fcda8774658150df72cd8651c2c3}
+\-Permet de copier une position actuelle dans une nouvelle 
+\begin{DoxyParams}{\-Paramètres}
+{\em pos} & la position actuelle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+une nouvelle position 
+\end{DoxyReturn}
+\hypertarget{position_8h_a38fc7708cc1de8410a7714ba1db94b79}{\index{position.\-h@{position.\-h}!position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}}
 \index{position\-\_\-get\-\_\-courant@{position\-\_\-get\-\_\-courant}!position.h@{position.\-h}}
-\subsubsection[{position\-\_\-get\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf position\-\_\-get\-\_\-courant} (
+\subsubsection[{position\-\_\-get\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf position\-\_\-get\-\_\-courant} (
 \begin{DoxyParamCaption}
 \item[{{\bf \-Ensemble}}]{\-E}
 \end{DoxyParamCaption}
-)}}\label{position_8h_a2f0f1db494c1a565d38b0f6ad50aa764}
+)}}\label{position_8h_a38fc7708cc1de8410a7714ba1db94b79}
 \-Permet de récupérer la position actuelle d'un ensemble 
 \begin{DoxyParams}{\-Paramètres}
 {\em \-E} & l'ensemble \\
@@ -150,3 +254,51 @@ nouvelle position
 \begin{DoxyReturn}{\-Renvoie}
 \-Un pointeur vers une position 
 \end{DoxyReturn}
+\hypertarget{position_8h_ab50df18c9a2325dbd85c98ea49571d39}{\index{position.\-h@{position.\-h}!position\-\_\-get\-\_\-x@{position\-\_\-get\-\_\-x}}
+\index{position\-\_\-get\-\_\-x@{position\-\_\-get\-\_\-x}!position.h@{position.\-h}}
+\subsubsection[{position\-\_\-get\-\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf position\-\_\-get\-\_\-x} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_ab50df18c9a2325dbd85c98ea49571d39}
+\-Permet de récupérer l'abcisse de la position p 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & le pointeur sur la position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+x l'abcisse 
+\end{DoxyReturn}
+\hypertarget{position_8h_ae402557c71f8e787a60a2d9190eae731}{\index{position.\-h@{position.\-h}!position\-\_\-get\-\_\-y@{position\-\_\-get\-\_\-y}}
+\index{position\-\_\-get\-\_\-y@{position\-\_\-get\-\_\-y}!position.h@{position.\-h}}
+\subsubsection[{position\-\_\-get\-\_\-y}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf position\-\_\-get\-\_\-y} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p}
+\end{DoxyParamCaption}
+)}}\label{position_8h_ae402557c71f8e787a60a2d9190eae731}
+\-Permet de récupérer l'ordonnée de la position p 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & le pointeur sur la position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+x l'ordonnée 
+\end{DoxyReturn}
+\hypertarget{position_8h_a5caa3a99a0ca91bbb36cc3dc282007d4}{\index{position.\-h@{position.\-h}!position\-\_\-set@{position\-\_\-set}}
+\index{position\-\_\-set@{position\-\_\-set}!position.h@{position.\-h}}
+\subsubsection[{position\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf position\-\_\-set} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Position}}]{p, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{position_8h_a5caa3a99a0ca91bbb36cc3dc282007d4}
+\-Permet de modifier une position 
+\begin{DoxyParams}{\-Paramètres}
+{\em p} & la position \\
+\hline
+{\em x} & nouvelle abscisse \\
+\hline
+{\em y} & nouvelle ordonnée \\
+\hline
+\end{DoxyParams}

@@ -1,4 +1,4 @@
-.TH "include/ensemble.h" 3 "Mercredi Février 19 2014" "Jeu du GO" \" -*- nroff -*-
+.TH "include/ensemble.h" 3 "Jeudi Février 20 2014" "Jeu du GO" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -53,6 +53,9 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .RI "void * \fBensemble_get_courant_contenu\fP (\fBEnsemble\fP E)"
 .br
 .ti -1c
+.RI "void * \fBensemble_get_suivant_contenu\fP (\fBEnsemble\fP E)"
+.br
+.ti -1c
 .RI "void \fBensemble_set_courant\fP (\fBEnsemble\fP E, \fBCell\fP c)"
 .br
 .ti -1c
@@ -69,6 +72,9 @@ structures cell et \fBEnsemble\fP permettant la manipulation d'ensembles
 .br
 .ti -1c
 .RI "void \fBensemble_afficher_entier\fP (\fBEnsemble\fP E)"
+.br
+.ti -1c
+.RI "int \fBensemble_nbr_element\fP (\fBEnsemble\fP E)"
 .br
 .in -1c
 .SH "Description détaillée"
@@ -115,12 +121,7 @@ un pointeur vers un ensemble
 .PP
 \fBParamètres:\fP
 .RS 4
-\fIE\fP l'ensemble
-.RE
-.PP
-\fBA faire\fP
-.RS 4
-réaliser la destruction d'un ensemble 
+\fIE\fP l'ensemble 
 .RE
 .PP
 
@@ -225,6 +226,32 @@ void* le contenu
 \fBRenvoie:\fP
 .RS 4
 la cellule suivante (par rapport à courant) 
+.RE
+.PP
+
+.SS "void* \fBensemble_get_suivant_contenu\fP (\fBEnsemble\fPE)"Permet de récupérer le contenu de la cellule suivante 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+void* le contenu 
+.RE
+.PP
+
+.SS "int \fBensemble_nbr_element\fP (\fBEnsemble\fPE)"Permet de connaitre le nombre d'éléments d'un ensemble 
+.PP
+\fBParamètres:\fP
+.RS 4
+\fIE\fP l'ensemble 
+.RE
+.PP
+\fBRenvoie:\fP
+.RS 4
+le nombre d'éléments 
 .RE
 .PP
 

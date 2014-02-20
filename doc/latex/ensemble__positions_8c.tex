@@ -26,13 +26,13 @@ int \hyperlink{ensemble__positions_8c_ae248d6df280c9cb2d41b36dc320cdf54}{ensembl
 \item 
 int \hyperlink{ensemble__positions_8c_affbc8bbe59a85c33ba23fdc2b55df6d5}{ensemble\-\_\-positions\-\_\-suivant} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E)
 \item 
-int \hyperlink{ensemble__positions_8c_a29bcd0ec665670c98cbe8033713fe26d}{ensemble\-\_\-positions\-\_\-appartient} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E, \hyperlink{structPosition}{\-Position} $\ast$element)
+int \hyperlink{ensemble__positions_8c_afb176b8441283ed043a79c4e34ca7106}{ensemble\-\_\-positions\-\_\-appartient} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E, \hyperlink{structPosition}{\-Position} element)
 \item 
-\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \hyperlink{ensemble__positions_8c_a7eb7c2eb6544801d6870f11f7f354abd}{ensemble\-\_\-positions\-\_\-enlever} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E, \hyperlink{structPosition}{\-Position} $\ast$element)
+\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \hyperlink{ensemble__positions_8c_a48d4f7c5849f1246f06d0169e170028d}{ensemble\-\_\-positions\-\_\-enlever} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E, \hyperlink{structPosition}{\-Position} element)
 \item 
-void \hyperlink{ensemble__positions_8c_a1d7df599796910bc729d25ba737d356d}{ensemble\-\_\-positions\-\_\-ajouter} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E, \hyperlink{structPosition}{\-Position} $\ast$element)
+void \hyperlink{ensemble__positions_8c_a83c1cee73e64cf1406457d9d295db5a2}{ensemble\-\_\-positions\-\_\-ajouter} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E, \hyperlink{structPosition}{\-Position} element)
 \item 
-\hyperlink{structPosition}{\-Position} $\ast$ \hyperlink{ensemble__positions_8c_a67da321fd9e57541330a9fafe8457496}{ensemble\-\_\-positions\-\_\-get\-\_\-courant} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E)
+\hyperlink{structPosition}{\-Position} \hyperlink{ensemble__positions_8c_afd481a4867ebdef8f1164f658648a86a}{ensemble\-\_\-positions\-\_\-get\-\_\-courant} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E)
 \item 
 void \hyperlink{ensemble__positions_8c_a21c54da9cd6ede0ff72040097011404d}{ensemble\-\_\-positions\-\_\-affiche} (\hyperlink{ensemble__positions_8h_aa8ccfd582dee1b5a703aee4c0c809de1}{\-Ensemble\-\_\-\-Positions} \-E)
 \end{DoxyCompactItemize}
@@ -50,10 +50,8 @@ code source qui permet de gérer les ensembles de positions \-E\-N\-S\-I\-C\-A\-
 1.\-1 
 \end{DoxyVersion}
 \begin{DoxyDate}{\-Date}
-03-\/02-\/2013
+03-\/02-\/2013 
 \end{DoxyDate}
-\begin{DoxyRefDesc}{\-A faire}
-\item[\hyperlink{todo__todo000009}{\-A faire}]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position \end{DoxyRefDesc}
 
 
 \subsection{\-Documentation des fonctions}
@@ -91,27 +89,27 @@ un pointeur vers un ensemble
 {\em \-E} & l'ensemble de positions \\
 \hline
 \end{DoxyParams}
-\hypertarget{ensemble__positions_8c_a1d7df599796910bc729d25ba737d356d}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-ajouter@{ensemble\-\_\-positions\-\_\-ajouter}}
+\hypertarget{ensemble__positions_8c_a83c1cee73e64cf1406457d9d295db5a2}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-ajouter@{ensemble\-\_\-positions\-\_\-ajouter}}
 \index{ensemble\-\_\-positions\-\_\-ajouter@{ensemble\-\_\-positions\-\_\-ajouter}!ensemble_positions.c@{ensemble\-\_\-positions.\-c}}
 \subsubsection[{ensemble\-\_\-positions\-\_\-ajouter}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-positions\-\_\-ajouter} (
 \begin{DoxyParamCaption}
 \item[{{\bf \-Ensemble\-\_\-\-Positions}}]{\-E, }
-\item[{{\bf \-Position} $\ast$}]{element}
+\item[{{\bf \-Position}}]{element}
 \end{DoxyParamCaption}
-)}}\label{ensemble__positions_8c_a1d7df599796910bc729d25ba737d356d}
+)}}\label{ensemble__positions_8c_a83c1cee73e64cf1406457d9d295db5a2}
 \-Permet d'ajouter un élément dans un ensemble 
 \begin{DoxyParams}{\-Paramètres}
 {\em element} & l'élément à ajouter \\
 \hline
 \end{DoxyParams}
-\hypertarget{ensemble__positions_8c_a29bcd0ec665670c98cbe8033713fe26d}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-appartient@{ensemble\-\_\-positions\-\_\-appartient}}
+\hypertarget{ensemble__positions_8c_afb176b8441283ed043a79c4e34ca7106}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-appartient@{ensemble\-\_\-positions\-\_\-appartient}}
 \index{ensemble\-\_\-positions\-\_\-appartient@{ensemble\-\_\-positions\-\_\-appartient}!ensemble_positions.c@{ensemble\-\_\-positions.\-c}}
 \subsubsection[{ensemble\-\_\-positions\-\_\-appartient}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-positions\-\_\-appartient} (
 \begin{DoxyParamCaption}
 \item[{{\bf \-Ensemble\-\_\-\-Positions}}]{\-E, }
-\item[{{\bf \-Position} $\ast$}]{element}
+\item[{{\bf \-Position}}]{element}
 \end{DoxyParamCaption}
-)}}\label{ensemble__positions_8c_a29bcd0ec665670c98cbe8033713fe26d}
+)}}\label{ensemble__positions_8c_afb176b8441283ed043a79c4e34ca7106}
 \-Permet de vérifier qu'un élément appartiennent à un ensemble 
 \begin{DoxyParams}{\-Paramètres}
 {\em element} & l'élément \\
@@ -130,14 +128,14 @@ un pointeur vers un ensemble
 \-Permet de positionner le pointeur sur un des éléments de l'ensemble \begin{DoxyReturn}{\-Renvoie}
 le pointeur sur l'élément courant 
 \end{DoxyReturn}
-\hypertarget{ensemble__positions_8c_a7eb7c2eb6544801d6870f11f7f354abd}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-enlever@{ensemble\-\_\-positions\-\_\-enlever}}
+\hypertarget{ensemble__positions_8c_a48d4f7c5849f1246f06d0169e170028d}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-enlever@{ensemble\-\_\-positions\-\_\-enlever}}
 \index{ensemble\-\_\-positions\-\_\-enlever@{ensemble\-\_\-positions\-\_\-enlever}!ensemble_positions.c@{ensemble\-\_\-positions.\-c}}
 \subsubsection[{ensemble\-\_\-positions\-\_\-enlever}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble\-\_\-\-Positions} {\bf ensemble\-\_\-positions\-\_\-enlever} (
 \begin{DoxyParamCaption}
 \item[{{\bf \-Ensemble\-\_\-\-Positions}}]{\-E, }
-\item[{{\bf \-Position} $\ast$}]{element}
+\item[{{\bf \-Position}}]{element}
 \end{DoxyParamCaption}
-)}}\label{ensemble__positions_8c_a7eb7c2eb6544801d6870f11f7f354abd}
+)}}\label{ensemble__positions_8c_a48d4f7c5849f1246f06d0169e170028d}
 \-Permet de supprimer un élément dans l'ensemble 
 \begin{DoxyParams}{\-Paramètres}
 {\em element} & l'élement à supprimer \\
@@ -146,13 +144,13 @@ le pointeur sur l'élément courant
 \begin{DoxyReturn}{\-Renvoie}
 \-E pointeur vers le nouvel ensemble privé de l'élément supprimé 
 \end{DoxyReturn}
-\hypertarget{ensemble__positions_8c_a67da321fd9e57541330a9fafe8457496}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-get\-\_\-courant@{ensemble\-\_\-positions\-\_\-get\-\_\-courant}}
+\hypertarget{ensemble__positions_8c_afd481a4867ebdef8f1164f658648a86a}{\index{ensemble\-\_\-positions.\-c@{ensemble\-\_\-positions.\-c}!ensemble\-\_\-positions\-\_\-get\-\_\-courant@{ensemble\-\_\-positions\-\_\-get\-\_\-courant}}
 \index{ensemble\-\_\-positions\-\_\-get\-\_\-courant@{ensemble\-\_\-positions\-\_\-get\-\_\-courant}!ensemble_positions.c@{ensemble\-\_\-positions.\-c}}
-\subsubsection[{ensemble\-\_\-positions\-\_\-get\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position}$\ast$ {\bf ensemble\-\_\-positions\-\_\-get\-\_\-courant} (
+\subsubsection[{ensemble\-\_\-positions\-\_\-get\-\_\-courant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Position} {\bf ensemble\-\_\-positions\-\_\-get\-\_\-courant} (
 \begin{DoxyParamCaption}
 \item[{{\bf \-Ensemble\-\_\-\-Positions}}]{\-E}
 \end{DoxyParamCaption}
-)}}\label{ensemble__positions_8c_a67da321fd9e57541330a9fafe8457496}
+)}}\label{ensemble__positions_8c_afd481a4867ebdef8f1164f658648a86a}
 \-Permet de récupérer la position courrante de l'ensemble 
 \begin{DoxyParams}{\-Paramètres}
 {\em \-E} & l'ensemble de positions \\

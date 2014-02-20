@@ -1,41 +1,24 @@
 
 \begin{DoxyRefList}
-\item[\label{todo__todo000011}%
-\hypertarget{todo__todo000011}{}%
-\-Membre \hyperlink{libertes_8c_ad3022110d9d089ca0e9672f8aa89bbf1}{determine\-Liberte} (\-Plateau plateau, \-Chaine chaine)]réfléchir sur le struct dans le .c, et conséquence sur chaine 
-
-utiliser haut,bas,gauche,droite  
-\item[\label{todo__todo000003}%
-\hypertarget{todo__todo000003}{}%
-\-Membre \hyperlink{ensemble_8c_a70c89a2b7f9244151c66ffc2b195b8c5}{detruire\-\_\-ensemble} (\hyperlink{structEnsemble}{\-Ensemble} \-E)]réaliser la destruction d'un ensemble  
 \item[\label{todo__todo000007}%
 \hypertarget{todo__todo000007}{}%
-\-Fichier \hyperlink{ensemble__colores_8c}{ensemble\-\_\-colores.c} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position  
-\item[\label{todo__todo000008}%
-\hypertarget{todo__todo000008}{}%
-\-Membre \hyperlink{ensemble__colores_8c_a36d527e790ae93f72f0b0c6479f90e41}{ensemble\-\_\-colores\-\_\-appartient} (\hyperlink{structEnsemble__Colores}{\-Ensemble\-\_\-\-Colores} \-E, \hyperlink{structPosition}{\-Position} $\ast$element)]il ne devrait pas y avoir de cast... on attend les fonctions pour position\-\_\-get\-\_\-x, etc...  
+\-Membre \hyperlink{plateau_8c_a233209249792b1a2c99163fc53ce62aa}{capture\-Chaines} (\-Plateau plateau, \hyperlink{structPion}{\-Pion} pion, int $\ast$valide)]valide vaudra toujours 1 !? d'où valide=0 au dessus inutile !? il n'y a aucun return... donc on arrivera forcément ici !  
 \item[\label{todo__todo000005}%
 \hypertarget{todo__todo000005}{}%
+\-Membre \hyperlink{libertes_8c_ad3022110d9d089ca0e9672f8aa89bbf1}{determine\-Liberte} (\-Plateau plateau, \-Chaine chaine)]optimisation en utilisant deplacer\-\_\-...() mais peut poser problème car deux appels dans la condition...  
+\item[\label{todo__todo000003}%
+\hypertarget{todo__todo000003}{}%
 \-Membre \hyperlink{ensemble_8c_aa9174d08bc657e15cfe1ebf843421731}{ensemble\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} \-E)]insérer le mot get\-\_\- dans le nom pour plus de cohérence  
-\item[\label{todo__todo000009}%
-\hypertarget{todo__todo000009}{}%
-\-Fichier \hyperlink{ensemble__positions_8c}{ensemble\-\_\-positions.c} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position  
+\item[\label{todo__todo000002}%
+\hypertarget{todo__todo000002}{}%
+\-Membre \hyperlink{ensemble_8c_a81d2fb89bbbb2b90cacabfa9d6398849}{ensemble\-\_\-tete} (\hyperlink{structEnsemble}{\-Ensemble} \-E)]insérer le mot get\-\_\- dans le nom pour plus de cohérence  
 \item[\label{todo__todo000004}%
 \hypertarget{todo__todo000004}{}%
-\-Membre \hyperlink{ensemble_8c_a81d2fb89bbbb2b90cacabfa9d6398849}{ensemble\-\_\-tete} (\hyperlink{structEnsemble}{\-Ensemble} \-E)]insérer le mot get\-\_\- dans le nom pour plus de cohérence  
-\item[\label{todo__todo000010}%
-\hypertarget{todo__todo000010}{}%
-\-Fichier \hyperlink{libertes_8c}{libertes.c} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position  
+\-Fichier \hyperlink{go_8c}{go.c} ]fichier assez bordelique, non optimisé, à revoir (nom fichiers, taille des malloc, test des ouvertures) !  
 \item[\label{todo__todo000001}%
 \hypertarget{todo__todo000001}{}%
 \-Fichier \hyperlink{matrice_8h}{matrice.h} ]pouvoir modifier la taille de la matrice (utilisation de realloc, modification nbligne, nbcolonne)  
-\item[\label{todo__todo000013}%
-\hypertarget{todo__todo000013}{}%
-\-Fichier \hyperlink{position_8c}{position.c} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position  
-\item[\label{todo__todo000002}%
-\hypertarget{todo__todo000002}{}%
-\-Fichier \hyperlink{positions_8h}{positions.h} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position  
 \item[\label{todo__todo000006}%
 \hypertarget{todo__todo000006}{}%
-\-Fichier \hyperlink{test__ensemble_8c}{test\-\_\-ensemble.c} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position 
+\-Fichier \hyperlink{pion_8c}{pion.c} ]revoir la doc / remplacer \-Ensemble\-\_\-\-Positions par \-Ensemble\-\_\-\-Position 
 \end{DoxyRefList}

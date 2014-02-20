@@ -13,8 +13,6 @@
  * @author PARMENTIER Laurent <parmentier@ecole.ensicaen.fr, laubosslink@society-lbl.com>
  * @version 1.1 
  * @date 03-02-2013
- * 
- * @todo revoir la doc / remplacer Ensemble_Positions par Ensemble_Position
  */
  
 /** 
@@ -70,11 +68,41 @@ int main(){
 	tests = (ensemble_appartient(E, t+2) && tests == 1) ? 1 : 0;
 		
 	tests = (!ensemble_appartient(E, t+4) && tests == 1) ? 1 : 0;
-		
+
 	ensemble_enlever(E, t+3);
-	
+
 	tests = (!ensemble_appartient(E, t+3) && tests == 1) ? 1 : 0;
-	
+
+#if DEBUG_AFFICHE == 1	
+	printf("Enleve element a la fin: \n");
+	ensemble_afficher_entier(E);
+	printf("--------------------------\n");
+#endif
+
+	ensemble_ajouter(E, t+3);
+
+	ensemble_enlever(E, t+2);
+
+	tests = (!ensemble_appartient(E, t+2) && tests == 1) ? 1 : 0;
+
+#if DEBUG_AFFICHE == 1	
+	printf("Enleve element au milieu: \n");
+	ensemble_afficher_entier(E);
+	printf("--------------------------\n");
+#endif
+
+	ensemble_enlever(E, t);
+
+	tests = (!ensemble_appartient(E, t) && tests == 1) ? 1 : 0;
+
+#if DEBUG_AFFICHE == 1	
+	printf("Enleve element au debut: \n");
+	ensemble_afficher_entier(E);
+	printf("--------------------------\n");
+#endif
+
+	ensemble_ajouter(E, t);
+
 	A = creer_ensemble();
 	
 	ensemble_ajouter(A, t+3);
@@ -89,7 +117,7 @@ int main(){
 
 	A = ensemble_concatene(A, E);
 	
-	tests = (ensemble_nbr_element(A) == 4 && tests == 1) ? 1 : 0;
+	tests = (ensemble_nbr_element(A) == 3 && tests == 1) ? 1 : 0;
 		
 #if DEBUG_AFFICHE == 1
 	ensemble_afficher_entier(A);

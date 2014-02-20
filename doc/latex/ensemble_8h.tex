@@ -36,6 +36,8 @@ void \hyperlink{ensemble_8h_a7b0bf5f9ed97d8146b89d3a1bd1e7a6d}{ensemble\-\_\-ajo
 \item 
 void $\ast$ \hyperlink{ensemble_8h_a20852de7430ad36817fcbf25686b083b}{ensemble\-\_\-get\-\_\-courant\-\_\-contenu} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
 \item 
+void $\ast$ \hyperlink{ensemble_8h_a57875cb73815f63cba85084f464cf2b5}{ensemble\-\_\-get\-\_\-suivant\-\_\-contenu} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
+\item 
 void \hyperlink{ensemble_8h_a983751950264eb587db709ee5b0b08c8}{ensemble\-\_\-set\-\_\-courant} (\hyperlink{structEnsemble}{\-Ensemble} \-E, \hyperlink{structCell}{\-Cell} c)
 \item 
 int \hyperlink{ensemble_8h_ab619d79442f10aff2b26fb9f29fa984a}{ensemble\-\_\-suivant} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
@@ -47,6 +49,8 @@ void \hyperlink{ensemble_8h_af6b32ae127a0ba5999cecc124f3d5e1f}{ensemble\-\_\-res
 void \hyperlink{ensemble_8h_ad3602de5998378106d62fb93b699fe5d}{ensemble\-\_\-afficher\-\_\-pointeur} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
 \item 
 void \hyperlink{ensemble_8h_aba22cf19e1316944ad99abf110f236df}{ensemble\-\_\-afficher\-\_\-entier} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
+\item 
+int \hyperlink{ensemble_8h_ab00d715d36a31802ed60e9522a205632}{ensemble\-\_\-nbr\-\_\-element} (\hyperlink{structEnsemble}{\-Ensemble} \-E)
 \end{DoxyCompactItemize}
 
 
@@ -95,11 +99,9 @@ un pointeur vers un ensemble
 )}}\label{ensemble_8h_a70c89a2b7f9244151c66ffc2b195b8c5}
 \-Permet de détruire un ensemble (désalocation) 
 \begin{DoxyParams}{\-Paramètres}
-{\em \-E} & l'ensemble\\
+{\em \-E} & l'ensemble \\
 \hline
 \end{DoxyParams}
-\begin{DoxyRefDesc}{\-A faire}
-\item[\hyperlink{todo__todo000003}{\-A faire}]réaliser la destruction d'un ensemble \end{DoxyRefDesc}
 \hypertarget{ensemble_8h_aba22cf19e1316944ad99abf110f236df}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-afficher\-\_\-entier@{ensemble\-\_\-afficher\-\_\-entier}}
 \index{ensemble\-\_\-afficher\-\_\-entier@{ensemble\-\_\-afficher\-\_\-entier}!ensemble.h@{ensemble.\-h}}
 \subsubsection[{ensemble\-\_\-afficher\-\_\-entier}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf ensemble\-\_\-afficher\-\_\-entier} (
@@ -182,7 +184,7 @@ un nouvel ensemble
 le pointeur sur l'élément courant
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{\-A faire}
-\item[\hyperlink{todo__todo000005}{\-A faire}]insérer le mot get\-\_\- dans le nom pour plus de cohérence \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000003}{\-A faire}]insérer le mot get\-\_\- dans le nom pour plus de cohérence \end{DoxyRefDesc}
 \hypertarget{ensemble_8h_a0dc36c41c75e6ea4b0ea0c6efad1bfd0}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-enlever@{ensemble\-\_\-enlever}}
 \index{ensemble\-\_\-enlever@{ensemble\-\_\-enlever}!ensemble.h@{ensemble.\-h}}
 \subsubsection[{ensemble\-\_\-enlever}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-Ensemble} {\bf ensemble\-\_\-enlever} (
@@ -228,6 +230,36 @@ void$\ast$ le contenu
 \end{DoxyParams}
 \begin{DoxyReturn}{\-Renvoie}
 la cellule suivante (par rapport à courant) 
+\end{DoxyReturn}
+\hypertarget{ensemble_8h_a57875cb73815f63cba85084f464cf2b5}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-get\-\_\-suivant\-\_\-contenu@{ensemble\-\_\-get\-\_\-suivant\-\_\-contenu}}
+\index{ensemble\-\_\-get\-\_\-suivant\-\_\-contenu@{ensemble\-\_\-get\-\_\-suivant\-\_\-contenu}!ensemble.h@{ensemble.\-h}}
+\subsubsection[{ensemble\-\_\-get\-\_\-suivant\-\_\-contenu}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf ensemble\-\_\-get\-\_\-suivant\-\_\-contenu} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble}}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8h_a57875cb73815f63cba85084f464cf2b5}
+\-Permet de récupérer le contenu de la cellule suivante 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+void$\ast$ le contenu 
+\end{DoxyReturn}
+\hypertarget{ensemble_8h_ab00d715d36a31802ed60e9522a205632}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-nbr\-\_\-element@{ensemble\-\_\-nbr\-\_\-element}}
+\index{ensemble\-\_\-nbr\-\_\-element@{ensemble\-\_\-nbr\-\_\-element}!ensemble.h@{ensemble.\-h}}
+\subsubsection[{ensemble\-\_\-nbr\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-nbr\-\_\-element} (
+\begin{DoxyParamCaption}
+\item[{{\bf \-Ensemble}}]{\-E}
+\end{DoxyParamCaption}
+)}}\label{ensemble_8h_ab00d715d36a31802ed60e9522a205632}
+\-Permet de connaitre le nombre d'éléments d'un ensemble 
+\begin{DoxyParams}{\-Paramètres}
+{\em \-E} & l'ensemble \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Renvoie}
+le nombre d'éléments 
 \end{DoxyReturn}
 \hypertarget{ensemble_8h_af6b32ae127a0ba5999cecc124f3d5e1f}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-reset\-\_\-courant@{ensemble\-\_\-reset\-\_\-courant}}
 \index{ensemble\-\_\-reset\-\_\-courant@{ensemble\-\_\-reset\-\_\-courant}!ensemble.h@{ensemble.\-h}}
@@ -277,7 +309,7 @@ la cellule suivante (par rapport à courant)
 le pointeur de la tete de l'ensemble
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{\-A faire}
-\item[\hyperlink{todo__todo000004}{\-A faire}]insérer le mot get\-\_\- dans le nom pour plus de cohérence \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000002}{\-A faire}]insérer le mot get\-\_\- dans le nom pour plus de cohérence \end{DoxyRefDesc}
 \hypertarget{ensemble_8h_ac0faa23095aa313bcdecc04a260f6fe8}{\index{ensemble.\-h@{ensemble.\-h}!ensemble\-\_\-vide@{ensemble\-\_\-vide}}
 \index{ensemble\-\_\-vide@{ensemble\-\_\-vide}!ensemble.h@{ensemble.\-h}}
 \subsubsection[{ensemble\-\_\-vide}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf ensemble\-\_\-vide} (

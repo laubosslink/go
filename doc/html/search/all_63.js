@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['c',['c',['../structPion.html#a3811851abd3312e2e60a78fbc75081cb',1,'Pion::c()'],['../structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b',1,'Ensemble_Colores::c()']]],
-  ['capturechaines',['captureChaines',['../plateau_8h.html#a233209249792b1a2c99163fc53ce62aa',1,'captureChaines(Plateau plateau, Pion pion, int *valide):&#160;plateau.c'],['../plateau_8c.html#a233209249792b1a2c99163fc53ce62aa',1,'captureChaines(Plateau plateau, Pion pion, int *valide):&#160;plateau.c'],['../tmp_8c.html#a233209249792b1a2c99163fc53ce62aa',1,'captureChaines(Plateau plateau, Pion pion, int *valide):&#160;tmp.c']]],
+  ['c',['c',['../structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b',1,'Ensemble_Colores::c()'],['../structPion.html#a3811851abd3312e2e60a78fbc75081cb',1,'Pion::c()']]],
+  ['capturechaines',['captureChaines',['../plateau_8h.html#a233209249792b1a2c99163fc53ce62aa',1,'captureChaines(Plateau plateau, Pion pion, int *valide):&#160;plateau.c'],['../plateau_8c.html#a233209249792b1a2c99163fc53ce62aa',1,'captureChaines(Plateau plateau, Pion pion, int *valide):&#160;plateau.c']]],
   ['cell',['Cell',['../structCell.html',1,'Cell'],['../ensemble_8h.html#a966ffeb0dfd58f387e02d2b765cd5ce9',1,'Cell():&#160;ensemble.h']]],
   ['chaine',['Chaine',['../chaine_8h.html#af8ce15b2345494c42b553ea1e9963f3c',1,'chaine.h']]],
   ['chaine_2eh',['chaine.h',['../chaine_8h.html',1,'']]],
@@ -18,6 +18,8 @@ var searchData=
   ['creer_5fensemble_5fpositions',['creer_ensemble_positions',['../ensemble__positions_8h.html#a853a71393a6aa266039f453e963ed814',1,'creer_ensemble_positions():&#160;ensemble_positions.c'],['../ensemble__positions_8c.html#a853a71393a6aa266039f453e963ed814',1,'creer_ensemble_positions():&#160;ensemble_positions.c']]],
   ['creer_5fmatrice',['creer_matrice',['../matrice_8c.html#a1ae4f5dc3c9e06c598edb6c21f73a2bd',1,'matrice.c']]],
   ['creer_5fpartie',['creer_partie',['../partie_8h.html#af26b54c1a5509d0b4cae3778b320ccac',1,'creer_partie():&#160;partie.c'],['../partie_8c.html#af26b54c1a5509d0b4cae3778b320ccac',1,'creer_partie():&#160;partie.c']]],
+  ['creer_5fpion',['creer_pion',['../pion_8h.html#a07ae5fd0f580a91bc9ce492fb2026fc7',1,'creer_pion(Couleur c, Position p):&#160;pion.c'],['../pion_8c.html#a07ae5fd0f580a91bc9ce492fb2026fc7',1,'creer_pion(Couleur c, Position p):&#160;pion.c']]],
   ['creer_5fplateau',['creer_plateau',['../plateau_8h.html#a48347ca20160613e199cab541b9a261f',1,'creer_plateau(int taille):&#160;plateau.c'],['../plateau_8c.html#a48347ca20160613e199cab541b9a261f',1,'creer_plateau(int taille):&#160;plateau.c']]],
-  ['creer_5fposition',['creer_position',['../position_8h.html#a6b0ffa30310890f0f828dd785396f701',1,'creer_position(int x, int y):&#160;position.c'],['../position_8c.html#a6b0ffa30310890f0f828dd785396f701',1,'creer_position(int x, int y):&#160;position.c']]]
+  ['creer_5fposition',['creer_position',['../position_8h.html#a73242e281124e6b97f4302dc6ff40a99',1,'creer_position(int x, int y):&#160;position.c'],['../position_8c.html#a73242e281124e6b97f4302dc6ff40a99',1,'creer_position(int x, int y):&#160;position.c']]],
+  ['creer_5fterritoire',['creer_territoire',['../territoire_8h.html#a72de59166627636f84ef283db2cc8968',1,'creer_territoire():&#160;territoire.c'],['../territoire_8c.html#a72de59166627636f84ef283db2cc8968',1,'creer_territoire():&#160;territoire.c']]]
 ];

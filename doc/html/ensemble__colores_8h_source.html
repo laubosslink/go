@@ -100,11 +100,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00046"></a>00046 
 <a name="l00052"></a>00052 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a531175889de9fae1846ca16ed0caf9cc">ensemble_colores_vide</a>(Ensemble_Colores E);
 <a name="l00053"></a>00053 
-<a name="l00059"></a>00059 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a36d527e790ae93f72f0b0c6479f90e41">ensemble_colores_appartient</a>(Ensemble_Colores E, <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* element);
+<a name="l00059"></a>00059 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a775687030621aa6023a3f469227af63f">ensemble_colores_appartient</a>(Ensemble_Colores E, <a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a> element);
 <a name="l00060"></a>00060 
-<a name="l00065"></a>00065 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#a99531844bc6b944644ec1cb24cc178b0">ensemble_colores_ajouter</a>(Ensemble_Colores E, <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* element);
+<a name="l00065"></a>00065 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#a9de94ac6a8da4245dceb9b3e89cc295a">ensemble_colores_ajouter</a>(Ensemble_Colores E, <a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a> element);
 <a name="l00066"></a>00066 
-<a name="l00072"></a>00072 Ensemble_Colores <a class="code" href="ensemble__colores_8h.html#ad95833539e5917606e27c0d1ac3f6605">ensemble_colores_enlever</a>(Ensemble_Colores E, <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* element);
+<a name="l00072"></a>00072 Ensemble_Colores <a class="code" href="ensemble__colores_8h.html#a609dad6ab2d57bad3b6ac8ebed86ad98">ensemble_colores_enlever</a>(Ensemble_Colores E, <a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a> element);
 <a name="l00073"></a>00073 
 <a name="l00078"></a>00078 <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a> <a class="code" href="ensemble__colores_8h.html#ac4400f93582c3d56dfcb6f0589d3d62f">ensemble_colores_tete</a>(Ensemble_Colores E);
 <a name="l00079"></a>00079  
@@ -118,7 +118,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00105"></a>00105 
 <a name="l00110"></a>00110 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#adec6ad97d1dd7a1f51dc21c2e332d066">ensemble_colores_reset</a>(Ensemble_Colores E);
 <a name="l00111"></a>00111 
-<a name="l00117"></a>00117 <a class="code" href="structPosition.html" title="structure d&#39;une position qui permet de définir une position 2D. Cette structure comporte l&#39;absice et ...">Position</a>* <a class="code" href="ensemble__colores_8h.html#ab45abfb8ca0730fa9546266db5c8658b">ensemble_colores_get_courant</a>(Ensemble_Colores E);
+<a name="l00117"></a>00117 <a class="code" href="structPosition.html" title="Structure qui représente une position.">Position</a> <a class="code" href="ensemble__colores_8h.html#aa6e12abab10e5d5ede75563ad4972ac8">ensemble_colores_get_courant</a>(Ensemble_Colores E);
 <a name="l00118"></a>00118 
 <a name="l00124"></a>00124 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#a5cb797fa019d1a0dfaed8b1a020aae05">ensemble_colores_set_courant</a>(Ensemble_Colores E, <a class="code" href="structCell.html" title="structure Cell qui contient le contenu de la cellule et le pointeur vers la cellule suivante...">Cell</a> <a class="code" href="structEnsemble__Colores.html#ac6e238df5b4b896d72d3a54bceb3502b">c</a>);
 <a name="l00125"></a>00125 
@@ -126,7 +126,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a name="l00132"></a>00132 
 <a name="l00137"></a>00137 <span class="keywordtype">void</span> <a class="code" href="ensemble__colores_8h.html#ae7c9b269b319958acb535279d8d72522">ensemble_colores_affiche</a>(Ensemble_Colores E);
 <a name="l00138"></a>00138 
-<a name="l00139"></a>00139 <span class="preprocessor">#endif</span>
+<a name="l00144"></a>00144 <span class="keywordtype">int</span> <a class="code" href="ensemble__colores_8h.html#a03524fe2753082db1c23b5c51df55f5a">ensemble_colores_nbr_element</a>(Ensemble_Colores E);
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
@@ -145,7 +147,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 
 
 <hr class="footer"/><address class="footer"><small>
-Généré le Mercredi Février 19 2014 17:48:20 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Jeudi Février 20 2014 05:34:12 pour Jeu du GO par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>
