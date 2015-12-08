@@ -13,3 +13,9 @@ Ce fichier respecte la norme DokuWiki.
   * Pour réaliser l'ensemble des tests: <code bash>make tests</code>
   * Pour creer les tests : <code bash> make test_FILE </code>
 
+
+===== Ce qu'il reste à faire =====
+
+----
+
+Juste appliquer les règles sur le jeu. Les règles fonctionnent (cf. tests)
